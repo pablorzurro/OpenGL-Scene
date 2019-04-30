@@ -29,5 +29,17 @@
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp">
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Material.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

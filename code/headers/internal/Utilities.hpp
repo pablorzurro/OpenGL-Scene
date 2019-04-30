@@ -1,5 +1,5 @@
-#ifndef BOX2D_ANIMATED_SCENE_INTERNAL_UTILITIES_H_
-#define BOX2D_ANIMATED_SCENE_INTERNAL_UTILITIES_H_
+#ifndef OPENGL_SCENE_INTERNAL_UTILITIES_H_
+#define OPENGL_SCENE_INTERNAL_UTILITIES_H_
 
 #include "internal/Declarations.hpp"
 
@@ -29,12 +29,12 @@ namespace prz
 		return min + T(rand()) / T(RAND_MAX) * (max - min);
 	}
 
-	static float to_radians(float32 degrees)
+	static float to_radians(float degrees)
 	{
 		return degrees * DEG_TO_RAD;
 	}
 
-	static float to_degrees(float32 radians)
+	static float to_degrees(float radians)
 	{
 		return radians * RAD_TO_DEG;
 	}
@@ -45,4 +45,4 @@ namespace prz
 	}
 }
 
-#endif // !BOX2D_ANIMATED_SCENE_INTERNAL_UTILITIES_H_
+#endif // !OPENGL_SCENE_INTERNAL_UTILITIES_H_

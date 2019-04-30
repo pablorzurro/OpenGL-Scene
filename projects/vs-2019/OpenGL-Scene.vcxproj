@@ -91,8 +91,12 @@
     <ClCompile Include="..\..\code\sources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
+    <ClInclude Include="..\..\code\headers\Material.hpp" />
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

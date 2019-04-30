@@ -1,5 +1,5 @@
-#ifndef OPENGL_SCENE_DECLARATIONS_H
-#define OPENGL_SCENE_DECLARATIONS_H
+#ifndef OPENGL_SCENE_DECLARATIONS_H_
+#define OPENGL_SCENE_DECLARATIONS_H_
 
 #include "SFML/Graphics.hpp"
 
@@ -30,6 +30,6 @@ namespace prz
 	
 	constexpr float DEG_TO_RAD	= 0.01745f;
 	constexpr float RAD_TO_DEG	= 57.29578f;
-}
+} // !namespace prz
 
-#endif // !OPENGL_SCENE_DECLARATIONS_H
+#endif // !OPENGL_SCENE_DECLARATIONS_H_
