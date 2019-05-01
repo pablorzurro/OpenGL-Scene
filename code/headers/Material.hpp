@@ -12,11 +12,30 @@
 #ifndef OPENGL_SCENE_MATERIAL_H_
 #define OPENGL_SCENE_MATERIAL_H_
 
+#include "Shader.hpp"
+#include "ShaderProgram.hpp"
+
+#include "internal/Declarations.hpp"
+
+#include <variant>
+
 namespace prz
 {
+	class Texture;
+
 	class Material
 	{
+	public:
 
+		Material()
+		{}
+
+	private:
+
+		PBuffer< Texture > textures_;
+		Shader shader_;
+		ShaderProgram shaderProgram_;
+		/*PMap< PString, Variant> noIdea_;*/
 	};
 
 } //!namespace prz

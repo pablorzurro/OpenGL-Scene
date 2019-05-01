@@ -91,10 +91,21 @@
     <ClCompile Include="..\..\code\sources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\CubeMap.hpp" />
+    <ClInclude Include="..\..\code\headers\CubeMesh.hpp" />
+    <ClInclude Include="..\..\code\headers\ElevationMesh.hpp" />
     <ClInclude Include="..\..\code\headers\Framebuffer.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
     <ClInclude Include="..\..\code\headers\Material.hpp" />
+    <ClInclude Include="..\..\code\headers\Mesh.hpp" />
+    <ClInclude Include="..\..\code\headers\Model.hpp" />
+    <ClInclude Include="..\..\code\headers\ObjMesh.hpp" />
+    <ClInclude Include="..\..\code\headers\Piece.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader.hpp" />
+    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
     <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
     <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
   </ItemGroup>
