@@ -17,6 +17,7 @@
 
 namespace prz
 {
+	
 	struct Piece
 	{
 	public:
@@ -24,6 +25,9 @@ namespace prz
 		Piece(/*????*/):
 			mesh_(),
 			material_()
+		{}
+
+		~Piece()
 		{}
 
 	public:

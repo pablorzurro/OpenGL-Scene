@@ -14,8 +14,20 @@
 
 namespace prz
 {
+	
 	class Shader
 	{
+	public:
+
+		Shader()
+		{}
+
+		~Shader()
+		{}
+
+	protected:
+
+	private:
 
 	};
 

@@ -14,8 +14,20 @@
 
 namespace prz
 {
+	
 	class Framebuffer
 	{
+	public:
+
+		Framebuffer()
+		{}
+
+		~Framebuffer()
+		{}
+
+	protected:
+
+	private:
 
 	};
 

@@ -14,8 +14,20 @@
 
 namespace prz
 {
+	
 	class VertexArrayObject
 	{
+	public:
+
+		VertexArrayObject()
+		{}
+
+		~VertexArrayObject()
+		{}
+
+	protected:
+
+	private:
 
 	};
 

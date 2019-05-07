@@ -14,8 +14,20 @@
 
 namespace prz
 {
+	
 	class Model
 	{
+	public:
+
+		Model()
+		{}
+
+		~Model()
+		{}
+
+	protected:
+
+	private:
 
 	};
 

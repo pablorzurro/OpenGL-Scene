@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\code\sources\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -79,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\CubeMap.hpp">
       <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\View.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Camera.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Skybox.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

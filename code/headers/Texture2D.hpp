@@ -16,6 +16,7 @@
 
 namespace prz
 {
+	
 	class Texture2D : Texture
 	{
 

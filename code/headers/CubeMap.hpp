@@ -16,6 +16,7 @@
 
 namespace prz
 {
+	
 	class CubeMap : Texture
 	{
 

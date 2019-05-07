@@ -15,12 +15,13 @@
 #include "Shader.hpp"
 #include "ShaderProgram.hpp"
 
-#include "internal/Declarations.hpp"
+#include "Declarations.hpp"
 
 #include <variant>
 
 namespace prz
 {
+	
 	class Texture;
 
 	class Material
@@ -29,6 +30,11 @@ namespace prz
 
 		Material()
 		{}
+		
+		~Material()
+		{}
+
+	protected:
 
 	private:
 

@@ -14,8 +14,20 @@
 
 namespace prz
 {
+	
 	class VertexBufferObject
 	{
+	public:
+
+		VertexBufferObject()
+		{}
+
+		~VertexBufferObject()
+		{}
+
+	protected:
+
+	private:
 
 	};
 

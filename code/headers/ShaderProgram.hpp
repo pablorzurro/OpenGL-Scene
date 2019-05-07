@@ -12,10 +12,24 @@
 #ifndef OPENGL_SCENE_SHADER_PROGRAM_H_
 #define OPENGL_SCENE_SHADER_PROGRAM_H_
 
+#include "Shader.hpp"
+
 namespace prz
 {
-	class ShaderProgram
+	
+	class ShaderProgram : public Shader
 	{
+	public:
+
+		ShaderProgram()
+		{}
+
+		~ShaderProgram()
+		{}
+
+	protected:
+
+	private:
 
 	};
 
