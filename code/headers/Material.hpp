@@ -13,7 +13,7 @@
 #define OPENGL_SCENE_MATERIAL_H_
 
 #include "Shader.hpp"
-#include "ShaderProgram.hpp"
+#include "Shader_Program.hpp"
 
 #include "Declarations.hpp"
 
@@ -40,7 +40,7 @@ namespace prz
 
 		PBuffer< Texture > textures_;
 		Shader shader_;
-		ShaderProgram shaderProgram_;
+		Shader_Program shaderProgram_;
 		/*PMap< PString, Variant> noIdea_;*/
 	};
 

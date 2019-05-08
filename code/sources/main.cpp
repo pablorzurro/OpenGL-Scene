@@ -1,4 +1,3 @@
-
 #include "View.hpp"
 
 #include "Declarations.hpp"

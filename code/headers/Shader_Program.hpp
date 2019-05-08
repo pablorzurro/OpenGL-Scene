@@ -17,14 +17,14 @@
 namespace prz
 {
 	
-	class ShaderProgram : public Shader
+	class Shader_Program
 	{
 	public:
 
-		ShaderProgram()
+		Shader_Program()
 		{}
 
-		~ShaderProgram()
+		~Shader_Program()
 		{}
 
 	protected:
