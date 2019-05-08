@@ -30,8 +30,8 @@ namespace prz
 	class Vertex_Buffer_Object;
 	class Vertex_Array_Object;
 
-	using VBO = Vertex_Buffer_Object;
-	using VAO = Vertex_Array_Object;
+	using PVBO = Vertex_Buffer_Object;
+	using PVAO = Vertex_Array_Object;
 
 	////////////////////////////////////STANDARD LIBRARY/////////////////////////////////////
 
@@ -51,12 +51,12 @@ namespace prz
 
 	////////////////////////////////////SFML/////////////////////////////////////
 
-	using Key = sf::Keyboard::Key;
+	using PKey = sf::Keyboard::Key;
 
 	////////////////////////////////////GLM/////////////////////////////////////
 
-	using Point4f = glm::vec4;
-	using Vector4f = glm::vec4;
+	using PPoint4f = glm::vec4;
+	using PVector4f = glm::vec4;
 
 	////////////////////////////////////MATH/////////////////////////////////////
 

@@ -41,7 +41,7 @@ namespace prz
 
 	public:
 
-		// Public overrided constructors for each input data type: byte, unsigned byte, short, unsigned short, int, unsigned int and float
+		// Public overrided constructors for each input data type: byte, unsigned byte, short, unsigned short, int, unsigned int, unsigned int vectors (2,3 and 4), float and float vectors(2,3 and 4)
 		
 		Vertex_Buffer_Object(const GLbyte* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_BYTE, drawUsage) {}
 		Vertex_Buffer_Object(const GLubyte* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_BYTE, drawUsage) {}
@@ -49,7 +49,13 @@ namespace prz
 		Vertex_Buffer_Object(const GLushort* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_SHORT, drawUsage) {}
 		Vertex_Buffer_Object(const GLint* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_INT, drawUsage) {}
 		Vertex_Buffer_Object(const GLuint* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::uvec2* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::uvec3* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::uvec4* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
 		Vertex_Buffer_Object(const GLfloat* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::vec2* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC) : Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::vec3* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC) : Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
+		Vertex_Buffer_Object(const glm::vec4* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC) : Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
 
 		~Vertex_Buffer_Object()
 		{

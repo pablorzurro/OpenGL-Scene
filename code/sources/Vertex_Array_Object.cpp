@@ -2,42 +2,41 @@
 
 namespace prz
 {
-	Vertex_Array_Object::Vertex_Array_Object(const std::initializer_list< Vertex_Attribute_Information >& vertex_attribute_information_list, const PShared< VBO >& indices_vbo = PShared< VBO >())
+	Vertex_Array_Object::Vertex_Array_Object(const std::initializer_list< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >())
 	{
-		glGenVertexArrays(1, &vao_id);
+		glGenVertexArrays(1, &id_);
 
 		bind();
-
-		for (const auto& vertex_attribute_information : vertex_attribute_information_list)
 		{
-			vertex_attribute_information.vbo->bind();
+			for (const auto& vertex_attribute_information : vertexAttribInfoList)
+			{
+				vertex_attribute_information.vbo->bind();
 
-			glEnableVertexAttribArray(vertex_attribute_information.attribute_location);
+				glEnableVertexAttribArray(vertex_attribute_information.attribLocation);
 
-			glVertexAttribPointer
-			(
-				vertex_attribute_information.attribute_location,
-				vertex_attribute_information.number_of_components,
-				vertex_attribute_information.component_type,
-				GL_FALSE,
-				0,
-				0
-			);
+				glVertexAttribPointer
+				(
+					vertex_attribute_information.attribLocation,
+					vertex_attribute_information.nComponents,
+					vertex_attribute_information.componentType,
+					GL_FALSE,
+					0,
+					0
+				);
 
-			vbo_list.push_back(vertex_attribute_information.vbo);
-		}
+				vboList_.push_back(vertex_attribute_information.vbo);
+			}
 
-		if (indices_vbo.get())
-		{
-			indices_vbo->bind();
-		}
+			if (vboIndices.get())
+			{
+				vboIndices->bind();
+			}
 
-		vbo_list.push_back(indices_vbo);
+			vboList_.push_back(vboIndices);
 
-		unbind();
+		} unbind();
 
-		error = glGetError();
-
-		assert(error == GL_NO_ERROR);
+		error_ = glGetError();
+		assert(error_ == GL_NO_ERROR);
 	}
 }

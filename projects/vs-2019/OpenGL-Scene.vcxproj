@@ -89,6 +89,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp" />
+    <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp" />
     <ClCompile Include="..\..\code\sources\View.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -105,12 +107,12 @@
     <ClInclude Include="..\..\code\headers\ObjMesh.hpp" />
     <ClInclude Include="..\..\code\headers\Piece.hpp" />
     <ClInclude Include="..\..\code\headers\Shader.hpp" />
-    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader_Program.hpp" />
     <ClInclude Include="..\..\code\headers\Skybox.hpp" />
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
-    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
-    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Array_Object.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

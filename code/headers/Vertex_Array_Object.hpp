@@ -29,30 +29,32 @@ namespace prz
 
 		struct Vertex_Attribute_Information
 		{
-			SPtr< VBO > vbo;
-			GLuint attribute_location;
-			GLint  number_of_components;
-			GLenum component_type;
+			PSPtr< PVBO > vbo;
+			GLuint attribLocation;
+			GLint  nComponents;
+			GLenum componentType;
 		};
+
+		using PVAI = Vertex_Attribute_Information;
 
 	public:
 
 		Vertex_Array_Object
 		(
-			const std::initializer_list< Vertex_Attribute_Information >& vertex_attribute_information_list,
-			const SPtr< VBO >& indices_vbo = SPtr< VBO >()
+			const std::initializer_list< PVAI >& vertexAttribInfoList,
+			const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >()
 		);
 
 		~Vertex_Array_Object()
 		{
-			glDeleteVertexArrays(1, &vao_id);
+			glDeleteVertexArrays(1, &id_);
 		}
 
 	public:
 
 		void bind() const
 		{
-			glBindVertexArray(vao_id);
+			glBindVertexArray(id_);
 		}
 
 		void unbind() const
@@ -64,18 +66,25 @@ namespace prz
 
 		bool is_ok() const
 		{
-			return error == GL_NO_ERROR;
+			return error_ == GL_NO_ERROR;
+		}
+
+	public:
+
+		GLenum get_error() const
+		{
+			return error_;
 		}
 
 	private:
 
-		Vertex_Array_Object(const VAO&);
+		Vertex_Array_Object(const PVAO&);
 
 	private:
 
-		GLuint   vao_id;
-		PList< SPtr< VBO > > vbo_list;
-		GLenum   error;
+		GLuint id_;
+		PList< PSPtr< PVBO > > vboList_;
+		GLenum error_;
 	};
 
 } // !namespace prz 
