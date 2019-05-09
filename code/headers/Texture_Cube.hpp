@@ -1,5 +1,5 @@
 /**
- * @file CubeMap.hpp
+ * @file Texture_Cube.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
  * @brief
  * @version 0.1
@@ -9,19 +9,19 @@
  *
  */
 
-#ifndef OPENGL_SCENE_CUBE_MAP_H_
-#define OPENGL_SCENE_CUBE_MAP_H_
+#ifndef OPENGL_SCENE_TEXTURE_CUBE_H_
+#define OPENGL_SCENE_TEXTURE_CUBE_H_
 
 #include "Texture.hpp"
 
 namespace prz
 {
 	
-	class CubeMap : Texture
+	class Texture_Cube : public Texture
 	{
 
 	};
 
 } // !namespace prz 
 
-#endif // !OPENGL_SCENE_CUBE_MAP_H_
+#endif // !OPENGL_SCENE_TEXTURE_CUBE_H_

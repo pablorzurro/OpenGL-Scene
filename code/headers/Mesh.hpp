@@ -12,12 +12,28 @@
 #ifndef OPENGL_SCENE_MESH_H_
 #define OPENGL_SCENE_MESH_H_
 
+#include "Declarations.hpp"
+
 namespace prz
 {
-	
 	class Mesh
 	{
+	public:
 
+		Mesh()
+		{}
+
+		~Mesh();
+		{
+		}
+
+	protected:
+
+
+	private:
+
+		PVBO vbo_;
+		PVAO vao_;
 	};
 
 } // !namespace prz 

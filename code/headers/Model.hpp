@@ -12,11 +12,24 @@
 #ifndef OPENGL_SCENE_MODEL_H_
 #define OPENGL_SCENE_MODEL_H_
 
+#include "Mesh.hpp"
+#include "Material.hpp"
+
+#include "Declarations.hpp"
+
 namespace prz
 {
 	
 	class Model
 	{
+	public:
+
+		struct Piece
+		{
+			Mesh mesh_;
+			Material material_;
+		};
+
 	public:
 
 		Model()
@@ -25,9 +38,9 @@ namespace prz
 		~Model()
 		{}
 
-	protected:
-
 	private:
+
+		PBuffer< Piece > pieces_;
 
 	};
 

@@ -30,7 +30,7 @@ namespace prz
 		struct Vertex_Attribute_Information
 		{
 			PSPtr< PVBO > vbo;
-			GLuint attribLocation;
+			GLuint index;
 			GLint  nComponents;
 			GLenum componentType;
 		};
@@ -47,14 +47,14 @@ namespace prz
 
 		~Vertex_Array_Object()
 		{
-			glDeleteVertexArrays(1, &id_);
+			glDeleteVertexArrays(1, &vaoID_);
 		}
 
 	public:
 
 		void bind() const
 		{
-			glBindVertexArray(id_);
+			glBindVertexArray(vaoID_);
 		}
 
 		void unbind() const
@@ -76,13 +76,18 @@ namespace prz
 			return error_;
 		}
 
+		GLuint vaoID()
+		{
+			return vaoID_;
+		}
+
 	private:
 
-		Vertex_Array_Object(const PVAO&);
+		Vertex_Array_Object(const Vertex_Array_Object&);
 
 	private:
 
-		GLuint id_;
+		GLuint vaoID_;
 		PList< PSPtr< PVBO > > vboList_;
 		GLenum error_;
 	};

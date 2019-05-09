@@ -1,36 +1,36 @@
 /**
- * @file Framebuffer.hpp
+ * @file Renderer.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
  * @brief 
  * @version 0.1
- * @date 29-04-2019
+ * @date 09-05-2019
  * 
  * @copyright Copyright (c) 2019
  * 
  */
 
-#ifndef OPENGL_SCENE_FRAMEBUFFER_H_
-#define OPENGL_SCENE_FRAMEBUFFER_H_
+#ifndef OPENGL_SCENE_RENDERER_H_
+#define OPENGL_SCENE_RENDERER_H_
+
+#include "Mesh.hpp"
 
 namespace prz
 {
-	
-	class Framebuffer
+
+	class Renderer
 	{
 	public:
 
-		Framebuffer()
+		Renderer()
 		{}
 
-		~Framebuffer()
+		~Renderer()
 		{}
 
 	protected:
-
 	private:
-
 	};
 
 } // !namespace prz 
 
-#endif // !OPENGL_SCENE_FRAMEBUFFER_H_
+#endif // !OPENGL_SCENE_RENDERER_H_

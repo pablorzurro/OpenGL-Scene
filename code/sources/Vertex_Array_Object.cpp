@@ -4,7 +4,7 @@ namespace prz
 {
 	Vertex_Array_Object::Vertex_Array_Object(const std::initializer_list< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >())
 	{
-		glGenVertexArrays(1, &id_);
+		glGenVertexArrays(1, &vaoID_);
 
 		bind();
 		{
@@ -12,14 +12,14 @@ namespace prz
 			{
 				vertex_attribute_information.vbo->bind();
 
-				glEnableVertexAttribArray(vertex_attribute_information.attribLocation);
+				glEnableVertexAttribArray(vertex_attribute_information.index);
 
 				glVertexAttribPointer
 				(
-					vertex_attribute_information.attribLocation,
+					vertex_attribute_information.index,
 					vertex_attribute_information.nComponents,
 					vertex_attribute_information.componentType,
-					GL_FALSE,
+					GL_FALSE, /*Elements previously normalized*/
 					0,
 					0
 				);

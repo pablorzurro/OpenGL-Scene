@@ -12,10 +12,12 @@
 #ifndef OPENGL_SCENE_SKYBOX_H_
 #define OPENGL_SCENE_SKYBOX_H_
 
+#include "Texture_Cube.hpp"
+
 namespace prz
 {
 
-	class Skybox
+	class Skybox : public Texture_Cube
 	{
 	public:
 

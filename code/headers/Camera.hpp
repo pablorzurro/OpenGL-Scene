@@ -38,13 +38,13 @@ namespace prz
 
 	public:
 
-		float          get_fov() const { return fov_; }
-		float          get_near_z() const { return nearZ_; }
-		float          get_far_z() const { return farZ_; }
-		float          get_ratio() const { return ratio_; }
+		float get_fov() const { return fov_; }
+		float get_near_z() const { return nearZ_; }
+		float get_far_z() const { return farZ_; }
+		float get_ratio() const { return ratio_; }
 
-		const Point& get_location() const { return location_; }
-		const Point& get_target() const { return target_; }
+		const PPoint4& get_location() const { return location_; }
+		const PPoint4& get_target() const { return target_; }
 
 	public:
 
@@ -68,31 +68,31 @@ namespace prz
 
 	public:
 
-		void move(const glm::vec3 & translation)
+		void move(const PVec3 & translation)
 		{
-			location_ += glm::vec4(translation, 1.f);
-			target_ += glm::vec4(translation, 1.f);
+			location_ += PVec4(translation, 1.f);
+			target_ += PVec4(translation, 1.f);
 		}
 
-		void rotate(const glm::mat4 & rotation)
+		void rotate(const PMat4& rotation)
 		{
 			target_ = location_ + rotation * (target_ - location_);
 		}
 
 	public:
 
-		glm::mat4 get_projection() const
+		PMat4 get_projection() const
 		{
 			return glm::perspective(fov_, ratio_, nearZ_, farZ_);
 		}
 
-		glm::mat4 get_model_view() const
+		PMat4 get_model_view() const
 		{
 			return glm::lookAt
 			(
-				glm::vec3(location_[0], location_[1], location_[2]),
-				glm::vec3(target_[0], target_[1], target_[2]),
-				glm::vec3(0.0f, 1.0f, 0.0f)
+				PVec3(location_[0], location_[1], location_[2]),
+				PVec3(target_[0], target_[1], target_[2]),
+				PVec3(0.0f, 1.0f, 0.0f)
 			);
 		}
 
@@ -103,12 +103,9 @@ namespace prz
 		float  farZ_;
 		float  ratio_;
 
-		Point  location_;
-		Point  target_;
+		PPoint4  location_;
+		PPoint4  target_;
 	};
-
-
-}
 
 } // !namespace prz 
 

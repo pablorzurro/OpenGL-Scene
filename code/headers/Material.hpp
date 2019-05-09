@@ -41,7 +41,7 @@ namespace prz
 		PBuffer< Texture > textures_;
 		Shader shader_;
 		Shader_Program shaderProgram_;
-		/*PMap< PString, Variant> noIdea_;*/
+		/*PMap< PString, Uniform> noIdea_;*/
 	};
 
 } //!namespace prz

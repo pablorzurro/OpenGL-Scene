@@ -1,5 +1,5 @@
 /**
- * @file CubeMesh.hpp
+ * @file Cube.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
  * @brief
  * @version 0.1
@@ -12,10 +12,12 @@
 #ifndef OPENGL_SCENE_CUBE_MESH_H_
 #define OPENGL_SCENE_CUBE_MESH_H_
 
+#include "Mesh.hpp"
+
 namespace prz
 {
 	
-	class CubeMesh
+	class Cube : public Mesh
 	{
 
 	};

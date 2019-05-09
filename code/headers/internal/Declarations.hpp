@@ -18,6 +18,7 @@
 #include <gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
 #include <gtc/type_ptr.hpp>                 // value_ptr
 
+#include <chrono>
 #include <memory>
 #include <vector>
 #include <unordered_map>
@@ -49,14 +50,41 @@ namespace prz
 
 	using PString = std::string;
 
+	typedef std::chrono::high_resolution_clock HighClock;
+	typedef std::chrono::time_point<HighClock> HighTimePoint;
+	typedef std::chrono::duration<double> Elapsed;
+
+	using PHighClock = std::chrono::high_resolution_clock;
+	using PTimePoint = std::chrono::time_point<std::chrono::high_resolution_clock>;
+	using PElapsedTime =std::chrono::duration<double>;
+
 	////////////////////////////////////SFML/////////////////////////////////////
 
 	using PKey = sf::Keyboard::Key;
 
+	enum WindowStyle : sf::Uint32
+	{
+		NONE = sf::Style::None,
+		TITLEBAR = sf::Style::Titlebar,
+		RESIZE = sf::Style::Resize,
+		CLOSE = sf::Style::Close,
+		FULLSCREEN = sf::Style::Fullscreen,
+		DEFAULT = sf::Style::Fullscreen
+	};
+
 	////////////////////////////////////GLM/////////////////////////////////////
 
-	using PPoint4f = glm::vec4;
-	using PVector4f = glm::vec4;
+	using PVec2 = glm::vec2;
+	using PVec3 = glm::vec3;
+	using PVec4 = glm::vec4;
+
+	using PUVec2 = glm::uvec2;
+	using PUVec3 = glm::uvec3;
+	using PUVec4 = glm::uvec4;
+
+	using PPoint4 = glm::vec4;
+
+	using PMat4 = glm::mat4;
 
 	////////////////////////////////////MATH/////////////////////////////////////
 

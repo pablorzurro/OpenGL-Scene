@@ -6,7 +6,7 @@ namespace prz
 	{
 		assert(data && size);
 
-		glGenBuffers(1, &id_);
+		glGenBuffers(1, &vboID_);
 
 		bind();
 		{

@@ -1,5 +1,5 @@
 /**
- * @file Texture2D.hpp
+ * @file Texture_2D.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
  * @brief
  * @version 0.1
@@ -17,7 +17,7 @@
 namespace prz
 {
 	
-	class Texture2D : Texture
+	class Texture_2D : public Texture
 	{
 
 	};
