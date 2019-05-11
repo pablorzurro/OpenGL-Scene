@@ -16,9 +16,6 @@
 
 #include <cassert>
 
-#include <SFML/OpenGL.hpp>
-#include <glad/glad.h>
-
 namespace prz
 {
 	

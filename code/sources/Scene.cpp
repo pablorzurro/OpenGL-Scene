@@ -1,8 +1,4 @@
 #include "Scene.hpp"
-#include "Camera.hpp"
-#include "Skybox.hpp"
-
-#include <SFML/OpenGL.hpp>
 
 namespace prz
 {
@@ -32,15 +28,14 @@ namespace prz
 	void Scene::render(float deltaTime)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.5, 0.5, 0.5, 1.0);
 
-		skybox.render(activeCamera_);
+		//skybox.render(activeCamera_);
 	}
 
 	void Scene::on_window_resized()
 	{
 		Vector2u windowSize = window_.getSize();
-		unsigned int width = windowSize.x;
-		unsigned int height = windowSize.y;
 
 		activeCamera_.set_ratio(float(windowSize.x) / windowSize.y);
 

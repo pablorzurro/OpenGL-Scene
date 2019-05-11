@@ -28,20 +28,28 @@ namespace prz
 	{
 	public:
 
-		Material()
+		Material(const PString& name, PSPtr< Shader_Program >& shaderProgram)
 		{}
 		
 		~Material()
 		{}
 
-	protected:
+	private:
+
+		static unsigned instance_count;
+
+		static PSPtr< Material > default_material();
 
 	private:
 
 		PBuffer< Texture > textures_;
-		Shader shader_;
-		Shader_Program shaderProgram_;
-		/*PMap< PString, Uniform> noIdea_;*/
+		PSPtr< Shader_Program > shaderProgram_;
+		PMap< PString, Uniform> uniforms;
+
+	private:
+
+		unsigned int instanceID_;
+
 	};
 
 } //!namespace prz

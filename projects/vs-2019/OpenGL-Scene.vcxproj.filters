@@ -34,25 +34,64 @@
     <Filter Include="Header Files\Vertex_Objects">
       <UniqueIdentifier>{e983f6ac-c680-427b-aed7-40bdbf792b3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Internal">
+      <UniqueIdentifier>{446e2d08-c558-422e-b4d4-87ddd63551c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex_Objects">
+      <UniqueIdentifier>{b2b7b105-9b6a-4263-95c8-3f56269a80dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{0f7f7a2d-13fa-40de-a348-4b2847f5a21a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Meshes">
+      <UniqueIdentifier>{3a020936-a1dd-4148-873d-39b89f7522f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{3a3b2b25-ac32-429d-b9af-9cac97c05b90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\libraries\glad-gl-3.3-core\src\glad.c">
+      <Filter>Source Files\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\internal\OpenGL.cpp">
+      <Filter>Source Files\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\internal\Utilities.cpp">
+      <Filter>Source Files\Internal</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Vertex_Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp">
+      <Filter>Source Files\Vertex_Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Mesh.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Cube.cpp">
+      <Filter>Source Files\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Material.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Scene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Transform.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Shader_Program.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Shader.cpp">
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +134,6 @@
     <ClInclude Include="..\..\code\headers\Model.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture.hpp">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Texture_Cube.hpp">
       <Filter>Header Files\Textures</Filter>
     </ClInclude>
@@ -115,6 +151,45 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp">
       <Filter>Header Files\Vertex_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Texture_Loader.hpp">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Texture.hpp">
+      <Filter>Header Files\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Transform.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Entity.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Drawable.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Source_Code.hpp">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Vertex_Shader.hpp">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\Declarations_GLM.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\Declarations_SFML.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp">
+      <Filter>Header Files\Internal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

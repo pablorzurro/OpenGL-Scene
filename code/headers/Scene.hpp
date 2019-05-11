@@ -12,17 +12,18 @@
 #ifndef OPENGL_SCENE_VIEW_H_
 #define OPENGL_SCENE_VIEW_H_
 
+#include "Renderer.hpp"
+#include "Camera.hpp"
+#include "Skybox.hpp"
+
 #include "Declarations.hpp"
 
-#include <glad/glad.h>
 #include <SFML/Window.hpp>
 
 using namespace sf;
 
 namespace prz
 {
-	class Camera;
-	class Skybox;
 
 	class Scene
 	{
@@ -37,7 +38,10 @@ namespace prz
 
 	public:
 
-		void display();
+		void display()
+		{
+			window_.display();
+		}
 
 	public:
 
@@ -45,8 +49,15 @@ namespace prz
 
 	private:
 
+		Renderer renderer;
 		Camera activeCamera_;
+		
+	private:
+
 		Skybox skybox;
+
+	private:
+
 		Window& window_;
 	};
 

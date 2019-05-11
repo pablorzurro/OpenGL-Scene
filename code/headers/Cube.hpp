@@ -19,7 +19,26 @@ namespace prz
 	
 	class Cube : public Mesh
 	{
+	public:
+		
 
+	private:
+
+		enum VBO_ORDER
+		{
+			COORDINATES,
+			NORMALS,
+			COLORS,
+			INDICES,
+			SIZE
+		};
+
+	private:
+
+		static const GLfloat coordinates_[];
+		static const GLfloat normals_[];
+		static const GLfloat textureUVs_[];
+		static const GLubyte indices_[];
 	};
 
 } // !namespace prz 

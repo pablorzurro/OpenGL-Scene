@@ -1,7 +1,6 @@
 #include "Game.hpp"
-#include "Scene.hpp"
 #include "Input_Manager.hpp"
-
+#include <glad/glad.h>
 namespace prz
 {
 	void Game::run()
@@ -17,10 +16,10 @@ namespace prz
 
 				poll_events(inputManager);
 
-				scene_.update(deltaTime_);
-				scene_.render(deltaTime_);
+				scene_->update(deltaTime_);
+				scene_->render(deltaTime_);
 
-				scene_.display();
+				scene_->display();
 
 			} while (isRunning_);
 		}
@@ -39,12 +38,12 @@ namespace prz
 
 			case Event::Resized:
 
-				scene_.on_window_resized();
+				scene_->on_window_resized();
 
 				break;
 			}
 
-			inputManager.update(event_); // Send the event to the input manager to update it
+			inputManager.update(event_); // Send the event to the input manager and update it
 		}
 	}
 }

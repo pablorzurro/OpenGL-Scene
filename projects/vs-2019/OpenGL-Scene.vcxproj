@@ -64,7 +64,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../libraries/SFML-2.5.1/lib;../../libraries/Assimp/lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;gdi32.lib;sfml-graphics-s-d.lib	;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;sfml-graphics-s-d.lib	;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -84,21 +84,38 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../libraries/SFML-2.5.1/lib;../../libraries/Assimp/lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;gdi32.lib;sfml-graphics-s.lib	;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;sfml-graphics-s.lib	;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Cube.cpp" />
     <ClCompile Include="..\..\code\sources\Game.cpp" />
+    <ClCompile Include="..\..\code\sources\internal\OpenGL.cpp" />
+    <ClCompile Include="..\..\code\sources\internal\Utilities.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Material.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader_Program.cpp" />
+    <ClCompile Include="..\..\code\sources\Transform.cpp" />
     <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp" />
     <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp" />
     <ClCompile Include="..\..\code\sources\Scene.cpp" />
+    <ClCompile Include="..\..\libraries\glad-gl-3.3-core\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Camera.hpp" />
+    <ClInclude Include="..\..\code\headers\Drawable.hpp" />
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
     <ClInclude Include="..\..\code\headers\Game.hpp" />
+    <ClInclude Include="..\..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_GLM.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_SFML.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp" />
     <ClInclude Include="..\..\code\headers\Renderer.hpp" />
+    <ClInclude Include="..\..\code\headers\Source_Code.hpp" />
     <ClInclude Include="..\..\code\headers\Texture_Cube.hpp" />
     <ClInclude Include="..\..\code\headers\Cube.hpp" />
     <ClInclude Include="..\..\code\headers\Input_Manager.hpp" />
@@ -113,9 +130,12 @@
     <ClInclude Include="..\..\code\headers\Skybox.hpp" />
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Texture_2D.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Transform.hpp" />
     <ClInclude Include="..\..\code\headers\Vertex_Array_Object.hpp" />
     <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp" />
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Shader.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

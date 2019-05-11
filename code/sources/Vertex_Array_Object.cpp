@@ -2,7 +2,7 @@
 
 namespace prz
 {
-	Vertex_Array_Object::Vertex_Array_Object(const std::initializer_list< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >())
+	Vertex_Array_Object::Vertex_Array_Object(const std::initializer_list< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices)
 	{
 		glGenVertexArrays(1, &vaoID_);
 
@@ -24,7 +24,7 @@ namespace prz
 					0
 				);
 
-				vboList_.push_back(vertex_attribute_information.vbo);
+				vbos_.push_back(vertex_attribute_information.vbo);
 			}
 
 			if (vboIndices.get())
@@ -32,7 +32,7 @@ namespace prz
 				vboIndices->bind();
 			}
 
-			vboList_.push_back(vboIndices);
+			vbos_.push_back(vboIndices);
 
 		} unbind();
 

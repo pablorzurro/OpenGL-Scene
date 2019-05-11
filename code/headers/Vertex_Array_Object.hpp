@@ -17,7 +17,6 @@
 
 #include "Declarations.hpp"
 
-#include <SFML/OpenGL.hpp>
 #include <cassert>
 
 namespace prz
@@ -88,7 +87,7 @@ namespace prz
 	private:
 
 		GLuint vaoID_;
-		PList< PSPtr< PVBO > > vboList_;
+		PList< PSPtr< PVBO > > vbos_;
 		GLenum error_;
 	};
 

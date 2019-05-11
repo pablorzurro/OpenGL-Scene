@@ -17,6 +17,8 @@
 namespace prz
 {
 
+	class Camera;
+
 	class Skybox : public Texture_Cube
 	{
 	public:
@@ -26,7 +28,14 @@ namespace prz
 
 		~Skybox()
 		{}
+	
+	public:
 
+		void render(Camera& camera)
+		{
+
+		}
+		
 	protected:
 
 	private:

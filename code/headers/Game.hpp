@@ -12,29 +12,41 @@
 #ifndef OPENGL_SCENE_GAME_H_
 #define OPENGL_SCENE_GAME_H_
 
-#include "Declarations.hpp"
+#include "Scene.hpp"
 
-#include <glad/glad.h>
-#include <SFML/System.hpp>
+#include "Utilities.hpp"
+#include "Source_Code.hpp"
+
+#include "Declarations.hpp"
+#include <SFML/Window.hpp>
+
+#include <cassert>
 
 using namespace sf;
 
 namespace prz
 {
-	class Scene;
+
 	class Input_Manager;
 
 	class Game
 	{
 	public:
 
-		Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle = "PRZuro OpenGL Scene", const WindowStyle& windowStyle = DEFAULT, unsigned int depth = 32):
-			window_(VideoMode(windowWidth, windowHeight), windowTitle, windowStyle, ContextSettings(depth)),
-			scene_(window_),
+		Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle = "PRZuro OpenGL Scene", bool vSync = true, const WindowStyle& windowStyle = DEFAULT, unsigned int depth = 32):
+			window_(VideoMode(windowWidth, windowHeight), windowTitle, windowStyle, ContextSettings(24, 0,0, 4, 5, ContextSettings::Core)),
 			event_(),
 			deltaTime_(0.f),
 			isRunning_(false)
 		{
+			window_.setVerticalSyncEnabled(vSync);
+
+			if (!initialize_opengl_extensions())
+			{
+				exit(-1);
+			}
+
+			scene_.reset(new Scene(window_));
 			curTime = prevTime = HighClock::now();
 		}
 
@@ -64,14 +76,15 @@ namespace prz
 		void calculate_delta_time() 
 		{
 			curTime = HighClock::now();
-			deltaTime_ = Elapsed(curTime - prevTime).count();
+
+			deltaTime_ = static_cast<float>(Elapsed(curTime - prevTime).count());
 			prevTime = curTime;
 		}
 
 	private:
 
 		Window window_;
-		Scene scene_;
+		PSPtr<Scene> scene_;
 
 	private:
 

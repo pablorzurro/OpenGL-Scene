@@ -12,22 +12,59 @@
 #ifndef OPENGL_SCENE_SHADER_H_
 #define OPENGL_SCENE_SHADER_H_
 
+#include "Declarations.hpp"
+
 namespace prz
 {
-	
+	class Source_Code;
+
 	class Shader
 	{
 	public:
 
-		Shader()
-		{}
+		bool is_compiled() const
+		{
+			return (shaderObjID_ != 0);
+		}
 
-		~Shader()
-		{}
+		bool has_compilation_failed() const
+		{
+			return (shaderObjID_ == 0);
+		}
+
+		const PString& log() const
+		{
+			return (logStr_);
+		}
+
+	public:
+
+		operator GLuint () const
+		{
+			return (shaderObjID_);
+		}
 
 	protected:
 
+		Shader(const Source_Code& sourceCode, GLenum shaderType);
+
+		~Shader();
+
+	protected:
+
+		void on_delete()
+		{
+
+		}
+
 	private:
+
+		Shader(const Shader& other);
+
+	private:
+
+		GLuint shaderObjID_;
+		PString logStr_;
 
 	};
 

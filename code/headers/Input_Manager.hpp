@@ -1,6 +1,6 @@
 /**
  * @file Input_Manager.hpp
- * @author Pablo Rodríguez Zurro (przuro@gmail.com)
+ * @author Pablo Rodrï¿½guez Zurro (przuro@gmail.com)
  * @brief
  * @version 0.1
  * @date 08-05-2019
