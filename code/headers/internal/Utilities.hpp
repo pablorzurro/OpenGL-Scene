@@ -75,6 +75,49 @@ namespace prz
 
 		return str;
 	}
+
+
+
+	///////////////////////////////////GLM///////////////////////////////////////
+
+	inline PVec3 extract_translation(PMat4 & matrix)
+	{
+		return PVec3(matrix[3].x, matrix[3].y, matrix[3].z);
+	}
+
+	inline PVec3 extract_rotation_vector(PMat4& matrix)
+	{
+		return PVec3(matrix[0].x, matrix[1].y, matrix[2].z);
+	}
+
+	inline PQuat extract_rotation(PMat4& matrix)
+	{
+		glm::vec3 scale;
+		glm::quat rotation;
+		glm::vec3 translation;
+		glm::vec3 skew;
+		glm::vec4 perspective;
+
+		glm::decompose(matrix, scale, rotation, translation, skew, perspective);
+
+		return rotation;
+	}
+
+	inline PMat4 perspective(float fov, float near, float far, float aspect_ratio)
+	{
+		return glm::perspective(fov, aspect_ratio, near, far);
+	}
+
+	inline PVec3 extract_scale(PMat4& matrix)
+	{
+		return PVec3(matrix[0].x, matrix[1].y, matrix[2].z);
+	}
+
+	inline PMat4 rotate_matrix_around_axis(PMat4& matrix, float angle, const PVec3& axis)
+	{
+		PMat4 returnMatrix = glm::rotate(matrix, glm::radians(angle), axis);
+		return returnMatrix;
+	}
 }
 
 #endif // !OPENGL_SCENE_INTERNAL_UTILITIES_H_

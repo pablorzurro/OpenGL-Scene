@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_MATERIAL_H_
 #define OPENGL_SCENE_MATERIAL_H_
 
-#include "Shader.hpp"
+
 #include "Shader_Program.hpp"
 
 #include "Declarations.hpp"
@@ -28,28 +28,61 @@ namespace prz
 	{
 	public:
 
-		Material(const PString& name, PSPtr< Shader_Program >& shaderProgram)
+		Material(const PString& name, PSPtr< Shader_Program >& shaderProgram):
+			name_(name),
+			shaderProgram_(shaderProgram),
+			instanceID_(instanceCount_++)
 		{}
-		
-		~Material()
-		{}
+
+	public:
+
+		void use();
+
+	public:
+
+		Uniform* allocate_uniform(const char* id, const PString& name, Var::Type type);
+
+	public:
+
+		bool set(const char* id, const PString& name, const GLint    value);
+		bool set(const char* id, const PString& name, const GLuint   value);
+		bool set(const char* id, const PString& name, const GLfloat  value);
+		bool set(const char* id, const PString& name, const PVec2&	value);
+		bool set(const char* id, const PString& name, const PVec3&	value);
+		bool set(const char* id, const PString& name, const PVec4&	value);
+
+	public:
+
+		unsigned instanceID() const
+		{
+			return instanceID_;
+		}
+
+		const PString& name() const
+		{
+			return name_;
+		}
+
+		Shader_Program* get_shader_program() const
+		{
+			return shaderProgram_.get();
+		}
 
 	private:
 
-		static unsigned instance_count;
-
-		static PSPtr< Material > default_material();
-
-	private:
-
-		PBuffer< Texture > textures_;
+		PBuffer< PSPtr< Texture> > textures_;
 		PSPtr< Shader_Program > shaderProgram_;
-		PMap< PString, Uniform> uniforms;
+		PMap< PString, Uniform> uniforms_;
 
 	private:
 
+		PString name_;
 		unsigned int instanceID_;
 
+	private:
+
+		static unsigned instanceCount_;
+		static PSPtr< Material > default_material();
 	};
 
 } //!namespace prz

@@ -5,9 +5,9 @@ namespace prz
 	Transform::Transform(Entity& owner) :
 		owner_(owner),
 		localMatrix_(PMatIdentity),
-		position_(extract_position()),
-		rotation_(extract_rotation()),
-		scale_(extract_scale())
+		position_(extract_translation(localMatrix_)),
+		rotation_(extract_rotation(localMatrix_)),
+		scale_(extract_scale(localMatrix_))
 	{}
 
 	Transform::Transform(Entity& owner, Transform& other):
@@ -21,7 +21,7 @@ namespace prz
 	void Transform::translate(PVec3 translation)
 	{
 		localMatrix_ = glm::translate(localMatrix_, translation);
-		position_ = extract_position();
+		position_ = extract_translation(localMatrix_);
 	}
 
 	void Transform::translate(float translationX, float translationY, float translationZ)
@@ -29,26 +29,28 @@ namespace prz
 		translate(PVec3(translationX, translationY, translationZ));
 	}
 
-	void Transform::translate_x(float translationX)
+	void Transform::translate_in_x(float translationX)
 	{
 		translate(PVec3(translationX, 0, 0));
 	}
 
-	void Transform::translate_y(float translationY)
+	void Transform::translate_in_y(float translationY)
 	{
 		translate(PVec3(0, translationY, 0));
 	}
 
-	void Transform::translate_z(float translationZ)
+	void Transform::translate_in_z(float translationZ)
 	{
 		translate(PVec3(0, 0, translationZ));
 	}
 
 	void Transform::rotate(PVec3 rotation)
 	{
-		rotate_around_x(rotation.x);
-		rotate_around_y(rotation.y);
-		rotate_around_z(rotation.z);
+		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.x, PVec3(1, 0, 0));
+		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.y, PVec3(0, 1, 0));
+		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.z, PVec3(0, 0, 1));
+		
+		rotation_ = extract_rotation(localMatrix_);
 	}
 
 	void Transform::rotate(float angleX, float angleY, float angleZ)
@@ -58,22 +60,22 @@ namespace prz
 
 	void Transform::rotate_around_x(float angle)
 	{
-		rotate(angle, PVec3(1, 0, 0));
+		rotate(PVec3(angle, 0, 0));
 	}
 	void Transform::rotate_around_y(float angle)
 	{
-		rotate(angle, PVec3(0, 1, 0));
+		rotate(PVec3(0, angle, 0));
 	}
 
 	void Transform::rotate_around_z(float angle)
 	{
-		rotate(angle, PVec3(0, 0, 1));
+		rotate(PVec3(0, 0, angle));
 	}
 
 	void Transform::scale(PVec3 scale)
 	{
 		localMatrix_ = glm::scale(localMatrix_, scale_);
-		scale_ = extract_scale();
+		scale_ = extract_scale(localMatrix_);
 	}
 
 	void Transform::scale(float scaleX, float scaleY, float scaleZ)
@@ -114,7 +116,7 @@ namespace prz
 
 	void Transform::set_rotation(PVec3 newRotation)
 	{
-		rotate(newRotation - rotation_);
+		rotate(newRotation - extract_rotation_vector(localMatrix_));
 	}
 
 	void Transform::set_scale(PVec3 newScale)
@@ -174,7 +176,7 @@ namespace prz
 		return position_;
 	}
 
-	PVec3 Transform::rotation()
+	PQuat Transform::rotation()
 	{
 		return rotation_;
 	}
@@ -187,26 +189,5 @@ namespace prz
 	bool Transform::isVisible()
 	{
 		return isVisible_;
-	}
-
-	void Transform::rotate(float angle, const PVec3& axis)
-	{
-		localMatrix_ = glm::rotate(localMatrix_, glm::radians(angle), axis);
-		rotation_ = extract_rotation();
-	}
-
-	PVec3 Transform::extract_position()
-	{
-		return PVec3(localMatrix_[3].x, localMatrix_[3].y, localMatrix_[3].z);
-	}
-
-	PVec3 Transform::extract_rotation()
-	{
-		return PVec3(localMatrix_[0].x, localMatrix_[1].y, localMatrix_[2].z);
-	}
-
-	PVec3 Transform::extract_scale()
-	{
-		return PVec3(localMatrix_[0].x, localMatrix_[1].y, localMatrix_[2].z);
 	}
 }

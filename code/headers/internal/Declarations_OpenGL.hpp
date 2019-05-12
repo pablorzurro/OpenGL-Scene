@@ -50,12 +50,12 @@ namespace prz
 
 		union Data
 		{
-			GLint   intGL;
-			GLuint  uintGL;
-			GLfloat floatGL;
-			GLfloat fVector2GL[2];
-			GLfloat fVector3GL[3];
-			GLfloat fVector4GL[4];
+			GLint   gl_int;
+			GLuint  gl_uint;
+			GLfloat gl_float;
+			GLfloat gl_vec2[2];
+			GLfloat gl_vec3[3];
+			GLfloat gl_vec4[4];
 		};
 
 		Type type;

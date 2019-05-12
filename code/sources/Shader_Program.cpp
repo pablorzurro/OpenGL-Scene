@@ -25,9 +25,9 @@ namespace prz
 
 			if (logLength > 0)
 			{
-				logStr.resize(logLength);
+				logStr_.resize(logLength);
 
-				glGetShaderInfoLog(programObjID_, logLength, NULL, &logStr.front());
+				glGetShaderInfoLog(programObjID_, logLength, NULL, &logStr_.front());
 			}
 
 			assert(false);

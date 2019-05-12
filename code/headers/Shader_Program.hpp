@@ -21,22 +21,6 @@ namespace prz
 	
 	class Shader_Program
 	{
-	private:
-
-		typedef std::map< PString, GLint > Uniform_Map;
-
-	public:
-
-		static const Shader_Program* activeShaderProgram()
-		{
-			return activeShaderProgram_;
-		}
-
-		static void disable()
-		{
-			glUseProgram(0);
-		}
-
 	public:
 
 		Shader_Program()
@@ -55,15 +39,21 @@ namespace prz
 			programObjID_ = 0;
 		}
 
-	private:
+	public:
 
-		Shader_Program(const Shader_Program&)
+		static const Shader_Program* activeShaderProgram()
 		{
+			return activeShaderProgram_;
+		}
+
+		static void disable()
+		{
+			glUseProgram(0);
 		}
 
 	public:
 
-		unsigned id() const
+		unsigned instanceID() const
 		{
 			return instanceID_;
 		}
@@ -107,25 +97,25 @@ namespace prz
 		{
 			assert(is_usable());
 
-			GLint   uniformID = glGetUniformLocation(programObjID_, id);
+			GLint uniformID = glGetUniformLocation(programObjID_, id);
 
 			assert(uniformID != -1);
 
 			return (uniformID);
 		}
 
-		void set_uniform_value(GLint uniform_id, const GLint & value) const { glUniform1i(uniform_id, value); }
-		void set_uniform_value(GLint uniform_id, const GLuint & value) const { glUniform1ui(uniform_id, value); }
-		void set_uniform_value(GLint uniform_id, const float& value) const { glUniform1f(uniform_id, value); }
-		void set_uniform_value(GLint uniform_id, const float(&vector)[2]) const { glUniform2f(uniform_id, vector[0], vector[1]); }
-		void set_uniform_value(GLint uniform_id, const float(&vector)[3]) const { glUniform3f(uniform_id, vector[0], vector[1], vector[2]); }
-		void set_uniform_value(GLint uniform_id, const float(&vector)[4]) const { glUniform4f(uniform_id, vector[0], vector[1], vector[2], vector[3]); }
-		void set_uniform_value(GLint uniform_id, const PVec2 & vector) const { glUniform2f(uniform_id, vector[0], vector[1]); }
-		void set_uniform_value(GLint uniform_id, const PVec3& vector) const { glUniform3f(uniform_id, vector[0], vector[1], vector[2]); }
-		void set_uniform_value(GLint uniform_id, const PVec4& vector) const { glUniform4f(uniform_id, vector[0], vector[1], vector[2], vector[3]); }
-		void set_uniform_value(GLint uniform_id, const PMat2 & matrix) const { glUniformMatrix2fv(uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
-		void set_uniform_value(GLint uniform_id, const PMat3 & matrix) const { glUniformMatrix3fv(uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
-		void set_uniform_value(GLint uniform_id, const PMat4 & matrix) const { glUniformMatrix4fv(uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
+		void set_uniform_value(GLint uniformID, const GLint & value) const { glUniform1i(uniformID, value); }
+		void set_uniform_value(GLint uniformID, const GLuint & value) const { glUniform1ui(uniformID, value); }
+		void set_uniform_value(GLint uniformID, const float& value) const { glUniform1f(uniformID, value); }
+		void set_uniform_value(GLint uniformID, const float(&vector)[2]) const { glUniform2f(uniformID, vector[0], vector[1]); }
+		void set_uniform_value(GLint uniformID, const float(&vector)[3]) const { glUniform3f(uniformID, vector[0], vector[1], vector[2]); }
+		void set_uniform_value(GLint uniformID, const float(&vector)[4]) const { glUniform4f(uniformID, vector[0], vector[1], vector[2], vector[3]); }
+		void set_uniform_value(GLint uniformID, const PVec2 & vector) const { glUniform2f(uniformID, vector[0], vector[1]); }
+		void set_uniform_value(GLint uniformID, const PVec3& vector) const { glUniform3f(uniformID, vector[0], vector[1], vector[2]); }
+		void set_uniform_value(GLint uniformID, const PVec4& vector) const { glUniform4f(uniformID, vector[0], vector[1], vector[2], vector[3]); }
+		void set_uniform_value(GLint uniformID, const PMat2 & matrix) const { glUniformMatrix2fv(uniformID, 1, GL_FALSE, glm::value_ptr(matrix)); }
+		void set_uniform_value(GLint uniformID, const PMat3 & matrix) const { glUniformMatrix3fv(uniformID, 1, GL_FALSE, glm::value_ptr(matrix)); }
+		void set_uniform_value(GLint uniformID, const PMat4 & matrix) const { glUniformMatrix4fv(uniformID, 1, GL_FALSE, glm::value_ptr(matrix)); }
 
 	public:
 
@@ -133,31 +123,40 @@ namespace prz
 		{
 			assert(is_usable());
 
-			GLint   attribute_id = glGetAttribLocation(programObjID_, id);
+			GLint   attributeID = glGetAttribLocation(programObjID_, id);
 
-			assert(attribute_id != -1);
+			assert(attributeID != -1);
 
-			return (attribute_id);
+			return (attributeID);
 		}
 
-		void set_vertex_attribute(GLint attribute_id, const float& value) { glVertexAttrib1f(attribute_id, value); }
-		void set_vertex_attribute(GLint attribute_id, const PVec2& vector) { glVertexAttrib2fv(attribute_id, glm::value_ptr(vector)); }
-		void set_vertex_attribute(GLint attribute_id, const PVec3& vector) { glVertexAttrib3fv(attribute_id, glm::value_ptr(vector)); }
-		void set_vertex_attribute(GLint attribute_id, const PVec4& vector) { glVertexAttrib4fv(attribute_id, glm::value_ptr(vector)); }
+		void set_vertex_attribute(GLint attributeID, const float& value) { glVertexAttrib1f(attributeID, value); }
+		void set_vertex_attribute(GLint attributeID, const PVec2& vector) { glVertexAttrib2fv(attributeID, glm::value_ptr(vector)); }
+		void set_vertex_attribute(GLint attributeID, const PVec3& vector) { glVertexAttrib3fv(attributeID, glm::value_ptr(vector)); }
+		void set_vertex_attribute(GLint attributeID, const PVec4& vector) { glVertexAttrib4fv(attributeID, glm::value_ptr(vector)); }
 
 	public:
 
 		const PString& log() const
 		{
-			return (logStr);
+			return (logStr_);
 		}
+
+
+	private:
+
+		Shader_Program(const Shader_Program&)
+		{}
 
 	private:
 
 		unsigned    instanceID_;
 		GLuint      programObjID_;
 		bool        islinkSuccessful_;
-		PString logStr;
+
+	private:
+
+		PString logStr_;
 
 	private:
 

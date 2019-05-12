@@ -14,6 +14,8 @@
 
 #include "Declarations.hpp"
 
+#include "Utilities.hpp"
+
 namespace prz
 {
     
@@ -85,7 +87,7 @@ namespace prz
 
 	public:
 
-		PMat4 get_projection() const
+		PMat4 projectionMatrix() const
 		{
 			return glm::perspective(fov_, ratio_, nearZ_, farZ_);
 		}

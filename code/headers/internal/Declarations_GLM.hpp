@@ -15,6 +15,7 @@
 #include <glm.hpp>                          // vec3, vec4, ivec4, mat4
 #include <gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
 #include <gtc/type_ptr.hpp>                 // value_ptr
+#include <gtx/matrix_decompose.hpp>
 
 namespace prz
 {
@@ -31,6 +32,8 @@ namespace prz
 	using PMat2 = glm::mat2;
 	using PMat3 = glm::mat3;
 	using PMat4 = glm::mat4;
+
+	using PQuat = glm::quat;
 
 	static const PMat4 PMatIdentity = PMat4();
 } // !namespace prz

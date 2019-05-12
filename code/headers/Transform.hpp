@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef OPENGL_SCENE_CUBE_MESH_H_
-#define OPENGL_SCENE_CUBE_MESH_H_
+#ifndef OPENGL_SCENE_TRANSFORM_H_
+#define OPENGL_SCENE_TRANSFORM_H_
 
 #include "Declarations.hpp"
 #include "Utilities.hpp"
@@ -36,9 +36,9 @@ namespace prz
 
 	public:
 
-		void translate_x(float translationX);
-		void translate_y(float translationY);
-		void translate_z(float translationZ);
+		void translate_in_x(float translationX);
+		void translate_in_y(float translationY);
+		void translate_in_z(float translationZ);
 
 	public:
 
@@ -100,22 +100,12 @@ namespace prz
 	public:
 
 		PVec3 position();
-		PVec3 rotation();
+		PQuat rotation();
 		PVec3 scale(); 
 
 	public:
 
 		bool isVisible();
-	
-	protected:
-
-		void rotate(float angle, const PVec3& axis);
-		
-	protected:
-
-		PVec3 extract_position();
-		PVec3 extract_rotation();
-		PVec3 extract_scale();
 
 	protected:
 
@@ -134,7 +124,7 @@ namespace prz
 	protected:
 
 		PVec3 position_;
-		PVec3 rotation_;
+		PQuat rotation_;
 		PVec3 scale_;
 
 	protected:
@@ -144,4 +134,4 @@ namespace prz
 
 } // !namespace prz 
 
-#endif // !OPENGL_SCENE_CUBE_MESH_H_
+#endif // !OPENGL_SCENE_TRANSFORM_H_

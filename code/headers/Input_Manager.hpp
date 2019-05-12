@@ -72,8 +72,8 @@ namespace prz
 
 			case Event::MouseMoved:
 
-				last_pointer_x = curMouseX;
-				last_pointer_y = curMouseY;
+				prevMouseX = curMouseX;
+				prevMouseY = curMouseY;
 
 				curMouseX = event.mouseMove.x;
 				curMouseY = event.mouseMove.y;
@@ -110,15 +110,15 @@ namespace prz
 		Input_Manager():
 			isMousePressed_(false)
 		{
-			curMouseX = last_pointer_x = curMouseY = last_pointer_y = 0;
+			curMouseX = prevMouseX = curMouseY = prevMouseY = 0;
 		}
 
 	private:
 
 		PMap< PKey, bool > keysPressed_;
 
-		unsigned int  curMouseX, last_pointer_x;
-		unsigned int  curMouseY, last_pointer_y;
+		unsigned int  curMouseX, prevMouseX;
+		unsigned int  curMouseY, prevMouseY;
 
 	private: 
 
