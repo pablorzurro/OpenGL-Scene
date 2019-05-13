@@ -4,7 +4,11 @@ namespace prz
 {
 	Transform::Transform(Entity& owner) :
 		owner_(owner),
-		localMatrix_(PMatIdentity),
+		localMatrix_(PMatIdentity), 
+		globalMatrix_(PMatIdentity),
+		isVisible_(true),
+		parent_(nullptr),
+		renderer_(nullptr),
 		position_(extract_translation(localMatrix_)),
 		rotation_(extract_rotation(localMatrix_)),
 		scale_(extract_scale(localMatrix_))
@@ -13,6 +17,10 @@ namespace prz
 	Transform::Transform(Entity& owner, Transform& other):
 		owner_(owner),
 		localMatrix_(other.localMatrix_),
+		globalMatrix_(other.globalMatrix_),
+		isVisible_(other.isVisible_),
+		parent_(other.parent_),
+		renderer_(other.renderer_),
 		position_(other.position_),
 		rotation_(other.rotation_),
 		scale_(other.scale_)

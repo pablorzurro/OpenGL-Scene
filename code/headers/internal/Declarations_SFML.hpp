@@ -29,6 +29,8 @@ namespace prz
 		DEFAULT = sf::Style::Default
 	};
 
+	using PImage = sf::Image;
+
 } // !namespace prz
 
 #endif // !OPENGL_SCENE_DECLARATIONS_SFML_H_

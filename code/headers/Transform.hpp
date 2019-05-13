@@ -22,7 +22,6 @@ namespace prz
 
 	class Transform
 	{
-
 	public:
 
 		Transform() = delete;

@@ -49,6 +49,9 @@
     <Filter Include="Source Files\Shaders">
       <UniqueIdentifier>{3a3b2b25-ac32-429d-b9af-9cac97c05b90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Textures">
+      <UniqueIdentifier>{b793d71f-cda2-41b2-b01e-271acc842f7f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -92,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Shader.cpp">
       <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Texture_Cube.cpp">
+      <Filter>Source Files\Textures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

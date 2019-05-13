@@ -19,7 +19,13 @@ namespace prz
 	
 	class Texture_Cube : public Texture
 	{
+	private:
 
+		static const GLenum textureTarget_[];
+		
+		Texture_Cube(PBuffer<PImage&> cubeImages) :
+			Texture(GL_TEXTURE_CUBE_MAP, cubeImages)
+		{}
 	};
 
 } // !namespace prz 

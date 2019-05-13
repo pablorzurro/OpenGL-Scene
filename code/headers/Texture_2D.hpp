@@ -19,7 +19,21 @@ namespace prz
 	
 	class Texture_2D : public Texture
 	{
+	public:
 
+		Texture_2D(PBuffer<PString>& image)
+		{
+			PBuffer<PImage&> imageToBuffer{ image };
+
+			Texture(GL_TEXTURE_2D, imageToBuffer);
+		}
+
+	public:
+
+		virtual void on_construction(){}
+
+		virtual void draw() override
+		{}
 	};
 
 } // !namespace prz 
