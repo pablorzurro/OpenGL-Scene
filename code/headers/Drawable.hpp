@@ -14,7 +14,6 @@
 
 namespace prz
 {
-
 	class Drawable
 	{
 	public:

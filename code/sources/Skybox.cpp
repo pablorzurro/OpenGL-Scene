@@ -1,10 +1,10 @@
-#include "Skybox.hpp"
-#include "Texture_Cube.hpp"
-#include "Texture_Loader.hpp"
+#include <Skybox.hpp>
+#include <Texture_Cube.hpp>
+#include <Texture_Loader.hpp>
 
 namespace prz
 {
-	Skybox::Skybox(const PString& textureRootPath, const PString& textureName) :
+	Skybox::Skybox(const PString& textureRootPath, const PString& textureName):
 		Skybox(Texture_Loader::instance().load_cube_map(textureRootPath, textureName))
 	{}
 

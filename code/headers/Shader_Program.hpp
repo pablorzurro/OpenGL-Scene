@@ -12,9 +12,9 @@
 #ifndef OPENGL_SCENE_SHADER_PROGRAM_H_
 #define OPENGL_SCENE_SHADER_PROGRAM_H_
 
-#include "Shader.hpp"
+#include <Shader.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {

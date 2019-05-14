@@ -12,9 +12,11 @@
 #ifndef OPENGL_SCENE_CAMERA_H_
 #define OPENGL_SCENE_CAMERA_H_
 
-#include "Declarations.hpp"
+#include <Transform.hpp>
 
-#include "Utilities.hpp"
+#include <Declarations.hpp>
+
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -94,9 +96,15 @@ namespace prz
 
 		PMat4 get_model_view() const
 		{
+			PMat4 identity;
+			PMat4 camPosition = translate(identity, transform_.translation());
+			PQuat camRotation = transform_.rotation();
+
+			PQuat camRotation = normalize(camRotation);
+
 			return glm::lookAt
 			(
-				PVec3(location_[0], location_[1], location_[2]),
+				PVec3(camPosition.x, camPosition.y, camPosition.z),
 				PVec3(target_[0], target_[1], target_[2]),
 				PVec3(0.0f, 1.0f, 0.0f)
 			);
@@ -122,6 +130,11 @@ namespace prz
 
 		PPoint4  location_;
 		PPoint4  target_;
+
+	private:
+
+		prz::Transform transform_;
+
 	};
 
 } // !namespace prz 

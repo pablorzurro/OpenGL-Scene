@@ -12,15 +12,14 @@
 #ifndef OPENGL_SCENE_CUBE_MESH_H_
 #define OPENGL_SCENE_CUBE_MESH_H_
 
-#include "Mesh.hpp"
+#include <Mesh.hpp>
 
 namespace prz
 {
 	
 	class Cube : public Mesh
 	{
-	public:
-		
+	public:		
 
 	private:
 

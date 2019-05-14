@@ -118,6 +118,7 @@
     <ClInclude Include="..\..\code\headers\internal\Declarations_SFML.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp" />
     <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp" />
+    <ClInclude Include="..\..\code\headers\Model_Loader.hpp" />
     <ClInclude Include="..\..\code\headers\Renderer.hpp" />
     <ClInclude Include="..\..\code\headers\Source_Code.hpp" />
     <ClInclude Include="..\..\code\headers\Texture_Cube.hpp" />

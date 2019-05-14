@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_SKYBOX_H_
 #define OPENGL_SCENE_SKYBOX_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {

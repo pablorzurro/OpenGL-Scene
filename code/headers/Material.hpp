@@ -13,9 +13,9 @@
 #define OPENGL_SCENE_MATERIAL_H_
 
 
-#include "Shader_Program.hpp"
+#include <Shader_Program.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <variant>
 
@@ -33,6 +33,10 @@ namespace prz
 			shaderProgram_(shaderProgram),
 			instanceID_(instanceCount_++)
 		{}
+
+	public:
+
+		static PSPtr< Material > default_material();
 
 	public:
 
@@ -82,7 +86,6 @@ namespace prz
 	private:
 
 		static unsigned instanceCount_;
-		static PSPtr< Material > default_material();
 	};
 
 } //!namespace prz

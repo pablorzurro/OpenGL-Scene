@@ -1,7 +1,8 @@
-#include "Scene.hpp"
-#include "Texture_Loader.hpp"
-#include "Skybox.hpp"
-#include "Game.hpp"
+#include <Scene.hpp>
+#include <Texture_Loader.hpp>
+#include <Model_Loader.hpp>
+#include <Skybox.hpp>
+#include <Game.hpp>
 
 namespace prz
 {
@@ -12,12 +13,15 @@ namespace prz
 		//skybox("../../assets/sky-cube-map-")
 	{
 		glDisable(GL_DEPTH_TEST);
-		glEnable(GL_CULL_FACE);
-
+		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
+	
 		on_window_resized();
 
 		//PSPtr< Texture > texture( Texture_Loader::instance().load_texture2D(Game::assetsFolderPath() + "textures/2D/wood.png"));
 		Skybox skybox(Texture_Loader::instance().load_cube_map(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga"));
+
+		Model_Loader::instance().load_mesh(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
+		Model_Loader::instance().load_mesh(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
 	}
 
 	void Scene::update(float deltaTime)

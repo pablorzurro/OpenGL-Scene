@@ -12,10 +12,10 @@
 #ifndef OPENGL_SCENE_VERTEX_ARRAY_OBJECT_H_
 #define OPENGL_SCENE_VERTEX_ARRAY_OBJECT_H_
 
-#include "Shader_Program.hpp"
-#include "Vertex_Buffer_Object.hpp"
+#include <Shader_Program.hpp>
+#include <Vertex_Buffer_Object.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <cassert>
 

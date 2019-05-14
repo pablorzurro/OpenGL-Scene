@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_INPUT_MANAGER_H_
 #define OPENGL_SCENE_INPUT_MANAGER_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <SFML/System.hpp>
 

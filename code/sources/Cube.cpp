@@ -1,4 +1,4 @@
-#include "Cube.hpp"
+#include <Cube.hpp>
 
 namespace prz
 {

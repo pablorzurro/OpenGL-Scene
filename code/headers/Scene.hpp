@@ -12,10 +12,10 @@
 #ifndef OPENGL_SCENE_VIEW_H_
 #define OPENGL_SCENE_VIEW_H_
 
-#include "Renderer.hpp"
-#include "Camera.hpp"
+#include <Renderer.hpp>
+#include <Camera.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <SFML/Window.hpp>
 

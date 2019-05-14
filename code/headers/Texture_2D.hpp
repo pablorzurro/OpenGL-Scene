@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_TEXTURE_2D_H_
 #define OPENGL_SCENE_TEXTURE_2D_H_
 
-#include "Texture.hpp"
+#include <Texture.hpp>
 
 namespace prz
 {

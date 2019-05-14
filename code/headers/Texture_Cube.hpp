@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_TEXTURE_CUBE_H_
 #define OPENGL_SCENE_TEXTURE_CUBE_H_
 
-#include "Texture.hpp"
+#include <Texture.hpp>
 
 namespace prz
 {

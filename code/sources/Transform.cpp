@@ -1,4 +1,5 @@
-#include "Transform.hpp"
+#include <Transform.hpp>
+#include <gtx/quaternion.hpp>
 
 namespace prz
 {
@@ -9,7 +10,7 @@ namespace prz
 		isVisible_(true),
 		parent_(nullptr),
 		renderer_(nullptr),
-		position_(extract_translation(localMatrix_)),
+		translation_(extract_translation(localMatrix_)),
 		rotation_(extract_rotation(localMatrix_)),
 		scale_(extract_scale(localMatrix_))
 	{}
@@ -21,15 +22,22 @@ namespace prz
 		isVisible_(other.isVisible_),
 		parent_(other.parent_),
 		renderer_(other.renderer_),
-		position_(other.position_),
+		translation_(other.translation_),
 		rotation_(other.rotation_),
 		scale_(other.scale_)
 	{}
 
+	void Transform::update_local_matrix()
+	{
+		localMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix();
+
+		isGlobalMatUpdated = false;
+	}
+
 	void Transform::translate(PVec3 translation)
 	{
 		localMatrix_ = glm::translate(localMatrix_, translation);
-		position_ = extract_translation(localMatrix_);
+		translation_ = extract_translation(localMatrix_);
 	}
 
 	void Transform::translate(float translationX, float translationY, float translationZ)
@@ -52,13 +60,15 @@ namespace prz
 		translate(PVec3(0, 0, translationZ));
 	}
 
+	void Transform::rotate(PQuat rotation)
+	{
+		rotation_ += rotation;
+		update_local_matrix();
+	}
+
 	void Transform::rotate(PVec3 rotation)
 	{
-		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.x, PVec3(1, 0, 0));
-		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.y, PVec3(0, 1, 0));
-		localMatrix_ = rotate_matrix_around_axis(localMatrix_, rotation.z, PVec3(0, 0, 1));
-		
-		rotation_ = extract_rotation(localMatrix_);
+		rotate(PQuat(rotation));
 	}
 
 	void Transform::rotate(float angleX, float angleY, float angleZ)
@@ -82,8 +92,8 @@ namespace prz
 
 	void Transform::scale(PVec3 scale)
 	{
-		localMatrix_ = glm::scale(localMatrix_, scale_);
-		scale_ = extract_scale(localMatrix_);
+		scale_ += scale;
+		update_local_matrix();
 	}
 
 	void Transform::scale(float scaleX, float scaleY, float scaleZ)
@@ -117,19 +127,27 @@ namespace prz
 		renderer_ = renderer;
 	}
 
-	void Transform::set_position(PVec3 newPosition)
+	void Transform::set_translation(PVec3 newTranslation)
 	{
-		translate(newPosition - position_);
+		translation_ = newTranslation;
+		update_local_matrix();
+	}
+
+	void Transform::set_rotation(PQuat newRotation)
+	{
+		rotation_ = newRotation;
+		update_local_matrix();
 	}
 
 	void Transform::set_rotation(PVec3 newRotation)
 	{
-		rotate(newRotation - extract_rotation_vector(localMatrix_));
+		set_rotation(PQuat(newRotation));
 	}
 
 	void Transform::set_scale(PVec3 newScale)
 	{
-		scale(newScale - scale_);
+		scale_ = newScale;
+		update_local_matrix();
 	}
 
 	void Transform::set_visible(bool visibility)
@@ -149,13 +167,18 @@ namespace prz
 
 	PMat4 Transform::globalMatrix()
 	{
-		globalMatrix_ = localMatrix_;
-
-		if (parent_)
+		if (!isGlobalMatUpdated)
 		{
-			globalMatrix_ = parent_->localMatrix_ * globalMatrix_;
-		}
+			globalMatrix_ = localMatrix_;
 
+			if (parent_)
+			{
+				globalMatrix_ = parent_->globalMatrix_ * globalMatrix_;
+			}
+
+			isGlobalMatUpdated = true;
+		}
+		
 		return globalMatrix_;
 	}
 
@@ -179,19 +202,34 @@ namespace prz
 		return renderer_;
 	}
 
-	PVec3 Transform::position()
+	const PVec3& Transform::translation() const
 	{
-		return position_;
+		return translation_;
 	}
 
-	PQuat Transform::rotation()
+	PMat4 Transform::translation_matrix() const
+	{
+		return glm::translate(PMatIdentity, translation_);
+	}
+
+	const PQuat& Transform::rotation() const
 	{
 		return rotation_;
 	}
 
-	PVec3 Transform::scale()
+	PMat4 Transform::rotation_matrix() const
+	{
+		return glm::toMat4(rotation_);
+	}
+
+	const PVec3& Transform::scale() const
 	{
 		return scale_;
+	}
+
+	PMat4 Transform::scale_matrix() const
+	{
+		return glm::scale(PMatIdentity, scale_);
 	}
 
 	bool Transform::isVisible()

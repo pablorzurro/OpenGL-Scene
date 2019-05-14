@@ -12,8 +12,8 @@
 #ifndef OPENGL_SCENE_TRANSFORM_H_
 #define OPENGL_SCENE_TRANSFORM_H_
 
-#include "Declarations.hpp"
-#include "Utilities.hpp"
+#include <Declarations.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -30,6 +30,10 @@ namespace prz
 
 	public:
 
+		void update_local_matrix();
+
+	public:
+
 		void translate(PVec3 translation);
 		void translate(float translationX, float translationY, float translationZ);
 
@@ -41,6 +45,7 @@ namespace prz
 
 	public:
 
+		void rotate(PQuat rotation);
 		void rotate(PVec3 rotation);
 		void rotate(float angleX, float angleY, float angleZ);
 
@@ -71,7 +76,8 @@ namespace prz
 
 	public:
 
-		void set_position(PVec3 newPosition);
+		void set_translation(PVec3 newTranslation);
+		void set_rotation(PQuat newRotation);
 		void set_rotation(PVec3 newRotation);
 		void set_scale(PVec3 newScale);
 
@@ -98,9 +104,14 @@ namespace prz
 
 	public:
 
-		PVec3 position();
-		PQuat rotation();
-		PVec3 scale(); 
+		const PVec3& translation() const;
+		PMat4 translation_matrix() const;
+
+		const PQuat& rotation() const;
+		PMat4 rotation_matrix() const;
+
+		const PVec3& scale() const; 
+		PMat4 scale_matrix()const;
 
 	public:
 
@@ -108,8 +119,8 @@ namespace prz
 
 	protected:
 
-		PMat4 localMatrix_;
-		PMat4 globalMatrix_;
+		PMat4 localMatrix_; // A.K.A Model Matrix
+		PMat4 globalMatrix_; // A.K.A Scene Matrix
 
 	protected:
 
@@ -122,13 +133,14 @@ namespace prz
 
 	protected:
 
-		PVec3 position_;
+		PVec3 translation_;
 		PQuat rotation_;
 		PVec3 scale_;
 
 	protected:
 
 		bool isVisible_;
+		bool isGlobalMatUpdated;
 	};
 
 } // !namespace prz 

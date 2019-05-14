@@ -1,4 +1,4 @@
-#include "Texture.hpp"
+#include <Texture.hpp>
 
 namespace prz
 {
@@ -6,8 +6,6 @@ namespace prz
 	{
 		if (is_ok()) // Check if the images have been loaded succesfully 
 		{
-			/*glEnable(textureType_);*/
-
 			glGenTextures(1, &textureID_);
 			glActiveTexture(GL_TEXTURE0);
 

@@ -1,4 +1,4 @@
-#include "Vertex_Array_Object.hpp"
+#include <Vertex_Array_Object.hpp>
 
 namespace prz
 {

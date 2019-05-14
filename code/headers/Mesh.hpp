@@ -12,11 +12,11 @@
 #ifndef OPENGL_SCENE_MESH_H_
 #define OPENGL_SCENE_MESH_H_
 
-#include "Drawable.hpp"
-#include "Vertex_Array_Object.hpp"
-#include "Vertex_Buffer_Object.hpp"
+#include <Drawable.hpp>
+#include <Vertex_Array_Object.hpp>
+#include <Vertex_Buffer_Object.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {

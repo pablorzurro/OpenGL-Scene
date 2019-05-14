@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_VERTEX_BUFFER_OBJECT_H_
 #define OPENGL_SCENE_VERTEX_BUFFER_OBJECT_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <cassert>
 

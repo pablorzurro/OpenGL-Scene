@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_TEXTURE_H_
 #define OPENGL_SCENE_TEXTURE_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {
@@ -150,7 +150,7 @@ namespace prz
 
 			case LINEAR:
 
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, LINEAR);
+				glTexParameteri(textureType_, GL_TEXTURE_MAG_FILTER, LINEAR);
 
 				break;
 
@@ -161,7 +161,7 @@ namespace prz
 
 			case NEAREST:
 
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, Filter_Mode::NEAREST);
+				glTexParameteri(textureType_, GL_TEXTURE_MAG_FILTER, Filter_Mode::NEAREST);
 
 				break;
 			}

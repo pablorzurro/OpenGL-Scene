@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_RENDERER_H_
 #define OPENGL_SCENE_RENDERER_H_
 
-#include "Mesh.hpp"
+#include <Mesh.hpp>
 
 namespace prz
 {

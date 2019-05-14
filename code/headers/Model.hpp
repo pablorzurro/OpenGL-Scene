@@ -12,10 +12,10 @@
 #ifndef OPENGL_SCENE_MODEL_H_
 #define OPENGL_SCENE_MODEL_H_
 
-#include "Drawable.hpp"
-#include "Material.hpp"
+#include <Mesh.hpp>
+#include <Material.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {
@@ -26,15 +26,15 @@ namespace prz
 
 		struct Piece
 		{
-			PSPtr< Drawable > drawable;
+			PSPtr< Mesh > mesh;
 			PSPtr< Material > material;
 		};
 
 	public:
 
-		void add_piece(const PSPtr< Drawable >& drawable, const PSPtr< Material >& material)
+		void add_piece(PSPtr< Mesh > mesh, PSPtr< Material > material = Material::default_material())
 		{
-			pieces_.push_back({ drawable, material });
+			pieces_.push_back({ mesh, material });
 		}
 
 	public:

@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_VERTEX_SHADER_H_
 #define OPENGL_SCENE_VERTEX_SHADER_H_
 
-#include "Shader.hpp"
+#include <Shader.hpp>
 
 namespace prz
 {

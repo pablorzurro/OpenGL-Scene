@@ -12,11 +12,11 @@
 #ifndef OPENGL_SCENE_TEXTURE_LOADER_H_
 #define OPENGL_SCENE_TEXTURE_LOADER_H_
 
-#include "Texture_2D.hpp"
-#include "Texture_Cube.hpp"
+#include <Texture_2D.hpp>
+#include <Texture_Cube.hpp>
 
-#include "Declarations.hpp"
-#include "Utilities.hpp"
+#include <Declarations.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {

@@ -12,12 +12,11 @@
 #ifndef OPENGL_SCENE_GAME_H_
 #define OPENGL_SCENE_GAME_H_
 
-#include "Scene.hpp"
+#include <Scene.hpp>
 
-#include "Utilities.hpp"
-#include "Source_Code.hpp"
+#include <Utilities.hpp>
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 #include <SFML/Window.hpp>
 
 #include <cassert>
@@ -33,28 +32,7 @@ namespace prz
 	{
 	public:
 
-		Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle = "PRZuro OpenGL Scene", bool vSync = true, const WindowStyle& windowStyle = DEFAULT, unsigned int depth = 32):
-			window_(VideoMode(windowWidth, windowHeight), windowTitle, windowStyle, ContextSettings(24, 0,0, 4, 5, ContextSettings::Core)),
-			event_(),
-			deltaTime_(0.f),
-			isRunning_(false)
-		{
-			window_.setVerticalSyncEnabled(vSync);
-
-			if (!initialize_opengl_extensions())
-			{
-				exit(-1);
-			}
-
-			cout << "Introduce assets folder relative path: ";
-			cin >> assetsFolderPath_;
-			cout << endl;
-			assetsFolderPath_ += "/";
-
-
-			scene_.reset(new Scene(window_));
-			curTime = prevTime = HighClock::now();
-		}
+		Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle = "PRZuro OpenGL Scene", bool vSync = true, const WindowStyle& windowStyle = DEFAULT, unsigned int depth = 32);
 
 		~Game()
 		{}

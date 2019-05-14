@@ -12,7 +12,7 @@
 #ifndef OPENGL_SCENE_SOURCE_CODE_H_
 #define OPENGL_SCENE_SOURCE_CODE_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 namespace prz
 {

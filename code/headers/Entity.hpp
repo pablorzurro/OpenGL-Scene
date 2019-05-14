@@ -12,8 +12,8 @@
 #ifndef OPENGL_SCENE_CUBE_MESH_H_
 #define OPENGL_SCENE_CUBE_MESH_H_
 
-#include "Transform.hpp"
-#include "Model.hpp"
+#include <Transform.hpp>
+#include <Model.hpp>
 
 namespace prz
 {
@@ -32,8 +32,7 @@ namespace prz
 		}
 
 		Entity(PBuffer<PString> paths)
-		{
-		}
+		{}
 
 		~Entity()
 		{}
