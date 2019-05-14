@@ -39,19 +39,18 @@ namespace prz
 			deltaTime_(0.f),
 			isRunning_(false)
 		{
-			cout << "Introduce assets folder relative path: ";
-			cin >> assetsFolderPath_;
-			cout << endl;
-			assetsFolderPath_ += "/";
-
-			cout << assetsFolderPath_ << endl;
-
 			window_.setVerticalSyncEnabled(vSync);
 
 			if (!initialize_opengl_extensions())
 			{
 				exit(-1);
 			}
+
+			cout << "Introduce assets folder relative path: ";
+			cin >> assetsFolderPath_;
+			cout << endl;
+			assetsFolderPath_ += "/";
+
 
 			scene_.reset(new Scene(window_));
 			curTime = prevTime = HighClock::now();

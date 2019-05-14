@@ -218,3 +218,7 @@ _Pvt_Extensions
 
 # Ignore shortcuts
 *.lnk
+
+# Whitelist
+
+!libraries/Assimp/lib/*
