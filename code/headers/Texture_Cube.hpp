@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file Texture_Cube.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
  * @brief
@@ -19,13 +19,31 @@ namespace prz
 	
 	class Texture_Cube : public Texture
 	{
+	public:
+		
+		Texture_Cube(PBuffer<PString>& imagePaths, const PString& name):
+			Texture(GL_TEXTURE_CUBE_MAP, imagePaths, name)
+		{
+			initialize();
+		}
+
+	protected:
+
+		void on_initialize() override;
+
+	protected:
+
+		void apply_wrap_mode() override
+		{
+			// Apply the wrap mode to each space coordinate axis. A cube map is a tridimensional texture so three axes
+			glTexParameteri(textureType_, GL_TEXTURE_WRAP_S, wrapMode_);
+			glTexParameteri(textureType_, GL_TEXTURE_WRAP_T, wrapMode_);
+			glTexParameteri(textureType_, GL_TEXTURE_WRAP_R, wrapMode_);
+		}
+
 	private:
 
 		static const GLenum textureTarget_[];
-		
-		Texture_Cube(PBuffer<PImage&> cubeImages) :
-			Texture(GL_TEXTURE_CUBE_MAP, cubeImages)
-		{}
 	};
 
 } // !namespace prz 

@@ -12,14 +12,12 @@
 #ifndef OPENGL_SCENE_TEXTURE_H_
 #define OPENGL_SCENE_TEXTURE_H_
 
-#include "Drawable.hpp"
-
 #include "Declarations.hpp"
 
 namespace prz
 {
 	
-	class Texture : Drawable
+	class Texture
 	{
 	public:
 
@@ -43,33 +41,20 @@ namespace prz
 
 	public:
 
-		Texture(GLenum textureType, PBuffer<PString&> images):
+		Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, Filter_Mode filterMode = Filter_Mode::NEAREST):
 			textureType_(textureType),
+			name_(name),
+			wrapMode_(wrapMode),
+			filterMode_(filterMode),
 			error_(GL_NO_ERROR)
 		{
-			load_images(images);
-
-			glGenTextures(1, &textureID_);
-			glActiveTexture(GL_TEXTURE0);
-
-			bind();
-			{
-				on_construction();
-
-			} unbind();
-
-			error_ = glGetError();
-			assert(is_ok());
+			load_images(imagePaths);
 		}
 
 		~Texture()
 		{
 			glDeleteTextures(1, &textureID_);
 		}
-
-	public:
-		 
-		virtual void draw() override = 0;
 
 	public:
 
@@ -81,6 +66,21 @@ namespace prz
 		void unbind()
 		{
 			glBindTexture(textureType_, 0);
+		}
+
+	public:
+
+		virtual void set_wrap_mode(Wrap_Mode wrapMode)
+		{
+			wrapMode_ = wrapMode;
+			apply_wrap_mode();
+		}
+
+
+		virtual void set_filter_mode(Filter_Mode filterMode)
+		{
+			filterMode_ = filterMode;
+			apply_filter_mode();
 		}
 
 	public:
@@ -97,9 +97,20 @@ namespace prz
 			return error_;
 		}
 
+		const PString& name()
+		{
+			return name_;
+		}
+
 	protected:
 
-		virtual void load_images(PBuffer<PString&> imagePaths)
+		virtual void initialize();
+
+		virtual void on_initialize() = 0;
+
+	protected:
+
+		virtual void load_images(PBuffer<PString>& imagePaths)
 		{
 			size_t size = imagePaths.size();
 
@@ -110,26 +121,78 @@ namespace prz
 				if (!imgData.loadFromFile(imagePaths[i]))
 				{
 					error_ = GL_INVALID_OPERATION;
-					cout << "Could not load any image from the following path: " + imagePaths[i] << endl; // DEBUG
-
-					break;
 				}
-
-				images_.push_back(imgData);
+				else
+				{
+					cout << "Loaded image from path: " + imagePaths[i] << endl; // DEBUG
+					images_.push_back(imgData);
+				}
 			}
 		}
 
-		virtual void on_construction() = 0;
-
 	protected:
 
-		GLenum textureType_;
-		GLenum error_;
-		GLuint textureID_;
+		virtual void apply_wrap_mode()
+		{}
+
+		virtual void apply_filter_mode()
+		{
+			glTexParameteri(textureType_, GL_TEXTURE_MIN_FILTER, filterMode_);
+
+			bool generateMipmap = false;
+
+			switch (filterMode_)
+			{
+			case LINEAR_MIPMAP_NEAREST:
+			case LINEAR_MIPMAP_LINEAR:
+
+				generateMipmap = true;
+
+			case LINEAR:
+
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, LINEAR);
+
+				break;
+
+			case NEAREST_MIPMAP_NEAREST: 
+			case NEAREST_MIPMAP_LINEAR:
+
+				generateMipmap = true;
+
+			case NEAREST:
+
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, Filter_Mode::NEAREST);
+
+				break;
+			}
+
+			if (generateMipmap)
+			{
+				glGenerateMipmap(textureType_);
+			}
+		}
 
 	protected:
 
 		PBuffer<PImage> images_;
+
+	protected:
+
+		GLenum textureType_;
+		GLuint textureID_;
+
+	protected:
+
+		Wrap_Mode wrapMode_;
+		Filter_Mode filterMode_;
+
+	protected:
+
+		PString name_;
+
+	protected:
+
+		GLenum error_;
 	};
 
 } // !namespace prz 

@@ -97,7 +97,10 @@
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Shader.cpp" />
     <ClCompile Include="..\..\code\sources\Shader_Program.cpp" />
+    <ClCompile Include="..\..\code\sources\Skybox.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture.cpp" />
     <ClCompile Include="..\..\code\sources\Texture_Cube.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture_Loader.cpp" />
     <ClCompile Include="..\..\code\sources\Transform.cpp" />
     <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp" />
     <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp" />

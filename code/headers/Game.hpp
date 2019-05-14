@@ -39,6 +39,13 @@ namespace prz
 			deltaTime_(0.f),
 			isRunning_(false)
 		{
+			cout << "Introduce assets folder relative path: ";
+			cin >> assetsFolderPath_;
+			cout << endl;
+			assetsFolderPath_ += "/";
+
+			cout << assetsFolderPath_ << endl;
+
 			window_.setVerticalSyncEnabled(vSync);
 
 			if (!initialize_opengl_extensions())
@@ -69,6 +76,13 @@ namespace prz
 			return isRunning_;
 		}
 
+	public:
+
+		static const PString& assetsFolderPath()
+		{
+			return assetsFolderPath_;
+		}
+
 	private:
 
 		void poll_events(Input_Manager& inputManager);
@@ -89,7 +103,7 @@ namespace prz
 	private:
 
 		Event event_;
-
+		
 	private:
 
 		float deltaTime_;
@@ -99,6 +113,10 @@ namespace prz
 	private:
 
 		bool isRunning_;
+
+	private:
+
+		static PString assetsFolderPath_;
 	};
 
 } // !namespace prz 

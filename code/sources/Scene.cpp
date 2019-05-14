@@ -1,17 +1,23 @@
 #include "Scene.hpp"
+#include "Texture_Loader.hpp"
+#include "Skybox.hpp"
+#include "Game.hpp"
 
 namespace prz
 {
 
 	Scene::Scene(Window& window)
 		:
-		window_(window),
-		skybox("../../assets/sky-cube-map-")
+		window_(window)
+		//skybox("../../assets/sky-cube-map-")
 	{
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);
 
 		on_window_resized();
+
+		//PSPtr< Texture > texture( Texture_Loader::instance().load_texture2D(Game::assetsFolderPath() + "textures/2D/wood.png"));
+		Skybox skybox(Texture_Loader::instance().load_cube_map(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga"));
 	}
 
 	void Scene::update(float deltaTime)

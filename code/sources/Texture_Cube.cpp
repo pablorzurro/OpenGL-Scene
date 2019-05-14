@@ -2,14 +2,35 @@
 
 namespace prz
 {
-	const GLenum Texture_Cube::textureTarget_[] = 
+	void Texture_Cube::on_initialize()
 	{
-			GL_TEXTURE_CUBE_MAP_NEGATIVE_X, // Left
-			GL_TEXTURE_CUBE_MAP_POSITIVE_Z, // Back
-			GL_TEXTURE_CUBE_MAP_POSITIVE_X, // Right
-			GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, // Forward
-			GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, // Down
-			GL_TEXTURE_CUBE_MAP_POSITIVE_Y, // Up
-	};
+		// Send the image bitmaps to the GPU:
+		for (size_t i = 0; i < images_.size(); i++)
+		{
+			PImage& image = images_[i];
 
+			glTexImage2D
+			(
+				textureTarget_[i],
+				0,
+				GL_RGBA,
+				image.getSize().x,
+				image.getSize().y,
+				0,
+				GL_RGBA,
+				GL_UNSIGNED_BYTE,
+				image.getPixelsPtr()
+			);
+		}	
+	}
+
+	const GLenum Texture_Cube::textureTarget_[] =
+	{
+		GL_TEXTURE_CUBE_MAP_NEGATIVE_X, // Left
+		GL_TEXTURE_CUBE_MAP_POSITIVE_Z, // Back
+		GL_TEXTURE_CUBE_MAP_POSITIVE_X, // Right
+		GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, // Forward
+		GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, // Down
+		GL_TEXTURE_CUBE_MAP_POSITIVE_Y, // Up
+	};
 }

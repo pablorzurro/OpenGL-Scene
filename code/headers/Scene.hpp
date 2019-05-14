@@ -14,7 +14,6 @@
 
 #include "Renderer.hpp"
 #include "Camera.hpp"
-#include "Skybox.hpp"
 
 #include "Declarations.hpp"
 
@@ -54,7 +53,7 @@ namespace prz
 		
 	private:
 
-		Skybox skybox;
+		//Skybox skybox;
 
 	private:
 

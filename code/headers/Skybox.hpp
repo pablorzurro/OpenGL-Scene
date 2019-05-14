@@ -12,34 +12,39 @@
 #ifndef OPENGL_SCENE_SKYBOX_H_
 #define OPENGL_SCENE_SKYBOX_H_
 
-#include "Texture_Cube.hpp"
+#include "Declarations.hpp"
 
 namespace prz
 {
 
 	class Camera;
+	class Texture;
+	class Texture_Cube;
 
-	class Skybox : public Texture_Cube
+	class Skybox
 	{
 	public:
 
-		Skybox(const PString& texture_path)
-		{}
+		Skybox(const PString& textureRootPath, const PString& textureName);
+
+		Skybox(PSPtr< Texture > cubeMap);
+
+		Skybox(Texture_Cube* cubeMap)
+		{
+			assert(cubeMap);
+			cubeMap_ = cubeMap;
+		}
 
 		~Skybox()
 		{}
 	
 	public:
 
-		void render(Camera& camera)
-		{
-
-		}
-		
 	protected:
 
 	private:
 
+		Texture_Cube* cubeMap_;
 	};
 
 } // !namespace prz 

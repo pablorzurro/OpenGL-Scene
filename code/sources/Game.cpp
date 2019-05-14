@@ -46,4 +46,6 @@ namespace prz
 			inputManager.update(event_); // Send the event to the input manager and update it
 		}
 	}
+
+	PString Game::assetsFolderPath_ = "";
 }
