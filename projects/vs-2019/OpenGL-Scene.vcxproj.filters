@@ -108,6 +108,9 @@
     <ClCompile Include="..\..\code\sources\Skybox.cpp">
       <Filter>Source Files\Textures</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Camera.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">

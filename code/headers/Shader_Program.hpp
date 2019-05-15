@@ -142,12 +142,6 @@ namespace prz
 			return (logStr_);
 		}
 
-
-	private:
-
-		Shader_Program(const Shader_Program&)
-		{}
-
 	private:
 
 		unsigned    instanceID_;

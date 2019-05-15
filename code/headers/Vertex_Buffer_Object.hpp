@@ -116,9 +116,11 @@ namespace prz
 		 * @param drawUsage 
 		 */
 		Vertex_Buffer_Object(const void* data, size_t size, Target target, GLenum elementType, DrawUsage drawUsage):
+			vboID_(8000),
 			target_(GLenum(target)), 
 			elementType_(GLenum(target)),
-			drawUsage_(GLenum(drawUsage_))
+			drawUsage_(GLenum(drawUsage)),
+			error_(GL_NO_ERROR)
 		{
 			create(data, size);
 		}

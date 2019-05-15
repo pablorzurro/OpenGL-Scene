@@ -1,43 +1,61 @@
 #include <Transform.hpp>
+#include <Camera.hpp>
+#include "Entity.hpp"
+
 #include <gtx/quaternion.hpp>
 
 namespace prz
 {
-	Transform::Transform(Entity& owner) :
+	Transform::Transform(Entity& owner, Transform* parent):
 		owner_(owner),
-		localMatrix_(PMatIdentity), 
-		globalMatrix_(PMatIdentity),
+		modelMatrix_(PMatIdentity),
+		worldMatrix_(modelMatrix_),
+		translation_(PVec3(0.f, 0.f, 0.f)),
+		scale_(PVec3(1.f, 1.f, 1.f)),
 		isVisible_(true),
-		parent_(nullptr),
+		parent_(parent),
 		renderer_(nullptr),
-		translation_(extract_translation(localMatrix_)),
-		rotation_(extract_rotation(localMatrix_)),
-		scale_(extract_scale(localMatrix_))
-	{}
+		isWorldMatrixUpdated_(false),
+		isOwnerACamera_(static_cast<Camera*>(&owner_))
+	{
+		set_translation(PVec3(0.f, 0.f, 0.f));
+		set_rotation(PVec3(0.f, 0.f, 0.f));
+		set_scale(PVec3(1.f, 1.f, 1.f));
+		worldMatrix(); // initialize the world matrix
+	}
 
 	Transform::Transform(Entity& owner, Transform& other):
 		owner_(owner),
-		localMatrix_(other.localMatrix_),
-		globalMatrix_(other.globalMatrix_),
+		modelMatrix_(other.modelMatrix_),
+		worldMatrix_(other.worldMatrix_),
 		isVisible_(other.isVisible_),
 		parent_(other.parent_),
 		renderer_(other.renderer_),
 		translation_(other.translation_),
 		rotation_(other.rotation_),
-		scale_(other.scale_)
+		scale_(other.scale_),
+		isWorldMatrixUpdated_(other.isWorldMatrixUpdated_),
+		isOwnerACamera_(other.isOwnerACamera_)
 	{}
 
-	void Transform::update_local_matrix()
+	void Transform::update_model_matrix()
 	{
-		localMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix();
+		if (!isOwnerACamera_)
+		{
+			modelMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix(); // Original model matrix
+		}	
+		else
+		{
+			modelMatrix_ = scale_matrix();
+		}
 
-		isGlobalMatUpdated = false;
+		owner_.on_local_matrix_update();
+		isWorldMatrixUpdated_ = false;
 	}
 
-	void Transform::translate(PVec3 translation)
+	void Transform::translate(const PVec3& translation)
 	{
-		localMatrix_ = glm::translate(localMatrix_, translation);
-		translation_ = extract_translation(localMatrix_);
+		set_translation(translation_ + translation);
 	}
 
 	void Transform::translate(float translationX, float translationY, float translationZ)
@@ -60,40 +78,39 @@ namespace prz
 		translate(PVec3(0, 0, translationZ));
 	}
 
-	void Transform::rotate(PQuat rotation)
+	void Transform::rotate(const PQuat& rotation)
 	{
-		rotation_ += rotation;
-		update_local_matrix();
+		rotation_ *= rotation;
+		update_model_matrix();
 	}
 
-	void Transform::rotate(PVec3 rotation)
+	void Transform::rotate(const PVec3& eulerRotation, bool inRadians)
 	{
-		rotate(PQuat(rotation));
+		rotate(get_quaternion_from(eulerRotation, inRadians)); 
 	}
 
-	void Transform::rotate(float angleX, float angleY, float angleZ)
+	void Transform::rotate(float eulerAngleX, float eulerAngleY, float eulerAngleZ, bool inRadians)
 	{
-		rotate(PVec3(angleX, angleY, angleZ));
+		rotate(PVec3(eulerAngleX, eulerAngleY, eulerAngleZ), inRadians);
 	}
 
-	void Transform::rotate_around_x(float angle)
+	void Transform::rotate_around_x(float eulerAngle, bool inRadians)
 	{
-		rotate(PVec3(angle, 0, 0));
+		rotate(PVec3(eulerAngle, 0, 0), inRadians);
 	}
-	void Transform::rotate_around_y(float angle)
+	void Transform::rotate_around_y(float eulerAngle, bool inRadians)
 	{
-		rotate(PVec3(0, angle, 0));
-	}
-
-	void Transform::rotate_around_z(float angle)
-	{
-		rotate(PVec3(0, 0, angle));
+		rotate(PVec3(0, eulerAngle, 0), inRadians);
 	}
 
-	void Transform::scale(PVec3 scale)
+	void Transform::rotate_around_z(float eulerAngle, bool inRadians)
 	{
-		scale_ += scale;
-		update_local_matrix();
+		rotate(PVec3(0, 0, eulerAngle), inRadians);
+	}
+
+	void Transform::scale(const PVec3& scale)
+	{
+		set_scale(scale_ + scale);
 	}
 
 	void Transform::scale(float scaleX, float scaleY, float scaleZ)
@@ -127,27 +144,27 @@ namespace prz
 		renderer_ = renderer;
 	}
 
-	void Transform::set_translation(PVec3 newTranslation)
+	void Transform::set_translation(const PVec3& newTranslation)
 	{
 		translation_ = newTranslation;
-		update_local_matrix();
+		update_model_matrix();
 	}
 
-	void Transform::set_rotation(PQuat newRotation)
+	void Transform::set_rotation(const PQuat& newRotation)
 	{
 		rotation_ = newRotation;
-		update_local_matrix();
+		update_model_matrix();
 	}
 
-	void Transform::set_rotation(PVec3 newRotation)
+	void Transform::set_rotation(const PVec3& newRotation, bool inRadians)
 	{
-		set_rotation(PQuat(newRotation));
+		set_rotation(get_quaternion_from(newRotation, inRadians));
 	}
 
-	void Transform::set_scale(PVec3 newScale)
+	void Transform::set_scale(const PVec3& newScale)
 	{
 		scale_ = newScale;
-		update_local_matrix();
+		update_model_matrix();
 	}
 
 	void Transform::set_visible(bool visibility)
@@ -155,36 +172,41 @@ namespace prz
 		isVisible_ = visibility;
 	}
 
-	PMat4 Transform::localMatrix()
+	const PMat4& Transform::modelMatrix()
 	{
-		return localMatrix_;
+		return modelMatrix_;
 	}
 
-	PMat4 Transform::get_inverse_localMatrix()
+	PMat4 Transform::inverse_modelMatrix()
 	{
-		return inverse(localMatrix_);
+		return inverse(modelMatrix_);
 	}
 
-	PMat4 Transform::globalMatrix()
+	const PMat4& Transform::worldMatrix()
 	{
-		if (!isGlobalMatUpdated)
+		if (!isWorldMatrixUpdated_)
 		{
-			globalMatrix_ = localMatrix_;
+			worldMatrix_ = modelMatrix_; // In camera case this will be the view matrix and will be applied to all children
 
 			if (parent_)
 			{
-				globalMatrix_ = parent_->globalMatrix_ * globalMatrix_;
+				worldMatrix_ = parent_->worldMatrix() * worldMatrix_; // Calling the parent hierarchy to obtain the total transformation
 			}
 
-			isGlobalMatUpdated = true;
+			isWorldMatrixUpdated_ = true;
 		}
 		
-		return globalMatrix_;
+		return worldMatrix_;
 	}
 
-	PMat4 Transform::get_inverse_global_matrix()
+	PMat4 Transform::inverse_worldMatrix()
 	{
-		return inverse(globalMatrix());
+		return inverse(worldMatrix());
+	}
+
+	PMat4 Transform::viewMatrix()
+	{
+		return translation_matrix() * glm::transpose(rotation_matrix());
 	}
 
 	Transform* Transform::parent()
@@ -216,6 +238,19 @@ namespace prz
 	{
 		return rotation_;
 	}
+
+	PVec3 Transform::euler_rotation(bool inDegrees) const
+	{
+		PVec3 vec = glm::eulerAngles(rotation_);
+
+		if (inDegrees)
+		{
+			vec = glm::degrees(vec);
+		}
+
+		return vec;
+	}
+		
 
 	PMat4 Transform::rotation_matrix() const
 	{

@@ -19,7 +19,8 @@
 
 namespace prz
 {
-	
+	class Entity;
+
 	class Model
 	{
 	public:
@@ -30,6 +31,30 @@ namespace prz
 			PSPtr< Material > material;
 		};
 
+	public: 
+
+		Model(Entity* owner = nullptr, unsigned int numPieces = 100):
+			owner_(owner),
+			numPieces_(numPieces)
+		{}
+
+		Model(unsigned int numPieces = 100):
+			Model(nullptr, numPieces)
+		{}
+
+		~Model()
+		{}
+
+	public:
+
+		void initialize(Entity* owner = nullptr)
+		{
+			if (owner_ != owner && owner && !owner)
+			{
+				owner_ = owner;
+			}
+		}
+
 	public:
 
 		void add_piece(PSPtr< Mesh > mesh, PSPtr< Material > material = Material::default_material())
@@ -39,15 +64,41 @@ namespace prz
 
 	public:
 
-		PBuffer< Piece >& pieces()
+		void set_material_to(PSPtr< Material > material, unsigned int pieceIndex)
 		{
-			return pieces_;
+			pieces_[pieceIndex].material = material;
 		}
+
+		void set_material_to_all_pieces(PSPtr< Material > material)
+		{
+			for (unsigned int i = 0; i < pieces_.size(); i++)
+			{
+				set_material_to(material, i);
+			}	
+		}
+
+	public:
+
+		bool is_ok()
+		{
+			return numPieces_ == pieces_.size() && owner_;
+		}
+
+	public:
+
+		PBuffer< Piece >& pieces(){ return pieces_; }
 
 	private:
 
 		PBuffer< Piece > pieces_;
 
+	private:
+
+		Entity* owner_;
+
+	private:
+
+		unsigned int numPieces_;
 	};
 
 } // !namespace prz 

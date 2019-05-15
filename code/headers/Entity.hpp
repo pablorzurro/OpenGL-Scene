@@ -25,13 +25,8 @@ namespace prz
 	public:
 
 		Entity(Scene& scene, Transform* parent = nullptr):
-			transform_(*this),
+			transform_(*this, parent),
 			sceneParent_(scene)
-		{
-			set_parent(parent);
-		}
-
-		Entity(PBuffer<PString> paths)
 		{}
 
 		~Entity()
@@ -39,7 +34,8 @@ namespace prz
 
 	public:
 
-		virtual void update() = 0;
+		virtual void update(float deltaTime) {}
+		virtual void render(){}
 
 	public:
 
@@ -60,15 +56,19 @@ namespace prz
 			return sceneParent_; 
 		}
 
-	private:
+	public:
+
+		virtual void on_local_matrix_update(){}
+
+	protected:
 
 		Transform transform_;
 	
-	private:
+	protected:
 
 		PBuffer< PSPtr< Model > > models_;
 
-	private:
+	protected:
 
 		Scene& sceneParent_;
 	};

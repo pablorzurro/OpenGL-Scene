@@ -118,6 +118,27 @@ namespace prz
 		PMat4 returnMatrix = glm::rotate(matrix, glm::radians(angle), axis);
 		return returnMatrix;
 	}
+
+	inline PQuat get_quaternion_from(const PVec3& vector3f, bool inRadians = false, bool normalize = true)
+	{
+		PVec3 v = vector3f;
+
+		if (!inRadians)
+		{
+			v = glm::radians(v);
+		}
+
+		if (normalize)
+		{
+			v = glm::normalize(v);
+		}
+	
+		PQuat pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
+		PQuat yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
+		PQuat roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
+
+		return pitch * yaw * roll;
+	}
 }
 
 #endif // !OPENGL_SCENE_INTERNAL_UTILITIES_H_

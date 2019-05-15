@@ -42,6 +42,7 @@ namespace prz
 	public:
 
 		Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, Filter_Mode filterMode = Filter_Mode::NEAREST):
+			textureID_(8000),
 			textureType_(textureType),
 			name_(name),
 			wrapMode_(wrapMode),

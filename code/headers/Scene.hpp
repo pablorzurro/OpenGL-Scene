@@ -14,6 +14,7 @@
 
 #include <Renderer.hpp>
 #include <Camera.hpp>
+#include <Skybox.hpp>
 
 #include <Declarations.hpp>
 
@@ -53,7 +54,11 @@ namespace prz
 		
 	private:
 
-		//Skybox skybox;
+		PMap< PString, PSPtr< Entity >> entities_;
+
+	private:
+
+		Skybox skybox;
 
 	private:
 

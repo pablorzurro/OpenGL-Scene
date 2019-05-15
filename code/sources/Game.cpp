@@ -17,10 +17,10 @@ namespace prz
 			exit(-1);
 		}
 
-		cout << "Introduce assets folder relative path: ";
-		cin >> assetsFolderPath_;
-		cout << endl;
-		assetsFolderPath_ += "/";
+		//cout << "Introduce assets folder relative path: ";
+		//cin >> assetsFolderPath_;
+		//cout << endl;
+		//assetsFolderPath_ += "/";
 
 		scene_.reset(new Scene(window_));
 		curTime = prevTime = HighClock::now();
@@ -69,5 +69,5 @@ namespace prz
 		}
 	}
 
-	PString Game::assetsFolderPath_ = "assets";
+	PString Game::assetsFolderPath_ = "../../assets/";
 }

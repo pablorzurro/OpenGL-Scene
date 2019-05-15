@@ -88,6 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Camera.cpp" />
     <ClCompile Include="..\..\code\sources\Cube.cpp" />
     <ClCompile Include="..\..\code\sources\Game.cpp" />
     <ClCompile Include="..\..\code\sources\internal\OpenGL.cpp" />

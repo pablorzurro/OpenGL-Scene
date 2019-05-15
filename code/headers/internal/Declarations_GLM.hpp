@@ -16,6 +16,7 @@
 #include <gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
 #include <gtc/type_ptr.hpp>                 // value_ptr
 #include <gtx/matrix_decompose.hpp>
+#include <gtx/string_cast.hpp>
 
 namespace prz
 {
@@ -35,7 +36,7 @@ namespace prz
 
 	using PQuat = glm::quat;
 
-	static const PMat4 PMatIdentity = PMat4();
+	static const PMat4 PMatIdentity = PMat4(1.f); //PMat4 deprecated, is an all zeros matrix
 } // !namespace prz
 
 #endif // !OPENGL_SCENE_DECLARATIONS_GLM_H_

@@ -41,7 +41,7 @@ namespace prz
 		NO_INDICES_TYPE = GL_NONE
 	};
 
-	struct Var
+	struct PVar
 	{
 		enum class Type
 		{
@@ -60,13 +60,12 @@ namespace prz
 
 		Type type;
 		Data data;
-
 	};
 
 	struct Uniform
 	{
 		GLint index;
-		Var   value;
+		PVar   value;
 	};
 
 } // !namespace prz

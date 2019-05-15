@@ -54,7 +54,7 @@ namespace prz
 			nVertices_ = nVertices;
 		}
 
-		void set_vao(const std::shared_ptr< Vertex_Array_Object >& vao)
+		void set_vao(PSPtr< Vertex_Array_Object > vao)
 		{
 			vao_ = vao;
 		}

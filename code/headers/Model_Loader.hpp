@@ -1,12 +1,12 @@
 /**
  * @file Model_Loader.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 14-05-2019
- * 
+ *
  * @copyright Copyright (c) 2019
- * 
+ *
  */
 
 #ifndef OPENGL_SCENE_MESH_LOADER_H_
@@ -14,6 +14,7 @@
 
 #include <Model.hpp>
 #include <Mesh.hpp>
+#include <Vertex_Array_Object.hpp>
 
 #include <Declarations.hpp>
 
@@ -45,18 +46,47 @@ namespace prz
 
 			if (!assimpScene)
 			{
-				cout << "Error parsing " + meshPath +  ": " +  importer_.GetErrorString() << endl;
+				cout << "Error parsing " + meshPath + ": " + importer_.GetErrorString() << endl;
 				return PSPtr< Model >();
+			}
+
+			unsigned int numMeshes = assimpScene->mNumMeshes;
+
+			PSPtr< Model > model(new Model(numMeshes));
+ 
+			for (size_t i = 0; i < numMeshes; i++)
+			{
+				const aiMesh* assimpMesh = assimpScene->mMeshes[i];
+				unsigned int numVertices = assimpMesh->mNumVertices;
+
+				PSPtr< Mesh > mesh(new Mesh(TRIANGLES, numVertices, UNSIGNED_INT));
+
+				/*PSPtr< PVAO > vao(new PVAO
+				(
+
+
+				));*/
 			}
 
 			cout << "Model with path: " + meshPath + " loaded. " + to_string(assimpScene->mNumMeshes) + " meshes detected" << endl;
 
-			return PSPtr< Model >();
+			return model;
 		}
-	
+
+		bool load_model(const PString& meshPath, PSPtr<Entity> entityToSave, PSPtr< Material > material = Material::default_material())
+		{
+			if (entityToSave.get())
+			{
+				PSPtr< Model > model = load_model(meshPath, material);
+				return model.get();
+			}
+
+			return false;
+		}
+
 	private:
 
-		Model_Loader(){}
+		Model_Loader() {}
 
 	private:
 

@@ -12,12 +12,9 @@
 #ifndef OPENGL_SCENE_MATERIAL_H_
 #define OPENGL_SCENE_MATERIAL_H_
 
-
 #include <Shader_Program.hpp>
 
 #include <Declarations.hpp>
-
-#include <variant>
 
 namespace prz
 {
@@ -44,7 +41,7 @@ namespace prz
 
 	public:
 
-		Uniform* allocate_uniform(const char* id, const PString& name, Var::Type type);
+		Uniform* allocate_uniform(const char* id, const PString& name, PVar::Type type);
 
 	public:
 

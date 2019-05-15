@@ -12,129 +12,77 @@
 #ifndef OPENGL_SCENE_CAMERA_H_
 #define OPENGL_SCENE_CAMERA_H_
 
-#include <Transform.hpp>
+#include <Entity.hpp>
 
 #include <Declarations.hpp>
-
 #include <Utilities.hpp>
 
 namespace prz
 {
-    
-	class Camera
+	class Scene;
+
+	class Camera : public Entity
 	{
 	public:
 
-		Camera(float ratio = 1.f)
-		{
-			reset(60.f, 0.1f, 100.f, ratio);
-		}
+		Camera(Scene& scene, float fov, float zNear, float zFar, float aspectRatio);
 
-		Camera(float nearZ, float farZ, float ratio = 1.f)
-		{
-			reset(60.f, nearZ, farZ, ratio);
-		}
+		Camera(Scene& scene, float ratio = 1.f): Camera(scene, 60.f, 0.1f, 100.f, ratio){}
+		Camera(Scene& scene, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, 60.f, zNear, zFar, aspectRatio){}
+		
+	public:
 
-		Camera(float fov, float nearZ, float farZ, float ratio)
-		{
-			reset(fov, nearZ, farZ, ratio);
-		}
+		void set_fov(float fov) {fov_ = fov; calculate_projection_matrix();}
+		void set_near_z(float zNear) {zNear_ = zNear; calculate_projection_matrix();}
+		void set_far_z(float zFar) {zFar_ = zFar; calculate_projection_matrix();}
+		void set_ratio(float aspectRatio) {aspectRatio_ = aspectRatio; calculate_projection_matrix();}
 
 	public:
 
-		void set_fov(float fov) 
-		{ 
-			fov_ = fov; 
-		}
-		void set_near_z(float nearZ) { nearZ_ = nearZ; }
-		void set_far_z(float farZ) { farZ_ = farZ; }
-		void set_ratio(float ratio) { ratio_ = ratio; }
+		void reset(float fov, float zNear, float zFar, float aspectRatio);
+		
+	public:
 
-		void set_location(float x, float y, float z)
-		{ 
-			location_[0] = x; 
-			location_[1] = y; 
-			location_[2] = z; 
-		}
+		void on_local_matrix_update() override;
+		
+	public:
 
-		void set_target(float x, float y, float z) 
-		{ 
-			target_[0] = x;
-			target_[1] = y;
-			target_[2] = z; 
-		}
-
-		void reset(float fov, float nearZ, float farZ, float ratio)
-		{
-			set_fov(fov);
-			set_near_z(nearZ);
-			set_far_z(farZ);
-			set_ratio(ratio);
-			set_location(0.f, 0.f, 0.f);
-			set_target(0.f, 0.f, -1.f);
-		}
+		const PMat4& matrix() const { return matrix_; }
+		const PMat4& viewMatrix() const { return viewMatrix_; }
+		const PMat4& projectionMatrix() const { return projectionMatrix_; }
 
 	public:
 
-		void move(const PVec3 & translation)
+		float fov() const { return fov_; }
+		float nearZ() const { return zNear_; }
+		float farZ() const { return zFar_; }
+		float ratio() const { return aspectRatio_; }
+
+	private:
+
+		void calculate_matrix()
 		{
-			location_ += PVec4(translation, 1.f);
-			target_ += PVec4(translation, 1.f);
+			matrix_ = projectionMatrix_ * viewMatrix_ * transform_.modelMatrix();
 		}
 
-		void rotate(const PMat4& rotation)
+		void calculate_projection_matrix()
 		{
-			target_ = location_ + rotation * (target_ - location_);
+			projectionMatrix_ = glm::perspective(fov_, aspectRatio_, zNear_, zFar_);
+			on_local_matrix_update();
 		}
-
-	public:
-
-		PMat4 projectionMatrix() const
-		{
-			return glm::perspective(fov_, ratio_, nearZ_, farZ_);
-		}
-
-		PMat4 get_model_view() const
-		{
-			PMat4 identity;
-			PMat4 camPosition = translate(identity, transform_.translation());
-			PQuat camRotation = transform_.rotation();
-
-			PQuat camRotation = normalize(camRotation);
-
-			return glm::lookAt
-			(
-				PVec3(camPosition.x, camPosition.y, camPosition.z),
-				PVec3(target_[0], target_[1], target_[2]),
-				PVec3(0.0f, 1.0f, 0.0f)
-			);
-		}
-
-	public:
-
-		float get_fov() const { return fov_; }
-		float get_near_z() const { return nearZ_; }
-		float get_far_z() const { return farZ_; }
-		float get_ratio() const { return ratio_; }
-		const PPoint4& get_location() const { return location_; }
-		const PPoint4& get_target() const { return target_; }
 
 	private:
 
 		float  fov_;
-		float  nearZ_;
-		float  farZ_;
-		float  ratio_;
+		float  zNear_;
+		float  zFar_;
+		float  aspectRatio_;
 
 	private:
 
-		PPoint4  location_;
-		PPoint4  target_;
-
-	private:
-
-		prz::Transform transform_;
-
+		PMat4 projectionMatrix_;
+		PMat4 viewMatrix_;
+		PMat4 matrix_;
 	};
 
 } // !namespace prz 

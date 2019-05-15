@@ -25,17 +25,17 @@ namespace prz
 	public:
 
 		Transform() = delete;
-		Transform(Entity& owner);
+		Transform(Entity& owner, Transform* parent = nullptr);
 		Transform(Entity& owner, Transform& other);
 
 	public:
 
-		void update_local_matrix();
+		void update_model_matrix();
 
 	public:
 
-		void translate(PVec3 translation);
-		void translate(float translationX, float translationY, float translationZ);
+		void translate(const PVec3& translation);
+		void translate(float pitch, float yaw, float roll);
 
 	public:
 
@@ -45,19 +45,19 @@ namespace prz
 
 	public:
 
-		void rotate(PQuat rotation);
-		void rotate(PVec3 rotation);
-		void rotate(float angleX, float angleY, float angleZ);
+		void rotate(const PQuat& rotation);
+		void rotate(const PVec3& rotation, bool inRadians = false);
+		void rotate(float eulerAngleX, float eulerAngleY, float eulerAngleZ, bool inRadians = false);
 
 	public:
 
-		void rotate_around_x(float angle);
-		void rotate_around_y(float angle);
-		void rotate_around_z(float angle);
+		void rotate_around_x(float eulerAngle, bool inRadians = false);
+		void rotate_around_y(float eulerAngle, bool inRadians = false);
+		void rotate_around_z(float eulerAngle, bool inRadians = false);
 
 	public:
 
-		void scale(PVec3 scale);
+		void scale(const PVec3& scale);
 		void scale(float scaleX, float scaleY, float scaleZ);
 
 	public:
@@ -76,10 +76,10 @@ namespace prz
 
 	public:
 
-		void set_translation(PVec3 newTranslation);
-		void set_rotation(PQuat newRotation);
-		void set_rotation(PVec3 newRotation);
-		void set_scale(PVec3 newScale);
+		void set_translation(const PVec3& newTranslation);
+		void set_rotation(const PQuat& newRotation);
+		void set_rotation(const PVec3& newRotation, bool inRadians = false);
+		void set_scale(const PVec3& newScale);
 
 	public:
 
@@ -87,11 +87,13 @@ namespace prz
 		
 	public:
 
-		PMat4 localMatrix();
-		PMat4 get_inverse_localMatrix();
+		const PMat4& modelMatrix();
+		PMat4 inverse_modelMatrix();
 		
-		PMat4 globalMatrix();
-		PMat4 get_inverse_global_matrix();
+		const PMat4& worldMatrix();
+		PMat4 inverse_worldMatrix();
+
+		PMat4 viewMatrix();
 
 	public:
 
@@ -108,6 +110,7 @@ namespace prz
 		PMat4 translation_matrix() const;
 
 		const PQuat& rotation() const;
+		PVec3 euler_rotation(bool inDegrees = true) const;
 		PMat4 rotation_matrix() const;
 
 		const PVec3& scale() const; 
@@ -119,8 +122,8 @@ namespace prz
 
 	protected:
 
-		PMat4 localMatrix_; // A.K.A Model Matrix
-		PMat4 globalMatrix_; // A.K.A Scene Matrix
+		PMat4 modelMatrix_;
+		PMat4 worldMatrix_;
 
 	protected:
 
@@ -140,7 +143,11 @@ namespace prz
 	protected:
 
 		bool isVisible_;
-		bool isGlobalMatUpdated;
+
+	protected:
+
+		bool isWorldMatrixUpdated_;
+		bool isOwnerACamera_;
 	};
 
 } // !namespace prz 

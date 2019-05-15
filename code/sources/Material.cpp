@@ -9,7 +9,7 @@ namespace prz
 
 	bool Material::set(const char* id, const PString& name, const GLint value)
     {
-        Uniform * uniform = allocate_uniform(id, name, Var::Type::INT);
+        Uniform * uniform = allocate_uniform(id, name, PVar::Type::INT);
 
         if (uniform)
         {
@@ -23,7 +23,7 @@ namespace prz
 
     bool Material::set(const char* id, const PString& name, const GLuint value)
     {
-        Uniform * uniform = allocate_uniform(id, name, Var::Type::UNSIGNED_INT);
+        Uniform * uniform = allocate_uniform(id, name, PVar::Type::UNSIGNED_INT);
 
         if (uniform)
         {
@@ -37,7 +37,7 @@ namespace prz
 
     bool Material::set(const char* id, const PString& name, const GLfloat value)
     {
-        Uniform * uniform = allocate_uniform(id, name, Var::Type::FLOAT);
+        Uniform * uniform = allocate_uniform(id, name, PVar::Type::FLOAT);
 
         if (uniform)
         {
@@ -51,7 +51,7 @@ namespace prz
 
     bool Material::set(const char* id, const PString& name, const PVec2& vector2)
     {
-        Uniform * uniform = allocate_uniform(id, name, Var::Type::VECTOR2);
+        Uniform * uniform = allocate_uniform(id, name, PVar::Type::VECTOR2);
 
         if (uniform)
         {
@@ -66,7 +66,7 @@ namespace prz
 
     bool Material::set(const char* id, const PString& name, const PVec3& vector3)
     {
-        Uniform * uniform = allocate_uniform(id, name, Var::Type::VECTOR3);
+        Uniform * uniform = allocate_uniform(id, name, PVar::Type::VECTOR3);
 
         if (uniform)
         {
@@ -82,7 +82,7 @@ namespace prz
 
 	bool Material::set(const char* id, const PString& name, const PVec4& vector4)
 	{
-		Uniform* uniform = allocate_uniform(id, name, Var::Type::VECTOR4);
+		Uniform* uniform = allocate_uniform(id, name, PVar::Type::VECTOR4);
 
 		if (uniform)
 		{
@@ -97,7 +97,7 @@ namespace prz
 		return false;
 	}
 
-	Uniform* Material::allocate_uniform(const char* id, const PString& name, Var::Type type)
+	Uniform* Material::allocate_uniform(const char* id, const PString& name, PVar::Type type)
 	{
 		Uniform uniform;
 
@@ -125,12 +125,12 @@ namespace prz
 
 			switch (uniform.value.type)
 			{
-			case Var::Type::INT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_int); break;
-			case Var::Type::UNSIGNED_INT:   shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_uint); break;
-			case Var::Type::FLOAT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_float); break;
-			case Var::Type::VECTOR2:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec2); break;
-			case Var::Type::VECTOR3:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec3); break;
-			case Var::Type::VECTOR4:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec4); break;
+			case PVar::Type::INT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_int); break;
+			case PVar::Type::UNSIGNED_INT:   shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_uint); break;
+			case PVar::Type::FLOAT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_float); break;
+			case PVar::Type::VECTOR2:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec2); break;
+			case PVar::Type::VECTOR3:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec3); break;
+			case PVar::Type::VECTOR4:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec4); break;
 			default:
 				assert(false);
 			}
