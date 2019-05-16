@@ -46,13 +46,13 @@ namespace prz
 		Vertex_Buffer_Object(const GLushort	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_SHORT, drawUsage) {}
 		Vertex_Buffer_Object(const GLint	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_INT, drawUsage) {}
 		Vertex_Buffer_Object(const GLuint	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
-		Vertex_Buffer_Object(const PUVec2	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
-		Vertex_Buffer_Object(const PUVec3	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
-		Vertex_Buffer_Object(const PUVec4	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage) {}
+		Vertex_Buffer_Object(const PUVec2	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage, 2) {}
+		Vertex_Buffer_Object(const PUVec3	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage, 3) {}
+		Vertex_Buffer_Object(const PUVec4	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage, 4) {}
 		Vertex_Buffer_Object(const GLfloat	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
-		Vertex_Buffer_Object(const PVec2	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
-		Vertex_Buffer_Object(const PVec3	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
-		Vertex_Buffer_Object(const PVec4	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage) {}
+		Vertex_Buffer_Object(const PVec2	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage, 2) {}
+		Vertex_Buffer_Object(const PVec3	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage, 3) {}
+		Vertex_Buffer_Object(const PVec4	* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC): Vertex_Buffer_Object(data, size, target, GL_FLOAT, drawUsage, 4) {}
 
 		~Vertex_Buffer_Object()
 		{
@@ -77,32 +77,18 @@ namespace prz
 
 	public:
 
-		bool is_ok() const
-		{
-			return error_ == GL_NO_ERROR;
-		}
+		bool is_ok() const { return error_ == GL_NO_ERROR; }
 
 	public:
 
-		GLuint vboID()
-		{
-			return vboID_;
-		}
+		GLuint vboID() const { return vboID_; }
+		GLenum target() const { return target_; }
+		GLenum elementType() const { return elementType_; }
+		unsigned int nComponentsPerElement() { return nComponentsPerElement_; }
 
-		GLenum target()
-		{
-			return target_;
-		}
+	public:
 
-		GLenum elementType()
-		{
-			return elementType_;
-		}
-
-		GLenum get_error()
-		{
-			return error_;
-		}
+		GLenum get_error() const { return error_; }
 
 	private: 
 
@@ -115,11 +101,12 @@ namespace prz
 		 * @param elementType 
 		 * @param drawUsage 
 		 */
-		Vertex_Buffer_Object(const void* data, size_t size, Target target, GLenum elementType, DrawUsage drawUsage):
+		Vertex_Buffer_Object(const void* data, size_t size, Target target, GLenum elementType, DrawUsage drawUsage, unsigned int nComponents = 1):
 			vboID_(8000),
 			target_(GLenum(target)), 
-			elementType_(GLenum(target)),
+			elementType_(GLenum(elementType)),
 			drawUsage_(GLenum(drawUsage)),
+			nComponentsPerElement_(nComponents),
 			error_(GL_NO_ERROR)
 		{
 			create(data, size);
@@ -131,6 +118,7 @@ namespace prz
 		GLenum target_;
 		GLenum elementType_;
 		GLenum drawUsage_;
+		unsigned int nComponentsPerElement_;
 		GLenum error_;
 	};
 

@@ -24,24 +24,7 @@ namespace prz
 
 	using PVBO = Vertex_Buffer_Object;
 	using PVAO = Vertex_Array_Object;
-
-	struct Vertex_Attribute_Information
-	{
-		PSPtr< PVBO > vbo;
-		GLuint index;
-		GLint  nComponents;
-		GLenum componentType;
-
-		Vertex_Attribute_Information(PSPtr< PVBO > iVBO, GLuint iIndex, GLint iNumberOfComponents, GLenum iComponentType)
-		{
-			vbo = iVBO;
-			index = iIndex;
-			nComponents = iNumberOfComponents;
-			componentType = iComponentType;
-		}
-	};
-
-	using PVAI = Vertex_Attribute_Information;
+	using PVAI = struct Vertex_Attribute_Information;
 
 	////////////////////////////////////MATH/////////////////////////////////////
 

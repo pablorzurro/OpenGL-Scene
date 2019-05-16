@@ -119,7 +119,6 @@ namespace prz
 
 	private:
 
-
 		PSPtr< Texture > allocate_texture(PSPtr< Texture > texture, const PString& texturePath, const PString& textureName)
 		{
 			textures_[texturePath] = texture;

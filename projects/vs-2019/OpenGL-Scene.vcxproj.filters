@@ -52,6 +52,9 @@
     <Filter Include="Source Files\Textures">
       <UniqueIdentifier>{b793d71f-cda2-41b2-b01e-271acc842f7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{88463db1-6e12-4c9f-afa2-95f5b352bf45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -146,12 +149,6 @@
     <ClInclude Include="..\..\code\headers\Camera.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Material.hpp">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Model.hpp">
-      <Filter>Header Files\Core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Texture_Cube.hpp">
       <Filter>Header Files\Textures</Filter>
     </ClInclude>
@@ -209,8 +206,17 @@
     <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp">
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Vertex_Attribute_Information.hpp">
+      <Filter>Header Files\Vertex_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Model.hpp">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\code\headers\Model_Loader.hpp">
-      <Filter>Header Files\Core</Filter>
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Material.hpp">
+      <Filter>Header Files\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -41,8 +41,9 @@ namespace prz
 		NO_INDICES_TYPE = GL_NONE
 	};
 
-	struct PVar
+	struct Var_GL
 	{
+
 		enum class Type
 		{
 			BYTE, UNSIGNED_BYTE, SHORT, UNSIGNED_SHORT, INT, UNSIGNED_INT, FLOAT, VECTOR2, VECTOR3, VECTOR4
@@ -65,7 +66,7 @@ namespace prz
 	struct Uniform
 	{
 		GLint index;
-		PVar   value;
+		Var_GL  value;
 	};
 
 

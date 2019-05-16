@@ -18,6 +18,10 @@ namespace prz
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
 	
+		
+		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
+		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
+
 		on_window_resized();
 	}
 

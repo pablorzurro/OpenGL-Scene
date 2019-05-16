@@ -41,7 +41,7 @@ namespace prz
 
 	public:
 
-		Uniform* allocate_uniform(const char* id, const PString& name, PVar::Type type);
+		Uniform* allocate_uniform(const char* id, const PString& name, Var_GL::Type type);
 
 	public:
 

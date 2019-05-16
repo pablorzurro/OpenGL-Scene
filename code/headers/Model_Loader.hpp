@@ -15,6 +15,7 @@
 #include <Model.hpp>
 #include <Mesh.hpp>
 #include <Vertex_Array_Object.hpp>
+#include <Vertex_Attribute_Information.hpp>
 
 #include <Declarations.hpp>
 
@@ -46,7 +47,7 @@ namespace prz
 
 			if (!assimpScene)
 			{
-				cout << "Error parsing " + meshPath + ": " + importer_.GetErrorString() << endl;
+				cout << "Error parsing model in path: \"" +  meshPath + "\" " + ": " + importer_.GetErrorString() << endl;
 				return PSPtr< Model >();
 			}
 
@@ -57,30 +58,51 @@ namespace prz
 			for (size_t i = 0; i < numMeshes; i++)
 			{
 				const aiMesh* assimpMesh = assimpScene->mMeshes[i];
+
 				unsigned int numVertices = assimpMesh->mNumVertices;
-
-				PBuffer< PVec3 > vertCoords(numVertices), vertNormals(numVertices), texCoords(numVertices);
-				PBuffer< PVec4 > vertColors(numVertices);
-
-				for (size_t i = 0; i < numVertices; i++)
-				{	
-					aiVector3D& vertexCoordinates = assimpMesh->mVertices[i];
-					vertCoords[i] = PVec3(vertexCoordinates.x, vertexCoordinates.y, vertexCoordinates.z);
-
-					aiVector3D& vertexNormals = assimpMesh->mNormals[i];
-					vertNormals[i] = PVec3(vertexNormals.x, vertexNormals.y, vertexNormals.z);
-
-					aiVector3D& vertexTextureCoordinates = assimpMesh->mNormals[i];
-					texCoords[i] = PVec3(vertexTextureCoordinates.x, vertexTextureCoordinates.y, vertexTextureCoordinates.z);
-
-					aiColor4D* vertexColor = assimpMesh->mColors[i];
-					vertColors[i] = PVec4(vertexColor->r, vertexColor->g, vertexColor->b, vertexColor->a);
-				}
-
 				unsigned int numFaces = assimpMesh->mNumFaces;
+
+				bool hasPositions = assimpMesh->HasPositions();
+				bool hasNormals = assimpMesh->HasNormals();
+				bool hasTextureCoords = assimpMesh->HasTextureCoords(0); // There are up to 8 vertex texture coordinates slots, only will be used the first here
+				bool hasColors = assimpMesh->HasVertexColors(0);	// There are up to 8 vertex colors slots, only will be used the first here
+
+				assert(hasPositions && hasNormals && numFaces > 0); // Check if there is any positions, normals and triangles in the mesh
+
+				PBuffer< PVec3 > verPositions(numVertices), vertNormals(numVertices), texCoords(numVertices);
+				PBuffer< PVec4 > vertColors(numVertices);
 
 				PBuffer< PUVec3 > triangleIndices(numFaces);
 
+				// Fill the positions, normals, texture coordinates and colors
+				for (size_t i = 0; i < numVertices; i++)
+				{	
+					if (hasPositions)
+					{
+						aiVector3D& vertexPositions = assimpMesh->mVertices[i];
+						verPositions[i] = PVec3(vertexPositions.x, vertexPositions.y, vertexPositions.z);
+					}
+					
+					if (hasNormals)
+					{
+						aiVector3D& vertexNormals = assimpMesh->mNormals[i];
+						vertNormals[i] = PVec3(vertexNormals.x, vertexNormals.y, vertexNormals.z);
+					}
+					
+					if (hasTextureCoords)
+					{
+						aiVector3D* vertexTextureCoordinates = assimpMesh->mTextureCoords[0];
+						texCoords[i] = PVec3(vertexTextureCoordinates[0].x, vertexTextureCoordinates[0].y, vertexTextureCoordinates[0].z);
+					}
+
+					if (hasColors)
+					{
+						aiColor4D* vertexColor = assimpMesh->mColors[0];
+						vertColors[i] = PVec4(vertexColor[0].r, vertexColor[0].g, vertexColor[0].b, vertexColor[0].a);
+					}
+				}
+
+				// Fill the indices
 				for (size_t i = 0; i < numFaces; i++)
 				{
 					aiFace& face = assimpMesh->mFaces[i];
@@ -89,17 +111,27 @@ namespace prz
 					triangleIndices[i] = PUVec3(face.mIndices[0], face.mIndices[1], face.mIndices[2]);
 				}
 
-				PSPtr< Mesh > mesh(std::make_shared< Mesh>(TRIANGLES, numVertices, UNSIGNED_INT));
+				// Create the vertex attributes
 
-				PInitList<PVAI> vertexAttributes = 
-				{ 
-					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertCoords.data(), numVertices)), 0, 3, GL_FLOAT),
-					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertNormals.data(), numVertices)), 1, 3, GL_FLOAT),
-					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(texCoords.data(), numVertices)), 2, 3, GL_FLOAT),
-					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertColors.data(), numVertices)), 3, 4, GL_FLOAT),
+				PList< PVAI > vertexAttributes =
+				{
+					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(verPositions.data(), numVertices)), 0),
+					PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertNormals.data(), numVertices)), 1)
 				};
 
-				mesh->set_vao(std::make_shared<PVAO>
+				if (hasTextureCoords)
+				{
+					vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(texCoords.data(), numVertices)), 2));
+				}
+
+				if (hasColors)
+				{
+					vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertColors.data(), numVertices)), 2 + (int)hasTextureCoords));
+				}
+
+				PSPtr< Mesh > mesh(std::make_shared< Mesh>(TRIANGLES, numVertices, UNSIGNED_INT));
+
+				mesh->set_vao(std::make_shared< PVAO >
 				(
 					vertexAttributes,
 					PSPtr< PVBO >(std::make_shared< PVBO >(triangleIndices.data(), numFaces))
@@ -108,7 +140,7 @@ namespace prz
 				model->add_piece(mesh);
 			}
 
-			cout << "Model with path: " + meshPath + " loaded. " + to_string(assimpScene->mNumMeshes) + " meshes detected" << endl;
+			cout << "Model with path: \"" + meshPath + "\" loaded. " + to_string(assimpScene->mNumMeshes) + " meshes detected" << endl;
 
 			return model;
 		}

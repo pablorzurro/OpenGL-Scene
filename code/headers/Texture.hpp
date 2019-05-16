@@ -125,7 +125,7 @@ namespace prz
 				}
 				else
 				{
-					cout << "Loaded image from path: " + imagePaths[i] << endl; // DEBUG
+					cout << "Loaded image from path: \"" + imagePaths[i]+ "\"" << endl; // DEBUG
 					images_.push_back(imgData);
 				}
 			}

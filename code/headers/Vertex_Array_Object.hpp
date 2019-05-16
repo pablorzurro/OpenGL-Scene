@@ -13,7 +13,6 @@
 #define OPENGL_SCENE_VERTEX_ARRAY_OBJECT_H_
 
 #include <Shader_Program.hpp>
-#include <Vertex_Buffer_Object.hpp>
 
 #include <Declarations.hpp>
 
@@ -28,7 +27,7 @@ namespace prz
 
 		Vertex_Array_Object
 		(
-			const PInitList< PVAI >& vertexAttribInfoList,
+			const PList< PVAI >& vertexAttribInfoList,
 			const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >()
 		);
 

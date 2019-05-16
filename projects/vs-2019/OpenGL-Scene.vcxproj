@@ -139,6 +139,7 @@
     <ClInclude Include="..\..\code\headers\Texture_Loader.hpp" />
     <ClInclude Include="..\..\code\headers\Transform.hpp" />
     <ClInclude Include="..\..\code\headers\Vertex_Array_Object.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Attribute_Information.hpp" />
     <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp" />
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
     <ClInclude Include="..\..\code\headers\Vertex_Shader.hpp" />

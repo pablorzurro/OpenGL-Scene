@@ -1,8 +1,10 @@
 #include <Vertex_Array_Object.hpp>
+#include <Vertex_Buffer_Object.hpp>
+#include <Vertex_Attribute_Information.hpp>
 
 namespace prz
 {
-	Vertex_Array_Object::Vertex_Array_Object(const PInitList< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices)
+	Vertex_Array_Object::Vertex_Array_Object(const PList< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices)
 	{
 		glGenVertexArrays(1, &vaoID_);
 
