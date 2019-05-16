@@ -62,7 +62,7 @@ namespace prz
 
 		void calculate_matrix()
 		{
-			matrix_ = projectionMatrix_ * viewMatrix_ * transform_.modelMatrix();
+			matrix_ = projectionMatrix_ * viewMatrix_ * transform_.scale_matrix();
 		}
 
 		void calculate_projection_matrix()

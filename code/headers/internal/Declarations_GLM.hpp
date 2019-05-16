@@ -17,6 +17,7 @@
 #include <gtc/type_ptr.hpp>                 // value_ptr
 #include <gtx/matrix_decompose.hpp>
 #include <gtx/string_cast.hpp>
+#include <gtx/quaternion.hpp>
 
 namespace prz
 {
@@ -37,6 +38,8 @@ namespace prz
 	using PQuat = glm::quat;
 
 	static const PMat4 PMatIdentity = PMat4(1.f); //PMat4 deprecated, is an all zeros matrix
+	static const PQuat PQuatIdentity = glm::quat_identity<float, glm::qualifier::highp>();
+
 } // !namespace prz
 
 #endif // !OPENGL_SCENE_DECLARATIONS_GLM_H_

@@ -14,7 +14,7 @@ namespace prz
 
 		if (textureName == "no_input_name")
 		{
-			finalName = split_file_name(texturePath, "/");
+			finalName = split_string_by_separator(texturePath, "/");
 		}
 
 		PBuffer<PString> texturePathToBuffer{ texturePath };
@@ -33,10 +33,10 @@ namespace prz
 			return textures_[textureRootPath];
 		}
 
-		PString rootName = split_file_name(textureRootPath, "/");
+		PString rootName = split_string_by_separator(textureRootPath, "/");
 		PString path = textureRootPath;
 		path.replace(path.find(rootName), rootName.length(), "");
-		PString fileExtension = "." + split_file_name(rootName, ".");
+		PString fileExtension = "." + split_string_by_separator(rootName, ".");
 
 		PString finalName = textureName;
 		if (textureName == "no_input_name")

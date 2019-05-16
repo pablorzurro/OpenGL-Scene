@@ -114,6 +114,9 @@
     <ClCompile Include="..\..\code\sources\Camera.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Plane.cpp">
+      <Filter>Source Files\Meshes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -185,9 +188,6 @@
     <ClInclude Include="..\..\code\headers\Drawable.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Source_Code.hpp">
-      <Filter>Header Files\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp">
       <Filter>Header Files\Shaders</Filter>
     </ClInclude>
@@ -217,6 +217,12 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Material.hpp">
       <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Shader_Loader.hpp">
+      <Filter>Header Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Source_Code.hpp">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

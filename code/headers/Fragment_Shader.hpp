@@ -21,8 +21,8 @@ namespace prz
 	{
 	public:
 
-		Fragment_Shader(const Source_Code& sourceCode):
-			Shader(sourceCode, GL_VERTEX_SHADER)
+		Fragment_Shader(const Source_Code& sourceCode, const PString& name):
+			Shader(sourceCode, name, FRAGMENT_SHADER)
 		{}
 
 	};

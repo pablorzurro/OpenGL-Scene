@@ -30,7 +30,11 @@ namespace prz
 	class Model_Loader
 	{
 	public:
-
+		/**
+		 * @brief Get an static instance object of this class
+		 *
+		 * @return Model_Loader&
+		 */
 		static Model_Loader& instance()
 		{
 			static Model_Loader instance;

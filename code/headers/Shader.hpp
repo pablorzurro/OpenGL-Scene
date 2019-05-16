@@ -22,6 +22,18 @@ namespace prz
 	{
 	public:
 
+		enum Type
+		{
+			//COMPUTE_SHADER = GL_COMPUTE_SHADER, // 4.3 or higher
+			VERTEX_SHADER = GL_VERTEX_SHADER, 
+			//TESS_CONTROL_SHADER = GL_TESS_CONTROL_SHADER, // unknown version
+			//TESS_EVALUATION = GL_TESS_EVALUATION_SHADER, // unknown version
+			GEOMETRY_SHADER = GL_GEOMETRY_SHADER,
+			FRAGMENT_SHADER = GL_FRAGMENT_SHADER
+		};
+
+	public:
+
 		bool is_compiled() const
 		{
 			return (shaderObjID_ != 0);
@@ -37,6 +49,10 @@ namespace prz
 			return (logStr_);
 		}
 
+		const PString& path() const { return path_; };
+		Type type() const { return type_; };
+		const PString& name() const { return name_; }
+
 	public:
 
 		operator GLuint () const
@@ -46,25 +62,26 @@ namespace prz
 
 	protected:
 
-		Shader(const Source_Code& sourceCode, GLenum shaderType);
-
+		Shader(const Source_Code& sourceCode, const PString& name, Type shaderType);
 		~Shader();
 
 	protected:
 
-		void on_delete()
-		{
-
-		}
-
-	private:
-
 		Shader(const Shader& other);
 
-	private:
+	protected:
 
 		GLuint shaderObjID_;
+		Type type_;
+
+	protected:
+
 		PString logStr_;
+		
+	protected:
+
+		PString path_;
+		PString name_;
 
 	};
 

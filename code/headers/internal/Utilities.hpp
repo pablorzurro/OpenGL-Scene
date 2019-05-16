@@ -35,7 +35,7 @@ namespace prz
 		return radians * RAD_TO_DEG;
 	}
 
-	static PString split_file_name(const PString& str, const char * separator)
+	static PString split_string_by_separator(const PString& str, const char * separator)
 	{
 		return str.substr(str.find_last_of(separator) + 1);
 	}
@@ -75,8 +75,6 @@ namespace prz
 
 		return str;
 	}
-
-
 
 	///////////////////////////////////GLM///////////////////////////////////////
 
@@ -122,22 +120,31 @@ namespace prz
 	inline PQuat get_quaternion_from(const PVec3& vector3f, bool inRadians = false, bool normalize = true)
 	{
 		PVec3 v = vector3f;
+		PQuat pitch = PQuatIdentity;
+		PQuat yaw = PQuatIdentity;
+		PQuat roll = PQuatIdentity;
 
-		if (!inRadians)
+		bool isModuleZero = (v.x + v.y + v.z) == 0.f;
+
+		if (!isModuleZero)
 		{
-			v = glm::radians(v);
+			if (!inRadians)
+			{
+				v = glm::radians(v);
+			}
+
+			if (normalize)
+			{
+				v = glm::normalize(v);
+			}
+
+			/*	if()*/
+			pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
+			yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
+			roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
 		}
 
-		if (normalize)
-		{
-			v = glm::normalize(v);
-		}
-	
-		PQuat pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
-		PQuat yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
-		PQuat roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
-
-		return pitch * yaw * roll;
+		return pitch * yaw* roll;
 	}
 }
 

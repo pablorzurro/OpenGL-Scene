@@ -9,18 +9,18 @@
 namespace prz
 {
 
-	Scene::Scene(Window& window)
-		:
+	Scene::Scene(Window& window) :
 		window_(window),
 		activeCamera_(*this),
 		skybox(Texture_Loader::instance().load_cube_map(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga"))
 	{
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
-	
-		
-		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
-		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
+
+		PSPtr < Entity> entityP(new Entity(*this));
+
+		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx", entityP);
+		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj", entityP);
 
 		on_window_resized();
 	}

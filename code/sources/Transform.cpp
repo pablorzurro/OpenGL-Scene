@@ -6,22 +6,21 @@
 
 namespace prz
 {
-	Transform::Transform(Entity& owner, Transform* parent):
+	Transform::Transform(Entity& owner, Transform* parent, bool updateModelMatrixAlways):
 		owner_(owner),
 		modelMatrix_(PMatIdentity),
 		worldMatrix_(modelMatrix_),
-		translation_(PVec3(0.f, 0.f, 0.f)),
+		translation_(PVec3(5.f, 100.f, 200.f)),
+		rotation_(PQuatIdentity),
 		scale_(PVec3(1.f, 1.f, 1.f)),
 		isVisible_(true),
 		parent_(parent),
 		renderer_(nullptr),
+		isModelMatrixUpdated_(false),
 		isWorldMatrixUpdated_(false),
-		isOwnerACamera_(static_cast<Camera*>(&owner_))
+		updateModelMatrixAlways_(updateModelMatrixAlways)
 	{
-		set_translation(PVec3(0.f, 0.f, 0.f));
-		set_rotation(PVec3(0.f, 0.f, 0.f));
-		set_scale(PVec3(1.f, 1.f, 1.f));
-		worldMatrix(); // initialize the world matrix
+		update_model_matrix(false);
 	}
 
 	Transform::Transform(Entity& owner, Transform& other):
@@ -34,24 +33,10 @@ namespace prz
 		translation_(other.translation_),
 		rotation_(other.rotation_),
 		scale_(other.scale_),
+		isModelMatrixUpdated_(other.isModelMatrixUpdated_),
 		isWorldMatrixUpdated_(other.isWorldMatrixUpdated_),
-		isOwnerACamera_(other.isOwnerACamera_)
+		updateModelMatrixAlways_(other.updateModelMatrixAlways_)
 	{}
-
-	void Transform::update_model_matrix()
-	{
-		if (!isOwnerACamera_)
-		{
-			modelMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix(); // Original model matrix
-		}	
-		else
-		{
-			modelMatrix_ = scale_matrix();
-		}
-
-		owner_.on_local_matrix_update();
-		isWorldMatrixUpdated_ = false;
-	}
 
 	void Transform::translate(const PVec3& translation)
 	{
@@ -81,6 +66,7 @@ namespace prz
 	void Transform::rotate(const PQuat& rotation)
 	{
 		rotation_ *= rotation;
+		isModelMatrixUpdated_ = false; 
 		update_model_matrix();
 	}
 
@@ -147,12 +133,14 @@ namespace prz
 	void Transform::set_translation(const PVec3& newTranslation)
 	{
 		translation_ = newTranslation;
+		isModelMatrixUpdated_ = false; 
 		update_model_matrix();
 	}
 
 	void Transform::set_rotation(const PQuat& newRotation)
 	{
 		rotation_ = newRotation;
+		isModelMatrixUpdated_ = false; 
 		update_model_matrix();
 	}
 
@@ -164,6 +152,7 @@ namespace prz
 	void Transform::set_scale(const PVec3& newScale)
 	{
 		scale_ = newScale;
+		isModelMatrixUpdated_ = false; 
 		update_model_matrix();
 	}
 
@@ -174,6 +163,7 @@ namespace prz
 
 	const PMat4& Transform::modelMatrix()
 	{
+		update_model_matrix(true);
 		return modelMatrix_;
 	}
 
@@ -184,15 +174,11 @@ namespace prz
 
 	const PMat4& Transform::worldMatrix()
 	{
-		if (!isWorldMatrixUpdated_)
+		worldMatrix_ = modelMatrix(); // In camera case this will be the view matrix and will be applied to all children
+
+		if (!isWorldMatrixUpdated_ && parent_)
 		{
-			worldMatrix_ = modelMatrix_; // In camera case this will be the view matrix and will be applied to all children
-
-			if (parent_)
-			{
-				worldMatrix_ = parent_->worldMatrix() * worldMatrix_; // Calling the parent hierarchy to obtain the total transformation
-			}
-
+			worldMatrix_ = parent_->worldMatrix() * worldMatrix_; // Calling the parent hierarchy to obtain the total transformation
 			isWorldMatrixUpdated_ = true;
 		}
 		
@@ -251,7 +237,6 @@ namespace prz
 		return vec;
 	}
 		
-
 	PMat4 Transform::rotation_matrix() const
 	{
 		return glm::toMat4(rotation_);
@@ -270,5 +255,18 @@ namespace prz
 	bool Transform::isVisible()
 	{
 		return isVisible_;
+	}
+
+	void Transform::update_model_matrix(bool necessaryUpdate)
+	{
+		if ((!isModelMatrixUpdated_ && necessaryUpdate) || updateModelMatrixAlways_)
+		{
+			modelMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix();
+
+			isModelMatrixUpdated_ = true;
+			isWorldMatrixUpdated_ = false;
+
+			owner_.on_local_matrix_update();
+		}
 	}
 }

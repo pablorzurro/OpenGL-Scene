@@ -26,9 +26,9 @@ namespace prz
 							0
 						);
 
-					} glDisableVertexAttribArray(vai.index);
+					}/* glDisableVertexAttribArray(vai.index);*/
 
-				} vai.vbo->unbind();
+				} /*vai.vbo->unbind();*/
 				
 				vbos_.push_back(vai.vbo);
 			}
@@ -37,7 +37,7 @@ namespace prz
 			{
 				vboIndices->bind();
 				{
-				} vboIndices->unbind();
+				} /*vboIndices->unbind();*/
 			}
 
 			vbos_.push_back(vboIndices);

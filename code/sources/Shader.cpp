@@ -3,37 +3,33 @@
 
 namespace prz
 {
-	Shader::Shader(const Source_Code& sourceCode, GLenum shaderType)
-		:
-		shaderObjID_(0)
+	Shader::Shader(const Source_Code& sourceCode, const PString& name, Type type) :
+		shaderObjID_(0),
+		name_(name),
+		type_(type)
 	{
 		if (sourceCode.is_not_empty())
 		{
-			// Se crea el shader object:
+			// Create the shader object
+			shaderObjID_ = glCreateShader(type);
 
-			shaderObjID_ = glCreateShader(shaderType);
-
-			// Se carga el código del shader:
-
+			// Load the source code of the shader
 			const char* shaderCodes[] = { sourceCode };
-			const GLint  shaderCodeSizes[] = { (GLint)sourceCode.size() };
+			const GLint shaderCodeSizes[] = { (GLint)sourceCode.size() };
 
 			glShaderSource(shaderObjID_, 1, shaderCodes, shaderCodeSizes);
 
-			// Se compila el shader:
-
+			// Compile the shader
 			glCompileShader(shaderObjID_);
 
-			// Se comprueba si la compilación ha tenido éxito:
-
+			// Check if the compilation has succeeded
 			GLint succeeded = 0;
 
 			glGetShaderiv(shaderObjID_, GL_COMPILE_STATUS, &succeeded);
 
 			if (!succeeded)
 			{
-				// Se guarda el log del error que ha ocurrido:
-
+				// Save an state log of what happens
 				GLint logLength;
 
 				glGetShaderiv(shaderObjID_, GL_INFO_LOG_LENGTH, &logLength);
@@ -45,23 +41,22 @@ namespace prz
 					glGetShaderInfoLog(shaderObjID_, logLength, NULL, &logStr_.front());
 				}
 
-				// Se libera el shader object, ya que ahora es un recurso encapsulado no usable:
-
+				// Free the shader object that has been not compiled
 				glDeleteShader(shaderObjID_);
-
 				shaderObjID_ = 0;
-
+				cout << "Shader loading failed, source code path: \"" + sourceCode.path() + "\"   Error: " + logStr_ ;
 				assert(false);
 			}
 		}
 		else
-			assert(false);
+		{
+			cout << "Shader loading failed, source code from path: \"" + sourceCode.path() + "\" was empty";
+		}	
 	}
 
 	Shader::~Shader()
 	{
-		// Borrar un shader cuando se ha añadido a un shader program no tiene efectos adversos:
-
+		// Deleting a shader after add it to a shader program has no bad effects
 		glDeleteShader(shaderObjID_);
 
 		shaderObjID_ = 0;

@@ -13,6 +13,7 @@
 #define OPENGL_SCENE_SOURCE_CODE_H_
 
 #include <Declarations.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -20,16 +21,19 @@ namespace prz
 	{
 	public:
 
-		Source_Code(const PString& sourceCodeStr)
+		Source_Code(const PString& path)
 			:
-			sourceCodeStr_(sourceCodeStr)
+			sourceCodeStr_(load_file_as_string(path)),
+			path_(path)
 		{}
 
 	public:
 
 		size_t size() const { return (sourceCodeStr_.size()); }
 		bool is_empty() const { return (sourceCodeStr_.empty()); }
-		bool is_not_empty() const { return (!sourceCodeStr_.empty()); }
+		bool is_not_empty() const { return (!sourceCodeStr_.empty()); } 
+
+		const PString& path() const { return path_; }; 
 
 	public:
 
@@ -43,12 +47,19 @@ namespace prz
 			return (sourceCodeStr_.c_str());
 		}
 
+	public:
+
+		const PString& to_string()
+		{
+			return sourceCodeStr_;
+		}
+
 	private:
 
 		PString sourceCodeStr_;
+		PString path_;
 	};
-}
+
+} // !namespace prz
+
 #endif // !OPENGL_SCENE_SOURCE_CODE_H_
-
-
-

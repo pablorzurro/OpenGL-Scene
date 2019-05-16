@@ -15,6 +15,6 @@ namespace prz
 			error_ = glGetError();
 			assert(error_ == GL_NO_ERROR);
 
-		} unbind();
+		}/* unbind();*/
 	}
 }

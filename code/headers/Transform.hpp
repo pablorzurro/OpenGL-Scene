@@ -25,12 +25,8 @@ namespace prz
 	public:
 
 		Transform() = delete;
-		Transform(Entity& owner, Transform* parent = nullptr);
+		Transform(Entity& owner, Transform* parent = nullptr, bool updateModelMatrixAlways = false);
 		Transform(Entity& owner, Transform& other);
-
-	public:
-
-		void update_model_matrix();
 
 	public:
 
@@ -122,6 +118,10 @@ namespace prz
 
 	protected:
 
+		void update_model_matrix(bool necessaryUpdate = false);
+
+	protected:
+
 		PMat4 modelMatrix_;
 		PMat4 worldMatrix_;
 
@@ -146,8 +146,9 @@ namespace prz
 
 	protected:
 
+		bool isModelMatrixUpdated_;
 		bool isWorldMatrixUpdated_;
-		bool isOwnerACamera_;
+		bool updateModelMatrixAlways_;
 	};
 
 } // !namespace prz 

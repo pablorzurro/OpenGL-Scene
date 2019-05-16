@@ -49,7 +49,7 @@ namespace prz
 
 		void initialize(Entity* owner = nullptr)
 		{
-			if (owner_ != owner && owner && !owner)
+			if (owner_ != owner && owner && !owner_)
 			{
 				owner_ = owner;
 			}

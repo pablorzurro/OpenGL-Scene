@@ -1,12 +1,12 @@
 /**
  * @file Vertex_Shader.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 11-05-2019
- * 
+ *
  * @copyright Copyright (c) 2019
- * 
+ *
  */
 
 #ifndef OPENGL_SCENE_VERTEX_SHADER_H_
@@ -21,8 +21,8 @@ namespace prz
 	{
 	public:
 
-		Vertex_Shader(const Source_Code& sourceCode):
-			Shader(sourceCode, GL_VERTEX_SHADER)
+		Vertex_Shader(const Source_Code& sourceCode, const PString& name) :
+			Shader(sourceCode, name, VERTEX_SHADER)
 		{}
 
 	};

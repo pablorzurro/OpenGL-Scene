@@ -125,12 +125,12 @@ namespace prz
 
 			switch (uniform.value.type)
 			{
-			case Var_GL::Type::INT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_int); break;
-			case Var_GL::Type::UNSIGNED_INT:   shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_uint); break;
+			case Var_GL::Type::INT:				shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_int); break;
+			case Var_GL::Type::UNSIGNED_INT:	shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_uint); break;
 			case Var_GL::Type::FLOAT:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_float); break;
-			case Var_GL::Type::VECTOR2:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec2); break;
-			case Var_GL::Type::VECTOR3:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec3); break;
-			case Var_GL::Type::VECTOR4:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec4); break;
+			case Var_GL::Type::VECTOR2:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec2); break;
+			case Var_GL::Type::VECTOR3:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec3); break;
+			case Var_GL::Type::VECTOR4:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec4); break;
 			default:
 				assert(false);
 			}

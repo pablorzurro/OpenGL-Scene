@@ -4,7 +4,7 @@ namespace prz
 {
 	Camera::Camera(Scene& scene, float fov, float zNear, float zFar, float aspectRatio)
 		:
-		Entity(scene, nullptr),
+		Entity(scene, nullptr, true),
 		fov_(fov),
 		zNear_(zNear),
 		zFar_(zFar),

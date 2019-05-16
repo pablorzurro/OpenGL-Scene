@@ -19,7 +19,31 @@ namespace prz
 
 	class Plane : public Mesh
 	{
+	public:
 
+		enum VBO_ORDER
+		{
+			COORDINATES,
+			NORMALS,
+			TEXTURE_UVS,
+			INDICES,
+			SIZE
+		};
+
+	public:
+
+		Plane()
+			: Mesh(Primitive_Mode::TRIANGLES, 12, UNSIGNED_BYTE)
+		{
+			//set_vao()
+		}
+
+	private:
+
+		static const GLfloat coordinates_[];
+		static const GLfloat normals_[];
+		static const GLfloat textureUVs_[];
+		static const GLubyte indices_[];
 	};
 
 } // !namespace prz 

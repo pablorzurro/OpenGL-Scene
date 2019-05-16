@@ -30,7 +30,7 @@ namespace prz
 		/**
 		 * @brief Get an static instance object of this class
 		 *
-		 * @return InputManager&
+		 * @return Texture_Loader&
 		 */
 		static Texture_Loader& instance()
 		{

@@ -27,7 +27,7 @@ namespace prz
 		{
 			COORDINATES,
 			NORMALS,
-			COLORS,
+			TEXTURE_UVS,
 			INDICES,
 			SIZE
 		};
