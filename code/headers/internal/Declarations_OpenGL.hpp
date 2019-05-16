@@ -68,6 +68,7 @@ namespace prz
 		PVar   value;
 	};
 
+
 } // !namespace prz
 
 #endif // !OPENGL_SCENE_DECLARATIONS_OPENGL_H_

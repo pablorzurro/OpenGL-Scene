@@ -26,21 +26,9 @@ namespace prz
 	{
 	public:
 
-		struct Vertex_Attribute_Information
-		{
-			PSPtr< PVBO > vbo;
-			GLuint index;
-			GLint  nComponents;
-			GLenum componentType;
-		};
-
-		using PVAI = Vertex_Attribute_Information;
-
-	public:
-
 		Vertex_Array_Object
 		(
-			const std::initializer_list< PVAI >& vertexAttribInfoList,
+			const PInitList< PVAI >& vertexAttribInfoList,
 			const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >()
 		);
 

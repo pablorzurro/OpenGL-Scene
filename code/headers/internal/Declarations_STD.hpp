@@ -40,6 +40,9 @@ namespace prz
 	template<typename T>
 	using PList = std::list<T>;
 
+	template<typename T>
+	using PInitList = std::initializer_list<T>;
+
 	using PString = std::string;
 
 	typedef std::chrono::high_resolution_clock HighClock;
