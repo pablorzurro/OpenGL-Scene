@@ -17,8 +17,7 @@ namespace prz
 
 		if (!linkSucceeded)
 		{
-			// Se guarda el log del error que ha ocurrido:
-
+			// Register the events in the log
 			GLint logLength;
 
 			glGetShaderiv(programObjID_, GL_INFO_LOG_LENGTH, &logLength);

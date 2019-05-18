@@ -13,6 +13,7 @@
 #define OPENGL_SCENE_CAMERA_H_
 
 #include <Entity.hpp>
+#include <Input_Manager.hpp>
 
 #include <Declarations.hpp>
 #include <Utilities.hpp>
@@ -29,6 +30,10 @@ namespace prz
 
 		Camera(Scene& scene, float ratio = 1.f): Camera(scene, 60.f, 0.1f, 100.f, ratio){}
 		Camera(Scene& scene, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, 60.f, zNear, zFar, aspectRatio){}
+		
+	public:
+
+		void update(float deltaTime) override;
 		
 	public:
 
@@ -49,6 +54,7 @@ namespace prz
 
 		const PMat4& matrix() const { return matrix_; }
 		const PMat4& viewMatrix() const { return viewMatrix_; }
+		const PMat4& modelMatrix() const { return modelMatrix_; }
 		const PMat4& projectionMatrix() const { return projectionMatrix_; }
 
 	public:
@@ -81,6 +87,7 @@ namespace prz
 	private:
 
 		PMat4 projectionMatrix_;
+		PMat4 modelMatrix_;
 		PMat4 viewMatrix_;
 		PMat4 matrix_;
 	};

@@ -11,6 +11,7 @@ namespace prz
 
 	Scene::Scene(Window& window) :
 		window_(window),
+		renderer(*this),
 		activeCamera_(*this),
 		skybox(Texture_Loader::instance().load_cube_map(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga"))
 	{

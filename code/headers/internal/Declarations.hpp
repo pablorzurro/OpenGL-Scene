@@ -26,6 +26,9 @@ namespace prz
 	using PVAO = Vertex_Array_Object;
 	using PVAI = struct Vertex_Attribute_Information;
 
+	const float mouseSensitivityX = 0.0020f;
+	const float mouseSensitivityY = 0.0020f;
+
 	////////////////////////////////////MATH/////////////////////////////////////
 
 	constexpr float PI			= 3.14159f;

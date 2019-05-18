@@ -29,7 +29,8 @@ namespace prz
 			//TESS_CONTROL_SHADER = GL_TESS_CONTROL_SHADER, // unknown version
 			//TESS_EVALUATION = GL_TESS_EVALUATION_SHADER, // unknown version
 			GEOMETRY_SHADER = GL_GEOMETRY_SHADER,
-			FRAGMENT_SHADER = GL_FRAGMENT_SHADER
+			FRAGMENT_SHADER = GL_FRAGMENT_SHADER,
+			SIZE
 		};
 
 	public:
@@ -64,10 +65,6 @@ namespace prz
 
 		Shader(const Source_Code& sourceCode, const PString& name, Type shaderType);
 		~Shader();
-
-	protected:
-
-		Shader(const Shader& other);
 
 	protected:
 

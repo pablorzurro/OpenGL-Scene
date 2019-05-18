@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef OPENGL_SCENE_VERTEX_SHADER_H_
-#define OPENGL_SCENE_VERTEX_SHADER_H_
+#ifndef OPENGL_SCENE_FRAGMENT_SHADER_H_
+#define OPENGL_SCENE_FRAGMENT_SHADER_H_
 
 #include <Shader.hpp>
 
@@ -29,4 +29,4 @@ namespace prz
 
 } // !namespace prz
 
-#endif // !OPENGL_SCENE_VERTEX_SHADER_H_
+#endif // !OPENGL_SCENE_FRAGMENT_SHADER_H_

@@ -26,9 +26,7 @@ namespace prz
 	public:
 
 		Skybox(const PString& textureRootPath, const PString& textureName);
-
 		Skybox(PSPtr< Texture > cubeMap);
-
 		Skybox(Texture_Cube* cubeMap)
 		{
 			assert(cubeMap);
@@ -37,10 +35,6 @@ namespace prz
 
 		~Skybox()
 		{}
-	
-	public:
-
-	protected:
 
 	private:
 

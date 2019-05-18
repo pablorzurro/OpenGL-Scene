@@ -72,11 +72,11 @@ namespace prz
 
 			case Event::MouseMoved:
 
-				prevMouseX = curMouseX;
-				prevMouseY = curMouseY;
+				prevMouseX_ = curMouseX_;
+				prevMouseY_ = curMouseY_;
 
-				curMouseX = event.mouseMove.x;
-				curMouseY = event.mouseMove.y;
+				curMouseX_ = event.mouseMove.x;
+				curMouseY_ = event.mouseMove.y;
 
 				break;
 			}
@@ -101,6 +101,40 @@ namespace prz
 			return isMousePressed_;
 		}
 
+	public:
+		
+		PVec2 current_mouse_position()
+		{
+			return PVec2(curMouseX_, curMouseY_);
+		}
+
+		PVec2 previous_mouse_position()
+		{
+			return PVec2(prevMouseX_, prevMouseY_);
+		}
+
+	public:
+
+		const float& curMouseX()
+		{
+			return curMouseX_;
+		}
+
+		const float& curMouseY()
+		{
+			return curMouseY_;
+		}
+
+		const float& prevMouseX()
+		{
+			return prevMouseX_;
+		}
+
+		const float& prevMouseY()
+		{
+			return prevMouseY_;
+		}
+
 	private:
 
 		/**
@@ -110,15 +144,15 @@ namespace prz
 		Input_Manager():
 			isMousePressed_(false)
 		{
-			curMouseX = prevMouseX = curMouseY = prevMouseY = 0;
+			curMouseX_ = prevMouseX_ = curMouseY_ = prevMouseY_ = 0;
 		}
 
 	private:
 
 		PMap< PKey, bool > keysPressed_;
 
-		unsigned int  curMouseX, prevMouseX;
-		unsigned int  curMouseY, prevMouseY;
+		unsigned int  curMouseX_, prevMouseX_;
+		unsigned int  curMouseY_, prevMouseY_;
 
 	private: 
 

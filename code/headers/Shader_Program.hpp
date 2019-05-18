@@ -23,12 +23,11 @@ namespace prz
 	{
 	public:
 
-		Shader_Program()
+		Shader_Program() :
+			instanceID_(instanceCount_++),
+			programObjID_(glCreateProgram()),
+			islinkSuccessful_(false)
 		{
-			instanceID_ = instanceCount_++;
-			programObjID_ = glCreateProgram();
-			islinkSuccessful_ = false;
-
 			assert(programObjID_ != 0);
 		}
 
@@ -123,7 +122,7 @@ namespace prz
 		{
 			assert(is_usable());
 
-			GLint   attributeID = glGetAttribLocation(programObjID_, id);
+			GLint attributeID = glGetAttribLocation(programObjID_, id);
 
 			assert(attributeID != -1);
 

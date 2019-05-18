@@ -25,7 +25,7 @@ namespace prz
 	public:
 
 		Transform() = delete;
-		Transform(Entity& owner, Transform* parent = nullptr, bool updateModelMatrixAlways = false);
+		Transform(Entity& owner, Transform* parent = nullptr, bool isWorldMatrixInversed_ = false, bool updateModelMatrixAlways = false);
 		Transform(Entity& owner, Transform& other);
 
 	public:
@@ -73,8 +73,8 @@ namespace prz
 	public:
 
 		void set_translation(const PVec3& newTranslation);
-		void set_rotation(const PQuat& newRotation);
-		void set_rotation(const PVec3& newRotation, bool inRadians = false);
+		void set_orientation(const PQuat& newOrientation);
+		void set_orientation(const PVec3& newOrientation, bool inRadians = false);
 		void set_scale(const PVec3& newScale);
 
 	public:
@@ -105,7 +105,7 @@ namespace prz
 		const PVec3& translation() const;
 		PMat4 translation_matrix() const;
 
-		const PQuat& rotation() const;
+		const PQuat& orientation() const;
 		PVec3 euler_rotation(bool inDegrees = true) const;
 		PMat4 rotation_matrix() const;
 
@@ -119,6 +119,7 @@ namespace prz
 	protected:
 
 		void update_model_matrix(bool necessaryUpdate = false);
+		void update_world_matrix();
 
 	protected:
 
@@ -137,7 +138,7 @@ namespace prz
 	protected:
 
 		PVec3 translation_;
-		PQuat rotation_;
+		PQuat orientation_;
 		PVec3 scale_;
 
 	protected:
@@ -148,6 +149,7 @@ namespace prz
 
 		bool isModelMatrixUpdated_;
 		bool isWorldMatrixUpdated_;
+		bool isWorldMatrixInversed_;
 		bool updateModelMatrixAlways_;
 	};
 

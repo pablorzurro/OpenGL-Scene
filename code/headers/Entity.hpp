@@ -24,8 +24,8 @@ namespace prz
 	{
 	public:
 
-		Entity(Scene& scene, Transform* parent = nullptr, bool updateModelMatrixAlways = false):
-			transform_(*this, parent, updateModelMatrixAlways),
+		Entity(Scene& scene, Transform* parent = nullptr, bool modelIsViewMatrix = false, bool updateModelMatrixAlways = false):
+			transform_(*this, parent, modelIsViewMatrix, updateModelMatrixAlways),
 			sceneParent_(scene)
 		{}
 

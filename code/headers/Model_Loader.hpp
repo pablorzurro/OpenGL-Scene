@@ -130,7 +130,7 @@ namespace prz
 
 				if (hasColors)
 				{
-					vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertColors.data(), numVertices)), 2 + (int)hasTextureCoords));
+					vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertColors.data(), numVertices)), 3));
 				}
 
 				PSPtr< Mesh > mesh(std::make_shared< Mesh>(TRIANGLES, numVertices, UNSIGNED_INT));

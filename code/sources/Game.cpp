@@ -25,6 +25,7 @@ namespace prz
 		scene_.reset(new Scene(window_));
 		curTime = prevTime = HighClock::now();
 	}
+
 	void Game::run()
 	{
 		{

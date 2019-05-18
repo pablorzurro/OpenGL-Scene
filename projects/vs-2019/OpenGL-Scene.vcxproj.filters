@@ -215,14 +215,14 @@
     <ClInclude Include="..\..\code\headers\Model_Loader.hpp">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Material.hpp">
-      <Filter>Header Files\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Shader_Loader.hpp">
       <Filter>Header Files\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Source_Code.hpp">
       <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Material.hpp">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
