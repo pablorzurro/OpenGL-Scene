@@ -83,10 +83,10 @@ namespace prz
 		
 	public:
 
-		const PMat4& modelMatrix();
+		PMat4 modelMatrix();
 		PMat4 inverse_modelMatrix();
 		
-		const PMat4& worldMatrix();
+		PMat4 worldMatrix();
 		PMat4 inverse_worldMatrix();
 
 		PMat4 viewMatrix();

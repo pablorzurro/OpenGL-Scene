@@ -14,6 +14,8 @@
 
 #include <Transform.hpp>
 #include <Model.hpp>
+#include <Material.hpp>
+#include <Model_Loader.hpp>
 
 namespace prz
 {
@@ -24,18 +26,39 @@ namespace prz
 	{
 	public:
 
-		Entity(Scene& scene, Transform* parent = nullptr, bool modelIsViewMatrix = false, bool updateModelMatrixAlways = false):
+		Entity(Scene& scene, const PString& name, Transform* parent = nullptr, bool modelIsViewMatrix = false, bool updateModelMatrixAlways = false) :
 			transform_(*this, parent, modelIsViewMatrix, updateModelMatrixAlways),
-			sceneParent_(scene)
+			sceneParent_(scene),
+			name_(name)
 		{}
 
-		~Entity()
-		{}
+		~Entity(){}
 
 	public:
 
 		virtual void update(float deltaTime) {}
 		virtual void render(){}
+
+
+	public:
+
+		void add_model(const PString& path, PSPtr< Material > material = Material::default_material())
+		{
+			add_model(Model_Loader::instance().load_model(path, material));
+		}
+
+		void add_model(PSPtr< Model > model)
+		{
+			if (!exists_model(model))
+			{
+				model->initialize(this);
+
+				if (model->is_ok())
+				{
+					models_[model->name()] = model;
+				}
+			}
+		}
 
 	public:
 
@@ -46,15 +69,39 @@ namespace prz
 
 	public:
 
-		Transform& transform()
+		bool exists_model_with_name(const PString& name)
 		{
-			return transform_;
+			return models_.find(name) != models_.end();
 		}
 
-		Scene& scene()
+		bool exists_model(PSPtr< Model > model)
 		{
-			return sceneParent_; 
+			if (model)
+			{
+				return exists_model_with_name(model->name());
+			}
+
+			return false;
 		}
+
+	public:
+
+		PSPtr< Model > get_model(const PString& name)
+		{
+			if (exists_model_with_name(name))
+			{
+				return models_[name];
+			}
+
+			return PSPtr< Model>();
+		}
+
+	public:
+
+		Transform& transform() { return transform_; }
+		Scene& scene() { return sceneParent_; }
+		PMap< PString, PSPtr< Model > >& models() { return models_; }
+		const PString& name() const { return name_; }
 
 	public:
 
@@ -66,11 +113,15 @@ namespace prz
 	
 	protected:
 
-		PBuffer< PSPtr< Model > > models_;
+		PMap< PString,  PSPtr< Model > > models_;
 
 	protected:
 
 		Scene& sceneParent_;
+
+	protected:
+
+		PString name_;
 	};
 
 } // !namespace prz 

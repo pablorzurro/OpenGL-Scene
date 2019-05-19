@@ -10,7 +10,7 @@ namespace prz
 		owner_(owner),
 		modelMatrix_(PMatIdentity),
 		worldMatrix_(modelMatrix_),
-		translation_(PVec3(5.f, 100.f, 200.f)),
+		translation_(PVec3(0.f, 0.f, 0.f)),
 		orientation_(PQuatIdentity),
 		scale_(PVec3(1.f, 1.f, 1.f)),
 		isVisible_(true),
@@ -128,7 +128,7 @@ namespace prz
 
 	void Transform::set_renderer(Renderer* renderer)
 	{
-		assert(renderer == nullptr);
+		assert(renderer);
 		renderer_ = renderer;
 	}
 
@@ -163,7 +163,7 @@ namespace prz
 		isVisible_ = visibility;
 	}
 
-	const PMat4& Transform::modelMatrix()
+	PMat4 Transform::modelMatrix()
 	{
 		update_model_matrix(true);
 		return modelMatrix_;
@@ -175,7 +175,7 @@ namespace prz
 		return glm::inverse(modelMatrix_);
 	}
 
-	const PMat4& Transform::worldMatrix()
+	PMat4 Transform::worldMatrix()
 	{
 		update_world_matrix();
 

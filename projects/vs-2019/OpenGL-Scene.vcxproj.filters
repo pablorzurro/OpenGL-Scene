@@ -55,6 +55,9 @@
     <Filter Include="Header Files\Models">
       <UniqueIdentifier>{88463db1-6e12-4c9f-afa2-95f5b352bf45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Loaders">
+      <UniqueIdentifier>{2874ee76-525b-4911-99aa-95926d796fc6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -117,6 +120,12 @@
     <ClCompile Include="..\..\code\sources\Plane.cpp">
       <Filter>Source Files\Meshes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Renderer.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Model_Loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -173,9 +182,6 @@
     <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp">
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture_Loader.hpp">
-      <Filter>Header Files\Textures</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Texture.hpp">
       <Filter>Header Files\Textures</Filter>
     </ClInclude>
@@ -212,17 +218,23 @@
     <ClInclude Include="..\..\code\headers\Model.hpp">
       <Filter>Header Files\Models</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Model_Loader.hpp">
-      <Filter>Header Files\Models</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Shader_Loader.hpp">
-      <Filter>Header Files\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\Source_Code.hpp">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Material.hpp">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Model_Loader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Shader_Loader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Shader_Program_Loader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Texture_Loader.hpp">
+      <Filter>Header Files\Loaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

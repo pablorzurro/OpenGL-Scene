@@ -26,8 +26,8 @@ namespace prz
 	public:
 
 		Mesh();
-		Mesh(Primitive_Mode primitiveMode);
-		Mesh(Primitive_Mode primitiveMode, GLsizei nVertices, Indices_Type indicesType = NO_INDICES_TYPE);
+		Mesh(Primitive_Mode primitiveMode, const PString& name = "undefined");
+		Mesh(Primitive_Mode primitiveMode, GLsizei nVertices, Indices_Type indicesType = NO_INDICES_TYPE, const PString& name = "undefined");
 
 		~Mesh()
 		{
@@ -59,6 +59,10 @@ namespace prz
 			vao_ = vao;
 		}
 
+	public:
+
+		const PString& name() const { return name_; }
+
 	protected:
 
 		enum VBO_ORDER
@@ -80,6 +84,10 @@ namespace prz
 		GLenum primitiveMode_;
 		GLenum indicesType_;
 		GLsizei nVertices_;
+
+	protected:
+
+		PString name_;
 	};
 
 } // !namespace prz 

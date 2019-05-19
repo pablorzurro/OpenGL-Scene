@@ -41,40 +41,44 @@ namespace prz
 
 		PSPtr< Shader > load_shader(const PString& sourceCodeFilePath)
 		{
+			if (is_shader_loaded(sourceCodeFilePath))
+			{
+				return get_shader(sourceCodeFilePath);
+			}
+
 			Source_Code sourceCode(sourceCodeFilePath);
 			PString name = split_string_by_separator(sourceCodeFilePath, "/");
 			PString fileExtension = "." + split_string_by_separator(name, ".");
-			
+
 			if (sourceCode.is_not_empty())
 			{
 				PSPtr< Shader > shader;
-				Fragment_Shader* fragPtr = nullptr;
-				Vertex_Shader* verPtr = nullptr;
+				PSPtr<Fragment_Shader> fragShader;
+				PSPtr<Vertex_Shader> vertShader;
 
 				if (fileExtension == ".frag")
 				{
-					PSPtr<Fragment_Shader> fragShader = make_shared< Fragment_Shader >(sourceCode, name);
-					fragPtr = fragShader.get();
+					fragShader = make_shared< Fragment_Shader >(sourceCode, name);
 					shader = fragShader;
 				}
 				else if (fileExtension == ".vert")
 				{
-					PSPtr<Vertex_Shader> vertShader = make_shared< Vertex_Shader >(sourceCode, name);
+					vertShader = make_shared< Vertex_Shader >(sourceCode, name);
 					shader = vertShader;
 				}
 
-				if (shader.get() && !shader->has_compilation_failed())
+				if (shader && shader->is_compiled())
 				{
 					loadedShaders_[sourceCodeFilePath] = shader;
-					loadedShadersByName_[name] = shader.get();
+					loadedShadersByName_[name] = shader;
 
-					if (fragPtr)
+					if (fragShader)
 					{
-						loadedFragmentShaders_[sourceCodeFilePath] = loadedFragmentShadersByName_[name] = fragPtr;
+						loadedFragmentShaders_[sourceCodeFilePath] = loadedFragmentShadersByName_[name] = fragShader;
 					}
-					else if (verPtr)
+					else if (vertShader)
 					{
-						loadedVertexShaders_[sourceCodeFilePath] = loadedVertexShadersByName_[name] = verPtr;
+						loadedVertexShaders_[sourceCodeFilePath] = loadedVertexShadersByName_[name] = vertShader;
 					}
 
 					return loadedShaders_[sourceCodeFilePath];
@@ -86,7 +90,7 @@ namespace prz
 	
 	public:
 
-		bool unload_shader(const Shader* shader)
+		bool unload_shader(PSPtr< Shader > shader)
 		{
 			if (shader && is_shader_loaded(shader->path()))
 			{
@@ -112,7 +116,7 @@ namespace prz
 
 		bool unload_shader(const PString& shaderPath)
 		{
-			return unload_shader(get_shader(shaderPath).get());
+			return unload_shader(get_shader(shaderPath));
 		}
 
 		bool unload_shader_by_name(const PString& name)
@@ -128,22 +132,61 @@ namespace prz
 			return loadedShaders_.find(shaderPath) != loadedShaders_.end();
 		}
 
-	
 		bool is_shader_loaded_by_name(const PString& shaderName) const
 		{
 			return loadedShadersByName_.find(shaderName) != loadedShadersByName_.end();
+		}
+
+		bool is_vertex_shader_loaded(const PString& vertexShaderPath) const // Remember that a texture with multiple images is stored with the first path received
+		{
+			return loadedVertexShaders_.find(vertexShaderPath) != loadedVertexShaders_.end();
+		}
+
+		bool is_vertex_shader_loaded_by_name(const PString& vertexShaderName) const
+		{
+			return loadedVertexShadersByName_.find(vertexShaderName) != loadedVertexShadersByName_.end();
+		}
+
+		bool is_fragment_shader_loaded(const PString& fragmentShaderPath) const // Remember that a texture with multiple images is stored with the first path received
+		{
+			return loadedFragmentShaders_.find(fragmentShaderPath) != loadedFragmentShaders_.end();
+		}
+
+		bool is_fragment_shader_loaded_by_name(const PString& fragmentShaderName) const
+		{
+			return loadedFragmentShadersByName_.find(fragmentShaderName) != loadedFragmentShadersByName_.end();
 		}
 
 	public:
 
 		PSPtr< Shader > get_shader(const PString& shaderPath)
 		{
-			return is_shader_loaded(shaderPath) ? loadedShaders_[shaderPath] : nullptr;
+			return is_shader_loaded(shaderPath) ? loadedShaders_[shaderPath] : PSPtr< Shader >();
 		}
 
-		Shader* get_shader_by_name(const PString& shaderName)
+		PSPtr< Shader > get_shader_by_name(const PString& shaderName)
 		{
-			return is_shader_loaded_by_name(shaderName) ? loadedShadersByName_[shaderName] : nullptr;
+			return is_shader_loaded_by_name(shaderName) ? loadedShadersByName_[shaderName] : PSPtr< Shader >();
+		}
+
+		PSPtr< Vertex_Shader > get_vertex_shader(const PString& vertexShaderPath)
+		{
+			return is_vertex_shader_loaded(vertexShaderPath) ? loadedVertexShaders_[vertexShaderPath] : PSPtr< Vertex_Shader >();
+		}
+
+		PSPtr< Vertex_Shader > get_vertex_shader_by_name(const PString& vertexShaderName)
+		{
+			return is_vertex_shader_loaded_by_name(vertexShaderName) ? loadedVertexShadersByName_[vertexShaderName] : PSPtr< Vertex_Shader >();
+		}
+
+		PSPtr< Fragment_Shader > get_fragment_shader(const PString& fragmentShaderPath)
+		{
+			return is_fragment_shader_loaded(fragmentShaderPath) ? loadedFragmentShaders_[fragmentShaderPath] : PSPtr< Fragment_Shader >();
+		}
+
+		PSPtr< Fragment_Shader > get_fragment_shader_by_name(const PString& fragmentShaderName)
+		{
+			return is_fragment_shader_loaded_by_name(fragmentShaderName) ? loadedFragmentShadersByName_[fragmentShaderName] : PSPtr< Fragment_Shader >();
 		}
 
 	private:
@@ -153,15 +196,15 @@ namespace prz
 	private:
 
 		PMap< PString, PSPtr< Shader >> loadedShaders_;
-		PMap< PString, Shader*> loadedShadersByName_;
+		PMap< PString, PSPtr< Shader> > loadedShadersByName_;
 
 	private:
 
-		PMap< PString, Fragment_Shader*> loadedFragmentShaders_;
-		PMap< PString, Fragment_Shader*> loadedFragmentShadersByName_;
+		PMap< PString, PSPtr< Fragment_Shader> > loadedFragmentShaders_;
+		PMap< PString, PSPtr< Fragment_Shader> > loadedFragmentShadersByName_;
 		
-		PMap< PString, Vertex_Shader*> loadedVertexShaders_;
-		PMap< PString, Vertex_Shader*> loadedVertexShadersByName_;
+		PMap< PString, PSPtr< Vertex_Shader> > loadedVertexShaders_;
+		PMap< PString, PSPtr< Vertex_Shader> > loadedVertexShadersByName_;
 	};
 
 } // !namespace prz 

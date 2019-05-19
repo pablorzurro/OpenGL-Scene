@@ -2,7 +2,6 @@
 #include <Entity.hpp>
 #include <Transform.hpp>
 #include <Texture_Loader.hpp>
-#include <Model_Loader.hpp>
 #include <Skybox.hpp>
 #include <Game.hpp>
 
@@ -11,17 +10,19 @@ namespace prz
 
 	Scene::Scene(Window& window) :
 		window_(window),
-		renderer(*this),
-		activeCamera_(*this),
+		renderer_(*this),
+		activeCamera_(*this, "Active_Camera_For_Testing"),
 		skybox(Texture_Loader::instance().load_cube_map(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga"))
 	{
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
 
-		PSPtr < Entity> entityP(new Entity(*this));
+		PSPtr < Entity> entityP(new Entity(*this, "Test-Entity"));
+		//entityP->add_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
+		entityP->add_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
+		renderer_.subscribe_entity(entityP);
 
-		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx", entityP);
-		Model_Loader::instance().load_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj", entityP);
+		renderer_.update();
 
 		on_window_resized();
 	}
@@ -40,6 +41,8 @@ namespace prz
 		glClearColor(0.5, 0.5, 0.5, 1.0);
 
 		//skybox.render(activeCamera_);
+
+		renderer_.render();
 	}
 
 	void Scene::on_window_resized()
@@ -49,5 +52,27 @@ namespace prz
 		activeCamera_.set_ratio(float(windowSize.x) / windowSize.y);
 
 		glViewport(0, 0, windowSize.x, windowSize.y);
+	}
+	bool Scene::add_entity(PSPtr<Entity> entity, bool subscribeToRenderer)
+	{
+		if (!exists_entity(entity))
+		{
+			entities_[entity->name()] = entity;
+
+			if (subscribeToRenderer && !renderer_.is_entity_subscribed(entity))
+			{
+				renderer_.subscribe_entity(entity);
+			}
+		}
+	}
+
+	bool Scene::exists_entity(PSPtr<Entity> entity) const
+	{
+		if (entity)
+		{
+			return exists_entity(entity->name());
+		}
+
+		return false;
 	}
 }

@@ -96,7 +96,9 @@
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Material.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
+    <ClCompile Include="..\..\code\sources\Model_Loader.cpp" />
     <ClCompile Include="..\..\code\sources\Plane.cpp" />
+    <ClCompile Include="..\..\code\sources\Renderer.cpp" />
     <ClCompile Include="..\..\code\sources\Shader.cpp" />
     <ClCompile Include="..\..\code\sources\Shader_Program.cpp" />
     <ClCompile Include="..\..\code\sources\Skybox.cpp" />
@@ -123,6 +125,7 @@
     <ClInclude Include="..\..\code\headers\Model_Loader.hpp" />
     <ClInclude Include="..\..\code\headers\Renderer.hpp" />
     <ClInclude Include="..\..\code\headers\Shader_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader_Program_Loader.hpp" />
     <ClInclude Include="..\..\code\headers\Source_Code.hpp" />
     <ClInclude Include="..\..\code\headers\Texture_Cube.hpp" />
     <ClInclude Include="..\..\code\headers\Cube.hpp" />

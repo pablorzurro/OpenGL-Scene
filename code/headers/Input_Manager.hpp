@@ -103,34 +103,34 @@ namespace prz
 
 	public:
 		
-		PVec2 current_mouse_position()
+		PUVec2 current_mouse_position()
 		{
 			return PVec2(curMouseX_, curMouseY_);
 		}
 
-		PVec2 previous_mouse_position()
+		PUVec2 previous_mouse_position()
 		{
 			return PVec2(prevMouseX_, prevMouseY_);
 		}
 
 	public:
 
-		const float& curMouseX()
+		const unsigned int& curMouseX()
 		{
 			return curMouseX_;
 		}
 
-		const float& curMouseY()
+		const unsigned int& curMouseY()
 		{
 			return curMouseY_;
 		}
 
-		const float& prevMouseX()
+		const unsigned int& prevMouseX()
 		{
 			return prevMouseX_;
 		}
 
-		const float& prevMouseY()
+		const unsigned int& prevMouseY()
 		{
 			return prevMouseY_;
 		}

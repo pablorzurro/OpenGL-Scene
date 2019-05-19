@@ -2,9 +2,8 @@
 
 namespace prz
 {
-	Camera::Camera(Scene& scene, float fov, float zNear, float zFar, float aspectRatio)
-		:
-		Entity(scene, nullptr, true, true),
+	Camera::Camera(Scene& scene, const PString& name, float fov, float zNear, float zFar, float aspectRatio) :
+		Entity(scene, name, nullptr, true, true),
 		fov_(fov),
 		zNear_(zNear),
 		zFar_(zFar),
@@ -45,7 +44,7 @@ namespace prz
 		/*if (inputManager.is_mouse_pressed() == false)
 			return;*/
 
-		PVec2 mouseDelta = inputManager.current_mouse_position() - inputManager.previous_mouse_position();
+		PVec2 mouseDelta(inputManager.current_mouse_position() - inputManager.previous_mouse_position());
 		PVec2 normalizedMouseDelta = PVec2(mouseSensitivityX, mouseSensitivityY) * mouseDelta;
 
 		transform_.rotate(normalizedMouseDelta.x, normalizedMouseDelta.y, 0.f);

@@ -26,10 +26,10 @@ namespace prz
 	{
 	public:
 
-		Camera(Scene& scene, float fov, float zNear, float zFar, float aspectRatio);
+		Camera(Scene& scene, const PString& name, float fov, float zNear, float zFar, float aspectRatio);
 
-		Camera(Scene& scene, float ratio = 1.f): Camera(scene, 60.f, 0.1f, 100.f, ratio){}
-		Camera(Scene& scene, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, 60.f, zNear, zFar, aspectRatio){}
+		Camera(Scene& scene, const PString& name, float ratio = 1.f): Camera(scene, name, 60.f, 0.1f, 100.f, ratio){}
+		Camera(Scene& scene, const PString& name, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, name, 60.f, zNear, zFar, aspectRatio){}
 		
 	public:
 
@@ -74,7 +74,7 @@ namespace prz
 		void calculate_projection_matrix()
 		{
 			projectionMatrix_ = glm::perspective(fov_, aspectRatio_, zNear_, zFar_);
-			on_local_matrix_update();
+			calculate_matrix();
 		}
 
 	private:

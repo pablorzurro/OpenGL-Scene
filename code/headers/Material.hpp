@@ -64,9 +64,14 @@ namespace prz
 			return name_;
 		}
 
-		Shader_Program* get_shader_program() const
+		Shader_Program* shaderProgramPtr() const
 		{
 			return shaderProgram_.get();
+		}
+
+		PSPtr< Shader_Program > shaderProgram() const
+		{
+			return shaderProgram_;
 		}
 
 	private:
