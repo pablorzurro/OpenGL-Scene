@@ -12,7 +12,8 @@
 #ifndef OPENGL_SCENE_DECLARATIONS_OPENGL_H_
 #define OPENGL_SCENE_DECLARATIONS_OPENGL_H_
 
-#include "OpenGL.hpp"
+#include <OpenGL.hpp>
+#include <Declarations_GLM.hpp>
 
 namespace prz
 {
@@ -46,7 +47,7 @@ namespace prz
 
 		enum class Type
 		{
-			BYTE, UNSIGNED_BYTE, SHORT, UNSIGNED_SHORT, INT, UNSIGNED_INT, FLOAT, VECTOR2, VECTOR3, VECTOR4
+			BYTE, UNSIGNED_BYTE, SHORT, UNSIGNED_SHORT, INT, UNSIGNED_INT, FLOAT, VECTOR2, VECTOR3, VECTOR4, MATRIX33, MATRIX44
 		};
 
 		union Data
@@ -54,9 +55,11 @@ namespace prz
 			GLint   gl_int;
 			GLuint  gl_uint;
 			GLfloat gl_float;
-			GLfloat gl_vec2[2];
-			GLfloat gl_vec3[3];
-			GLfloat gl_vec4[4];
+			PVec2	gl_vec2;
+			PVec3	gl_vec3;
+			PVec4	gl_vec4;
+			PMat3	gl_mat33;
+			PMat4	gl_mat44;
 		};
 
 		Type type;

@@ -12,10 +12,10 @@
 #ifndef OPENGL_SCENE_DECLARATIONS_H_
 #define OPENGL_SCENE_DECLARATIONS_H_
 
-#include "Declarations_STD.hpp"
-#include "Declarations_SFML.hpp"
-#include "Declarations_OpenGL.hpp"
-#include "Declarations_GLM.hpp"
+#include <Declarations_STD.hpp>
+#include <Declarations_SFML.hpp>
+#include <Declarations_OpenGL.hpp>
+#include <Declarations_GLM.hpp>
 
 namespace prz
 {

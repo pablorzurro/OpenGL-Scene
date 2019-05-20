@@ -29,7 +29,7 @@ namespace prz
 				glGetShaderInfoLog(programObjID_, logLength, NULL, &logStr_.front());
 			}
 
-			assert(false);
+			//assert(false);
 		}
 
 		return (islinkSuccessful_ = (linkSucceeded != 0));

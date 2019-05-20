@@ -275,7 +275,10 @@ namespace prz
 
 	void Transform::update_world_matrix()
 	{
-		update_model_matrix(true);
+		if (!isModelMatrixUpdated_) // Avoid infinite recursivity in camera case
+		{
+			update_model_matrix(true);
+		}
 
 		if(!isWorldMatrixUpdated_)
 		{

@@ -1,10 +1,24 @@
 #include <Material.hpp>
+#include <Shader_Program_Loader.hpp>
+#include <Game.hpp>
 
 namespace prz
 {
+	unsigned int Material::instanceCount_ = 0;
+
 	PSPtr< Material > Material::default_material()
 	{
-		return PSPtr< Material >();
+		static PSPtr< Material > material(new Material
+		(
+			"default_material",
+			Shader_Program_Loader::instance().load_shader_program
+			(
+				Game::assetsFolderPath() + "shaders/fragment_shader.frag",
+				Game::assetsFolderPath() + "shaders/vertex_shader.vert"
+			)
+		));
+
+		return material;
 	}
 
 	bool Material::set(const char* id, const PString& name, const GLint value)
@@ -55,8 +69,7 @@ namespace prz
 
         if (uniform)
         {
-            uniform->value.data.gl_vec2[0] = vector2[0];
-            uniform->value.data.gl_vec2[1] = vector2[1];
+            uniform->value.data.gl_vec2 = vector2;
 
             return true;
         }
@@ -70,9 +83,7 @@ namespace prz
 
         if (uniform)
         {
-            uniform->value.data.gl_vec3[0] = vector3[0];
-            uniform->value.data.gl_vec3[1] = vector3[1];
-            uniform->value.data.gl_vec3[2] = vector3[2];
+            uniform->value.data.gl_vec3 = vector3;
 
             return true;
         }
@@ -91,6 +102,32 @@ namespace prz
 			uniform->value.data.gl_vec4[2] = vector4[2];
 			uniform->value.data.gl_vec4[3] = vector4[3];
 
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set(const char* id, const PString& name, const PMat3& value)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX33);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_mat33 = value;
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set(const char* id, const PString& name, const PMat4& value)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX44);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_mat44 = value;
 			return true;
 		}
 
@@ -131,6 +168,8 @@ namespace prz
 			case Var_GL::Type::VECTOR2:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec2); break;
 			case Var_GL::Type::VECTOR3:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec3); break;
 			case Var_GL::Type::VECTOR4:			shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_vec4); break;
+			case Var_GL::Type::MATRIX33:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_mat33); break;
+			case Var_GL::Type::MATRIX44:		shaderProgram_->set_uniform_value(uniform.index, uniform.value.data.gl_mat44); break;
 			default:
 				assert(false);
 			}

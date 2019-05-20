@@ -1,4 +1,6 @@
-#include "Renderer.hpp"
+#include <Renderer.hpp>
+
+#include <Camera.hpp>
 #include <Model.hpp>
 #include <Mesh.hpp>
 #include <Material.hpp>
@@ -8,7 +10,7 @@
 
 namespace prz
 {
-	void Renderer::render()
+	void Renderer::render(Camera& activeCamera)
 	{
 		for (auto& shaderMaterialPair : renderQueue_)
 		{
@@ -18,10 +20,17 @@ namespace prz
 			for (auto& materialBatch : shaderMaterialPair.second)
 			{
 				PSPtr< Material > material = materialBatch.first;
+
+				set_material_shared_uniforms(material, activeCamera);
+
 				material->use();
 
 				for (auto& transformMeshListPair : materialBatch.second)
 				{
+					Transform* modelTransform = transformMeshListPair.first;
+
+					set_material_local_uniforms(material, modelTransform);
+
 					PList < PSPtr< Mesh > >& meshes = *transformMeshListPair.second;
 
 					for (auto& mesh : meshes)
@@ -88,6 +97,25 @@ namespace prz
 					}
 				}
 			}
+		}
+	}
+
+	void Renderer::set_material_shared_uniforms(PSPtr<Material> material, Camera& activeCamera)
+	{
+		// Try to set each shared uniform with "brute force", setting every known uniform from the created shaders
+		material->set("proj_matrix", "proj_matrix", activeCamera.projectionMatrix());
+		material->set("light_color", "light_color", PVec3(255.f, 255.f, 255.f));
+		material->set("light_pos", "light_pos", PVec3(0.f, 20.f, 0.f));
+		material->set("ambient_intensity", "ambient_intensity", 0.15f);
+	}
+
+	void Renderer::set_material_local_uniforms(PSPtr<Material> material, Transform* transform)
+	{
+		// Try to set each local uniform with "brute force", setting every known uniform from the created shaders
+
+		if (transform)
+		{
+			material->set("model_view_matrix", "model_view_matrix", transform->worldMatrix());
 		}
 	}
 }

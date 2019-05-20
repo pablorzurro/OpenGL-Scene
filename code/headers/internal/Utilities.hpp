@@ -1,7 +1,7 @@
 #ifndef OPENGL_SCENE_INTERNAL_UTILITIES_H_
 #define OPENGL_SCENE_INTERNAL_UTILITIES_H_
 
-#include "Declarations.hpp"
+#include <Declarations.hpp>
 
 #include <time.h>
 #include <random>

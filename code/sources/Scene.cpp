@@ -5,6 +5,8 @@
 #include <Skybox.hpp>
 #include <Game.hpp>
 
+#include <Shader_Program_Loader.hpp>
+
 namespace prz
 {
 
@@ -18,6 +20,7 @@ namespace prz
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
 
 		PSPtr < Entity> entityP(new Entity(*this, "Test-Entity"));
+		entityP->transform().translate(0.f, 0.f, 10.f);
 		//entityP->add_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
 		entityP->add_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
 		renderer_.subscribe_entity(entityP);
@@ -29,10 +32,14 @@ namespace prz
 
 	void Scene::update(float deltaTime)
 	{
+		activeCamera_.update(deltaTime);
+
 		for (auto& pair : entities_)
 		{
 			pair.second->update(deltaTime);
 		}
+
+		renderer_.update();
 	}
 
 	void Scene::render(float deltaTime)
@@ -42,7 +49,7 @@ namespace prz
 
 		//skybox.render(activeCamera_);
 
-		renderer_.render();
+		renderer_.render(activeCamera_);
 	}
 
 	void Scene::on_window_resized()
@@ -53,6 +60,7 @@ namespace prz
 
 		glViewport(0, 0, windowSize.x, windowSize.y);
 	}
+
 	bool Scene::add_entity(PSPtr<Entity> entity, bool subscribeToRenderer)
 	{
 		if (!exists_entity(entity))
@@ -63,7 +71,11 @@ namespace prz
 			{
 				renderer_.subscribe_entity(entity);
 			}
+
+			return true;
 		}
+
+		return false;
 	}
 
 	bool Scene::exists_entity(PSPtr<Entity> entity) const

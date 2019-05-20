@@ -63,7 +63,7 @@ namespace prz
 	void Camera::on_local_matrix_update()
 	{
 		modelMatrix_ = transform_.scale_matrix();
-		viewMatrix_ = transform_.viewMatrix();
+ 		viewMatrix_ = transform_.viewMatrix();
 		calculate_matrix();
 	}
 }

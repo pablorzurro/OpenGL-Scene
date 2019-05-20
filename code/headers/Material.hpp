@@ -25,7 +25,7 @@ namespace prz
 	{
 	public:
 
-		Material(const PString& name, PSPtr< Shader_Program >& shaderProgram):
+		Material(const PString& name, PSPtr< Shader_Program > shaderProgram):
 			name_(name),
 			shaderProgram_(shaderProgram),
 			instanceID_(instanceCount_++)
@@ -51,6 +51,8 @@ namespace prz
 		bool set(const char* id, const PString& name, const PVec2&	value);
 		bool set(const char* id, const PString& name, const PVec3&	value);
 		bool set(const char* id, const PString& name, const PVec4&	value);
+		bool set(const char* id, const PString& name, const PMat3&	value);
+		bool set(const char* id, const PString& name, const PMat4&	value);
 
 	public:
 
@@ -74,13 +76,13 @@ namespace prz
 			return shaderProgram_;
 		}
 
-	private:
+	protected:
 
 		PBuffer< PSPtr< Texture> > textures_;
 		PSPtr< Shader_Program > shaderProgram_;
 		PMap< PString, Uniform> uniforms_;
 
-	private:
+	protected:
 
 		PString name_;
 		unsigned int instanceID_;

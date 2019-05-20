@@ -58,6 +58,9 @@
     <Filter Include="Header Files\Loaders">
       <UniqueIdentifier>{2874ee76-525b-4911-99aa-95926d796fc6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Loaders">
+      <UniqueIdentifier>{fb0bfa07-8da9-4e05-9e84-b3aca892f314}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -105,9 +108,6 @@
     <ClCompile Include="..\..\code\sources\Texture_Cube.cpp">
       <Filter>Source Files\Textures</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Texture_Loader.cpp">
-      <Filter>Source Files\Textures</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\Texture.cpp">
       <Filter>Source Files\Textures</Filter>
     </ClCompile>
@@ -123,8 +123,14 @@
     <ClCompile Include="..\..\code\sources\Renderer.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Texture_Loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\code\sources\Model_Loader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Shader_Program_Loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -33,7 +33,7 @@ namespace prz
 				vbos_.push_back(vai.vbo);
 			}
 
-			if (vboIndices.get())
+			if (vboIndices)
 			{
 				vboIndices->bind();
 				{

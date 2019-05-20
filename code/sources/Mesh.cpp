@@ -28,7 +28,7 @@ namespace prz
 
 	void Mesh::draw()
 	{
-		if (vao_.get())
+		if (vao_)
 		{
 			assert(primitiveMode_ != GL_NONE);
 			assert(nVertices_ > 0);

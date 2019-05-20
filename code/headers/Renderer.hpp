@@ -22,6 +22,7 @@ namespace prz
 	class Material;
 	class Mesh;
 	class Shader_Program;
+	class Camera;
 
 	class Renderer
 	{
@@ -47,7 +48,7 @@ namespace prz
 			update_render_queue();
 		}
 
-		void render();
+		void render(Camera& activeCamera);
 	
 	public:
 
@@ -66,6 +67,11 @@ namespace prz
 	private:
 
 		void update_render_queue();
+
+	private:
+
+		void set_material_shared_uniforms(PSPtr< Material > material, Camera& activeCamera /*PBuffer< PSPtr< Light > > lights*/);
+		void set_material_local_uniforms(PSPtr< Material> material, Transform* transform);
 
 	private:
 

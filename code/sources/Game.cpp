@@ -28,25 +28,24 @@ namespace prz
 
 	void Game::run()
 	{
+		isRunning_ = true;
+
+		Input_Manager& inputManager = Input_Manager::instance();
+
+		do
 		{
-			isRunning_ = true;
+			calculate_delta_time();
 
-			Input_Manager& inputManager = Input_Manager::instance();
+			poll_events(inputManager);
 
-			do
-			{
-				calculate_delta_time();
+			scene_->update(deltaTime_);
+			scene_->render(deltaTime_);
 
-				poll_events(inputManager);
+			scene_->display();
 
-				scene_->update(deltaTime_);
-				scene_->render(deltaTime_);
-
-				scene_->display();
-
-			} while (isRunning_);
-		}
+		} while (isRunning_);
 	}
+
 	void Game::poll_events(Input_Manager& inputManager)
 	{
 		while (window_.pollEvent(event_))

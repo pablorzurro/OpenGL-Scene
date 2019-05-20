@@ -50,7 +50,6 @@ namespace prz
 			return load_shader_program(shaders);
 		}
 
-
 		PSPtr< Shader_Program > load_shader_program(PSPtr< Vertex_Shader > vertexShader, PSPtr< Fragment_Shader > fragmentShader)
 		{
 			PBuffer< PSPtr< Shader > > shaders = { vertexShader, fragmentShader };

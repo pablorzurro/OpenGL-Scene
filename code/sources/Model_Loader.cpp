@@ -111,10 +111,10 @@ namespace prz
 			PSPtr< Mesh > mesh(std::make_shared< Mesh>(TRIANGLES, numVertices, UNSIGNED_INT, assimpMesh->mName.C_Str()));
 
 			mesh->set_vao(std::make_shared< PVAO >
-				(
-					vertexAttributes,
-					PSPtr< PVBO >(std::make_shared< PVBO >(triangleIndices.data(), numFaces))
-					));
+			(
+				vertexAttributes,
+				PSPtr< PVBO >(std::make_shared< PVBO >(triangleIndices.data(), numFaces, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
+			));
 
 			model->add_piece(mesh, material);
 		}

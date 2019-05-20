@@ -153,7 +153,7 @@ namespace prz
 
 			GLint uniformID = glGetUniformLocation(programObjID_, id);
 
-			assert(uniformID != -1);
+			/*assert(uniformID != -1);*/
 
 			return (uniformID);
 		}
@@ -167,7 +167,7 @@ namespace prz
 
 		unsigned int get_number_of_attached_shaders()
 		{
-			return attachedShaders_.size();
+			return (unsigned int)attachedShaders_.size();
 		}
 
 	public:
