@@ -6,7 +6,7 @@
 
 namespace prz
 {
-	Transform::Transform(Entity& owner, Transform* parent, bool isWorldMatrixInversed, bool updateModelMatrixAlways):
+	Transform::Transform(Entity& owner, Transform* parent, bool modelIsViewMatrix):
 		owner_(owner),
 		modelMatrix_(PMatIdentity),
 		worldMatrix_(modelMatrix_),
@@ -18,10 +18,9 @@ namespace prz
 		renderer_(nullptr),
 		isModelMatrixUpdated_(false),
 		isWorldMatrixUpdated_(false),
-		updateModelMatrixAlways_(updateModelMatrixAlways),
-		isWorldMatrixInversed_(isWorldMatrixInversed)
+		modelIsViewMatrix_(modelIsViewMatrix)
 	{
-		update_model_matrix(true);
+		update_model_matrix();
 	}
 
 	Transform::Transform(Entity& owner, Transform& other):
@@ -36,8 +35,7 @@ namespace prz
 		scale_(other.scale_),
 		isModelMatrixUpdated_(other.isModelMatrixUpdated_),
 		isWorldMatrixUpdated_(other.isWorldMatrixUpdated_),
-		updateModelMatrixAlways_(other.updateModelMatrixAlways_),
-		isWorldMatrixInversed_(other.isWorldMatrixInversed_)
+		modelIsViewMatrix_(other.modelIsViewMatrix_)
 	{}
 
 	void Transform::translate(const PVec3& translation)
@@ -67,9 +65,8 @@ namespace prz
 
 	void Transform::rotate(const PQuat& rotation)
 	{
-		orientation_ *= rotation;
+		orientation_ *= glm::normalize(rotation);
 		isModelMatrixUpdated_ = false; 
-		update_model_matrix();
 	}
 
 	void Transform::rotate(const PVec3& eulerRotation, bool inRadians)
@@ -136,14 +133,12 @@ namespace prz
 	{
 		translation_ = newTranslation;
 		isModelMatrixUpdated_ = false; 
-		update_model_matrix();
 	}
 
 	void Transform::set_orientation(const PQuat& newOrientation)
 	{
 		orientation_ = newOrientation;
 		isModelMatrixUpdated_ = false; 
-		update_model_matrix();
 	}
 
 	void Transform::set_orientation(const PVec3& newOrientation, bool inRadians)
@@ -155,7 +150,6 @@ namespace prz
 	{
 		scale_ = newScale;
 		isModelMatrixUpdated_ = false; 
-		update_model_matrix();
 	}
 
 	void Transform::set_visible(bool visibility)
@@ -163,15 +157,14 @@ namespace prz
 		isVisible_ = visibility;
 	}
 
-	PMat4 Transform::modelMatrix()
+	PMat4 Transform::modelMatrix() 
 	{
-		update_model_matrix(true);
+		update_model_matrix();
 		return modelMatrix_;
 	}
 
 	PMat4 Transform::inverse_modelMatrix()
 	{
-		update_model_matrix(true);
 		return glm::inverse(modelMatrix_);
 	}
 
@@ -179,9 +172,9 @@ namespace prz
 	{
 		update_world_matrix();
 
-		if (isWorldMatrixInversed_)
+		if (modelIsViewMatrix_)
 		{
-			return inverse_worldMatrix();
+			return viewMatrix();
 		}
 
 		return worldMatrix_;
@@ -195,7 +188,8 @@ namespace prz
 
 	PMat4 Transform::viewMatrix()
 	{
-		return inverse_worldMatrix();
+		update_world_matrix();
+		return translation_matrix() * rotation_matrix();
 	}
 
 	Transform* Transform::parent()
@@ -260,36 +254,29 @@ namespace prz
 		return isVisible_;
 	}
 
-	void Transform::update_model_matrix(bool necessaryUpdate)
+	void Transform::update_model_matrix()
 	{
-		if ((!isModelMatrixUpdated_ && necessaryUpdate) || updateModelMatrixAlways_)
+		if (!isModelMatrixUpdated_)
 		{
 			modelMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix();
 			
 			isModelMatrixUpdated_ = true;
 			isWorldMatrixUpdated_ = false;
-
-			owner_.on_local_matrix_update();
 		}
 	}
 
 	void Transform::update_world_matrix()
-	{
-		if (!isModelMatrixUpdated_) // Avoid infinite recursivity in camera case
-		{
-			update_model_matrix(true);
-		}
+	{	
+		update_model_matrix();
 
 		if(!isWorldMatrixUpdated_)
 		{
+			worldMatrix_ = modelMatrix();
+
 			if (parent_)
 			{
 				worldMatrix_ = parent_->worldMatrix() * modelMatrix_; // Calling the parent hierarchy to obtain the total transformation
 				isWorldMatrixUpdated_ = true;
-			}
-			else
-			{
-				worldMatrix_ = modelMatrix_;
 			}
 		}
 	}

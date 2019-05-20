@@ -25,6 +25,18 @@ namespace prz
 	{
 	public:
 
+		enum VBO_ORDER : GLuint
+		{
+			COORDINATES,
+			NORMALS,
+			TEXTURE_COORD,
+			COLORS,
+			INDICES,
+			SIZE
+		};
+
+	public:
+
 		Mesh();
 		Mesh(Primitive_Mode primitiveMode, const PString& name = "undefined");
 		Mesh(Primitive_Mode primitiveMode, GLsizei nVertices, Indices_Type indicesType = NO_INDICES_TYPE, const PString& name = "undefined");
@@ -62,18 +74,6 @@ namespace prz
 	public:
 
 		const PString& name() const { return name_; }
-
-	protected:
-
-		enum VBO_ORDER
-		{
-			COORDINATES,
-			NORMALS,
-			TEXTURE_COORD,
-			COLORS,
-			INDICES,
-			SIZE
-		};
 
 	protected:
 

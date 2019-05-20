@@ -14,12 +14,15 @@
 
 namespace prz
 {
+	class Camera;
+
 	class Drawable
 	{
 	public:
 
 		virtual ~Drawable() = default;
 		virtual void draw() = 0;
+		virtual void draw(PSPtr< Camera > camera);
 
 	};
 }

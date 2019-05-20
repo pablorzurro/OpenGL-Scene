@@ -14,12 +14,16 @@
 
 #include <Mesh.hpp>
 
+#include <Declarations.hpp>
+
 namespace prz
 {
 	
 	class Cube : public Mesh
 	{
-	public:		
+	public:	
+
+		Cube(const PString& name = "undefined");
 
 	private:
 

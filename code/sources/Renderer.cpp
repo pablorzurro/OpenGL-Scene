@@ -10,7 +10,7 @@
 
 namespace prz
 {
-	void Renderer::render(Camera& activeCamera)
+	void Renderer::render(const PSPtr< Camera > activeCamera)
 	{
 		for (auto& shaderMaterialPair : renderQueue_)
 		{
@@ -21,15 +21,17 @@ namespace prz
 			{
 				PSPtr< Material > material = materialBatch.first;
 
-				set_material_shared_uniforms(material, activeCamera);
-
 				material->use();
+
+				set_material_shared_uniforms(material, activeCamera);
+				material->apply_shared_uniforms();
 
 				for (auto& transformMeshListPair : materialBatch.second)
 				{
 					Transform* modelTransform = transformMeshListPair.first;
 
 					set_material_local_uniforms(material, modelTransform);
+					material->apply_local_uniforms();
 
 					PList < PSPtr< Mesh > >& meshes = *transformMeshListPair.second;
 
@@ -75,7 +77,7 @@ namespace prz
 
 			Transform& entityTransform = entity->transform();
 
-			if (entityTransform.renderer() == this)
+			if (entityTransform.renderer() == this && entityTransform.isVisible())
 			{
 				PMap< PString, PSPtr< Model > >& entityModels = entity->models();
 
@@ -100,22 +102,25 @@ namespace prz
 		}
 	}
 
-	void Renderer::set_material_shared_uniforms(PSPtr<Material> material, Camera& activeCamera)
+	void Renderer::set_material_shared_uniforms(PSPtr<Material> material, const PSPtr< Camera > activeCamera)
 	{
 		// Try to set each shared uniform with "brute force", setting every known uniform from the created shaders
-		material->set("proj_matrix", "proj_matrix", activeCamera.projectionMatrix());
+
+		/*material->set("proj_matrix", "proj_matrix", activeCamera->projectionMatrix());
 		material->set("light_color", "light_color", PVec3(255.f, 255.f, 255.f));
 		material->set("light_pos", "light_pos", PVec3(0.f, 20.f, 0.f));
-		material->set("ambient_intensity", "ambient_intensity", 0.15f);
+		material->set("ambient_intensity", "ambient_intensity", 0.15f);*/
+
+		material->set_uniform("projectionMatrix", "projectionMatrix", activeCamera->projectionMatrix(), true);
+		material->set_uniform("lightColor", "lightColor", PVec3(0.5f, 0.5f, 0.5f), true);
+		material->set_uniform("lightPosition", "lightPosition", PVec3(0.f, 20.f, 0.f), true);
 	}
 
 	void Renderer::set_material_local_uniforms(PSPtr<Material> material, Transform* transform)
 	{
 		// Try to set each local uniform with "brute force", setting every known uniform from the created shaders
-
-		if (transform)
-		{
-			material->set("model_view_matrix", "model_view_matrix", transform->worldMatrix());
-		}
+		assert(transform);
+		/*material->set("model_view_matrix", "model_view_matrix", transform->worldMatrix());*/
+		material->set_uniform("modelViewMatrix", "modelViewMatrix", transform->worldMatrix());
 	}
 }

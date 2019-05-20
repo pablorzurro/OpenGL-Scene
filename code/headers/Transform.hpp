@@ -25,8 +25,15 @@ namespace prz
 	public:
 
 		Transform() = delete;
-		Transform(Entity& owner, Transform* parent = nullptr, bool isWorldMatrixInversed_ = false, bool updateModelMatrixAlways = false);
+		Transform(Entity& owner, Transform* parent = nullptr, bool modelIsViewMatrix = false);
 		Transform(Entity& owner, Transform& other);
+
+	public:
+
+		void update()
+		{
+			update_world_matrix();
+		}
 
 	public:
 
@@ -118,7 +125,7 @@ namespace prz
 
 	protected:
 
-		void update_model_matrix(bool necessaryUpdate = false);
+		void update_model_matrix();
 		void update_world_matrix();
 
 	protected:
@@ -149,8 +156,7 @@ namespace prz
 
 		bool isModelMatrixUpdated_;
 		bool isWorldMatrixUpdated_;
-		bool isWorldMatrixInversed_;
-		bool updateModelMatrixAlways_;
+		bool modelIsViewMatrix_;
 	};
 
 } // !namespace prz 

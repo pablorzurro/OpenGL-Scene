@@ -27,13 +27,12 @@ namespace prz
 	public:
 
 		Camera(Scene& scene, const PString& name, float fov, float zNear, float zFar, float aspectRatio);
-
 		Camera(Scene& scene, const PString& name, float ratio = 1.f): Camera(scene, name, 60.f, 0.1f, 100.f, ratio){}
 		Camera(Scene& scene, const PString& name, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, name, 60.f, zNear, zFar, aspectRatio){}
 		
 	public:
 
-		void update(float deltaTime) override;
+		void entity_update(float deltaTime) override;
 		
 	public:
 
@@ -45,10 +44,6 @@ namespace prz
 	public:
 
 		void reset(float fov, float zNear, float zFar, float aspectRatio);
-		
-	public:
-
-		void on_local_matrix_update() override;
 		
 	public:
 
@@ -68,7 +63,9 @@ namespace prz
 
 		void calculate_matrix()
 		{
-			matrix_ = projectionMatrix_ * viewMatrix_ * transform_.scale_matrix();
+			modelMatrix_ = transform_.scale_matrix();
+			viewMatrix_ = transform_.viewMatrix();
+			matrix_ = projectionMatrix_ * viewMatrix_ * modelMatrix_;
 		}
 
 		void calculate_projection_matrix()

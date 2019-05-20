@@ -67,6 +67,12 @@ namespace prz
 			return vaoID_;
 		}
 
+		// Returns the number of indices
+		GLuint nIndices()
+		{
+			return nIndices_;
+		}
+
 	private:
 
 		Vertex_Array_Object(const Vertex_Array_Object&);
@@ -75,6 +81,12 @@ namespace prz
 
 		GLuint vaoID_;
 		PList< PSPtr< PVBO > > vbos_;
+
+	private:
+
+		GLuint nIndices_;
+		
+	private:
 		GLenum error_;
 	};
 

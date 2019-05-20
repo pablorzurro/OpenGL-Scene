@@ -51,7 +51,8 @@ namespace prz
 
 	public:
 
-		bool add_entity(PSPtr< Entity > entity, bool subscribeToRenderer = true);
+		PSPtr< Entity > add_entity(PSPtr< Entity > entity, PSPtr< Entity > parent = PSPtr < Entity >(), bool subscribeToRenderer = true);
+		PSPtr< Entity > create_entity(const PString& name, PSPtr< Entity > parent = PSPtr < Entity >(), bool modelIsViewMatrix = false);
 		
 	public:
 
@@ -65,12 +66,12 @@ namespace prz
 	public:
 
 		const Renderer& renderer() const { return renderer_; }
-		const Camera& activeCamera() const { return activeCamera(); }
+		const PSPtr< Camera > activeCamera() const { return activeCamera_; }
 
 	private:
 
 		Renderer renderer_;
-		Camera activeCamera_;
+		PSPtr< Camera > activeCamera_;
 		
 	private:
 
@@ -78,7 +79,7 @@ namespace prz
 
 	private:
 
-		Skybox skybox;
+		Skybox skybox_;
 
 	private:
 

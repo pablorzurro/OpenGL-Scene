@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef OPENGL_SCENE_CUBE_MESH_H_
-#define OPENGL_SCENE_CUBE_MESH_H_
+#ifndef OPENGL_SCENE_ENTITY_H_
+#define OPENGL_SCENE_ENTITY_H_
 
 #include <Transform.hpp>
 #include <Model.hpp>
@@ -26,19 +26,28 @@ namespace prz
 	{
 	public:
 
-		Entity(Scene& scene, const PString& name, Transform* parent = nullptr, bool modelIsViewMatrix = false, bool updateModelMatrixAlways = false) :
-			transform_(*this, parent, modelIsViewMatrix, updateModelMatrixAlways),
+		Entity(Scene& scene, const PString& name, Transform* parent = nullptr, bool modelIsViewMatrix = false) :
+			transform_(*this, parent, modelIsViewMatrix),
 			sceneParent_(scene),
 			name_(name)
+		{}
+
+		Entity(Scene& scene, const PString& name, PSPtr< Entity > parent = PSPtr< Entity >(), bool modelIsViewMatrix = false) :
+			Entity(scene, name, &parent->transform_, modelIsViewMatrix)
 		{}
 
 		~Entity(){}
 
 	public:
 
-		virtual void update(float deltaTime) {}
-		virtual void render(){}
+		void update(float deltaTime) 
+		{
+			transform_.update();
 
+			entity_update(deltaTime);
+		}
+
+		virtual void render(){}
 
 	public:
 
@@ -65,6 +74,11 @@ namespace prz
 		void set_parent(Transform* parent)
 		{
 			transform_.set_parent(parent); 
+		}
+
+		void set_parent(PSPtr< Entity > parent)
+		{
+			transform_.set_parent(&parent->transform_);
 		}
 
 	public:
@@ -102,10 +116,10 @@ namespace prz
 		Scene& scene() { return sceneParent_; }
 		PMap< PString, PSPtr< Model > >& models() { return models_; }
 		const PString& name() const { return name_; }
+		
+	protected:
 
-	public:
-
-		virtual void on_local_matrix_update(){}
+		virtual void entity_update(float deltaTime) {}
 
 	protected:
 
@@ -126,4 +140,4 @@ namespace prz
 
 } // !namespace prz 
 
-#endif // !OPENGL_SCENE_CUBE_MESH_H_
+#endif // !OPENGL_SCENE_ENTITY_H_

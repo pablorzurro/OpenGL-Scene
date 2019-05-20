@@ -29,6 +29,5 @@ void main()
 	
 	// la inversa de la traspuesta, se puede hacer una vez por malla en vez de una vez por vertice
 	Normals = mat3(transpose(inverse(modelViewMatrix))) * aNormals;
-
 	gl_Position = projectionMatrix * modelPosition;
 }

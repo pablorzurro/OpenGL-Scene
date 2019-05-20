@@ -30,6 +30,7 @@ namespace prz
 			shaderProgram_(shaderProgram),
 			instanceID_(instanceCount_++)
 		{}
+		Material(const PString& name, const PString& pathVertexShader, const PString& pathFragmentShader);
 
 	public:
 
@@ -41,18 +42,26 @@ namespace prz
 
 	public:
 
-		Uniform* allocate_uniform(const char* id, const PString& name, Var_GL::Type type);
+		void apply_local_uniforms();
+		void apply_shared_uniforms();
 
 	public:
 
-		bool set(const char* id, const PString& name, const GLint    value);
-		bool set(const char* id, const PString& name, const GLuint   value);
-		bool set(const char* id, const PString& name, const GLfloat  value);
-		bool set(const char* id, const PString& name, const PVec2&	value);
-		bool set(const char* id, const PString& name, const PVec3&	value);
-		bool set(const char* id, const PString& name, const PVec4&	value);
-		bool set(const char* id, const PString& name, const PMat3&	value);
-		bool set(const char* id, const PString& name, const PMat4&	value);
+		bool add_texture(PSPtr< Texture > texture);
+		bool add_texture_cube(const PString& texturePath);
+		bool add_texture_2D(const PString& texturePath);
+		bool add_texture_by_name(const PString& textureName);
+
+	public:
+
+		bool set_uniform(const char* id, const PString& name, const GLint    value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const GLuint   value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const GLfloat  value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const PVec2&	 value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const PVec3&	 value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const PVec4&	 value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const PMat3&	 value, bool isSharedUniform = false);
+		bool set_uniform(const char* id, const PString& name, const PMat4&	 value, bool isSharedUniform = false);
 
 	public:
 
@@ -78,9 +87,21 @@ namespace prz
 
 	protected:
 
+		Uniform* allocate_uniform(const char* id, const PString& name, Var_GL::Type type, bool isSharedUniform = false);
+
+	protected:
+
+		void apply_uniforms(PMap< PString, Uniform>& uniformsMap);
+
+	protected:
+
 		PBuffer< PSPtr< Texture> > textures_;
 		PSPtr< Shader_Program > shaderProgram_;
-		PMap< PString, Uniform> uniforms_;
+
+	protected:
+
+		PMap< PString, Uniform> localUniforms_;
+		PMap< PString, Uniform> sharedUniforms_;
 
 	protected:
 

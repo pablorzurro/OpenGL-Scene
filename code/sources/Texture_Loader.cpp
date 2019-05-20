@@ -19,8 +19,9 @@ namespace prz
 
 		PBuffer<PString> texturePathToBuffer{ texturePath };
 
-		PSPtr<Texture> texture2D(allocate_texture(make_shared<Texture_2D>(texturePathToBuffer, finalName), texturePath, textureName));
-		textures2DByName_[finalName] = static_cast<Texture_2D*>(texture2D.get());
+		PSPtr< Texture_2D > texture2D = make_shared<Texture_2D>(texturePathToBuffer, finalName);
+		PSPtr< Texture > texture(allocate_texture(texture2D, texturePath, textureName));
+		textures2DByName_[finalName] = texture2D;
 
 		return texture2D;
 	}
@@ -55,8 +56,9 @@ namespace prz
 			texturePathToBuffer[i] = path + rootName + to_string(cubeMapNumeration) + fileExtension;
 		}
 
-		PSPtr<Texture> textureCube(allocate_texture(make_shared<Texture_Cube>(texturePathToBuffer, finalName), textureRootPath, finalName));
-		texturesCubeByName_[finalName] = static_cast<Texture_Cube*>(textures_[textureRootPath].get());
+		PSPtr< Texture_Cube > textureCube = make_shared<Texture_Cube>(texturePathToBuffer, finalName);
+		PSPtr<Texture> texture(allocate_texture(textureCube, textureRootPath, finalName));
+		texturesCubeByName_[finalName] = textureCube;
 
 		return textureCube;
 	}

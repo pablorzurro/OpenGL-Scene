@@ -1,4 +1,5 @@
 #include <Mesh.hpp>
+
 #include <Vertex_Array_Object.hpp>
 #include <Vertex_Buffer_Object.hpp>
 
@@ -41,7 +42,7 @@ namespace prz
 			}
 			else
 			{
-				glDrawElements(primitiveMode_, nVertices_, indicesType_, 0);
+				glDrawElements(primitiveMode_, vao_->nIndices(), indicesType_, 0);
 			}
 
 			vao_->unbind();

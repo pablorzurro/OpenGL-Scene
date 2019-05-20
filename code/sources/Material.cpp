@@ -1,10 +1,17 @@
 #include <Material.hpp>
+
 #include <Shader_Program_Loader.hpp>
+#include <Texture_Loader.hpp>
+#include <Texture.hpp>
 #include <Game.hpp>
 
 namespace prz
 {
 	unsigned int Material::instanceCount_ = 0;
+
+	Material::Material(const PString& name, const PString& pathVertexShader, const PString& pathFragmentShader) :
+		Material(name, Shader_Program_Loader::instance().load_shader_program(pathVertexShader, pathFragmentShader))
+	{}
 
 	PSPtr< Material > Material::default_material()
 	{
@@ -21,79 +28,79 @@ namespace prz
 		return material;
 	}
 
-	bool Material::set(const char* id, const PString& name, const GLint value)
-    {
-        Uniform * uniform = allocate_uniform(id, name, Var_GL::Type::INT);
-
-        if (uniform)
-        {
-            uniform->value.data.gl_int = value;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    bool Material::set(const char* id, const PString& name, const GLuint value)
-    {
-        Uniform * uniform = allocate_uniform(id, name, Var_GL::Type::UNSIGNED_INT);
-
-        if (uniform)
-        {
-            uniform->value.data.gl_uint = value;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    bool Material::set(const char* id, const PString& name, const GLfloat value)
-    {
-        Uniform * uniform = allocate_uniform(id, name, Var_GL::Type::FLOAT);
-
-        if (uniform)
-        {
-            uniform->value.data.gl_float = value;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    bool Material::set(const char* id, const PString& name, const PVec2& vector2)
-    {
-        Uniform * uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR2);
-
-        if (uniform)
-        {
-            uniform->value.data.gl_vec2 = vector2;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    bool Material::set(const char* id, const PString& name, const PVec3& vector3)
-    {
-        Uniform * uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR3);
-
-        if (uniform)
-        {
-            uniform->value.data.gl_vec3 = vector3;
-
-            return true;
-        }
-
-        return false;
-    }
-
-	bool Material::set(const char* id, const PString& name, const PVec4& vector4)
+	bool Material::set_uniform(const char* id, const PString & name, const GLint value, bool isSharedUniform)
 	{
-		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR4);
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::INT, isSharedUniform);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_int = value;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set_uniform(const char* id, const PString & name, const GLuint value, bool isSharedUniform)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::UNSIGNED_INT, isSharedUniform);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_uint = value;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set_uniform(const char* id, const PString & name, const GLfloat value, bool isSharedUniform)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::FLOAT, isSharedUniform);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_float = value;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set_uniform(const char* id, const PString & name, const PVec2 & vector2, bool isSharedUniform)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR2, isSharedUniform);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_vec2 = vector2;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set_uniform(const char* id, const PString & name, const PVec3 & vector3, bool isSharedUniform)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR3, isSharedUniform);
+
+		if (uniform)
+		{
+			uniform->value.data.gl_vec3 = vector3;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::set_uniform(const char* id, const PString & name, const PVec4 & vector4, bool isSharedUniform)
+	{
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::VECTOR4, isSharedUniform);
 
 		if (uniform)
 		{
@@ -108,9 +115,9 @@ namespace prz
 		return false;
 	}
 
-	bool Material::set(const char* id, const PString& name, const PMat3& value)
+	bool Material::set_uniform(const char* id, const PString & name, const PMat3 & value, bool isSharedUniform)
 	{
-		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX33);
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX33, isSharedUniform);
 
 		if (uniform)
 		{
@@ -121,9 +128,9 @@ namespace prz
 		return false;
 	}
 
-	bool Material::set(const char* id, const PString& name, const PMat4& value)
+	bool Material::set_uniform(const char* id, const PString & name, const PMat4 & value, bool isSharedUniform)
 	{
-		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX44);
+		Uniform* uniform = allocate_uniform(id, name, Var_GL::Type::MATRIX44, isSharedUniform);
 
 		if (uniform)
 		{
@@ -134,7 +141,43 @@ namespace prz
 		return false;
 	}
 
-	Uniform* Material::allocate_uniform(const char* id, const PString& name, Var_GL::Type type)
+	void Material::apply_local_uniforms()
+	{
+		apply_uniforms(localUniforms_);
+	}
+
+	void Material::apply_shared_uniforms()
+	{
+		apply_uniforms(sharedUniforms_);
+	}
+
+	bool Material::add_texture(PSPtr<Texture> texture)
+	{
+		if (texture)
+		{
+			textures_.push_back(texture);
+			return true;
+		}
+
+		return false;
+	}
+
+	bool Material::add_texture_cube(const PString& texturePath)
+	{
+		return add_texture(Texture_Loader::instance().load_cube_map(texturePath));
+	}
+
+	bool Material::add_texture_2D(const PString& texturePath)
+	{
+		return add_texture(Texture_Loader::instance().load_texture2D(texturePath));
+	}
+
+	bool Material::add_texture_by_name(const PString& textureName)
+	{
+		add_texture(Texture_Loader::instance().get_texture_by_name(textureName));
+	}
+
+	Uniform* Material::allocate_uniform(const char* id, const PString & name, Var_GL::Type type, bool isSharedUniform)
 	{
 		Uniform uniform;
 
@@ -144,19 +187,24 @@ namespace prz
 		{
 			uniform.value.type = type;
 
-			uniforms_[name] = uniform;
-
-			return &uniforms_[name];
+			if (isSharedUniform)
+			{
+				sharedUniforms_[name] = uniform;
+				return &sharedUniforms_[name];
+			}
+			else 
+			{
+				localUniforms_[name] = uniform;
+				return &localUniforms_[name];
+			}
 		}
 
 		return nullptr;
 	}
 
-	void Material::use()
+	void Material::apply_uniforms(PMap<PString, Uniform>& uniformsMap)
 	{
-		shaderProgram_->use();
-
-		for (auto& pair : uniforms_)
+		for (auto& pair : uniformsMap)
 		{
 			Uniform& uniform = pair.second;
 
@@ -175,5 +223,18 @@ namespace prz
 			}
 		}
 	}
+
+	void Material::use()
+	{
+		shaderProgram_->use();
+
+		for (PSPtr< Texture> texture : textures_)
+		{
+			texture->bind();
+		}
+
+		apply_shared_uniforms();
+	}
+
 
 }

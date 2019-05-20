@@ -133,18 +133,21 @@ namespace prz
 				v = glm::radians(v);
 			}
 
-			if (normalize)
-			{
-				v = glm::normalize(v);
-			}
-
-			/*	if()*/
 			pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
 			yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
 			roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
 		}
 
-		return pitch * yaw* roll;
+		PQuat resultantQuat = pitch * yaw * roll;
+
+		isModuleZero = (resultantQuat.x + resultantQuat.y + resultantQuat.z + resultantQuat.w) == 0.f;
+
+		if (normalize && !isModuleZero)
+		{
+			resultantQuat = glm::normalize(resultantQuat);
+		}
+
+		return resultantQuat;
 	}
 }
 

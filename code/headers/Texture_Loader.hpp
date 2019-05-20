@@ -91,20 +91,20 @@ namespace prz
 
 		PSPtr< Texture > get_texture(const PString& texturePath)
 		{
-			return is_texture_loaded(texturePath) ? textures_[texturePath] : nullptr;
+			return is_texture_loaded(texturePath) ? textures_[texturePath] : PSPtr< Texture >();
 		}
 
-		Texture* get_texture_by_name(const PString& textureName)
+		PSPtr< Texture > get_texture_by_name(const PString& textureName)
 		{
-			return is_texture_loaded_by_name(textureName) ? texturesByName_[textureName] : nullptr;
+			return is_texture_loaded_by_name(textureName) ? texturesByName_[textureName] : PSPtr< Texture >();
 		}
 
-		Texture_2D* get_texture_2d(const PString& texture2DName)
+		PSPtr< Texture_2D > get_texture_2d(const PString& texture2DName)
 		{
-			return is_texture_2D_loaded(texture2DName) ? textures2DByName_[texture2DName] : nullptr;
+			return is_texture_2D_loaded(texture2DName) ? textures2DByName_[texture2DName] : PSPtr< Texture_2D >();
 		}
 
-		Texture_Cube* get_texture_cube(const PString& textureCubeName)
+		PSPtr< Texture_Cube > get_texture_cube(const PString& textureCubeName)
 		{
 			return is_texture_cube_loaded(textureCubeName) ? texturesCubeByName_[textureCubeName] : nullptr;
 		}
@@ -122,7 +122,7 @@ namespace prz
 		PSPtr< Texture > allocate_texture(PSPtr< Texture > texture, const PString& texturePath, const PString& textureName)
 		{
 			textures_[texturePath] = texture;
-			texturesByName_[textureName] = textures_[texturePath].get();
+			texturesByName_[textureName] = textures_[texturePath];
 
 			return textures_[texturePath];
 		}
@@ -130,12 +130,12 @@ namespace prz
 	private:
 
 		PMap< PString, PSPtr< Texture > > textures_;
-		PMap< PString, Texture* > texturesByName_;
+		PMap< PString, PSPtr< Texture > > texturesByName_;
 
 	private:
 
-		PMap< PString, Texture_2D* > textures2DByName_;
-		PMap< PString, Texture_Cube* > texturesCubeByName_;
+		PMap< PString, PSPtr< Texture_2D > > textures2DByName_;
+		PMap< PString, PSPtr< Texture_Cube > > texturesCubeByName_;
 	};
 
 

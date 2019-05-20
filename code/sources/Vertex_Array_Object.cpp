@@ -4,7 +4,8 @@
 
 namespace prz
 {
-	Vertex_Array_Object::Vertex_Array_Object(const PList< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices)
+	Vertex_Array_Object::Vertex_Array_Object(const PList< PVAI >& vertexAttribInfoList, const PSPtr< PVBO >& vboIndices) :
+		nIndices_(0)
 	{
 		glGenVertexArrays(1, &vaoID_);
 
@@ -38,6 +39,8 @@ namespace prz
 				vboIndices->bind();
 				{
 				} /*vboIndices->unbind();*/
+
+				nIndices_ = vboIndices->size();
 			}
 
 			vbos_.push_back(vboIndices);

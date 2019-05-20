@@ -1,4 +1,7 @@
 #include <Cube.hpp>
+#include <Vertex_Array_Object.hpp>
+#include <Vertex_Buffer_Object.hpp>
+#include <Vertex_Attribute_Information.hpp>
 
 namespace prz
 {
@@ -101,4 +104,23 @@ namespace prz
 		20, 23, 22,             // bottom
 		20, 22, 21,
 	};
+
+	Cube::Cube(const PString& name) :
+		Mesh(Primitive_Mode::TRIANGLES, sizeof(indices_), Indices_Type::UNSIGNED_BYTE, name)
+	{
+		unsigned int nCoordinates = sizeof(GLfloat) * sizeof(coordinates_);
+
+		PList< PVAI > vertexAttributes =
+		{
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates_, nCoordinates, 3)), VBO_ORDER::COORDINATES),
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals_, nCoordinates, 3)), VBO_ORDER::NORMALS),
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs_, nCoordinates, 2)), VBO_ORDER::COORDINATES)
+		};
+
+		vao_ = std::make_shared< PVAO >
+		(
+			vertexAttributes,
+			PSPtr< PVBO >(std::make_shared< PVBO >(indices_, sizeof(GLubyte) * nVertices_, 1, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
+		);
+	}
 }
