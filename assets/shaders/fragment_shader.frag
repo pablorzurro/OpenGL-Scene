@@ -1,29 +1,31 @@
 
 #version 330 core
 
-in vec3 _VertNormals;
-in vec2 _TexCoords;
-in vec3 _FragPosition;
+in vec3 in_world_pos;
+in vec3 in_normal;
+in vec2 in_tex_coord;
+in vec4 in_vert_color;
 
-out vec4 _FragColor;
+uniform sampler2D 	texture_color;
+uniform vec3 		light_color;
+uniform vec3 		light_pos;
+uniform float 		ambient_intensity;
 
-// uniform sampler2D ourTexture;
-
-uniform vec3 lightColor;
-uniform vec3 lightPosition;
+out vec4 out_color;
 
 void main()
 {
-	vec3 norm = normalize(_VertNormals);
-	vec3 lightDir = normalize(lightPosition - _FragPosition);
+	vec3 normal = normalize(in_normal);
+	vec3 light_dir = normalize(light_pos - in_world_pos);
 
-	float diff = max(dot(norm, lightDir), 0.0);
-	vec3 diffuse = diff * lightColor;
-
-	float ambientStrength = 0.1;
-
-	vec3 ambient = ambientStrength * lightColor;
+	float diff = max(dot(normal, light_dir), 0.0);
+	vec3 diffuse = diff * light_color;
+	
+	vec3 ambient = ambient_intensity * light_color;;
 	vec3 result = (ambient + diffuse) * vec3(1.0, 1.0, 1.0);
+	
+	vec3 differential;
+	differential = texture(texture_color, normalize(in_tex_coord)).rgb;
 
-	_FragColor = vec4(result, 1.0);
+	out_color = vec4(differential, 1.0);
 }

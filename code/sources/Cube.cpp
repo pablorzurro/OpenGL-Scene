@@ -108,19 +108,19 @@ namespace prz
 	Cube::Cube(const PString& name) :
 		Mesh(Primitive_Mode::TRIANGLES, sizeof(indices_), Indices_Type::UNSIGNED_BYTE, name)
 	{
-		unsigned int nCoordinates = sizeof(GLfloat) * sizeof(coordinates_);
+		unsigned int nCoordinates = sizeof(coordinates_);
 
 		PList< PVAI > vertexAttributes =
 		{
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates_, nCoordinates, 3)), VBO_ORDER::COORDINATES),
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals_, nCoordinates, 3)), VBO_ORDER::NORMALS),
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs_, nCoordinates, 2)), VBO_ORDER::COORDINATES)
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates_,  sizeof(coordinates_), 3)), VBO_ORDER::COORDINATES),
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals_,  sizeof(normals_), 3)), VBO_ORDER::NORMALS),
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs_, sizeof(textureUVs_), 2)), VBO_ORDER::TEXTURE_COORD)
 		};
 
 		vao_ = std::make_shared< PVAO >
 		(
 			vertexAttributes,
-			PSPtr< PVBO >(std::make_shared< PVBO >(indices_, sizeof(GLubyte) * nVertices_, 1, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
+			PSPtr< PVBO >(std::make_shared< PVBO >(indices_, nVertices_, 1, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
 		);
 	}
 }

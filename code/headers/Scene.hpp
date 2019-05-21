@@ -52,7 +52,7 @@ namespace prz
 	public:
 
 		PSPtr< Entity > add_entity(PSPtr< Entity > entity, PSPtr< Entity > parent = PSPtr < Entity >(), bool subscribeToRenderer = true);
-		PSPtr< Entity > create_entity(const PString& name, PSPtr< Entity > parent = PSPtr < Entity >(), bool modelIsViewMatrix = false);
+		PSPtr< Entity > create_entity(const PString& name, PSPtr< Entity > parent = PSPtr < Entity >());
 		
 	public:
 
@@ -79,7 +79,7 @@ namespace prz
 
 	private:
 
-		Skybox skybox_;
+		PSPtr< Skybox > skybox_;
 
 	private:
 

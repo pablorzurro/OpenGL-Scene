@@ -1,33 +1,31 @@
 
 #version 330 core
 
-layout(location = 0) in vec3 vertex;
-layout(location = 1) in vec3 aNormals;
-layout(location = 2) in vec2 aTexCoord;
-layout(location = 3) in vec4 vertColor;
+layout(location = 0) in vec3 in_position;
+layout(location = 1) in vec3 in_normal;
+layout(location = 2) in vec2 in_tex_coord;
+layout(location = 3) in vec4 in_vert_color;
 
-out vec2 TexCoord;
-out vec3 FragPosition;
-out vec3 Normals;
+uniform mat4 model_matrix;
+uniform mat4 view_matrix;
+uniform mat4 proj_matrix;
 
-uniform mat4 modelViewMatrix;
-uniform mat4 projectionMatrix;
-//uniform float time;
+out vec3 out_world_pos;
+out vec3 out_normal;
+out vec2 out_tex_coord;
+out vec4 out_color;
 
 void main()
 {
-	//float offset = ((vertex.x * vertex.x) + (vertex.z * vertex.z));
-	//float frequency = 0.3;
-	//float speed = 2;
-	//sin(time * speed + vertex.x * frequency)
+	mat4 model_view_matrix = view_matrix * model_matrix;
 
-	vec4 modelPosition = modelViewMatrix * vec4(vertex, 1.0);
-	
-	TexCoord = aTexCoord;
+	vec4 model_pos = model_view_matrix * vec4(in_position, 1.0);
+	gl_Position = proj_matrix * model_pos;
 
-	FragPosition = modelPosition.xyz;
-	
-	// la inversa de la traspuesta, se puede hacer una vez por malla en vez de una vez por vertice
-	Normals = mat3(transpose(inverse(modelViewMatrix))) * aNormals;
-	gl_Position = projectionMatrix * modelPosition;
+	vec4 normal =  model_view_matrix * vec4(in_normal, 0.0);
+
+	out_world_pos = model_pos.xyz;
+	out_normal = normal.xyz;
+	out_tex_coord= in_tex_coord;	
+	out_color = in_vert_color;
 }

@@ -18,14 +18,34 @@ namespace prz
 		static PSPtr< Material > material(new Material
 		(
 			"default_material",
-			Shader_Program_Loader::instance().load_shader_program
-			(
-				Game::assetsFolderPath() + "shaders/fragment_shader.frag",
-				Game::assetsFolderPath() + "shaders/vertex_shader.vert"
-			)
+			Game::assetsFolderPath() + "shaders/fragment_shader.frag",
+			Game::assetsFolderPath() + "shaders/vertex_shader.vert"
 		));
 
+		static bool isTextureAdded = false;
+
+		if (!isTextureAdded)
+		{
+			material->add_texture_2D(Game::assetsFolderPath() + "textures/2D/uv-checker-3.tga", "texture_color");
+			isTextureAdded = true;
+		}
+
 		return material;
+	}
+
+	bool Material::exists_texture_with_name(const PString& textureName)
+	{
+		return textures_.find(textureName) != textures_.end();
+	}
+
+	bool Material::exists_texture(PSPtr<Texture> texture)
+	{
+		if (texture)
+		{
+			return exists_texture_with_name(texture->name());
+		}
+
+		return false;
 	}
 
 	bool Material::set_uniform(const char* id, const PString & name, const GLint value, bool isSharedUniform)
@@ -141,6 +161,11 @@ namespace prz
 		return false;
 	}
 
+	PSPtr<Texture> Material::get_texture_with_name(const PString& textureName)
+	{
+		return exists_texture_with_name(textureName) ? textures_[textureName].texture : PSPtr< Texture >();
+	}
+
 	void Material::apply_local_uniforms()
 	{
 		apply_uniforms(localUniforms_);
@@ -151,30 +176,40 @@ namespace prz
 		apply_uniforms(sharedUniforms_);
 	}
 
-	bool Material::add_texture(PSPtr<Texture> texture)
+	PSPtr< Texture > Material::add_texture(PSPtr<Texture> texture, const PString& uniformName)
 	{
 		if (texture)
 		{
-			textures_.push_back(texture);
-			return true;
+			GLuint uniformID = shaderProgram_->get_uniform_id(uniformName.c_str()) != -1;
+			if (uniformID != -1)
+			{
+				TextureSlot textureSlot;
+
+				textureSlot.texture = texture;
+				textureSlot.uniformID = uniformID;
+
+				textures_[texture->name()] = textureSlot;
+
+				return textures_[texture->name()].texture;
+			}
 		}
 
-		return false;
+		return PSPtr< Texture >();
 	}
 
-	bool Material::add_texture_cube(const PString& texturePath)
+	PSPtr< Texture > Material::add_texture_cube(const PString& texturePath, const PString& uniformName)
 	{
-		return add_texture(Texture_Loader::instance().load_cube_map(texturePath));
+		return add_texture(Texture_Loader::instance().load_cube_map(texturePath), uniformName);
 	}
 
-	bool Material::add_texture_2D(const PString& texturePath)
+	PSPtr< Texture > Material::add_texture_2D(const PString& texturePath, const PString& uniformName)
 	{
-		return add_texture(Texture_Loader::instance().load_texture2D(texturePath));
+		return add_texture(Texture_Loader::instance().load_texture2D(texturePath), uniformName);
 	}
 
-	bool Material::add_texture_by_name(const PString& textureName)
+	PSPtr< Texture > Material::add_texture_by_name(const PString& textureName, const PString& uniformName)
 	{
-		add_texture(Texture_Loader::instance().get_texture_by_name(textureName));
+		return add_texture(Texture_Loader::instance().get_texture_by_name(textureName), uniformName);
 	}
 
 	Uniform* Material::allocate_uniform(const char* id, const PString & name, Var_GL::Type type, bool isSharedUniform)
@@ -226,15 +261,25 @@ namespace prz
 
 	void Material::use()
 	{
-		shaderProgram_->use();
-
-		for (PSPtr< Texture> texture : textures_)
+		if (shaderProgram_)
 		{
-			texture->bind();
-		}
+			shaderProgram_->use();
 
-		apply_shared_uniforms();
+			unsigned int i = 0;
+
+			for (auto& pair : textures_)
+			{
+				TextureSlot& textureSlot = pair.second;
+
+				if (i > 15)
+				{
+					break; // A shader program can have only 16 texture slots
+				}
+
+				glActiveTexture(GL_TEXTURE0 + i);
+				textureSlot.texture->bind();
+				glUniform1i(textureSlot.uniformID, textureSlot.texture->textureID());
+			}
+		}	
 	}
-
-
 }

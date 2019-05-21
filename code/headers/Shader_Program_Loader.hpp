@@ -84,6 +84,8 @@ namespace prz
 				{
 					shaderProgram->link();
 
+
+
 					if (shaderProgram->is_usable())
 					{
 						loadedShaderPrograms_[shaderProgram->name()] = shaderProgram;

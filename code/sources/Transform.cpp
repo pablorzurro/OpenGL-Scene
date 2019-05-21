@@ -6,7 +6,7 @@
 
 namespace prz
 {
-	Transform::Transform(Entity& owner, Transform* parent, bool modelIsViewMatrix):
+	Transform::Transform(Entity& owner, Transform* parent):
 		owner_(owner),
 		modelMatrix_(PMatIdentity),
 		worldMatrix_(modelMatrix_),
@@ -17,8 +17,7 @@ namespace prz
 		parent_(parent),
 		renderer_(nullptr),
 		isModelMatrixUpdated_(false),
-		isWorldMatrixUpdated_(false),
-		modelIsViewMatrix_(modelIsViewMatrix)
+		isWorldMatrixUpdated_(false)
 	{
 		update_model_matrix();
 	}
@@ -34,8 +33,7 @@ namespace prz
 		orientation_(other.orientation_),
 		scale_(other.scale_),
 		isModelMatrixUpdated_(other.isModelMatrixUpdated_),
-		isWorldMatrixUpdated_(other.isWorldMatrixUpdated_),
-		modelIsViewMatrix_(other.modelIsViewMatrix_)
+		isWorldMatrixUpdated_(other.isWorldMatrixUpdated_)
 	{}
 
 	void Transform::translate(const PVec3& translation)
@@ -63,9 +61,24 @@ namespace prz
 		translate(PVec3(0, 0, translationZ));
 	}
 
+	void Transform::forward_translate(float translation)
+	{
+		translate(get_forward() * translation);
+	}
+
+	void Transform::left_translate(float translation)
+	{
+		translate(get_left() * translation);
+	}
+
+	void Transform::up_translate(float translation)
+	{
+		translate(get_up() * translation);
+	}
+
 	void Transform::rotate(const PQuat& rotation)
 	{
-		orientation_ *= glm::normalize(rotation);
+		orientation_ = glm::normalize(rotation * orientation_);
 		isModelMatrixUpdated_ = false; 
 	}
 
@@ -79,16 +92,16 @@ namespace prz
 		rotate(PVec3(eulerAngleX, eulerAngleY, eulerAngleZ), inRadians);
 	}
 
-	void Transform::rotate_around_x(float eulerAngle, bool inRadians)
+	void Transform::pitch(float eulerAngle, bool inRadians)
 	{
 		rotate(PVec3(eulerAngle, 0, 0), inRadians);
 	}
-	void Transform::rotate_around_y(float eulerAngle, bool inRadians)
+	void Transform::yaw(float eulerAngle, bool inRadians)
 	{
 		rotate(PVec3(0, eulerAngle, 0), inRadians);
 	}
 
-	void Transform::rotate_around_z(float eulerAngle, bool inRadians)
+	void Transform::roll(float eulerAngle, bool inRadians)
 	{
 		rotate(PVec3(0, 0, eulerAngle), inRadians);
 	}
@@ -172,11 +185,6 @@ namespace prz
 	{
 		update_world_matrix();
 
-		if (modelIsViewMatrix_)
-		{
-			return viewMatrix();
-		}
-
 		return worldMatrix_;
 	}
 
@@ -188,8 +196,10 @@ namespace prz
 
 	PMat4 Transform::viewMatrix()
 	{
-		update_world_matrix();
-		return translation_matrix() * rotation_matrix();
+		PMat4 viewMatrix_ = glm::mat4_cast(orientation_);
+		viewMatrix_ = glm::translate(viewMatrix_, translation_);
+
+		return viewMatrix_;
 	}
 
 	Transform* Transform::parent()
@@ -236,7 +246,7 @@ namespace prz
 		
 	PMat4 Transform::rotation_matrix() const
 	{
-		return glm::toMat4(orientation_);
+		return glm::mat4_cast(orientation_);
 	}
 
 	const PVec3& Transform::scale() const
@@ -249,6 +259,22 @@ namespace prz
 		return glm::scale(PMatIdentity, scale_);
 	}
 
+	PVec3 Transform::get_forward() const
+	{
+		return glm::conjugate(orientation_)* glm::vec3(0.0f, 0.0f, -1.0f);
+	}
+
+	PVec3 Transform::get_left() const
+	{
+		return glm::conjugate(orientation_)* PVec3(-1.0, 0.0f, 0.0f);
+	}
+
+	PVec3 Transform::get_up() const
+	{
+		return glm::conjugate(orientation_)* PVec3(0.0f, 1.0f, 0.0f);
+	}
+
+
 	bool Transform::isVisible()
 	{
 		return isVisible_;
@@ -259,10 +285,10 @@ namespace prz
 		if (!isModelMatrixUpdated_)
 		{
 			modelMatrix_ = translation_matrix() * rotation_matrix() * scale_matrix();
-			
+
 			isModelMatrixUpdated_ = true;
 			isWorldMatrixUpdated_ = false;
-		}
+		}	
 	}
 
 	void Transform::update_world_matrix()
@@ -275,7 +301,7 @@ namespace prz
 
 			if (parent_)
 			{
-				worldMatrix_ = parent_->worldMatrix() * modelMatrix_; // Calling the parent hierarchy to obtain the total transformation
+				worldMatrix_ = parent_->worldMatrix() * worldMatrix_; // Calling the parent hierarchy to obtain the total transformation
 				isWorldMatrixUpdated_ = true;
 			}
 		}

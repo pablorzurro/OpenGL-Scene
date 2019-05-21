@@ -185,7 +185,7 @@ namespace prz
 
 			for (size_t i = 0; i < shaderNames.size(); i++)
 			{
-				name += " -" + shaderNames[i++];
+				name += " -" + shaderNames[i];
 			}
 
 			return name;

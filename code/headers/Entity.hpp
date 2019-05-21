@@ -26,14 +26,14 @@ namespace prz
 	{
 	public:
 
-		Entity(Scene& scene, const PString& name, Transform* parent = nullptr, bool modelIsViewMatrix = false) :
-			transform_(*this, parent, modelIsViewMatrix),
+		Entity(Scene& scene, const PString& name, Transform* parent = nullptr) :
+			transform_(*this, parent),
 			sceneParent_(scene),
 			name_(name)
 		{}
 
-		Entity(Scene& scene, const PString& name, PSPtr< Entity > parent = PSPtr< Entity >(), bool modelIsViewMatrix = false) :
-			Entity(scene, name, &parent->transform_, modelIsViewMatrix)
+		Entity(Scene& scene, const PString& name, PSPtr< Entity > parent = PSPtr< Entity >()) :
+			Entity(scene, name, parent ? &parent->transform() : nullptr)
 		{}
 
 		~Entity(){}

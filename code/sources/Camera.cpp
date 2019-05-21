@@ -3,7 +3,7 @@
 namespace prz
 {
 	Camera::Camera(Scene& scene, const PString& name, float fov, float zNear, float zFar, float aspectRatio) :
-		Entity(scene, name, nullptr, true),
+		Entity(scene, name, nullptr),
 		fov_(fov),
 		zNear_(zNear),
 		zFar_(zFar),
@@ -20,39 +20,51 @@ namespace prz
 	{
 		Input_Manager& inputManager = Input_Manager::instance();
 
+		float speed = 10.f * deltaTime;
+
+		if (inputManager.is_key_pressed(PKey::LShift))
+		{
+			speed *= 5.f;
+		}
+
 		if (inputManager.is_key_pressed(PKey::W))
 		{
-			transform_.translate(0.f, 0.f, 10.f);
+			transform_.forward_translate(-speed);
 		}
 		if (inputManager.is_key_pressed(PKey::S))
 		{
-			transform_.translate(0.f, 0.f, -10.f);
+			transform_.forward_translate(speed);
 		}
 		if (inputManager.is_key_pressed(PKey::D))
 		{
-			transform_.translate(0.f, 0.f, 10.f);
+			transform_.left_translate(-speed);
 		}
 		if (inputManager.is_key_pressed(PKey::A))
 		{
-			transform_.translate(0.f, 0.f, -10.f);
+			transform_.left_translate(speed);
 		}
+		if (inputManager.is_key_pressed(PKey::Space))
+		{
+			if (inputManager.is_key_pressed(PKey::LControl))
+			{
+				transform_.up_translate(-speed);
+			}
+			else
+			{
+				transform_.up_translate(speed);
+			}
+		}
+
 		if (inputManager.is_key_pressed(PKey::R))
 		{
 			transform_.set_translation(PVec3(0.f, 0.f, 0.f));
 		}
-
 		
-
-		/*if (inputManager.is_mouse_pressed() == false)
-			return;*/
-
-		float yawRotation = mouseSensitivityX * ((float)inputManager.curMouseX() - (float)inputManager.prevMouseX());
-		float pitchRotation = mouseSensitivityY * ((float)inputManager.curMouseY() - (float)inputManager.prevMouseY());
-
-		transform_.rotate(yawRotation, pitchRotation, 0.f);
-
-		//cout << glm::to_string(inputManager.current_mouse_position()) + "         " + glm::to_string(inputManager.previous_mouse_position()) << endl;
-		//cout << to_string(yawRotation)  + "      "+ to_string(pitchRotation) << endl;
+		if (inputManager.is_mouse_pressed())
+		{
+			transform_.pitch(mouseSensitivityX * ((float)inputManager.curMouseX() - (float)inputManager.prevMouseX()));
+			transform_.yaw(mouseSensitivityX * ((float)inputManager.curMouseY() - (float)inputManager.prevMouseY()));
+		}
 
 		calculate_matrix();
 	}

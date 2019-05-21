@@ -49,6 +49,7 @@ namespace prz
 			filterMode_(filterMode),
 			error_(GL_NO_ERROR)
 		{
+			error_ = glGetError();
 			load_images(imagePaths);
 		}
 
@@ -101,6 +102,11 @@ namespace prz
 		const PString& name()
 		{
 			return name_;
+		}
+
+		GLuint textureID() const
+		{
+			return textureID_;
 		}
 
 	protected:

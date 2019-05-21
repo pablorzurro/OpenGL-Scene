@@ -22,8 +22,7 @@ namespace prz
 
 	class Camera;
 	class Texture;
-	class Texture_Cube;
-	class Shader_Program;
+	class Material;
 
 	class Skybox : public Drawable
 	{
@@ -43,7 +42,9 @@ namespace prz
 	private:
 
 		PSPtr< Material > material_;
+		PSPtr< Texture > textureCube_;
 		Cube cube_;
+
 	};
 
 } // !namespace prz 

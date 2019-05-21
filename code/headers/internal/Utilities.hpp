@@ -132,19 +132,22 @@ namespace prz
 			{
 				v = glm::radians(v);
 			}
-
-			pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
-			yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
-			roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
 		}
+
+		pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
+		yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
+		roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
 
 		PQuat resultantQuat = pitch * yaw * roll;
 
-		isModuleZero = (resultantQuat.x + resultantQuat.y + resultantQuat.z + resultantQuat.w) == 0.f;
-
-		if (normalize && !isModuleZero)
+		if (normalize)
 		{
-			resultantQuat = glm::normalize(resultantQuat);
+			isModuleZero = (resultantQuat.x + resultantQuat.y + resultantQuat.z + resultantQuat.w) == 0.f;
+
+			if (!isModuleZero)
+			{
+				resultantQuat = glm::normalize(resultantQuat);
+			}	
 		}
 
 		return resultantQuat;

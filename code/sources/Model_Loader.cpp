@@ -60,6 +60,7 @@ namespace prz
 			PBuffer< GLfloat > vertTexCoords(n2DVertComponents);
 			PBuffer< GLfloat > vertColors(n4DVertComponents);
 
+
 			// Fill the positions, normals, texture coordinates and colors
 			for (size_t i = 0; i < numVertices; ++i)
 			{

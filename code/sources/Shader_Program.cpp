@@ -29,7 +29,7 @@ namespace prz
 				glGetShaderInfoLog(programObjID_, logLength, NULL, &logStr_.front());
 			}
 
-			//assert(false);
+			cout << name_ + " failed to link.  LOG:" + logStr_ << endl;
 		}
 
 		return (islinkSuccessful_ = (linkSucceeded != 0));

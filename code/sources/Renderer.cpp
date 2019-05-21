@@ -14,9 +14,6 @@ namespace prz
 	{
 		for (auto& shaderMaterialPair : renderQueue_)
 		{
-			PSPtr< Shader_Program > shaderProgram = shaderMaterialPair.first;
-			shaderProgram->use();
-
 			for (auto& materialBatch : shaderMaterialPair.second)
 			{
 				PSPtr< Material > material = materialBatch.first;
@@ -106,21 +103,16 @@ namespace prz
 	{
 		// Try to set each shared uniform with "brute force", setting every known uniform from the created shaders
 
-		/*material->set("proj_matrix", "proj_matrix", activeCamera->projectionMatrix());
-		material->set("light_color", "light_color", PVec3(255.f, 255.f, 255.f));
-		material->set("light_pos", "light_pos", PVec3(0.f, 20.f, 0.f));
-		material->set("ambient_intensity", "ambient_intensity", 0.15f);*/
-
-		material->set_uniform("projectionMatrix", "projectionMatrix", activeCamera->projectionMatrix(), true);
-		material->set_uniform("lightColor", "lightColor", PVec3(0.5f, 0.5f, 0.5f), true);
-		material->set_uniform("lightPosition", "lightPosition", PVec3(0.f, 20.f, 0.f), true);
+		material->set_uniform("proj_matrix", "projection_matrix", activeCamera->projectionMatrix(), true);
+		material->set_uniform("view_matrix", "view_matrix", activeCamera->viewMatrix(), true);
+		material->set_uniform("light_color", "light_color", PVec3(255.f, 255.f, 255.f), true);
+		material->set_uniform("light_pos", "light_position", PVec3(0.f, 20.f, 0.f), true);
+		material->set_uniform("ambient_intensity", "ambient_intensity", 0.15f, true);
 	}
 
 	void Renderer::set_material_local_uniforms(PSPtr<Material> material, Transform* transform)
 	{
 		// Try to set each local uniform with "brute force", setting every known uniform from the created shaders
-		assert(transform);
-		/*material->set("model_view_matrix", "model_view_matrix", transform->worldMatrix());*/
-		material->set_uniform("modelViewMatrix", "modelViewMatrix", transform->worldMatrix());
+		material->set_uniform("model_matrix", "model_matrix", transform->worldMatrix());
 	}
 }

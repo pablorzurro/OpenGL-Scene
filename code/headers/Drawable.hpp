@@ -12,6 +12,8 @@
 #ifndef OPENGL_SCENE_DRAWABLE_H_
 #define OPENGL_SCENE_DRAWABLE_H_
 
+#include <Declarations.hpp>
+
 namespace prz
 {
 	class Camera;
@@ -22,7 +24,7 @@ namespace prz
 
 		virtual ~Drawable() = default;
 		virtual void draw() = 0;
-		virtual void draw(PSPtr< Camera > camera);
+		virtual void draw(PSPtr< Camera > camera){}
 
 	};
 }

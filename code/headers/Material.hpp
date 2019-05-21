@@ -25,6 +25,15 @@ namespace prz
 	{
 	public:
 
+		struct TextureSlot
+		{
+			PSPtr< Texture > texture;
+			GLuint uniformID;
+		};
+		
+	public:
+
+
 		Material(const PString& name, PSPtr< Shader_Program > shaderProgram):
 			name_(name),
 			shaderProgram_(shaderProgram),
@@ -47,11 +56,16 @@ namespace prz
 
 	public:
 
-		bool add_texture(PSPtr< Texture > texture);
-		bool add_texture_cube(const PString& texturePath);
-		bool add_texture_2D(const PString& texturePath);
-		bool add_texture_by_name(const PString& textureName);
+		PSPtr< Texture > add_texture(PSPtr< Texture > texture, const PString& uniformName);
+		PSPtr< Texture > add_texture_cube(const PString& texturePath, const PString& uniformName);
+		PSPtr< Texture > add_texture_2D(const PString& texturePath, const PString& uniformName);
+		PSPtr< Texture > add_texture_by_name(const PString& textureName, const PString& uniformName);
 
+	public:
+
+		bool exists_texture_with_name(const PString& textureName);
+		bool exists_texture(PSPtr< Texture > texture);
+		
 	public:
 
 		bool set_uniform(const char* id, const PString& name, const GLint    value, bool isSharedUniform = false);
@@ -63,6 +77,10 @@ namespace prz
 		bool set_uniform(const char* id, const PString& name, const PMat3&	 value, bool isSharedUniform = false);
 		bool set_uniform(const char* id, const PString& name, const PMat4&	 value, bool isSharedUniform = false);
 
+	public:
+
+		PSPtr< Texture > get_texture_with_name(const PString& textureName);
+	
 	public:
 
 		unsigned instanceID() const
@@ -95,7 +113,7 @@ namespace prz
 
 	protected:
 
-		PBuffer< PSPtr< Texture> > textures_;
+		PMap< PString, TextureSlot > textures_;
 		PSPtr< Shader_Program > shaderProgram_;
 
 	protected:

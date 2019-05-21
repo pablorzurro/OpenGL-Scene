@@ -27,17 +27,6 @@ namespace prz
 
 	private:
 
-		enum VBO_ORDER
-		{
-			COORDINATES,
-			NORMALS,
-			TEXTURE_UVS,
-			INDICES,
-			SIZE
-		};
-
-	private:
-
 		static const GLfloat coordinates_[];
 		static const GLfloat normals_[];
 		static const GLfloat textureUVs_[];

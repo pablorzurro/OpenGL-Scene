@@ -25,7 +25,7 @@ namespace prz
 	public:
 
 		Transform() = delete;
-		Transform(Entity& owner, Transform* parent = nullptr, bool modelIsViewMatrix = false);
+		Transform(Entity& owner, Transform* parent = nullptr);
 		Transform(Entity& owner, Transform& other);
 
 	public:
@@ -46,6 +46,10 @@ namespace prz
 		void translate_in_y(float translationY);
 		void translate_in_z(float translationZ);
 
+		void forward_translate(float translation);
+		void left_translate(float translation);
+		void up_translate(float translation);
+
 	public:
 
 		void rotate(const PQuat& rotation);
@@ -54,9 +58,9 @@ namespace prz
 
 	public:
 
-		void rotate_around_x(float eulerAngle, bool inRadians = false);
-		void rotate_around_y(float eulerAngle, bool inRadians = false);
-		void rotate_around_z(float eulerAngle, bool inRadians = false);
+		void pitch(float eulerAngle, bool inRadians = false);
+		void yaw(float eulerAngle, bool inRadians = false);
+		void roll(float eulerAngle, bool inRadians = false);
 
 	public:
 
@@ -119,6 +123,13 @@ namespace prz
 		const PVec3& scale() const; 
 		PMat4 scale_matrix()const;
 
+
+	public:
+
+		PVec3 get_forward() const;
+		PVec3 get_left() const;
+		PVec3 get_up() const;
+
 	public:
 
 		bool isVisible();
@@ -156,7 +167,6 @@ namespace prz
 
 		bool isModelMatrixUpdated_;
 		bool isWorldMatrixUpdated_;
-		bool modelIsViewMatrix_;
 	};
 
 } // !namespace prz 
