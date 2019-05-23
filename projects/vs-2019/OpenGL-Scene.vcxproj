@@ -100,6 +100,7 @@
     <ClCompile Include="..\..\code\sources\Plane.cpp" />
     <ClCompile Include="..\..\code\sources\Renderer.cpp" />
     <ClCompile Include="..\..\code\sources\Shader.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader_Loader.cpp" />
     <ClCompile Include="..\..\code\sources\Shader_Program.cpp" />
     <ClCompile Include="..\..\code\sources\Shader_Program_Loader.cpp" />
     <ClCompile Include="..\..\code\sources\Skybox.cpp" />

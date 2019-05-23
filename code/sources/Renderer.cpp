@@ -14,6 +14,7 @@ namespace prz
 	{
 		for (auto& shaderMaterialPair : renderQueue_)
 		{
+
 			for (auto& materialBatch : shaderMaterialPair.second)
 			{
 				PSPtr< Material > material = materialBatch.first;
@@ -35,6 +36,8 @@ namespace prz
 					for (auto& mesh : meshes)
 					{
 						mesh->draw();
+						assert(glGetError() == GL_NO_ERROR);
+
 					}
 				}
 			}

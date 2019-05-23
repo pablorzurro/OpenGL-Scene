@@ -24,6 +24,11 @@ namespace prz
 		Texture_Cube(PBuffer<PString>& imagePaths, const PString& name):
 			Texture(GL_TEXTURE_CUBE_MAP, imagePaths, name)
 		{
+			/*images_[2].flipHorizontally();
+			images_[3].flipHorizontally();*/
+			/*images_[2].flipVertically();
+			images_[3].flipVertically();*/
+			
 			initialize();
 		}
 

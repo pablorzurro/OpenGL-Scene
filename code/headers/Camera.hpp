@@ -27,7 +27,7 @@ namespace prz
 	public:
 
 		Camera(Scene& scene, const PString& name, float fov, float zNear, float zFar, float aspectRatio);
-		Camera(Scene& scene, const PString& name, float ratio = 1.f): Camera(scene, name, 35.f, 0.1f, 100.f, ratio){}
+		Camera(Scene& scene, const PString& name, float ratio = 1.f): Camera(scene, name, 20.f, 0.1f, 100.f, ratio){}
 		Camera(Scene& scene, const PString& name, float zNear, float zFar, float aspectRatio = 1.f): Camera(scene, name, 60.f, zNear, zFar, aspectRatio){}
 		
 	public:

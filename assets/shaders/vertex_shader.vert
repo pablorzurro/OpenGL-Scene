@@ -10,10 +10,10 @@ uniform mat4 model_matrix;
 uniform mat4 view_matrix;
 uniform mat4 proj_matrix;
 
-out vec3 out_world_pos;
-out vec3 out_normal;
-out vec2 out_tex_coord;
-out vec4 out_color;
+out vec3 delete_world_pos;
+out vec3 delete_normal;
+out vec2 delete_tex_coord;
+out vec4 delete_color;
 
 void main()
 {
@@ -24,8 +24,8 @@ void main()
 
 	vec4 normal =  model_view_matrix * vec4(in_normal, 0.0);
 
-	out_world_pos = model_pos.xyz;
-	out_normal = normal.xyz;
-	out_tex_coord= in_tex_coord;	
-	out_color = in_vert_color;
+	delete_world_pos = model_pos.xyz;
+	delete_normal = normal.xyz;
+	delete_tex_coord= in_tex_coord;	
+	delete_color = in_vert_color;
 }

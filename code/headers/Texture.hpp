@@ -41,7 +41,7 @@ namespace prz
 
 	public:
 
-		Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, Filter_Mode filterMode = Filter_Mode::NEAREST):
+		Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, Filter_Mode filterMode = Filter_Mode::NEAREST, bool flipImages = true):
 			textureID_(8000),
 			textureType_(textureType),
 			name_(name),
@@ -51,6 +51,11 @@ namespace prz
 		{
 			error_ = glGetError();
 			load_images(imagePaths);
+
+			if (flipImages)
+			{
+				flip_images();
+			}
 		}
 
 		~Texture()
@@ -68,6 +73,16 @@ namespace prz
 		void unbind()
 		{
 			glBindTexture(textureType_, 0);
+		}
+
+	public:
+
+		void flip_images()
+		{
+			for (PImage& image : images_)
+			{
+				image.flipVertically();
+			}
 		}
 
 	public:
@@ -109,75 +124,25 @@ namespace prz
 			return textureID_;
 		}
 
+		GLuint textureType() const
+		{
+			return textureType_;
+		}
+
 	protected:
 
 		virtual void initialize();
-
 		virtual void on_initialize() = 0;
 
 	protected:
 
-		virtual void load_images(PBuffer<PString>& imagePaths)
-		{
-			size_t size = imagePaths.size();
-
-			for (size_t i = 0; i < size; ++i)
-			{
-				PImage imgData;
-				
-				if (!imgData.loadFromFile(imagePaths[i]))
-				{
-					error_ = GL_INVALID_OPERATION;
-				}
-				else
-				{
-					cout << "Loaded image from path: \"" + imagePaths[i]+ "\"" << endl; // DEBUG
-					images_.push_back(imgData);
-				}
-			}
-		}
-
+		virtual void load_images(PBuffer<PString>& imagePaths);
+		
 	protected:
 
-		virtual void apply_wrap_mode()
-		{}
-
-		virtual void apply_filter_mode()
-		{
-			glTexParameteri(textureType_, GL_TEXTURE_MIN_FILTER, filterMode_);
-
-			bool generateMipmap = false;
-
-			switch (filterMode_)
-			{
-			case LINEAR_MIPMAP_NEAREST:
-			case LINEAR_MIPMAP_LINEAR:
-
-				generateMipmap = true;
-
-			case LINEAR:
-
-				glTexParameteri(textureType_, GL_TEXTURE_MAG_FILTER, LINEAR);
-
-				break;
-
-			case NEAREST_MIPMAP_NEAREST: 
-			case NEAREST_MIPMAP_LINEAR:
-
-				generateMipmap = true;
-
-			case NEAREST:
-
-				glTexParameteri(textureType_, GL_TEXTURE_MAG_FILTER, Filter_Mode::NEAREST);
-
-				break;
-			}
-
-			if (generateMipmap)
-			{
-				glGenerateMipmap(textureType_);
-			}
-		}
+		virtual void apply_wrap_mode(){}
+		virtual void apply_filter_mode();
+		
 
 	protected:
 

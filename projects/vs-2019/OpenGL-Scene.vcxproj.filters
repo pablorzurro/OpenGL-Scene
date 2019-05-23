@@ -31,14 +31,8 @@
     <Filter Include="Header Files\Core">
       <UniqueIdentifier>{c7ca8e4c-be1d-476f-aa09-fe4649c3321d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Vertex_Objects">
-      <UniqueIdentifier>{e983f6ac-c680-427b-aed7-40bdbf792b3d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Internal">
       <UniqueIdentifier>{446e2d08-c558-422e-b4d4-87ddd63551c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Vertex_Objects">
-      <UniqueIdentifier>{b2b7b105-9b6a-4263-95c8-3f56269a80dc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{0f7f7a2d-13fa-40de-a348-4b2847f5a21a}</UniqueIdentifier>
@@ -61,6 +55,12 @@
     <Filter Include="Source Files\Loaders">
       <UniqueIdentifier>{fb0bfa07-8da9-4e05-9e84-b3aca892f314}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Vertex Objects">
+      <UniqueIdentifier>{b2b7b105-9b6a-4263-95c8-3f56269a80dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Vertex Objects">
+      <UniqueIdentifier>{e983f6ac-c680-427b-aed7-40bdbf792b3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\libraries\glad-gl-3.3-core\src\glad.c">
@@ -73,10 +73,10 @@
       <Filter>Source Files\Internal</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp">
-      <Filter>Source Files\Vertex_Objects</Filter>
+      <Filter>Source Files\Vertex Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp">
-      <Filter>Source Files\Vertex_Objects</Filter>
+      <Filter>Source Files\Vertex Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Mesh.cpp">
       <Filter>Source Files\Meshes</Filter>
@@ -132,6 +132,9 @@
     <ClCompile Include="..\..\code\sources\main.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Shader_Loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -180,10 +183,10 @@
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Vertex_Array_Object.hpp">
-      <Filter>Header Files\Vertex_Objects</Filter>
+      <Filter>Header Files\Vertex Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp">
-      <Filter>Header Files\Vertex_Objects</Filter>
+      <Filter>Header Files\Vertex Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp">
       <Filter>Header Files\Internal</Filter>
@@ -219,7 +222,7 @@
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Vertex_Attribute_Information.hpp">
-      <Filter>Header Files\Vertex_Objects</Filter>
+      <Filter>Header Files\Vertex Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Model.hpp">
       <Filter>Header Files\Models</Filter>

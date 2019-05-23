@@ -7,8 +7,6 @@
 #include <Model.hpp>
 #include <Cube.hpp>
 
-#include <Shader_Program_Loader.hpp>
-
 namespace prz
 {
 
@@ -16,14 +14,14 @@ namespace prz
 		window_(window),
 		renderer_(*this),
 		activeCamera_(make_shared< Camera >( *this, "Active_Camera_For_Testing")),
-		skybox_(make_shared< Skybox >(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga", Game::assetsFolderPath() + "shaders/skybox.vert", Game::assetsFolderPath() + "shaders/skybox.frag"))
+		skybox_(make_shared< Skybox >(Game::assetsFolderPath() + "textures/cube_maps/sky/sky-cube-map-.tga" /*"textures/cube_maps/lake/goldrush_.tga"*/, Game::assetsFolderPath() + "shaders/skybox.vert", Game::assetsFolderPath() + "shaders/skybox.frag"))
 	{
-		glDisable(GL_DEPTH_TEST);
+		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
 
 		/*add_entity(make_shared< Entity >(*this, "Test-Entity"));*/
 
-		/*PSPtr< Entity > entityP =  create_entity("test_entity");
+		/*PSPtr< Entity > entityP = create_entity("test_entity");
 		entityP->add_model(Game::assetsFolderPath() + "models/fbx/Tank.fbx");
 		entityP->transform().translate_in_z(-10.f);*/
 
@@ -71,11 +69,11 @@ namespace prz
 
 	void Scene::render(float deltaTime)
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_DEPTH_BUFFER_BIT);
 		glClearColor(0.5, 0.5, 0.5, 1.0);
 
-		renderer_.render(activeCamera_);
 		skybox_->draw(activeCamera_);
+		renderer_.render(activeCamera_);
 	}
 
 	void Scene::on_window_resized()

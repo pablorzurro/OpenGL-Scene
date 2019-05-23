@@ -109,6 +109,8 @@ namespace prz
 		Mesh(Primitive_Mode::TRIANGLES, sizeof(indices_), Indices_Type::UNSIGNED_BYTE, name)
 	{
 		unsigned int nCoordinates = sizeof(coordinates_);
+		unsigned int nNormals = sizeof(normals_);
+		unsigned int nUVs = sizeof(textureUVs_);
 
 		PList< PVAI > vertexAttributes =
 		{

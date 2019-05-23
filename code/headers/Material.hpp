@@ -28,7 +28,7 @@ namespace prz
 		struct TextureSlot
 		{
 			PSPtr< Texture > texture;
-			GLuint uniformID;
+			PString uniformID;
 		};
 		
 	public:

@@ -26,7 +26,7 @@ namespace prz
 
 		if (!isTextureAdded)
 		{
-			material->add_texture_2D(Game::assetsFolderPath() + "textures/2D/uv-checker-3.tga", "texture_color");
+			material->add_texture_2D(Game::assetsFolderPath() + "textures/2D/wood.png"/*"uv-checker-3.tga"*/, "texture_color");
 			isTextureAdded = true;
 		}
 
@@ -178,7 +178,7 @@ namespace prz
 
 	PSPtr< Texture > Material::add_texture(PSPtr<Texture> texture, const PString& uniformName)
 	{
-		if (texture)
+		if (texture && shaderProgram_)
 		{
 			GLuint uniformID = shaderProgram_->get_uniform_id(uniformName.c_str()) != -1;
 			if (uniformID != -1)
@@ -186,7 +186,7 @@ namespace prz
 				TextureSlot textureSlot;
 
 				textureSlot.texture = texture;
-				textureSlot.uniformID = uniformID;
+				textureSlot.uniformID = uniformName;
 
 				textures_[texture->name()] = textureSlot;
 
@@ -214,26 +214,29 @@ namespace prz
 
 	Uniform* Material::allocate_uniform(const char* id, const PString & name, Var_GL::Type type, bool isSharedUniform)
 	{
-		Uniform uniform;
-
-		uniform.index = shaderProgram_->get_uniform_id(id);
-
-		if (uniform.index >= 0)
+		if (shaderProgram_)
 		{
-			uniform.value.type = type;
+			Uniform uniform;
 
-			if (isSharedUniform)
+			uniform.index = shaderProgram_->get_uniform_id(id);
+
+			if (uniform.index >= 0)
 			{
-				sharedUniforms_[name] = uniform;
-				return &sharedUniforms_[name];
-			}
-			else 
-			{
-				localUniforms_[name] = uniform;
-				return &localUniforms_[name];
+				uniform.value.type = type;
+
+				if (isSharedUniform)
+				{
+					sharedUniforms_[name] = uniform;
+					return &sharedUniforms_[name];
+				}
+				else
+				{
+					localUniforms_[name] = uniform;
+					return &localUniforms_[name];
+				}
 			}
 		}
-
+		
 		return nullptr;
 	}
 
@@ -264,7 +267,7 @@ namespace prz
 		if (shaderProgram_)
 		{
 			shaderProgram_->use();
-
+			
 			unsigned int i = 0;
 
 			for (auto& pair : textures_)
@@ -277,8 +280,11 @@ namespace prz
 				}
 
 				glActiveTexture(GL_TEXTURE0 + i);
+				assert(glGetError() == GL_NO_ERROR);
 				textureSlot.texture->bind();
-				glUniform1i(textureSlot.uniformID, textureSlot.texture->textureID());
+				assert(glGetError() == GL_NO_ERROR);
+				glUniform1i(shaderProgram_->get_uniform_id(textureSlot.uniformID.c_str()), 0);
+				assert(glGetError() == GL_NO_ERROR);
 			}
 		}	
 	}

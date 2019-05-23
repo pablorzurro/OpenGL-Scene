@@ -35,7 +35,6 @@ namespace prz
 		~Shader_Program()
 		{
 			glDeleteProgram(programObjID_);
-
 			programObjID_ = 0;
 		}
 

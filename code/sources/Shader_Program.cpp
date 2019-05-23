@@ -30,6 +30,7 @@ namespace prz
 			}
 
 			cout << name_ + " failed to link.  LOG:" + logStr_ << endl;
+			assert(false);
 		}
 
 		return (islinkSuccessful_ = (linkSucceeded != 0));

@@ -35,23 +35,23 @@ namespace prz
 		{
 			transform_.forward_translate(speed);
 		}
-		if (inputManager.is_key_pressed(PKey::D))
-		{
-			transform_.left_translate(-speed);
-		}
-		if (inputManager.is_key_pressed(PKey::A))
+		if (inputManager.is_key_pressed(PKey::D) || inputManager.is_key_pressed(PKey::Right))
 		{
 			transform_.left_translate(speed);
+		}
+		if (inputManager.is_key_pressed(PKey::A) || inputManager.is_key_pressed(PKey::Left))
+		{
+			transform_.left_translate(-speed);
 		}
 		if (inputManager.is_key_pressed(PKey::Space))
 		{
 			if (inputManager.is_key_pressed(PKey::LControl))
 			{
-				transform_.up_translate(-speed);
+				transform_.up_translate(speed);
 			}
 			else
 			{
-				transform_.up_translate(speed);
+				transform_.up_translate(-speed);
 			}
 		}
 
@@ -62,8 +62,8 @@ namespace prz
 		
 		if (inputManager.is_mouse_pressed())
 		{
-			transform_.pitch(mouseSensitivityX * ((float)inputManager.curMouseX() - (float)inputManager.prevMouseX()));
-			transform_.yaw(mouseSensitivityX * ((float)inputManager.curMouseY() - (float)inputManager.prevMouseY()));
+			transform_.pitch((mouseSensitivityY * ((float)inputManager.prevMouseY() - (float)inputManager.curMouseY())));
+			transform_.yaw((mouseSensitivityX * ((float)inputManager.prevMouseX() - (float)inputManager.curMouseX())));
 		}
 
 		calculate_matrix();
