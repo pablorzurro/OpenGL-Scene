@@ -1,5 +1,5 @@
 /**
- * @file View.hpp
+ * @file Scene.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
  * @brief 
  * @version 0.1
@@ -13,8 +13,6 @@
 #define OPENGL_SCENE_SCENE_H_
 
 #include <Renderer.hpp>
-#include <Camera.hpp>
-#include <Skybox.hpp>
 
 #include <Declarations.hpp>
 
@@ -26,6 +24,8 @@ namespace prz
 {
 
 	class Entity;
+	class Camera;
+	class Skybox;
 
 	class Scene
 	{
@@ -33,9 +33,21 @@ namespace prz
 
 		Scene(Window& window);
 
+		Scene
+		(
+			Window& window,
+			PSPtr< Camera > activeCamera,
+			PSPtr< Skybox > skybox
+
+		);
+
 	public:
 
-		void update(float deltaTime);
+		virtual void initialize() {}
+
+	public:
+
+		virtual void update(float deltaTime);
 		void render(float deltaTime);
 
 	public:
@@ -68,20 +80,20 @@ namespace prz
 		const Renderer& renderer() const { return renderer_; }
 		const PSPtr< Camera > activeCamera() const { return activeCamera_; }
 
-	private:
+	protected:
 
 		Renderer renderer_;
 		PSPtr< Camera > activeCamera_;
 		
-	private:
+	protected:
 
 		PMap< PString, PSPtr< Entity >> entities_;
 
-	private:
+	protected:
 
 		PSPtr< Skybox > skybox_;
 
-	private:
+	protected:
 
 		Window& window_;
 	};

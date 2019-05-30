@@ -134,11 +134,17 @@ namespace prz
 			}
 		}
 
-		pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
+		// Weird and same result in both cases
+
+		/*pitch = glm::angleAxis(v.x, PVec3(1.f, 0.f, 0.f));
 		yaw = glm::angleAxis(v.y, PVec3(0.f, 1.f, 0.f));
-		roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f));
+		roll = glm::angleAxis(v.z, PVec3(0.f, 0.f, 1.f);
 
 		PQuat resultantQuat = pitch * yaw * roll;
+		*/
+
+
+		PQuat resultantQuat = PQuat(v);
 
 		if (normalize)
 		{

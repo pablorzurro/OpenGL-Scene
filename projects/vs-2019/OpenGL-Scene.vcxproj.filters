@@ -61,6 +61,12 @@
     <Filter Include="Header Files\Vertex Objects">
       <UniqueIdentifier>{e983f6ac-c680-427b-aed7-40bdbf792b3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{91f3d1f9-0e94-4fa7-b452-72743ad29650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{3eb5d207-df3f-4583-bc62-ba554ed623dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\libraries\glad-gl-3.3-core\src\glad.c">
@@ -133,6 +139,12 @@
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Shader_Loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Demo_Scene_01.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Material_Loader.cpp">
       <Filter>Source Files\Loaders</Filter>
     </ClCompile>
   </ItemGroup>
@@ -243,6 +255,12 @@
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Texture_Loader.hpp">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Demo_Scene_01.hpp">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Material_Loader.hpp">
       <Filter>Header Files\Loaders</Filter>
     </ClInclude>
   </ItemGroup>

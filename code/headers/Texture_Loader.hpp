@@ -81,7 +81,6 @@ namespace prz
 			return textures2DByName_.find(texture2DName) != textures2DByName_.end();
 		}
 
-
 		bool is_texture_cube_loaded(const PString& textureCubeName) const
 		{
 			return texturesCubeByName_.find(textureCubeName) != texturesCubeByName_.end();

@@ -1,5 +1,5 @@
 /**
- * @file GameObject.hpp
+ * @file Entity.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
  * @brief 
  * @version 0.1
@@ -15,6 +15,7 @@
 #include <Transform.hpp>
 #include <Model.hpp>
 #include <Material.hpp>
+#include <Material_Loader.hpp>
 #include <Model_Loader.hpp>
 
 namespace prz
@@ -51,7 +52,7 @@ namespace prz
 
 	public:
 
-		void add_model(const PString& path, PSPtr< Material > material = Material::default_material())
+		void add_model(const PString& path, PSPtr< Material > material = Material_Loader::instance().get_default_material())
 		{
 			add_model(Model_Loader::instance().load_model(path, material));
 		}

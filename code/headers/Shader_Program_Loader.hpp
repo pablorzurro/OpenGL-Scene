@@ -1,4 +1,13 @@
-
+/**
+ * @file Shader_Program_Loader.hpp
+ * @author Pablo Rodríguez Zurro (przuro@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 16-05-2019
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef OPENGL_SCENE_SHADER_PROGRAM_LOADER_H_
 #define OPENGL_SCENE_SHADER_PROGRAM_LOADER_H_
@@ -96,7 +105,6 @@ namespace prz
 			return PSPtr< Shader_Program >();
 		}
 
-
 	public:
 
 		bool exists_shader_program_with_name(const PString& name)
@@ -114,12 +122,6 @@ namespace prz
 			return exists_shader_program_with_name(Shader_Program::form_shader_program_name(shaders));
 		}
 
-	public:
-
-
-
-
-
 	private:
 
 		Shader_Program_Loader() {}
@@ -130,6 +132,6 @@ namespace prz
 	};
 
 
-}
+} // !namespace prz
 
-#endif OPENGL_SCENE_SHADER_PROGRAM_LOADER_H_
+#endif //! OPENGL_SCENE_SHADER_PROGRAM_LOADER_H_

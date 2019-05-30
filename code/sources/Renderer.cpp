@@ -12,36 +12,16 @@ namespace prz
 {
 	void Renderer::render(const PSPtr< Camera > activeCamera)
 	{
-		for (auto& shaderMaterialPair : renderQueue_)
+		render_queue(renderQueue_, activeCamera);
+
+		// Render the transparency materials queue
+
+		glEnable(GL_BLEND);
 		{
-
-			for (auto& materialBatch : shaderMaterialPair.second)
-			{
-				PSPtr< Material > material = materialBatch.first;
-
-				material->use();
-
-				set_material_shared_uniforms(material, activeCamera);
-				material->apply_shared_uniforms();
-
-				for (auto& transformMeshListPair : materialBatch.second)
-				{
-					Transform* modelTransform = transformMeshListPair.first;
-
-					set_material_local_uniforms(material, modelTransform);
-					material->apply_local_uniforms();
-
-					PList < PSPtr< Mesh > >& meshes = *transformMeshListPair.second;
-
-					for (auto& mesh : meshes)
-					{
-						mesh->draw();
-						assert(glGetError() == GL_NO_ERROR);
-
-					}
-				}
-			}
-		}
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			render_queue(transparencyRenderQueue_, activeCamera);
+			
+		} glDisable(GL_BLEND);
 	}
 
 	bool Renderer::subscribe_entity(PSPtr< Entity > entity)
@@ -66,9 +46,42 @@ namespace prz
 		return entity && is_entity_subscribed(entity->name());
 	}
 
-	void Renderer::update_render_queue()
+	void Renderer::render_queue(Shader_Program_Batches& queueMap, const PSPtr< Camera > activeCamera)
+	{
+		for (auto& shaderMaterialPair : queueMap)
+		{
+			for (auto& materialBatch : shaderMaterialPair.second)
+			{
+				PSPtr< Material > material = materialBatch.first;
+
+				material->use();
+
+				set_material_shared_uniforms(material, activeCamera);
+				material->apply_shared_uniforms();
+
+				for (auto& transformMeshListPair : materialBatch.second)
+				{
+					Transform* modelTransform = transformMeshListPair.first;
+
+					set_material_local_uniforms(material, modelTransform);
+					material->apply_local_uniforms();
+
+					PList < PSPtr< Mesh > >& meshes = *transformMeshListPair.second;
+
+					for (auto& mesh : meshes)
+					{
+						mesh->draw();
+						assert(glGetError() == GL_NO_ERROR);
+					}
+				}
+			}
+		}
+	}
+
+	void Renderer::update_render_queues()
 	{
 		renderQueue_.clear();
+		transparencyRenderQueue_.clear();
 
 		for (auto& entityPair : subscribedEntities_)
 		{
@@ -95,7 +108,16 @@ namespace prz
 						assert(shaderProgram);
 						assert(meshes->size() > 0); // There should not be any empty mesh list here.
 
-						renderQueue_[shaderProgram][material][&entityTransform] = meshes;
+						if (material->usesTransparency())
+						{
+							// Fill the transparencies render queue with materials that use transparencies
+							transparencyRenderQueue_[shaderProgram][material][&entityTransform] = meshes;
+						}
+						else
+						{
+							// Fill the normal render queue with materials that don't use transparencies
+							renderQueue_[shaderProgram][material][&entityTransform] = meshes;
+						}
 					}
 				}
 			}

@@ -9,29 +9,16 @@ namespace prz
 {
 	unsigned int Material::instanceCount_ = 0;
 
-	Material::Material(const PString& name, const PString& pathVertexShader, const PString& pathFragmentShader) :
-		Material(name, Shader_Program_Loader::instance().load_shader_program(pathVertexShader, pathFragmentShader))
+	Material::Material(const PString& name, PSPtr<Shader_Program> shaderProgram, bool usesTransparency):
+		name_(name),
+		shaderProgram_(shaderProgram),
+		instanceID_(instanceCount_++),
+		usesTransparency_(usesTransparency)
 	{}
 
-	PSPtr< Material > Material::default_material()
-	{
-		static PSPtr< Material > material(new Material
-		(
-			"default_material",
-			Game::assetsFolderPath() + "shaders/fragment_shader.frag",
-			Game::assetsFolderPath() + "shaders/vertex_shader.vert"
-		));
-
-		static bool isTextureAdded = false;
-
-		if (!isTextureAdded)
-		{
-			material->add_texture_2D(Game::assetsFolderPath() + "textures/2D/wood.png"/*"uv-checker-3.tga"*/, "texture_color");
-			isTextureAdded = true;
-		}
-
-		return material;
-	}
+	Material::Material(const PString& name, const PString& pathVertexShader, const PString& pathFragmentShader, bool usesTransparency) :
+		Material(name, Shader_Program_Loader::instance().load_shader_program(pathVertexShader, pathFragmentShader), usesTransparency)
+	{}
 
 	bool Material::exists_texture_with_name(const PString& textureName)
 	{
@@ -270,6 +257,8 @@ namespace prz
 			
 			unsigned int i = 0;
 
+
+
 			for (auto& pair : textures_)
 			{
 				TextureSlot& textureSlot = pair.second;
@@ -279,12 +268,19 @@ namespace prz
 					break; // A shader program can have only 16 texture slots
 				}
 
+				if (i == 1)
+				{
+					i;
+				}
+
 				glActiveTexture(GL_TEXTURE0 + i);
 				assert(glGetError() == GL_NO_ERROR);
 				textureSlot.texture->bind();
 				assert(glGetError() == GL_NO_ERROR);
-				glUniform1i(shaderProgram_->get_uniform_id(textureSlot.uniformID.c_str()), 0);
+				glUniform1i(shaderProgram_->get_uniform_id(textureSlot.uniformID.c_str()), i);
 				assert(glGetError() == GL_NO_ERROR);
+
+				i++;
 			}
 		}	
 	}

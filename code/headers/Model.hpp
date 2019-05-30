@@ -14,6 +14,7 @@
 
 #include <Mesh.hpp>
 #include <Material.hpp>
+#include <Material_Loader.hpp>
 
 #include <Declarations.hpp>
 
@@ -59,7 +60,7 @@ namespace prz
 
 	public:
 
-		bool add_piece(PSPtr< Mesh > mesh, PSPtr< Material > material = Material::default_material())
+		bool add_piece(PSPtr< Mesh > mesh, PSPtr< Material > material = Material_Loader::instance().get_default_material())
 		{
 			if (!exists_mesh(mesh))
 			{

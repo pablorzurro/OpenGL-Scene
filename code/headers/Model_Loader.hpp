@@ -13,6 +13,7 @@
 #define OPENGL_SCENE_MESH_LOADER_H_
 
 #include <Material.hpp>
+#include <Material_Loader.hpp>
 
 #include <Declarations.hpp>
 
@@ -37,8 +38,8 @@ namespace prz
 
 	public:
 
-		PSPtr< Model > load_model(const PString& meshPath, PSPtr< Material > material = Material::default_material());
-		bool load_model(const PString& meshPath, PSPtr<Entity> entityToSave, PSPtr< Material > material = Material::default_material());
+		PSPtr< Model > load_model(const PString& meshPath, PSPtr< Material > material = Material_Loader::instance().get_default_material());
+		bool load_model(const PString& meshPath, PSPtr<Entity> entityToSave, PSPtr< Material > material =  Material_Loader::instance().get_default_material());
 	
 	private:
 

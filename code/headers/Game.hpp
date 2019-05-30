@@ -32,7 +32,15 @@ namespace prz
 	{
 	public:
 
-		Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle = "PRZuro OpenGL Scene", bool vSync = true, const WindowStyle& windowStyle = DEFAULT, unsigned int depth = 32);
+		Game
+		(
+			unsigned int windowWidth,
+			unsigned int windowHeight,
+			const PString& windowTitle = "PRZuro OpenGL Scene",
+			bool vSync = true,
+			const WindowStyle& windowStyle = DEFAULT,
+			unsigned int depth = 32
+		);
 
 		~Game()
 		{}
@@ -69,6 +77,7 @@ namespace prz
 			curTime = HighClock::now();
 
 			deltaTime_ = static_cast<float>(Elapsed(curTime - prevTime).count());
+
 			prevTime = curTime;
 		}
 

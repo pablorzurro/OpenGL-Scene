@@ -45,7 +45,7 @@ namespace prz
 
 		void update() 
 		{
-			update_render_queue();
+			update_render_queues(); 
 		}
 
 		void render(const PSPtr< Camera > activeCamera);
@@ -66,7 +66,11 @@ namespace prz
 		
 	private:
 
-		void update_render_queue();
+		void render_queue(Shader_Program_Batches& queueMap, const PSPtr< Camera > activeCamera);
+
+	private:
+
+		void update_render_queues();
 
 	private:
 
@@ -76,6 +80,7 @@ namespace prz
 	private:
 
 		Shader_Program_Batches renderQueue_; // This map contains the active shader program batches that are ready to be rendered. To be active, it needs to be used by at least one material and the material used by at least one mesh.
+		Shader_Program_Batches transparencyRenderQueue_;
 		PMap< PString, PSPtr< Entity > > subscribedEntities_;
 
 	private:

@@ -8,4 +8,4 @@ int main()
 	game.run();
 
 	return (EXIT_SUCCESS);
-}
+}	

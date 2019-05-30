@@ -34,16 +34,20 @@ namespace prz
 	public:
 
 
-		Material(const PString& name, PSPtr< Shader_Program > shaderProgram):
-			name_(name),
-			shaderProgram_(shaderProgram),
-			instanceID_(instanceCount_++)
-		{}
-		Material(const PString& name, const PString& pathVertexShader, const PString& pathFragmentShader);
+		Material
+		(
+			const PString& name,
+			PSPtr< Shader_Program > shaderProgram,
+			bool usesTransparency = false
+		);
 
-	public:
-
-		static PSPtr< Material > default_material();
+		Material
+		(
+			const PString& name,
+			const PString& pathVertexShader,
+			const PString& pathFragmentShader,
+			bool usesTransparency = false
+		);
 
 	public:
 
@@ -103,6 +107,11 @@ namespace prz
 			return shaderProgram_;
 		}
 
+		bool usesTransparency()
+		{
+			return usesTransparency_;
+		}
+
 	protected:
 
 		Uniform* allocate_uniform(const char* id, const PString& name, Var_GL::Type type, bool isSharedUniform = false);
@@ -129,6 +138,11 @@ namespace prz
 	private:
 
 		static unsigned instanceCount_;
+
+	private:
+
+		bool usesTransparency_;
+
 	};
 
 } //!namespace prz

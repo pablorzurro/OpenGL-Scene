@@ -26,5 +26,5 @@ void main()
 	
 	vec3 vertex_texture_color = texture2D(texture_color, tex_coord).rgb;
 
-	out_color =vec4(vertex_texture_color, 1.0);
+	out_color = vec4(vertex_texture_color, 0.6);
 }

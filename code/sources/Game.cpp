@@ -1,5 +1,6 @@
 #include <Game.hpp>
 #include <Input_Manager.hpp>
+#include <Demo_Scene_01.hpp>
 #include <glad/glad.h>
 
 namespace prz
@@ -22,7 +23,7 @@ namespace prz
 		cout << endl;
 		assetsFolderPath_ += "/";*/
 
-		scene_.reset(new Scene(window_));
+		scene_.reset(new Demo_Scene_01(window_));
 		curTime = prevTime = HighClock::now();
 	}
 
@@ -31,6 +32,8 @@ namespace prz
 		isRunning_ = true;
 
 		Input_Manager& inputManager = Input_Manager::instance();
+
+		scene_->initialize();
 
 		do
 		{
