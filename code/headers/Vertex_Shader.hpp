@@ -1,7 +1,7 @@
 /**
  * @file Vertex_Shader.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief
+ * @brief Class to initialize a vertex shader
  * @version 0.1
  * @date 11-05-2019
  *
@@ -16,11 +16,21 @@
 
 namespace prz
 {
-
+	
+	/**
+	 * @brief 
+	 * 
+	 */
 	class Vertex_Shader : public Shader
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Vertex_Shader
+		 * 
+		 * @param sourceCode 
+		 * @param name 
+		 */
 		Vertex_Shader(const Source_Code& sourceCode, const PString& name) :
 			Shader(sourceCode, name, VERTEX_SHADER)
 		{}

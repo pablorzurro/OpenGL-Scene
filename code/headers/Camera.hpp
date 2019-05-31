@@ -23,7 +23,7 @@ namespace prz
 	class Scene;
 
 	/**
-	 * @brief 
+	 * @brief Class that represents the view of the scene
 	 * 
 	 */
 	class Camera : public Entity
@@ -103,7 +103,7 @@ namespace prz
 	public:
 
 		/**
-		 * @brief 
+		 * @brief Reset the members of the camera
 		 * 
 		 * @param fov 
 		 * @param zNear 
@@ -115,28 +115,28 @@ namespace prz
 	public:
 
 		/**
-		 * @brief 
+		 * @brief return the camera matrix
 		 * 
 		 * @return const PMat4& 
 		 */
 		const PMat4& matrix() const { return matrix_; }
 
 		/**
-		 * @brief 
+		 * @brief Returns the view matrix of the transform 
 		 * 
 		 * @return const PMat4& 
 		 */
 		const PMat4& viewMatrix() const { return viewMatrix_; }
 
 		/**
-		 * @brief 
+		 * @brief Returns the model matrix of the transform
 		 * 
 		 * @return const PMat4& 
 		 */
 		const PMat4& modelMatrix() const { return modelMatrix_; }
 
 		/**
-		 * @brief 
+		 * @brief returns the camera projection
 		 * 
 		 * @return const PMat4& 
 		 */
@@ -145,28 +145,28 @@ namespace prz
 	public:
 
 		/**
-		 * @brief 
+		 * @brief return fov
 		 * 
 		 * @return float 
 		 */
 		float fov() const { return fov_; }
 
 		/**
-		 * @brief 
+		 * @brief return zNear
 		 * 
 		 * @return float 
 		 */
 		float nearZ() const { return zNear_; }
 
 		/**
-		 * @brief 
+		 * @brief return zFar
 		 * 
 		 * @return float 
 		 */
 		float farZ() const { return zFar_; }
 
 		/**
-		 * @brief 
+		 * @brief return aspect ratio
 		 * 
 		 * @return float 
 		 */
@@ -175,7 +175,7 @@ namespace prz
 	private:
 
 		/**
-		 * @brief 
+		 * @brief calculate all matrices
 		 * 
 		 */
 		void calculate_matrix()
@@ -186,7 +186,7 @@ namespace prz
 		}
 
 		/**
-		 * @brief 
+		 * @brief calculate the projection matrix, also the other matrices
 		 * 
 		 */
 		void calculate_projection_matrix()

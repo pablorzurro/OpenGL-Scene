@@ -1,7 +1,7 @@
 /**
  * @file Texture_2D.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that represents an image 2D
  * @version 0.1
  * @date 30-04-2019
  *
@@ -17,10 +17,22 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class that represents an image 2D
+	 * 
+	 */
 	class Texture_2D : public Texture
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Texture_2D
+		 * 
+		 * @param imagePaths 
+		 * @param name 
+		 * @param colorFormat 
+		 * @param flipImages 
+		 */
 		Texture_2D
 		(
 			PBuffer<PString>& imagePaths,
@@ -29,6 +41,14 @@ namespace prz
 			bool flipImages = true
 		);
 
+		/**
+		 * @brief Construct a new Texture_2D
+		 * 
+		 * @param name 
+		 * @param width 
+		 * @param height 
+		 * @param colorFormat 
+		 */
 		Texture_2D
 		(
 			const PString& name,
@@ -39,10 +59,18 @@ namespace prz
 
 	protected:
 
+		/**
+		 * @brief Method called on initialize  
+		 * 
+		 */
 		virtual void on_initialize() override;
 		
 	protected:
 
+		/**
+		 * @brief Overrided wrap mode application
+		 * 
+		 */
 		void apply_wrap_mode() override
 		{
 			// Apply the wrap mode to each space coordinate axis. A texture 2D is a bidimensional texture so two axes

@@ -1,0 +1,5 @@
+<map id="prz::Cube" name="prz::Cube">
+<area shape="rect" id="node1" title="Class that store the information of a cube." alt="" coords="17,155,95,181"/>
+<area shape="rect" id="node2" href="$classprz_1_1_mesh.html" title="Class to store and manage vertex array objects." alt="" coords="16,80,96,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_drawable.html" title="Abstract class that will be the base of all drawable objects." alt="" coords="5,5,107,32"/>
+</map>

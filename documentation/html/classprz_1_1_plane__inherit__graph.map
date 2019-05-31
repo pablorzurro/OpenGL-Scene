@@ -1,0 +1,5 @@
+<map id="prz::Plane" name="prz::Plane">
+<area shape="rect" id="node1" title="Mesh that represents a quad with 2 triangles." alt="" coords="15,155,97,181"/>
+<area shape="rect" id="node2" href="$classprz_1_1_mesh.html" title="Class to store and manage vertex array objects." alt="" coords="16,80,96,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_drawable.html" title="Abstract class that will be the base of all drawable objects." alt="" coords="5,5,107,32"/>
+</map>

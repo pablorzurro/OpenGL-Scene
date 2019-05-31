@@ -1,0 +1,129 @@
+\hypertarget{classprz_1_1_game}{}\section{prz\+::Game Class Reference}
+\label{classprz_1_1_game}\index{prz::Game@{prz::Game}}
+
+
+Core class to manage the logic of the application.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_game_a7d4e2a604dc46ca59fe9ab1911148a08}{Game}} (unsigned int window\+Width, unsigned int window\+Height, const P\+String \&window\+Title=\char`\"{}P\+R\+Zuro Open\+GL \mbox{\hyperlink{classprz_1_1_scene}{Scene}}\char`\"{}, bool v\+Sync=true, const Window\+Style \&window\+Style=D\+E\+F\+A\+U\+LT, unsigned int depth=32)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_game}{Game}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_game_aa5c08c7c2f79d5b302b73ca9c32a66f3}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_game}{Game}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_game_a8456ab37b4e2b8579e9d92e682e146f1}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_game_a997a0bc714bb3062999bf8aceaf1952c}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_game_a8e3f861f4ff74b0959a922b1f5911678}{is\+Running}} ()
+\begin{DoxyCompactList}\small\item\em Return the running state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const P\+String \& \mbox{\hyperlink{classprz_1_1_game_aff14ff5fb4ab33c68b769b4262139879}{assets\+Folder\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Return the assets folder path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core class to manage the logic of the application. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_game_a7d4e2a604dc46ca59fe9ab1911148a08}\label{classprz_1_1_game_a7d4e2a604dc46ca59fe9ab1911148a08}} 
+\index{prz::Game@{prz::Game}!Game@{Game}}
+\index{Game@{Game}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily prz\+::\+Game\+::\+Game (\begin{DoxyParamCaption}\item[{unsigned int}]{window\+Width,  }\item[{unsigned int}]{window\+Height,  }\item[{const P\+String \&}]{window\+Title = {\ttfamily \char`\"{}PRZuro~OpenGL~\mbox{\hyperlink{classprz_1_1_scene}{Scene}}\char`\"{}},  }\item[{bool}]{v\+Sync = {\ttfamily true},  }\item[{const Window\+Style \&}]{window\+Style = {\ttfamily DEFAULT},  }\item[{unsigned int}]{depth = {\ttfamily 32} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_game}{Game}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Width} & \\
+\hline
+{\em window\+Height} & \\
+\hline
+{\em window\+Title} & \\
+\hline
+{\em v\+Sync} & \\
+\hline
+{\em window\+Style} & \\
+\hline
+{\em depth} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_game_aa5c08c7c2f79d5b302b73ca9c32a66f3}\label{classprz_1_1_game_aa5c08c7c2f79d5b302b73ca9c32a66f3}} 
+\index{prz::Game@{prz::Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily prz\+::\+Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_game}{Game}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_game_aff14ff5fb4ab33c68b769b4262139879}\label{classprz_1_1_game_aff14ff5fb4ab33c68b769b4262139879}} 
+\index{prz::Game@{prz::Game}!assetsFolderPath@{assetsFolderPath}}
+\index{assetsFolderPath@{assetsFolderPath}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{assetsFolderPath()}{assetsFolderPath()}}
+{\footnotesize\ttfamily static const P\+String\& prz\+::\+Game\+::assets\+Folder\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the assets folder path. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_game_a8e3f861f4ff74b0959a922b1f5911678}\label{classprz_1_1_game_a8e3f861f4ff74b0959a922b1f5911678}} 
+\index{prz::Game@{prz::Game}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool prz\+::\+Game\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the running state. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_game_a8456ab37b4e2b8579e9d92e682e146f1}\label{classprz_1_1_game_a8456ab37b4e2b8579e9d92e682e146f1}} 
+\index{prz::Game@{prz::Game}!run@{run}}
+\index{run@{run}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void prz\+::\+Game\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the game. 
+
+\mbox{\Hypertarget{classprz_1_1_game_a997a0bc714bb3062999bf8aceaf1952c}\label{classprz_1_1_game_a997a0bc714bb3062999bf8aceaf1952c}} 
+\index{prz::Game@{prz::Game}!stop@{stop}}
+\index{stop@{stop}!prz::Game@{prz::Game}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void prz\+::\+Game\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stop the game. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_game_8hpp}{Game.\+hpp}}\item 
+code/sources/Game.\+cpp\end{DoxyCompactItemize}

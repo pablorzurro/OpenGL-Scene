@@ -1,7 +1,7 @@
 /**
  * @file Demo_Scene_01.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Scene example 1
  * @version 0.1
  * @date 30-05-2019
  * 
@@ -16,10 +16,20 @@
 
 namespace prz
 {
+
+	/**
+	 * @brief Scene example 1
+	 * 
+	 */
 	class Demo_Scene_01 : public Scene
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Demo_Scene_01
+		 * 
+		 * @param window 
+		 */
 		Demo_Scene_01(Window& window);
 
 	public:

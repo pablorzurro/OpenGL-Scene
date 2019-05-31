@@ -1,0 +1,4 @@
+<map id="prz::Demo_Scene_01" name="prz::Demo_Scene_01">
+<area shape="rect" id="node1" title="Scene example 1." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node2" href="$classprz_1_1_scene.html" title="Core class to save the state and items of the application." alt="" coords="36,5,121,32"/>
+</map>

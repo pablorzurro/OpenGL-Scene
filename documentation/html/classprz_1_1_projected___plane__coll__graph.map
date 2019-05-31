@@ -1,0 +1,5 @@
+<map id="prz::Projected_Plane" name="prz::Projected_Plane">
+<area shape="rect" id="node1" title="Mesh that represents a quad in screen space." alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node2" href="$classprz_1_1_mesh.html" title="Class to store and manage vertex array objects." alt="" coords="37,80,117,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_drawable.html" title="Abstract class that will be the base of all drawable objects." alt="" coords="26,5,127,32"/>
+</map>

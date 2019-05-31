@@ -19,10 +19,19 @@
 namespace prz
 {
 
+	/**
+	 * @brief Mesh that represents a quad in screen space
+	 * 
+	 */
 	class Projected_Plane : public Mesh
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Projected_Plane
+		 * 
+		 * @param name 
+		 */
 		Projected_Plane(const PString& name);
 
 	private:

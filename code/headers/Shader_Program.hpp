@@ -1,7 +1,7 @@
 /**
  * @file ShaderProgram.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that manage an OpenGL's shader program
  * @version 0.1
  * @date 30-04-2019
  *
@@ -19,10 +19,18 @@
 namespace prz
 {
 
+	/**
+	 * @brief Class that manage an OpenGL's shader program
+	 * 
+	 */
 	class Shader_Program
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Shader_Program
+		 * 
+		 */
 		Shader_Program() :
 			instanceID_(instanceCount_++),
 			programObjID_(glCreateProgram()),
@@ -32,6 +40,10 @@ namespace prz
 			assert(programObjID_ != 0);
 		}
 
+		/**
+		 * @brief Destroy the Shader_Program
+		 * 
+		 */
 		~Shader_Program()
 		{
 			glDeleteProgram(programObjID_);
@@ -40,8 +52,18 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Link the shader program and returns if is linked succesfuly
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool link();
 
+		/**
+		 * @brief Use the shader program
+		 * 
+		 */
 		void use() const
 		{
 			assert(is_usable());
@@ -54,6 +76,10 @@ namespace prz
 			}
 		}
 
+		/**
+		 * @brief disable to the default shader program
+		 * 
+		 */
 		static void disable()
 		{
 			glUseProgram(0);
@@ -61,6 +87,13 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief attach a shader to this shader program
+		 * 
+		 * @param shader 
+		 * @return true 
+		 * @return false 
+		 */
 		bool attach(PSPtr< Shader > shader)
 		{
 			if (!is_shader_attached(shader) && shader->is_compiled())
@@ -75,6 +108,13 @@ namespace prz
 			return false;
 		}
 
+		/**
+		 * @brief Detach a shader
+		 * 
+		 * @param shader 
+		 * @return true 
+		 * @return false 
+		 */
 		bool detach(PSPtr< Shader > shader)
 		{
 			return shader ? detach(shader->name()) : false;
@@ -96,6 +136,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Set the uniform value
+		 * 
+		 * @param uniformID 
+		 * @param value 
+		 */
 		void set_uniform_value(GLint uniformID, const GLint & value) const { glUniform1i(uniformID, value); }
 		void set_uniform_value(GLint uniformID, const GLuint & value) const { glUniform1ui(uniformID, value); }
 		void set_uniform_value(GLint uniformID, const float& value) const { glUniform1f(uniformID, value); }
@@ -111,6 +157,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Set the vertex attribute
+		 * 
+		 * @param attributeID 
+		 * @param value 
+		 */
 		void set_vertex_attribute(GLint attributeID, const float& value) { glVertexAttrib1f(attributeID, value); }
 		void set_vertex_attribute(GLint attributeID, const PVec2 & vector) { glVertexAttrib2fv(attributeID, glm::value_ptr(vector)); }
 		void set_vertex_attribute(GLint attributeID, const PVec3 & vector) { glVertexAttrib3fv(attributeID, glm::value_ptr(vector)); }
@@ -118,16 +170,36 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if is usable
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_usable() const
 		{
 			return islinkSuccessful_;
 		}
 
+		/**
+		 * @brief Return if the input shader is attached
+		 * 
+		 * @param shader 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_shader_attached(PSPtr< Shader > shader)
 		{
 			return shader ? is_shader_attached(shader->name()) : false;
 		}
 
+		/**
+		 * @brief Return if a shader is attached by name
+		 * 
+		 * @param name 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_shader_attached(const PString& name)
 		{
 			return attachedShaders_.find(name) != attachedShaders_.end();
@@ -135,6 +207,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the vertex attribute id of the input string
+		 * 
+		 * @param id 
+		 * @return GLint 
+		 */
 		GLint get_vertex_attribute_id(const char* id) const
 		{
 			assert(is_usable());
@@ -146,6 +224,12 @@ namespace prz
 			return (attributeID);
 		}
 
+		/**
+		 * @brief Return the uniform id of the input string
+		 * 
+		 * @param id 
+		 * @return GLint 
+		 */
 		GLint get_uniform_id(const char* id) const
 		{
 			assert(is_usable());
@@ -157,6 +241,12 @@ namespace prz
 			return (uniformID);
 		}
 
+		/**
+		 * @brief Return an attached shader by name
+		 * 
+		 * @param shaderName 
+		 * @return PSPtr< Shader > 
+		 */
 		PSPtr< Shader > get_attached_shader(const PString& shaderName)
 		{
 			return is_shader_attached(shaderName) ? attachedShaders_[shaderName] : PSPtr< Shader >();
@@ -164,6 +254,11 @@ namespace prz
 
 	public: 
 
+		/**
+		 * @brief Return the number of attached shaders
+		 * 
+		 * @return unsigned int 
+		 */
 		unsigned int get_number_of_attached_shaders()
 		{
 			return (unsigned int)attachedShaders_.size();
@@ -171,13 +266,42 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the currently active shader program
+		 * 
+		 * @return const Shader_Program* 
+		 */
 		static const Shader_Program* activeShaderProgram() { return activeShaderProgram_; }
+
+		/**
+		 * @brief Return the instance identification
+		 * 
+		 * @return unsigned 
+		 */
 		unsigned instanceID() const { return instanceID_; }
+
+		/**
+		 * @brief Return the error log
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& log() const { return (logStr_); }
+
+		/**
+		 * @brief Return the name
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& name() const { return name_; }
 
 	public:
 
+		/**
+		 * @brief Create a shader program name by the input shader names
+		 * 
+		 * @param shaderNames 
+		 * @return PString 
+		 */
 		static PString form_shader_program_name(PBuffer< PString >& shaderNames)
 		{
 			PString name = "Shader_program_with_shaders:";
@@ -190,6 +314,12 @@ namespace prz
 			return name;
 		}
 
+		/**
+		 * @brief Create a shader program name by the input shaders
+		 * 
+		 * @param shaders 
+		 * @return PString 
+		 */
 		static PString form_shader_program_name(PBuffer< PSPtr< Shader> >& shaders)
 		{
 			PBuffer< PString > shaderNames(shaders.size());
@@ -211,6 +341,10 @@ namespace prz
 
 	private:
 
+		/**
+		 * @brief reset name after a shader has been attached or detached
+		 * 
+		 */
 		void reset_name()
 		{
 			PBuffer< PString > shaderNames(attachedShaders_.size());

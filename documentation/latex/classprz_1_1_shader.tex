@@ -1,0 +1,214 @@
+\hypertarget{classprz_1_1_shader}{}\section{prz\+::Shader Class Reference}
+\label{classprz_1_1_shader}\index{prz::Shader@{prz::Shader}}
+
+
+Class that store a source code and compiles it to Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Shader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classprz_1_1_shader__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_a201c45a321469a374e30c5b779476bf6}\label{classprz_1_1_shader_a201c45a321469a374e30c5b779476bf6}} 
+enum {\bfseries Type} \{ {\bfseries V\+E\+R\+T\+E\+X\+\_\+\+S\+H\+A\+D\+ER} = G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+S\+H\+A\+D\+ER, 
+{\bfseries G\+E\+O\+M\+E\+T\+R\+Y\+\_\+\+S\+H\+A\+D\+ER} = G\+L\+\_\+\+G\+E\+O\+M\+E\+T\+R\+Y\+\_\+\+S\+H\+A\+D\+ER, 
+{\bfseries F\+R\+A\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+D\+ER} = G\+L\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+D\+ER, 
+{\bfseries S\+I\+ZE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classprz_1_1_shader_aaf76d1f8e733e2b2a92790283f396fb6}{is\+\_\+compiled}} () const
+\begin{DoxyCompactList}\small\item\em Return if is compiled succesfully. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader_aee6376f3446bf9f163ea76d6a3a7491d}{has\+\_\+compilation\+\_\+failed}} () const
+\begin{DoxyCompactList}\small\item\em Return if the compilation has failed. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_shader_af51b4c8c6aeced5c43ab485cb484f91e}{log}} () const
+\begin{DoxyCompactList}\small\item\em Return the error log. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_shader_a16e80489a6a0ad68daa3524eb844f1e2}{path}} () const
+\begin{DoxyCompactList}\small\item\em Return the origin path. \end{DoxyCompactList}\item 
+Type \mbox{\hyperlink{classprz_1_1_shader_a2bfab69158c791e4a34942abd593c889}{type}} () const
+\begin{DoxyCompactList}\small\item\em Return the type. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_shader_a2ba459fe4dc556e94ab73df91d2c0a4e}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_shader_ad9ff32ee5cd648fc9e4a2c554a754c0c}{operator G\+Luint}} () const
+\begin{DoxyCompactList}\small\item\em Operator to return the identification object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_shader_ad5d70da7c366bead1cc7bd5f327e23c7}{Shader}} (const \mbox{\hyperlink{classprz_1_1_source___code}{Source\+\_\+\+Code}} \&source\+Code, const P\+String \&\mbox{\hyperlink{classprz_1_1_shader_a2ba459fe4dc556e94ab73df91d2c0a4e}{name}}, Type shader\+Type)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_shader}{Shader}}. Private mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_shader_a6a3e46f3adf75a523eb8d043ed476630}{$\sim$\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_shader}{Shader}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_aac996d2c1d0c69189441694e3b81a183}\label{classprz_1_1_shader_aac996d2c1d0c69189441694e3b81a183}} 
+G\+Luint {\bfseries shader\+Obj\+I\+D\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_abeff929418ee3e74c8d26d2165235ab3}\label{classprz_1_1_shader_abeff929418ee3e74c8d26d2165235ab3}} 
+Type {\bfseries type\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_a9a1650751c1226e4165efdbd7107d102}\label{classprz_1_1_shader_a9a1650751c1226e4165efdbd7107d102}} 
+P\+String {\bfseries log\+Str\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_a79d120a5af0fc34a39669fb30752d0f9}\label{classprz_1_1_shader_a79d120a5af0fc34a39669fb30752d0f9}} 
+P\+String {\bfseries path\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader_a190f3bf5449696c0661e987b4287e325}\label{classprz_1_1_shader_a190f3bf5449696c0661e987b4287e325}} 
+P\+String {\bfseries name\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that store a source code and compiles it to Open\+GL. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader_ad5d70da7c366bead1cc7bd5f327e23c7}\label{classprz_1_1_shader_ad5d70da7c366bead1cc7bd5f327e23c7}} 
+\index{prz::Shader@{prz::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily prz\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classprz_1_1_source___code}{Source\+\_\+\+Code}} \&}]{source\+Code,  }\item[{const P\+String \&}]{name,  }\item[{Type}]{shader\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_shader}{Shader}}. Private mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Code} & \\
+\hline
+{\em name} & \\
+\hline
+{\em shader\+Type} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_shader_a6a3e46f3adf75a523eb8d043ed476630}\label{classprz_1_1_shader_a6a3e46f3adf75a523eb8d043ed476630}} 
+\index{prz::Shader@{prz::Shader}!````~Shader@{$\sim$Shader}}
+\index{````~Shader@{$\sim$Shader}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{$\sim$Shader()}{~Shader()}}
+{\footnotesize\ttfamily prz\+::\+Shader\+::$\sim$\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_shader}{Shader}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader_aee6376f3446bf9f163ea76d6a3a7491d}\label{classprz_1_1_shader_aee6376f3446bf9f163ea76d6a3a7491d}} 
+\index{prz::Shader@{prz::Shader}!has\_compilation\_failed@{has\_compilation\_failed}}
+\index{has\_compilation\_failed@{has\_compilation\_failed}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{has\_compilation\_failed()}{has\_compilation\_failed()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+::has\+\_\+compilation\+\_\+failed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if the compilation has failed. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_aaf76d1f8e733e2b2a92790283f396fb6}\label{classprz_1_1_shader_aaf76d1f8e733e2b2a92790283f396fb6}} 
+\index{prz::Shader@{prz::Shader}!is\_compiled@{is\_compiled}}
+\index{is\_compiled@{is\_compiled}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{is\_compiled()}{is\_compiled()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+::is\+\_\+compiled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if is compiled succesfully. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_af51b4c8c6aeced5c43ab485cb484f91e}\label{classprz_1_1_shader_af51b4c8c6aeced5c43ab485cb484f91e}} 
+\index{prz::Shader@{prz::Shader}!log@{log}}
+\index{log@{log}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Shader\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error log. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_a2ba459fe4dc556e94ab73df91d2c0a4e}\label{classprz_1_1_shader_a2ba459fe4dc556e94ab73df91d2c0a4e}} 
+\index{prz::Shader@{prz::Shader}!name@{name}}
+\index{name@{name}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Shader\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_ad9ff32ee5cd648fc9e4a2c554a754c0c}\label{classprz_1_1_shader_ad9ff32ee5cd648fc9e4a2c554a754c0c}} 
+\index{prz::Shader@{prz::Shader}!operator GLuint@{operator GLuint}}
+\index{operator GLuint@{operator GLuint}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{operator GLuint()}{operator GLuint()}}
+{\footnotesize\ttfamily prz\+::\+Shader\+::operator G\+Luint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator to return the identification object. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_a16e80489a6a0ad68daa3524eb844f1e2}\label{classprz_1_1_shader_a16e80489a6a0ad68daa3524eb844f1e2}} 
+\index{prz::Shader@{prz::Shader}!path@{path}}
+\index{path@{path}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Shader\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the origin path. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader_a2bfab69158c791e4a34942abd593c889}\label{classprz_1_1_shader_a2bfab69158c791e4a34942abd593c889}} 
+\index{prz::Shader@{prz::Shader}!type@{type}}
+\index{type@{type}!prz::Shader@{prz::Shader}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily Type prz\+::\+Shader\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the type. 
+
+\begin{DoxyReturn}{Returns}
+Type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_shader_8hpp}{Shader.\+hpp}}\item 
+code/sources/Shader.\+cpp\end{DoxyCompactItemize}

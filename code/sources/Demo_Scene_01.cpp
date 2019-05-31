@@ -9,6 +9,9 @@
 #include <Material_Loader.hpp>
 #include <Framebuffer.hpp>
 
+#include <Plane.hpp>
+#include <Projected_Plane.hpp>
+
 namespace prz
 {
 	Demo_Scene_01::Demo_Scene_01(Window& window) : 
@@ -16,22 +19,14 @@ namespace prz
 		(
 			window,
 			make_shared< Camera >(*this, "Active_Camera_For_Testing"),
-			make_shared< Skybox >(Game::assetsFolderPath() + /*"textures/cube_maps/sky/sky-cube-map-.tga"*/ "textures/cube_maps/lake/goldrush_.tga", Game::assetsFolderPath() + "shaders/skybox.vert", Game::assetsFolderPath() + "shaders/skybox.frag")
+			make_shared< Framebuffer >(*this, Game::assetsFolderPath() + "shaders/vertex.vert", Game::assetsFolderPath() + "shaders/framebuffer.frag", window.getSize().x, window.getSize().y),
+			make_shared< Skybox >(Game::assetsFolderPath() + "textures/cube_maps/lake/goldrush_.tga", Game::assetsFolderPath() + "shaders/skybox.vert", Game::assetsFolderPath() + "shaders/skybox.frag")
 		)
 	{}
 
 	void Demo_Scene_01::initialize()
 	{
-		PString shadersFolderPath = Game::assetsFolderPath() + "shaders/";
-
-		framebuffer_ = make_shared< Framebuffer >
-		(
-			*this,
-			shadersFolderPath + "vertex.vert",
-			shadersFolderPath + "framebuffer.frag",
-			window_.getSize().x, 
-			window_.getSize().y
-		);
+		// Create the scene entities
 
 		PSPtr< Entity > head = create_entity("Head");
 		head->add_model(Game::assetsFolderPath() + "models/obj/head.obj");
@@ -85,7 +80,9 @@ namespace prz
 		elevationPlane->transform().translate_in_x(-20.f);
 		elevationPlane->transform().scale(PVec3(10.f));
 
+		// Create the frame buffer
 	}
+
 	void Demo_Scene_01::update(float deltaTime)
 	{
 		Scene::update(deltaTime);

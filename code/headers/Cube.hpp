@@ -1,7 +1,7 @@
 /**
  * @file Cube.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that store the information of a cube
  * @version 0.1
  * @date 30-04-2019
  *
@@ -19,10 +19,19 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class that store the information of a cube
+	 * 
+	 */
 	class Cube : public Mesh
 	{
 	public:	
 
+		/**
+		 * @brief Construct a new Cube
+		 * 
+		 * @param name 
+		 */
 		Cube(const PString& name = "undefined");
 
 	private:

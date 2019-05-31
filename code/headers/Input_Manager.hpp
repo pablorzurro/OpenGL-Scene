@@ -1,7 +1,7 @@
 /**
  * @file Input_Manager.hpp
  * @author Pablo Rodriguez Zurro (przuro@gmail.com)
- * @brief
+ * @brief Class that checks and saves the state of the input
  * @version 0.1
  * @date 08-05-2019
  *
@@ -20,7 +20,11 @@ using namespace sf;
 
 namespace prz
 {
-
+	
+	/**
+ 	 * @brief Class that checks and saves the state of the input
+	 * 
+	 */
 	class Input_Manager
 	{
 	public:
@@ -96,6 +100,12 @@ namespace prz
 			return keysPressed_.count(key) == 1 && keysPressed_.at(key) == true;
 		}
 
+		/**
+		 * @brief return if mouse is pressed
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_mouse_pressed()
 		{
 			return isMousePressed_;
@@ -103,11 +113,21 @@ namespace prz
 
 	public:
 		
+		/**
+		 * @brief return the current mouse position vector
+		 * 
+		 * @return PUVec2 
+		 */
 		PUVec2 current_mouse_position()
 		{
 			return PVec2(curMouseX_, curMouseY_);
 		}
 
+		/**
+		 * @brief return the previous mouse position vector
+		 * 
+		 * @return PUVec2 
+		 */
 		PUVec2 previous_mouse_position()
 		{
 			return PVec2(prevMouseX_, prevMouseY_);
@@ -115,21 +135,41 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief return the current mouse x position
+		 * 
+		 * @return const unsigned& curMouseX 
+		 */
 		const unsigned int& curMouseX()
 		{
 			return curMouseX_;
 		}
 
+		/**
+		 * @brief return the current mouse y position
+		 * 
+		 * @return const unsigned& curMouseY 
+		 */
 		const unsigned int& curMouseY()
 		{
 			return curMouseY_;
 		}
 
+		/**
+		 * @brief return the previous mouse x position
+		 * 
+		 * @return const unsigned& prevMouseX 
+		 */
 		const unsigned int& prevMouseX()
 		{
 			return prevMouseX_;
 		}
 
+		/**
+		 * @brief return the previous mouse y position
+		 * 
+		 * @return const unsigned& prevMouseY 
+		 */
 		const unsigned int& prevMouseY()
 		{
 			return prevMouseY_;
@@ -151,6 +191,8 @@ namespace prz
 
 		PMap< PKey, bool > keysPressed_;
 
+	private:
+	
 		unsigned int  curMouseX_, prevMouseX_;
 		unsigned int  curMouseY_, prevMouseY_;
 

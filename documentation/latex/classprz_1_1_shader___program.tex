@@ -1,0 +1,462 @@
+\hypertarget{classprz_1_1_shader___program}{}\section{prz\+::Shader\+\_\+\+Program Class Reference}
+\label{classprz_1_1_shader___program}\index{prz::Shader\_Program@{prz::Shader\_Program}}
+
+
+Class that manage an Open\+GL\textquotesingle{}s shader program.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Program.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_shader___program_a85eef4afd66769bb35c910b8933a233a}{Shader\+\_\+\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_shader___program_af7a5d1bcb0991735702b6410a5015e77}{$\sim$\+Shader\+\_\+\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_a5a19bc3636c1b39cbf33739228dcfa34}{link}} ()
+\begin{DoxyCompactList}\small\item\em Link the shader program and returns if is linked succesfuly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_shader___program_a7d77b91c272c02c6c4cf017c7d957305}{use}} () const
+\begin{DoxyCompactList}\small\item\em Use the shader program. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_abdd9abf63919d1c550bae23e0bdc76a5}{attach}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em attach a shader to this shader program \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_ac0a5e9ee801dc29757beb391fb9ee9ca}{detach}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Detach a shader. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a0e15d02294b03f004553f468214bab2f}\label{classprz_1_1_shader___program_a0e15d02294b03f004553f468214bab2f}} 
+bool {\bfseries detach} (const P\+String \&shader\+Name)
+\item 
+void \mbox{\hyperlink{classprz_1_1_shader___program_a1e7289d620dc9a4567b3b5c51aed4d58}{set\+\_\+uniform\+\_\+value}} (G\+Lint uniform\+ID, const G\+Lint \&value) const
+\begin{DoxyCompactList}\small\item\em Set the uniform value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a74cbcfed26915f2fb9f96a13eff8a525}\label{classprz_1_1_shader___program_a74cbcfed26915f2fb9f96a13eff8a525}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const G\+Luint \&value) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a29ccc5851de28b34a53acb9c3866376f}\label{classprz_1_1_shader___program_a29ccc5851de28b34a53acb9c3866376f}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const float \&value) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a9dc3dc8143a66d57b57782f5ccefc261}\label{classprz_1_1_shader___program_a9dc3dc8143a66d57b57782f5ccefc261}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const float(\&vector)\mbox{[}2\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a0aa48b066daf7ee3a25bddfd85d0429d}\label{classprz_1_1_shader___program_a0aa48b066daf7ee3a25bddfd85d0429d}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const float(\&vector)\mbox{[}3\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a2602c0a1a00c14d164cc8a2ed8d9ae8c}\label{classprz_1_1_shader___program_a2602c0a1a00c14d164cc8a2ed8d9ae8c}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const float(\&vector)\mbox{[}4\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a045e58631bcd993b66e66f45e26702ab}\label{classprz_1_1_shader___program_a045e58631bcd993b66e66f45e26702ab}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Vec2 \&vector) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_ab413a6895a511a6f9f9f527257ec58e1}\label{classprz_1_1_shader___program_ab413a6895a511a6f9f9f527257ec58e1}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Vec3 \&vector) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a0d4b3d74860096c4769cb14a20050ab1}\label{classprz_1_1_shader___program_a0d4b3d74860096c4769cb14a20050ab1}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Vec4 \&vector) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a84f2ca8b8f69ee24340be2e5325ce1e4}\label{classprz_1_1_shader___program_a84f2ca8b8f69ee24340be2e5325ce1e4}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Mat2 \&matrix) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a5d4e6ab941e7105315166a27bee3a417}\label{classprz_1_1_shader___program_a5d4e6ab941e7105315166a27bee3a417}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Mat3 \&matrix) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_ad86458c707d66524d4c7c1d8d1110650}\label{classprz_1_1_shader___program_ad86458c707d66524d4c7c1d8d1110650}} 
+void {\bfseries set\+\_\+uniform\+\_\+value} (G\+Lint uniform\+ID, const P\+Mat4 \&matrix) const
+\item 
+void \mbox{\hyperlink{classprz_1_1_shader___program_ab82a2f5de5de8a1031ff3c59b48e917f}{set\+\_\+vertex\+\_\+attribute}} (G\+Lint attribute\+ID, const float \&value)
+\begin{DoxyCompactList}\small\item\em Set the vertex attribute. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a6e5450a3d68bac846bb1bd8478854953}\label{classprz_1_1_shader___program_a6e5450a3d68bac846bb1bd8478854953}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+ID, const P\+Vec2 \&vector)
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a24efda3df9e06e65e230803461ab9c3b}\label{classprz_1_1_shader___program_a24efda3df9e06e65e230803461ab9c3b}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+ID, const P\+Vec3 \&vector)
+\item 
+\mbox{\Hypertarget{classprz_1_1_shader___program_a3f19847bcff7a3f16bdac721cf6472d1}\label{classprz_1_1_shader___program_a3f19847bcff7a3f16bdac721cf6472d1}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+ID, const P\+Vec4 \&vector)
+\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_a5e49c8f33174f2e198d7e9a2928f2be6}{is\+\_\+usable}} () const
+\begin{DoxyCompactList}\small\item\em Return if is usable. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_adacc3a06016c7950b3099a753f7f8570}{is\+\_\+shader\+\_\+attached}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Return if the input shader is attached. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program_aa23dbf1cfa870b98ac1afad31e4a15bc}{is\+\_\+shader\+\_\+attached}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_shader___program_ab6eacdeb0d1733ea9ba6abfa00c34fe8}{name}})
+\begin{DoxyCompactList}\small\item\em Return if a shader is attached by name. \end{DoxyCompactList}\item 
+G\+Lint \mbox{\hyperlink{classprz_1_1_shader___program_a10cfe69aaa44702980a02bb188f690b1}{get\+\_\+vertex\+\_\+attribute\+\_\+id}} (const char $\ast$id) const
+\begin{DoxyCompactList}\small\item\em Return the vertex attribute id of the input string. \end{DoxyCompactList}\item 
+G\+Lint \mbox{\hyperlink{classprz_1_1_shader___program_afe3de8262b16d85fe6e11519398c6dc9}{get\+\_\+uniform\+\_\+id}} (const char $\ast$id) const
+\begin{DoxyCompactList}\small\item\em Return the uniform id of the input string. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___program_a14596994d22a0560b9f48a810dec1bef}{get\+\_\+attached\+\_\+shader}} (const P\+String \&shader\+Name)
+\begin{DoxyCompactList}\small\item\em Return an attached shader by name. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classprz_1_1_shader___program_a9259f0edb13c9d2dd8b9863c668d0434}{get\+\_\+number\+\_\+of\+\_\+attached\+\_\+shaders}} ()
+\begin{DoxyCompactList}\small\item\em Return the number of attached shaders. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classprz_1_1_shader___program_a55bb714a5fb1c02b5425290ed0f38333}{instance\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Return the instance identification. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_shader___program_a9370e9d2f79184492113936cdc79ca1f}{log}} () const
+\begin{DoxyCompactList}\small\item\em Return the error log. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_shader___program_ab6eacdeb0d1733ea9ba6abfa00c34fe8}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classprz_1_1_shader___program_ab63e89654d2099c6c7b56f085f3a370f}{disable}} ()
+\begin{DoxyCompactList}\small\item\em disable to the default shader program \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $\ast$ \mbox{\hyperlink{classprz_1_1_shader___program_acdfd5708b9913d50047ffafb0fd2fa36}{active\+Shader\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Return the currently active shader program. \end{DoxyCompactList}\item 
+static P\+String \mbox{\hyperlink{classprz_1_1_shader___program_ade1a6d9e240cfa6e5880bdff8493c5af}{form\+\_\+shader\+\_\+program\+\_\+name}} (P\+Buffer$<$ P\+String $>$ \&shader\+Names)
+\begin{DoxyCompactList}\small\item\em Create a shader program name by the input shader names. \end{DoxyCompactList}\item 
+static P\+String \mbox{\hyperlink{classprz_1_1_shader___program_ac60371217614e7962a32202f88a62d0e}{form\+\_\+shader\+\_\+program\+\_\+name}} (P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&shaders)
+\begin{DoxyCompactList}\small\item\em Create a shader program name by the input shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that manage an Open\+GL\textquotesingle{}s shader program. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a85eef4afd66769bb35c910b8933a233a}\label{classprz_1_1_shader___program_a85eef4afd66769bb35c910b8933a233a}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}}
+{\footnotesize\ttfamily prz\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}. 
+
+\mbox{\Hypertarget{classprz_1_1_shader___program_af7a5d1bcb0991735702b6410a5015e77}\label{classprz_1_1_shader___program_af7a5d1bcb0991735702b6410a5015e77}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!````~Shader\_Program@{$\sim$Shader\_Program}}
+\index{````~Shader\_Program@{$\sim$Shader\_Program}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{$\sim$Shader\_Program()}{~Shader\_Program()}}
+{\footnotesize\ttfamily prz\+::\+Shader\+\_\+\+Program\+::$\sim$\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader___program_acdfd5708b9913d50047ffafb0fd2fa36}\label{classprz_1_1_shader___program_acdfd5708b9913d50047ffafb0fd2fa36}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!activeShaderProgram@{activeShaderProgram}}
+\index{activeShaderProgram@{activeShaderProgram}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{activeShaderProgram()}{activeShaderProgram()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}$\ast$ prz\+::\+Shader\+\_\+\+Program\+::active\+Shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return the currently active shader program. 
+
+\begin{DoxyReturn}{Returns}
+const Shader\+\_\+\+Program$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_abdd9abf63919d1c550bae23e0bdc76a5}\label{classprz_1_1_shader___program_abdd9abf63919d1c550bae23e0bdc76a5}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!attach@{attach}}
+\index{attach@{attach}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::attach (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+attach a shader to this shader program 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_ac0a5e9ee801dc29757beb391fb9ee9ca}\label{classprz_1_1_shader___program_ac0a5e9ee801dc29757beb391fb9ee9ca}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!detach@{detach}}
+\index{detach@{detach}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::detach (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detach a shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_ab63e89654d2099c6c7b56f085f3a370f}\label{classprz_1_1_shader___program_ab63e89654d2099c6c7b56f085f3a370f}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!disable@{disable}}
+\index{disable@{disable}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily static void prz\+::\+Shader\+\_\+\+Program\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+disable to the default shader program 
+
+\mbox{\Hypertarget{classprz_1_1_shader___program_ade1a6d9e240cfa6e5880bdff8493c5af}\label{classprz_1_1_shader___program_ade1a6d9e240cfa6e5880bdff8493c5af}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!form\_shader\_program\_name@{form\_shader\_program\_name}}
+\index{form\_shader\_program\_name@{form\_shader\_program\_name}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{form\_shader\_program\_name()}{form\_shader\_program\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static P\+String prz\+::\+Shader\+\_\+\+Program\+::form\+\_\+shader\+\_\+program\+\_\+name (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+String $>$ \&}]{shader\+Names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create a shader program name by the input shader names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Names} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_ac60371217614e7962a32202f88a62d0e}\label{classprz_1_1_shader___program_ac60371217614e7962a32202f88a62d0e}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!form\_shader\_program\_name@{form\_shader\_program\_name}}
+\index{form\_shader\_program\_name@{form\_shader\_program\_name}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{form\_shader\_program\_name()}{form\_shader\_program\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static P\+String prz\+::\+Shader\+\_\+\+Program\+::form\+\_\+shader\+\_\+program\+\_\+name (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&}]{shaders }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create a shader program name by the input shaders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shaders} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a14596994d22a0560b9f48a810dec1bef}\label{classprz_1_1_shader___program_a14596994d22a0560b9f48a810dec1bef}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!get\_attached\_shader@{get\_attached\_shader}}
+\index{get\_attached\_shader@{get\_attached\_shader}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_attached\_shader()}{get\_attached\_shader()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ prz\+::\+Shader\+\_\+\+Program\+::get\+\_\+attached\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return an attached shader by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a9259f0edb13c9d2dd8b9863c668d0434}\label{classprz_1_1_shader___program_a9259f0edb13c9d2dd8b9863c668d0434}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!get\_number\_of\_attached\_shaders@{get\_number\_of\_attached\_shaders}}
+\index{get\_number\_of\_attached\_shaders@{get\_number\_of\_attached\_shaders}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_number\_of\_attached\_shaders()}{get\_number\_of\_attached\_shaders()}}
+{\footnotesize\ttfamily unsigned int prz\+::\+Shader\+\_\+\+Program\+::get\+\_\+number\+\_\+of\+\_\+attached\+\_\+shaders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the number of attached shaders. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_afe3de8262b16d85fe6e11519398c6dc9}\label{classprz_1_1_shader___program_afe3de8262b16d85fe6e11519398c6dc9}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!get\_uniform\_id@{get\_uniform\_id}}
+\index{get\_uniform\_id@{get\_uniform\_id}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_uniform\_id()}{get\_uniform\_id()}}
+{\footnotesize\ttfamily G\+Lint prz\+::\+Shader\+\_\+\+Program\+::get\+\_\+uniform\+\_\+id (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the uniform id of the input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+Lint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a10cfe69aaa44702980a02bb188f690b1}\label{classprz_1_1_shader___program_a10cfe69aaa44702980a02bb188f690b1}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!get\_vertex\_attribute\_id@{get\_vertex\_attribute\_id}}
+\index{get\_vertex\_attribute\_id@{get\_vertex\_attribute\_id}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_vertex\_attribute\_id()}{get\_vertex\_attribute\_id()}}
+{\footnotesize\ttfamily G\+Lint prz\+::\+Shader\+\_\+\+Program\+::get\+\_\+vertex\+\_\+attribute\+\_\+id (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the vertex attribute id of the input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+Lint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a55bb714a5fb1c02b5425290ed0f38333}\label{classprz_1_1_shader___program_a55bb714a5fb1c02b5425290ed0f38333}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!instanceID@{instanceID}}
+\index{instanceID@{instanceID}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{instanceID()}{instanceID()}}
+{\footnotesize\ttfamily unsigned prz\+::\+Shader\+\_\+\+Program\+::instance\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the instance identification. 
+
+\begin{DoxyReturn}{Returns}
+unsigned 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_adacc3a06016c7950b3099a753f7f8570}\label{classprz_1_1_shader___program_adacc3a06016c7950b3099a753f7f8570}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!is\_shader\_attached@{is\_shader\_attached}}
+\index{is\_shader\_attached@{is\_shader\_attached}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{is\_shader\_attached()}{is\_shader\_attached()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::is\+\_\+shader\+\_\+attached (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if the input shader is attached. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_aa23dbf1cfa870b98ac1afad31e4a15bc}\label{classprz_1_1_shader___program_aa23dbf1cfa870b98ac1afad31e4a15bc}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!is\_shader\_attached@{is\_shader\_attached}}
+\index{is\_shader\_attached@{is\_shader\_attached}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{is\_shader\_attached()}{is\_shader\_attached()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::is\+\_\+shader\+\_\+attached (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a shader is attached by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a5e49c8f33174f2e198d7e9a2928f2be6}\label{classprz_1_1_shader___program_a5e49c8f33174f2e198d7e9a2928f2be6}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!is\_usable@{is\_usable}}
+\index{is\_usable@{is\_usable}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{is\_usable()}{is\_usable()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::is\+\_\+usable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if is usable. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a5a19bc3636c1b39cbf33739228dcfa34}\label{classprz_1_1_shader___program_a5a19bc3636c1b39cbf33739228dcfa34}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!link@{link}}
+\index{link@{link}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{link()}{link()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+::link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Link the shader program and returns if is linked succesfuly. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a9370e9d2f79184492113936cdc79ca1f}\label{classprz_1_1_shader___program_a9370e9d2f79184492113936cdc79ca1f}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!log@{log}}
+\index{log@{log}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Shader\+\_\+\+Program\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error log. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_ab6eacdeb0d1733ea9ba6abfa00c34fe8}\label{classprz_1_1_shader___program_ab6eacdeb0d1733ea9ba6abfa00c34fe8}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!name@{name}}
+\index{name@{name}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Shader\+\_\+\+Program\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a1e7289d620dc9a4567b3b5c51aed4d58}\label{classprz_1_1_shader___program_a1e7289d620dc9a4567b3b5c51aed4d58}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!set\_uniform\_value@{set\_uniform\_value}}
+\index{set\_uniform\_value@{set\_uniform\_value}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{set\_uniform\_value()}{set\_uniform\_value()}}
+{\footnotesize\ttfamily void prz\+::\+Shader\+\_\+\+Program\+::set\+\_\+uniform\+\_\+value (\begin{DoxyParamCaption}\item[{G\+Lint}]{uniform\+ID,  }\item[{const G\+Lint \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the uniform value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform\+ID} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_shader___program_ab82a2f5de5de8a1031ff3c59b48e917f}\label{classprz_1_1_shader___program_ab82a2f5de5de8a1031ff3c59b48e917f}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!set\_vertex\_attribute@{set\_vertex\_attribute}}
+\index{set\_vertex\_attribute@{set\_vertex\_attribute}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{set\_vertex\_attribute()}{set\_vertex\_attribute()}}
+{\footnotesize\ttfamily void prz\+::\+Shader\+\_\+\+Program\+::set\+\_\+vertex\+\_\+attribute (\begin{DoxyParamCaption}\item[{G\+Lint}]{attribute\+ID,  }\item[{const float \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the vertex attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+ID} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_shader___program_a7d77b91c272c02c6c4cf017c7d957305}\label{classprz_1_1_shader___program_a7d77b91c272c02c6c4cf017c7d957305}} 
+\index{prz::Shader\_Program@{prz::Shader\_Program}!use@{use}}
+\index{use@{use}!prz::Shader\_Program@{prz::Shader\_Program}}
+\subsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void prz\+::\+Shader\+\_\+\+Program\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Use the shader program. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/Shader\+\_\+\+Program.\+hpp\item 
+code/sources/Shader\+\_\+\+Program.\+cpp\end{DoxyCompactItemize}

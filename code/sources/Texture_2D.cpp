@@ -49,7 +49,7 @@ namespace prz
 				0,
 				colorFormat_,
 				GL_UNSIGNED_BYTE,
-				0
+				NULL
 			);
 		}
 	}

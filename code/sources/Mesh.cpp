@@ -39,10 +39,16 @@ namespace prz
 
 		PList< PVAI > vertexAttributes =
 		{
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates.data(), nCoordinates, 3)), VBO_ORDER::COORDINATES),
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals.data(),  nNormals, 3)), VBO_ORDER::NORMALS),
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates.data(), nCoordinates, 3)), VBO_ORDER::COORDINATES)
 		};
 
+		if (nNormals > 0)
+		{
+			vertexAttributes.push_back
+			(
+				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals.data(), nNormals, 3)), VBO_ORDER::NORMALS)
+			);
+		}
 		if (nUVs > 0)
 		{
 			vertexAttributes.push_back

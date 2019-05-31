@@ -1,0 +1,7 @@
+<map id="prz::Camera" name="prz::Camera">
+<area shape="rect" id="node1" title="Class that represents the view of the scene." alt="" coords="207,273,301,300"/>
+<area shape="rect" id="node2" href="$classprz_1_1_entity.html" title="Core class that store models and a transform." alt="" coords="102,184,185,211"/>
+<area shape="rect" id="node3" href="$classprz_1_1_transform.html" title="Class that represents the transformation of an object in a scene." alt="" coords="5,273,111,300"/>
+<area shape="rect" id="node4" href="$classprz_1_1_renderer.html" title="Class to render all subscribed entities." alt="" coords="13,5,113,32"/>
+<area shape="rect" id="node5" href="$classprz_1_1_scene.html" title="Core class to save the state and items of the application." alt="" coords="77,95,162,121"/>
+</map>

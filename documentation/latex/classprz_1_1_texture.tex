@@ -1,0 +1,383 @@
+\hypertarget{classprz_1_1_texture}{}\section{prz\+::Texture Class Reference}
+\label{classprz_1_1_texture}\index{prz::Texture@{prz::Texture}}
+
+
+Class that manage Open\+GL textures and images loaded from files.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classprz_1_1_texture__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a667c9ad6d1fd3ea22cf86754189ba7f7}\label{classprz_1_1_texture_a667c9ad6d1fd3ea22cf86754189ba7f7}} 
+enum {\bfseries Wrap\+\_\+\+Mode} \{ {\bfseries R\+E\+P\+E\+AT} = G\+L\+\_\+\+R\+E\+P\+E\+AT, 
+{\bfseries M\+I\+R\+R\+O\+R\+E\+D\+\_\+\+R\+E\+P\+E\+AT} = G\+L\+\_\+\+M\+I\+R\+R\+O\+R\+E\+D\+\_\+\+R\+E\+P\+E\+AT, 
+{\bfseries C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE} = G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, 
+{\bfseries C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+B\+O\+R\+D\+ER} = G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+B\+O\+R\+D\+ER
+ \}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a1887b18d9f0370660ac87c66520abc1f}\label{classprz_1_1_texture_a1887b18d9f0370660ac87c66520abc1f}} 
+enum {\bfseries Filter\+\_\+\+Mode} \{ \newline
+{\bfseries N\+E\+A\+R\+E\+ST} = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST, 
+{\bfseries L\+I\+N\+E\+AR} = G\+L\+\_\+\+L\+I\+N\+E\+AR, 
+{\bfseries N\+E\+A\+R\+E\+S\+T\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+E\+ST} = G\+L\+\_\+\+N\+E\+A\+R\+E\+S\+T\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+E\+ST, 
+{\bfseries L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+E\+ST} = G\+L\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+E\+ST, 
+\newline
+{\bfseries N\+E\+A\+R\+E\+S\+T\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+AR} = G\+L\+\_\+\+N\+E\+A\+R\+E\+S\+T\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+AR, 
+{\bfseries L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+AR} = G\+L\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+AR
+ \}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a4db479fb4bde395e7d411d0848ff8ca6}\label{classprz_1_1_texture_a4db479fb4bde395e7d411d0848ff8ca6}} 
+enum {\bfseries Color\+\_\+\+Format} \{ {\bfseries R\+GB} = G\+L\+\_\+\+R\+GB, 
+{\bfseries R\+G\+BA} = G\+L\+\_\+\+R\+G\+BA
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_texture_af46d7713d680b9771f3a43c552ee7b25}{Texture}} (G\+Lenum \mbox{\hyperlink{classprz_1_1_texture_a3cdf458e7d2adefec6da4cde932cf775}{texture\+Type}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}{name}}, Wrap\+\_\+\+Mode wrap\+Mode=Wrap\+\_\+\+Mode\+::\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, Filter\+\_\+\+Mode filter\+Mode=Filter\+\_\+\+Mode\+::\+L\+I\+N\+E\+AR, const Color\+\_\+\+Format \&color\+Format=Color\+\_\+\+Format\+::\+R\+G\+BA)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_texture_a4a11cd4aee54384cd2c9280e8acc926c}{Texture}} (G\+Lenum \mbox{\hyperlink{classprz_1_1_texture_a3cdf458e7d2adefec6da4cde932cf775}{texture\+Type}}, P\+Buffer$<$ P\+String $>$ \&image\+Paths, const P\+String \&\mbox{\hyperlink{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}{name}}, Wrap\+\_\+\+Mode wrap\+Mode=Wrap\+\_\+\+Mode\+::\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, Filter\+\_\+\+Mode filter\+Mode=Filter\+\_\+\+Mode\+::\+L\+I\+N\+E\+AR, const Color\+\_\+\+Format \&color\+Format=Color\+\_\+\+Format\+::\+R\+G\+BA, bool flip\+Images=true)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_texture_acf6614dc1ad3a76be4849f519c610110}{$\sim$\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_texture_afd48365ad270a9937e9d71c5a371e138}{bind}} ()
+\begin{DoxyCompactList}\small\item\em Bind the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_texture_a55ae7e8c1e609b7d0e911c69e3614840}{unbind}} ()
+\begin{DoxyCompactList}\small\item\em Unbind the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_texture_a22bb0df706f6b81f8a908708a724e67c}{flip\+\_\+images}} ()
+\begin{DoxyCompactList}\small\item\em Flip images. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_afeecdb8009467fd3600c14272f9d887e}{set\+\_\+wrap\+\_\+mode}} (Wrap\+\_\+\+Mode wrap\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the wrap mode. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_ad149ad868fd8a2d139b7e69ba7b1936f}{set\+\_\+filter\+\_\+mode}} (Filter\+\_\+\+Mode filter\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the filter mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_texture_a25f1084494684ad127094b7a48a5c003}{is\+\_\+ok}} () const
+\begin{DoxyCompactList}\small\item\em Return if is good. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classprz_1_1_texture_a039881cbfc129c8bc3a1b3ec96ea18f1}{get\+\_\+error}} () const
+\begin{DoxyCompactList}\small\item\em Return the error. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}{name}} ()
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{classprz_1_1_texture_a5d49295c73908a7e2962ec71f8f72bcb}{texture\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Return the texture identification. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{classprz_1_1_texture_a3cdf458e7d2adefec6da4cde932cf775}{texture\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Return the texture type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_ac30711bd35724f1044cbdbf4644d1df1}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_a75b9d1ba9920727d99e4c167c900fa32}{on\+\_\+initialize}} ()=0
+\begin{DoxyCompactList}\small\item\em Method called on initialize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_a0687ed315cff544d82e748621b75bf19}{load\+\_\+images}} (P\+Buffer$<$ P\+String $>$ \&image\+Paths)
+\begin{DoxyCompactList}\small\item\em Load images from files. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_ad68b4a5a4032f74d3ea719f26f78b202}{apply\+\_\+wrap\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Apply the texture wrap mode. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture_a1383c86fed1a6d297e0b24e5a2c6c29b}{apply\+\_\+filter\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Apply the filter mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a55c40d63f2d7591a3e603e32bf3fe415}\label{classprz_1_1_texture_a55c40d63f2d7591a3e603e32bf3fe415}} 
+P\+Buffer$<$ P\+Image $>$ {\bfseries images\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_ab37b08a44286d475e0a206d839c050f9}\label{classprz_1_1_texture_ab37b08a44286d475e0a206d839c050f9}} 
+G\+Lenum {\bfseries texture\+Type\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_ac217dbee62c06d36880515b8a5c65b24}\label{classprz_1_1_texture_ac217dbee62c06d36880515b8a5c65b24}} 
+G\+Luint {\bfseries texture\+I\+D\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_ad8280431126e0b96d8913ca48f800151}\label{classprz_1_1_texture_ad8280431126e0b96d8913ca48f800151}} 
+Wrap\+\_\+\+Mode {\bfseries wrap\+Mode\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a91911b6f58e86957b86d639e82ed64bf}\label{classprz_1_1_texture_a91911b6f58e86957b86d639e82ed64bf}} 
+Filter\+\_\+\+Mode {\bfseries filter\+Mode\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a81b73f3eaf14fbec1c8869aa996e2b19}\label{classprz_1_1_texture_a81b73f3eaf14fbec1c8869aa996e2b19}} 
+Color\+\_\+\+Format {\bfseries color\+Format\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_ad77fb2cfaadc2d54dfc8061e8d775627}\label{classprz_1_1_texture_ad77fb2cfaadc2d54dfc8061e8d775627}} 
+P\+String {\bfseries name\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture_a620bea0d596614fcacb42456fb78211c}\label{classprz_1_1_texture_a620bea0d596614fcacb42456fb78211c}} 
+G\+Lenum {\bfseries error\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that manage Open\+GL textures and images loaded from files. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_texture_af46d7713d680b9771f3a43c552ee7b25}\label{classprz_1_1_texture_af46d7713d680b9771f3a43c552ee7b25}} 
+\index{prz::Texture@{prz::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{G\+Lenum}]{texture\+Type,  }\item[{const P\+String \&}]{name,  }\item[{Wrap\+\_\+\+Mode}]{wrap\+Mode = {\ttfamily Wrap\+\_\+Mode\+:\+:CLAMP\+\_\+TO\+\_\+EDGE},  }\item[{Filter\+\_\+\+Mode}]{filter\+Mode = {\ttfamily Filter\+\_\+Mode\+:\+:LINEAR},  }\item[{const Color\+\_\+\+Format \&}]{color\+Format = {\ttfamily Color\+\_\+Format\+:\+:RGBA} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Type} & \\
+\hline
+{\em name} & \\
+\hline
+{\em wrap\+Mode} & \\
+\hline
+{\em filter\+Mode} & \\
+\hline
+{\em color\+Format} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture_a4a11cd4aee54384cd2c9280e8acc926c}\label{classprz_1_1_texture_a4a11cd4aee54384cd2c9280e8acc926c}} 
+\index{prz::Texture@{prz::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{G\+Lenum}]{texture\+Type,  }\item[{P\+Buffer$<$ P\+String $>$ \&}]{image\+Paths,  }\item[{const P\+String \&}]{name,  }\item[{Wrap\+\_\+\+Mode}]{wrap\+Mode = {\ttfamily Wrap\+\_\+Mode\+:\+:CLAMP\+\_\+TO\+\_\+EDGE},  }\item[{Filter\+\_\+\+Mode}]{filter\+Mode = {\ttfamily Filter\+\_\+Mode\+:\+:LINEAR},  }\item[{const Color\+\_\+\+Format \&}]{color\+Format = {\ttfamily Color\+\_\+Format\+:\+:RGBA},  }\item[{bool}]{flip\+Images = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Type} & \\
+\hline
+{\em image\+Paths} & \\
+\hline
+{\em name} & \\
+\hline
+{\em wrap\+Mode} & \\
+\hline
+{\em filter\+Mode} & \\
+\hline
+{\em color\+Format} & \\
+\hline
+{\em flip\+Images} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture_acf6614dc1ad3a76be4849f519c610110}\label{classprz_1_1_texture_acf6614dc1ad3a76be4849f519c610110}} 
+\index{prz::Texture@{prz::Texture}!````~Texture@{$\sim$Texture}}
+\index{````~Texture@{$\sim$Texture}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{$\sim$Texture()}{~Texture()}}
+{\footnotesize\ttfamily prz\+::\+Texture\+::$\sim$\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_texture}{Texture}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_texture_a1383c86fed1a6d297e0b24e5a2c6c29b}\label{classprz_1_1_texture_a1383c86fed1a6d297e0b24e5a2c6c29b}} 
+\index{prz::Texture@{prz::Texture}!apply\_filter\_mode@{apply\_filter\_mode}}
+\index{apply\_filter\_mode@{apply\_filter\_mode}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{apply\_filter\_mode()}{apply\_filter\_mode()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::apply\+\_\+filter\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Apply the filter mode. 
+
+\mbox{\Hypertarget{classprz_1_1_texture_ad68b4a5a4032f74d3ea719f26f78b202}\label{classprz_1_1_texture_ad68b4a5a4032f74d3ea719f26f78b202}} 
+\index{prz::Texture@{prz::Texture}!apply\_wrap\_mode@{apply\_wrap\_mode}}
+\index{apply\_wrap\_mode@{apply\_wrap\_mode}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{apply\_wrap\_mode()}{apply\_wrap\_mode()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Texture\+::apply\+\_\+wrap\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Apply the texture wrap mode. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classprz_1_1_texture__2_d_ac8639f22c51ad83198fb8d1a7c257ac2}{prz\+::\+Texture\+\_\+2D}}, and \mbox{\hyperlink{classprz_1_1_texture___cube_aa3657f6c55bec9d78032d4b7658b3154}{prz\+::\+Texture\+\_\+\+Cube}}.
+
+\mbox{\Hypertarget{classprz_1_1_texture_afd48365ad270a9937e9d71c5a371e138}\label{classprz_1_1_texture_afd48365ad270a9937e9d71c5a371e138}} 
+\index{prz::Texture@{prz::Texture}!bind@{bind}}
+\index{bind@{bind}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bind the texture. 
+
+\mbox{\Hypertarget{classprz_1_1_texture_a22bb0df706f6b81f8a908708a724e67c}\label{classprz_1_1_texture_a22bb0df706f6b81f8a908708a724e67c}} 
+\index{prz::Texture@{prz::Texture}!flip\_images@{flip\_images}}
+\index{flip\_images@{flip\_images}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{flip\_images()}{flip\_images()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::flip\+\_\+images (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Flip images. 
+
+\mbox{\Hypertarget{classprz_1_1_texture_a039881cbfc129c8bc3a1b3ec96ea18f1}\label{classprz_1_1_texture_a039881cbfc129c8bc3a1b3ec96ea18f1}} 
+\index{prz::Texture@{prz::Texture}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily G\+Lenum prz\+::\+Texture\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error. 
+
+\begin{DoxyReturn}{Returns}
+G\+Lenum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture_ac30711bd35724f1044cbdbf4644d1df1}\label{classprz_1_1_texture_ac30711bd35724f1044cbdbf4644d1df1}} 
+\index{prz::Texture@{prz::Texture}!initialize@{initialize}}
+\index{initialize@{initialize}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initialize. 
+
+\mbox{\Hypertarget{classprz_1_1_texture_a25f1084494684ad127094b7a48a5c003}\label{classprz_1_1_texture_a25f1084494684ad127094b7a48a5c003}} 
+\index{prz::Texture@{prz::Texture}!is\_ok@{is\_ok}}
+\index{is\_ok@{is\_ok}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{is\_ok()}{is\_ok()}}
+{\footnotesize\ttfamily bool prz\+::\+Texture\+::is\+\_\+ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if is good. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture_a0687ed315cff544d82e748621b75bf19}\label{classprz_1_1_texture_a0687ed315cff544d82e748621b75bf19}} 
+\index{prz::Texture@{prz::Texture}!load\_images@{load\_images}}
+\index{load\_images@{load\_images}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{load\_images()}{load\_images()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::load\+\_\+images (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+String $>$ \&}]{image\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Load images from files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Paths} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}\label{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}} 
+\index{prz::Texture@{prz::Texture}!name@{name}}
+\index{name@{name}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Texture\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture_a75b9d1ba9920727d99e4c167c900fa32}\label{classprz_1_1_texture_a75b9d1ba9920727d99e4c167c900fa32}} 
+\index{prz::Texture@{prz::Texture}!on\_initialize@{on\_initialize}}
+\index{on\_initialize@{on\_initialize}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{on\_initialize()}{on\_initialize()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Texture\+::on\+\_\+initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Method called on initialize. 
+
+
+
+Implemented in \mbox{\hyperlink{classprz_1_1_texture__2_d_abf56074e463a4811b4e64ccf61931d94}{prz\+::\+Texture\+\_\+2D}}, and \mbox{\hyperlink{classprz_1_1_texture___cube_a428b68f8ceb7476a5780469a40084fab}{prz\+::\+Texture\+\_\+\+Cube}}.
+
+\mbox{\Hypertarget{classprz_1_1_texture_ad149ad868fd8a2d139b7e69ba7b1936f}\label{classprz_1_1_texture_ad149ad868fd8a2d139b7e69ba7b1936f}} 
+\index{prz::Texture@{prz::Texture}!set\_filter\_mode@{set\_filter\_mode}}
+\index{set\_filter\_mode@{set\_filter\_mode}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{set\_filter\_mode()}{set\_filter\_mode()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Texture\+::set\+\_\+filter\+\_\+mode (\begin{DoxyParamCaption}\item[{Filter\+\_\+\+Mode}]{filter\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the filter mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter\+Mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture_afeecdb8009467fd3600c14272f9d887e}\label{classprz_1_1_texture_afeecdb8009467fd3600c14272f9d887e}} 
+\index{prz::Texture@{prz::Texture}!set\_wrap\_mode@{set\_wrap\_mode}}
+\index{set\_wrap\_mode@{set\_wrap\_mode}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{set\_wrap\_mode()}{set\_wrap\_mode()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Texture\+::set\+\_\+wrap\+\_\+mode (\begin{DoxyParamCaption}\item[{Wrap\+\_\+\+Mode}]{wrap\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the wrap mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wrap\+Mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture_a5d49295c73908a7e2962ec71f8f72bcb}\label{classprz_1_1_texture_a5d49295c73908a7e2962ec71f8f72bcb}} 
+\index{prz::Texture@{prz::Texture}!textureID@{textureID}}
+\index{textureID@{textureID}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{textureID()}{textureID()}}
+{\footnotesize\ttfamily G\+Luint prz\+::\+Texture\+::texture\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the texture identification. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture_a3cdf458e7d2adefec6da4cde932cf775}\label{classprz_1_1_texture_a3cdf458e7d2adefec6da4cde932cf775}} 
+\index{prz::Texture@{prz::Texture}!textureType@{textureType}}
+\index{textureType@{textureType}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{textureType()}{textureType()}}
+{\footnotesize\ttfamily G\+Luint prz\+::\+Texture\+::texture\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the texture type. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture_a55ae7e8c1e609b7d0e911c69e3614840}\label{classprz_1_1_texture_a55ae7e8c1e609b7d0e911c69e3614840}} 
+\index{prz::Texture@{prz::Texture}!unbind@{unbind}}
+\index{unbind@{unbind}!prz::Texture@{prz::Texture}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unbind the texture. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_texture_8hpp}{Texture.\+hpp}}\item 
+code/sources/Texture.\+cpp\end{DoxyCompactItemize}

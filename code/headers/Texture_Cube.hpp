@@ -1,7 +1,7 @@
 ﻿/**
  * @file Texture_Cube.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that represents 6 textures 2D which forms a cube
  * @version 0.1
  * @date 30-04-2019
  *
@@ -17,10 +17,21 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class that represents 6 textures 2D which forms a cube
+	 * 
+	 */
 	class Texture_Cube : public Texture
 	{
 	public:
 		
+		/**
+		 * @brief Construct a new Texture_Cube
+		 * 
+		 * @param imagePaths 
+		 * @param name 
+		 * @param colorFormat 
+		 */
 		Texture_Cube
 		(
 			PBuffer<PString>& imagePaths,
@@ -30,10 +41,18 @@ namespace prz
 
 	protected:
 
+		/**
+		 * @brief Overrided method called on texture initialize
+		 * 
+		 */
 		void on_initialize() override;
 
 	protected:
 
+		/**
+		 * @brief Overrided wrap mode application
+		 * 
+		 */
 		void apply_wrap_mode() override;
 	
 	private:

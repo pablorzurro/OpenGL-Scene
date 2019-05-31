@@ -1,7 +1,7 @@
 /**
  * @file Material.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Class that represents the union of a shader program and multiple textures 
  * @version 0.1
  * @date 29-04-2019
  * 
@@ -34,6 +34,13 @@ namespace prz
 	public:
 
 
+		/**
+		 * @brief Construct a new Material
+		 * 
+		 * @param name 
+		 * @param shaderProgram 
+		 * @param usesTransparency 
+		 */
 		Material
 		(
 			const PString& name,
@@ -41,6 +48,14 @@ namespace prz
 			bool usesTransparency = false
 		);
 
+		/**
+		 * @brief Construct a new Material
+		 * 
+		 * @param name 
+		 * @param pathVertexShader 
+		 * @param pathFragmentShader 
+		 * @param usesTransparency 
+		 */
 		Material
 		(
 			const PString& name,
@@ -51,22 +66,76 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Use this material
+		 * 
+		 */
 		void use();
+
+		/**
+		 * @brief Try to disable all the textures // #WIP
+		 * 
+		 */
+		void desuse();
 
 	public:
 
+		/**
+		 * @brief apply the local uniforms
+		 * 
+		 */
 		void apply_local_uniforms();
+
+		/**
+		 * @brief apply the shared uniforms
+		 * 
+		 */
 		void apply_shared_uniforms();
 
 	public:
 
+		/**
+		 * @brief Add a generic texture
+		 * 
+		 * @param texture 
+		 * @param uniformName 
+		 * @return PSPtr< Texture > 
+		 */
 		PSPtr< Texture > add_texture(PSPtr< Texture > texture, const PString& uniformName);
+
+		/**
+		 * @brief Add a texture cube
+		 * 
+		 * @param texturePath 
+		 * @param uniformName 
+		 * @return PSPtr< Texture > 
+		 */
 		PSPtr< Texture > add_texture_cube(const PString& texturePath, const PString& uniformName);
+
+		/**
+		 * @brief Add a texture 2D
+		 * 
+		 * @param texturePath 
+		 * @param uniformName 
+		 * @return PSPtr< Texture > 
+		 */
 		PSPtr< Texture > add_texture_2D(const PString& texturePath, const PString& uniformName);
+
+		/**
+		 * @brief Add a generic texture by name
+		 * 
+		 * @param textureName 
+		 * @param uniformName 
+		 * @return PSPtr< Texture > 
+		 */
 		PSPtr< Texture > add_texture_by_name(const PString& textureName, const PString& uniformName);
 
 	public:
 
+		/**
+		 * @brief Delete all the textures
+		 * 
+		 */
 		void clear_textures()
 		{
 			textures_.clear();
@@ -74,11 +143,36 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if exists a texture with name
+		 * 
+		 * @param textureName 
+		 * @return true 
+		 * @return false 
+		 */
 		bool exists_texture_with_name(const PString& textureName);
+
+		/**
+		 * @brief Return if is saved the input texture 
+		 * 
+		 * @param texture 
+		 * @return true 
+		 * @return false 
+		 */
 		bool exists_texture(PSPtr< Texture > texture);
 		
 	public:
 
+		/**
+		 * @brief Set the uniforms
+		 * 
+		 * @param id 
+		 * @param name 
+		 * @param value 
+		 * @param isSharedUniform 
+		 * @return true 
+		 * @return false 
+		 */
 		bool set_uniform(const char* id, const PString& name, const GLint    value, bool isSharedUniform = false);
 		bool set_uniform(const char* id, const PString& name, const GLuint   value, bool isSharedUniform = false);
 		bool set_uniform(const char* id, const PString& name, const GLfloat  value, bool isSharedUniform = false);
@@ -90,30 +184,62 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Returns the texture with name
+		 * 
+		 * @param textureName 
+		 * @return PSPtr< Texture > 
+		 */
 		PSPtr< Texture > get_texture_with_name(const PString& textureName);
 	
 	public:
 
+		/**
+		 * @brief Return the instance identification
+		 * 
+		 * @return unsigned 
+		 */
 		unsigned instanceID() const
 		{
 			return instanceID_;
 		}
 
+		/**
+		 * @brief Return the name
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& name() const
 		{
 			return name_;
 		}
 
+		/**
+		 * @brief Return a pointer to the shader program object
+		 * 
+		 * @return Shader_Program* 
+		 */
 		Shader_Program* shaderProgramPtr() const
 		{
 			return shaderProgram_.get();
 		}
 
+		/**
+		 * @brief Return the shader program object
+		 * 
+		 * @return PSPtr< Shader_Program > 
+		 */
 		PSPtr< Shader_Program > shaderProgram() const
 		{
 			return shaderProgram_;
 		}
 
+		/**
+		 * @brief Return if this material uses transparency
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool usesTransparency()
 		{
 			return usesTransparency_;
@@ -121,10 +247,24 @@ namespace prz
 
 	protected:
 
+		/**
+		 * @brief Allocate a uniform with variant type
+		 * 
+		 * @param id 
+		 * @param name 
+		 * @param type 
+		 * @param isSharedUniform 
+		 * @return Uniform* 
+		 */
 		Uniform* allocate_uniform(const char* id, const PString& name, Var_GL::Type type, bool isSharedUniform = false);
 
 	protected:
 
+		/**
+		 * @brief Apply all the uniforms of any kind
+		 * 
+		 * @param uniformsMap 
+		 */
 		void apply_uniforms(PMap< PString, Uniform>& uniformsMap);
 
 	protected:

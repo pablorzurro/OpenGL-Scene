@@ -1,0 +1,366 @@
+\hypertarget{classprz_1_1_entity}{}\section{prz\+::Entity Class Reference}
+\label{classprz_1_1_entity}\index{prz::Entity@{prz::Entity}}
+
+
+Core class that store models and a transform.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classprz_1_1_entity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classprz_1_1_entity__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_entity_a3a2ee329c4db0ab431c318213c79f5f4}{Entity}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&\mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}}, \mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_entity_adcc5c23fcdbe9a5413877af8f19390f1}{Entity}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&\mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}}, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ parent=P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$())
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_entity_aa50e2bc561f809dea2a5e5e66ae93a8b}{$\sim$\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_entity_ac164eed5997d84d42014b6cb8fcc09c0}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the entity. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_entity_a3ad5dd16209c48164624522f99a2d418}{render}} ()
+\begin{DoxyCompactList}\small\item\em render the entity (deprecated) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_entity_ad05faa4499acdf692cbb4da278eaa329}{add\+\_\+model}} (const P\+String \&path, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material=\mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material())
+\begin{DoxyCompactList}\small\item\em Add a model by loading it with the path and a material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_entity_a6006671c0683f0cfdfb827c66b7e37de}{add\+\_\+model}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ model)
+\begin{DoxyCompactList}\small\item\em add a model \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_entity_a78044944c6e3e9699a1f685ff6345d39}{set\+\_\+parent}} (\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Set the transform parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_entity_ad9305e51dfcade9d1b7a6aa0e5d74b2e}{set\+\_\+parent}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ parent)
+\begin{DoxyCompactList}\small\item\em Set the transform parent. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_entity_afd5b573b1cf1bd50bd9831facb66b3da}{exists\+\_\+model\+\_\+with\+\_\+name}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}})
+\begin{DoxyCompactList}\small\item\em return if exists a model with a name \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_entity_a8d9500acb1c61a571864b2e4217a48cc}{exists\+\_\+model}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ model)
+\begin{DoxyCompactList}\small\item\em return if exists the same model \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ \mbox{\hyperlink{classprz_1_1_entity_a9596c8a874c25cb930360b4dacaf7188}{get\+\_\+model}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}})
+\begin{DoxyCompactList}\small\item\em returns a model by name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_transform}{Transform}} \& \mbox{\hyperlink{classprz_1_1_entity_a4ad46e0479f2aa68a0ec75c8fe3b8238}{transform}} ()
+\begin{DoxyCompactList}\small\item\em return the transform \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \& \mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}} ()
+\begin{DoxyCompactList}\small\item\em return the scene \end{DoxyCompactList}\item 
+P\+Map$<$ P\+String, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ $>$ \& \mbox{\hyperlink{classprz_1_1_entity_af6c594463d2a6cb91d1e30b7d5bda397}{models}} ()
+\begin{DoxyCompactList}\small\item\em return the models map \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}} () const
+\begin{DoxyCompactList}\small\item\em return the name \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classprz_1_1_entity_abf4cb73b801b239f61535eec0505b26d}{entity\+\_\+update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em protected method to update the hierarchy \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_entity_a86b40fe1cccd095c57aca2ad4ee9c37f}\label{classprz_1_1_entity_a86b40fe1cccd095c57aca2ad4ee9c37f}} 
+\mbox{\hyperlink{classprz_1_1_transform}{Transform}} {\bfseries transform\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_entity_a30ff5d8bbb248340a40689dcdea681c7}\label{classprz_1_1_entity_a30ff5d8bbb248340a40689dcdea681c7}} 
+P\+Map$<$ P\+String, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ $>$ {\bfseries models\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_entity_a80ef1d26d5c2d326ffa0117b07cf8c7f}\label{classprz_1_1_entity_a80ef1d26d5c2d326ffa0117b07cf8c7f}} 
+\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \& {\bfseries scene\+Parent\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_entity_a79f31808667de52879fe747b989b3ce6}\label{classprz_1_1_entity_a79f31808667de52879fe747b989b3ce6}} 
+P\+String {\bfseries name\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core class that store models and a transform. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_entity_a3a2ee329c4db0ab431c318213c79f5f4}\label{classprz_1_1_entity_a3a2ee329c4db0ab431c318213c79f5f4}} 
+\index{prz::Entity@{prz::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{name,  }\item[{\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em name} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_adcc5c23fcdbe9a5413877af8f19390f1}\label{classprz_1_1_entity_adcc5c23fcdbe9a5413877af8f19390f1}} 
+\index{prz::Entity@{prz::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{name,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{parent = {\ttfamily PSPtr$<$~\mbox{\hyperlink{classprz_1_1_entity}{Entity}}~$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em name} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_aa50e2bc561f809dea2a5e5e66ae93a8b}\label{classprz_1_1_entity_aa50e2bc561f809dea2a5e5e66ae93a8b}} 
+\index{prz::Entity@{prz::Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily prz\+::\+Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_entity}{Entity}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_entity_ad05faa4499acdf692cbb4da278eaa329}\label{classprz_1_1_entity_ad05faa4499acdf692cbb4da278eaa329}} 
+\index{prz::Entity@{prz::Entity}!add\_model@{add\_model}}
+\index{add\_model@{add\_model}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{add\_model()}{add\_model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Entity\+::add\+\_\+model (\begin{DoxyParamCaption}\item[{const P\+String \&}]{path,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material = {\ttfamily \mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a model by loading it with the path and a material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_a6006671c0683f0cfdfb827c66b7e37de}\label{classprz_1_1_entity_a6006671c0683f0cfdfb827c66b7e37de}} 
+\index{prz::Entity@{prz::Entity}!add\_model@{add\_model}}
+\index{add\_model@{add\_model}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{add\_model()}{add\_model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Entity\+::add\+\_\+model (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add a model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_abf4cb73b801b239f61535eec0505b26d}\label{classprz_1_1_entity_abf4cb73b801b239f61535eec0505b26d}} 
+\index{prz::Entity@{prz::Entity}!entity\_update@{entity\_update}}
+\index{entity\_update@{entity\_update}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{entity\_update()}{entity\_update()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Entity\+::entity\+\_\+update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+protected method to update the hierarchy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classprz_1_1_camera_abea73c7221f27991b3c2790e71feaf3b}{prz\+::\+Camera}}.
+
+\mbox{\Hypertarget{classprz_1_1_entity_a8d9500acb1c61a571864b2e4217a48cc}\label{classprz_1_1_entity_a8d9500acb1c61a571864b2e4217a48cc}} 
+\index{prz::Entity@{prz::Entity}!exists\_model@{exists\_model}}
+\index{exists\_model@{exists\_model}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{exists\_model()}{exists\_model()}}
+{\footnotesize\ttfamily bool prz\+::\+Entity\+::exists\+\_\+model (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if exists the same model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_afd5b573b1cf1bd50bd9831facb66b3da}\label{classprz_1_1_entity_afd5b573b1cf1bd50bd9831facb66b3da}} 
+\index{prz::Entity@{prz::Entity}!exists\_model\_with\_name@{exists\_model\_with\_name}}
+\index{exists\_model\_with\_name@{exists\_model\_with\_name}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{exists\_model\_with\_name()}{exists\_model\_with\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Entity\+::exists\+\_\+model\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if exists a model with a name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_a9596c8a874c25cb930360b4dacaf7188}\label{classprz_1_1_entity_a9596c8a874c25cb930360b4dacaf7188}} 
+\index{prz::Entity@{prz::Entity}!get\_model@{get\_model}}
+\index{get\_model@{get\_model}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{get\_model()}{get\_model()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ prz\+::\+Entity\+::get\+\_\+model (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns a model by name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Model $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_af6c594463d2a6cb91d1e30b7d5bda397}\label{classprz_1_1_entity_af6c594463d2a6cb91d1e30b7d5bda397}} 
+\index{prz::Entity@{prz::Entity}!models@{models}}
+\index{models@{models}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{models()}{models()}}
+{\footnotesize\ttfamily P\+Map$<$ P\+String, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ $>$\& prz\+::\+Entity\+::models (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the models map 
+
+\begin{DoxyReturn}{Returns}
+P\+Map$<$ P\+String, P\+S\+Ptr$<$ Model $>$ $>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}\label{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}} 
+\index{prz::Entity@{prz::Entity}!name@{name}}
+\index{name@{name}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Entity\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the name 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_a3ad5dd16209c48164624522f99a2d418}\label{classprz_1_1_entity_a3ad5dd16209c48164624522f99a2d418}} 
+\index{prz::Entity@{prz::Entity}!render@{render}}
+\index{render@{render}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Entity\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+render the entity (deprecated) 
+
+\mbox{\Hypertarget{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}\label{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}} 
+\index{prz::Entity@{prz::Entity}!scene@{scene}}
+\index{scene@{scene}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{scene()}{scene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_scene}{Scene}}\& prz\+::\+Entity\+::scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the scene 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_scene}{Scene}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_a78044944c6e3e9699a1f685ff6345d39}\label{classprz_1_1_entity_a78044944c6e3e9699a1f685ff6345d39}} 
+\index{prz::Entity@{prz::Entity}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{set\_parent()}{set\_parent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Entity\+::set\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the transform parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_ad9305e51dfcade9d1b7a6aa0e5d74b2e}\label{classprz_1_1_entity_ad9305e51dfcade9d1b7a6aa0e5d74b2e}} 
+\index{prz::Entity@{prz::Entity}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{set\_parent()}{set\_parent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Entity\+::set\+\_\+parent (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the transform parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_entity_a4ad46e0479f2aa68a0ec75c8fe3b8238}\label{classprz_1_1_entity_a4ad46e0479f2aa68a0ec75c8fe3b8238}} 
+\index{prz::Entity@{prz::Entity}!transform@{transform}}
+\index{transform@{transform}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_transform}{Transform}}\& prz\+::\+Entity\+::transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the transform 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_transform}{Transform}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_entity_ac164eed5997d84d42014b6cb8fcc09c0}\label{classprz_1_1_entity_ac164eed5997d84d42014b6cb8fcc09c0}} 
+\index{prz::Entity@{prz::Entity}!update@{update}}
+\index{update@{update}!prz::Entity@{prz::Entity}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void prz\+::\+Entity\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_entity_8hpp}{Entity.\+hpp}}\end{DoxyCompactItemize}

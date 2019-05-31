@@ -1,0 +1,136 @@
+\hypertarget{classprz_1_1_vertex___array___object}{}\section{prz\+::Vertex\+\_\+\+Array\+\_\+\+Object Class Reference}
+\label{classprz_1_1_vertex___array___object}\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+
+
+Class to manage and store vertex array information.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+\_\+\+Array\+\_\+\+Object.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_vertex___array___object_a83368b8c0aa93db50307df788234cfec}{Vertex\+\_\+\+Array\+\_\+\+Object}} (const P\+List$<$ \mbox{\hyperlink{structprz_1_1_vertex___attribute___information}{P\+V\+AI}} $>$ \&vertex\+Attrib\+Info\+List, const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{P\+V\+BO}} $>$ \&vbo\+Indices=P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{P\+V\+BO}} $>$())
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_vertex___array___object_a9a9af420f5ea9d334d25d610025b9083}{$\sim$\+Vertex\+\_\+\+Array\+\_\+\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_vertex___array___object_aeb2ecc81c998fd8565786b0a961f9cb7}{bind}} () const
+\begin{DoxyCompactList}\small\item\em Bind the V\+AO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_vertex___array___object_a6ca325c80db7f4d570154f776adcc10c}{unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbind the V\+AO. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_vertex___array___object_a75e8fc332c90857ac7435cba9200507c}{is\+\_\+ok}} () const
+\begin{DoxyCompactList}\small\item\em Return if is ok. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classprz_1_1_vertex___array___object_ab13fbca0183040fd87ead81645db9eb2}{get\+\_\+error}} () const
+\begin{DoxyCompactList}\small\item\em Return the error. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{classprz_1_1_vertex___array___object_abe38c2f93a114a1022137ef1b961d91b}{vao\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Return the V\+AO identification. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_a5163e3ef81b9e680cb5c51a7e4b8b1a0}\label{classprz_1_1_vertex___array___object_a5163e3ef81b9e680cb5c51a7e4b8b1a0}} 
+G\+Luint {\bfseries n\+Indices} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to manage and store vertex array information. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_a83368b8c0aa93db50307df788234cfec}\label{classprz_1_1_vertex___array___object_a83368b8c0aa93db50307df788234cfec}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!Vertex\_Array\_Object@{Vertex\_Array\_Object}}
+\index{Vertex\_Array\_Object@{Vertex\_Array\_Object}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{Vertex\_Array\_Object()}{Vertex\_Array\_Object()}}
+{\footnotesize\ttfamily prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::\+Vertex\+\_\+\+Array\+\_\+\+Object (\begin{DoxyParamCaption}\item[{const P\+List$<$ \mbox{\hyperlink{structprz_1_1_vertex___attribute___information}{P\+V\+AI}} $>$ \&}]{vertex\+Attrib\+Info\+List,  }\item[{const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{P\+V\+BO}} $>$ \&}]{vbo\+Indices = {\ttfamily PSPtr$<$~\mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{P\+V\+BO}}~$>$()} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Attrib\+Info\+List} & \\
+\hline
+{\em vbo\+Indices} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_a9a9af420f5ea9d334d25d610025b9083}\label{classprz_1_1_vertex___array___object_a9a9af420f5ea9d334d25d610025b9083}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!````~Vertex\_Array\_Object@{$\sim$Vertex\_Array\_Object}}
+\index{````~Vertex\_Array\_Object@{$\sim$Vertex\_Array\_Object}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{$\sim$Vertex\_Array\_Object()}{~Vertex\_Array\_Object()}}
+{\footnotesize\ttfamily prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::$\sim$\+Vertex\+\_\+\+Array\+\_\+\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_aeb2ecc81c998fd8565786b0a961f9cb7}\label{classprz_1_1_vertex___array___object_aeb2ecc81c998fd8565786b0a961f9cb7}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!bind@{bind}}
+\index{bind@{bind}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bind the V\+AO. 
+
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_ab13fbca0183040fd87ead81645db9eb2}\label{classprz_1_1_vertex___array___object_ab13fbca0183040fd87ead81645db9eb2}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily G\+Lenum prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error. 
+
+\begin{DoxyReturn}{Returns}
+G\+Lenum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_a75e8fc332c90857ac7435cba9200507c}\label{classprz_1_1_vertex___array___object_a75e8fc332c90857ac7435cba9200507c}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!is\_ok@{is\_ok}}
+\index{is\_ok@{is\_ok}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{is\_ok()}{is\_ok()}}
+{\footnotesize\ttfamily bool prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::is\+\_\+ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if is ok. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_a6ca325c80db7f4d570154f776adcc10c}\label{classprz_1_1_vertex___array___object_a6ca325c80db7f4d570154f776adcc10c}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!unbind@{unbind}}
+\index{unbind@{unbind}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unbind the V\+AO. 
+
+\mbox{\Hypertarget{classprz_1_1_vertex___array___object_abe38c2f93a114a1022137ef1b961d91b}\label{classprz_1_1_vertex___array___object_abe38c2f93a114a1022137ef1b961d91b}} 
+\index{prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}!vaoID@{vaoID}}
+\index{vaoID@{vaoID}!prz::Vertex\_Array\_Object@{prz::Vertex\_Array\_Object}}
+\subsubsection{\texorpdfstring{vaoID()}{vaoID()}}
+{\footnotesize\ttfamily G\+Luint prz\+::\+Vertex\+\_\+\+Array\+\_\+\+Object\+::vao\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the V\+AO identification. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/Vertex\+\_\+\+Array\+\_\+\+Object.\+hpp\item 
+code/sources/Vertex\+\_\+\+Array\+\_\+\+Object.\+cpp\end{DoxyCompactItemize}

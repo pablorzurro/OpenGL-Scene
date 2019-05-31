@@ -1,0 +1,277 @@
+\hypertarget{classprz_1_1_mesh}{}\section{prz\+::Mesh Class Reference}
+\label{classprz_1_1_mesh}\index{prz::Mesh@{prz::Mesh}}
+
+
+Class to store and manage vertex array objects.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classprz_1_1_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Mesh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classprz_1_1_mesh__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_a92ede8aab760d6591edcead3136b4ed8}\label{classprz_1_1_mesh_a92ede8aab760d6591edcead3136b4ed8}} 
+enum {\bfseries V\+B\+O\+\_\+\+O\+R\+D\+ER} \+: G\+Luint \{ \newline
+{\bfseries C\+O\+O\+R\+D\+I\+N\+A\+T\+ES}, 
+{\bfseries N\+O\+R\+M\+A\+LS}, 
+{\bfseries T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+RD}, 
+{\bfseries C\+O\+L\+O\+RS}, 
+\newline
+{\bfseries I\+N\+D\+I\+C\+ES}, 
+{\bfseries S\+I\+ZE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_mesh_a44ad0bce328a1dff4e02c394bb77566d}{Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_mesh_affbffa087c8ba58116135a94e043a22b}{Mesh}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}{name}}, Primitive\+\_\+\+Mode primitive\+Mode)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_mesh_a60ab064062ab3206f247207ddd41a176}{Mesh}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}{name}}, G\+Lsizei n\+Vertices, Primitive\+\_\+\+Mode primitive\+Mode=T\+R\+I\+A\+N\+G\+L\+ES, Indices\+\_\+\+Type indices\+Type=U\+N\+S\+I\+G\+N\+E\+D\+\_\+\+I\+NT)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_mesh_a4433113df2e40cf204bdfe8c9b629ce2}{Mesh}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}{name}}, const P\+Buffer$<$ G\+Lfloat $>$ \&coordinates, const P\+Buffer$<$ G\+Lfloat $>$ \&normals, const P\+Buffer$<$ G\+Luint $>$ \&indices, Primitive\+\_\+\+Mode primitive\+Mode=T\+R\+I\+A\+N\+G\+L\+ES, const P\+Buffer$<$ G\+Lfloat $>$ \&texture\+U\+Vs=P\+Buffer$<$ G\+Lfloat $>$(), const P\+Buffer$<$ G\+Lfloat $>$ \&colors=P\+Buffer$<$ G\+Lfloat $>$())
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_mesh_a1f550ea9ea4e04fcc24722843b44419f}{$\sim$\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_mesh_aed5a3cd6605bc59e29d6957a8f1a1131}{draw}} () override
+\begin{DoxyCompactList}\small\item\em draw the mesh \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_mesh_a909e0d3a9a3670425b6215546b572b1c}{set\+\_\+primitive\+\_\+mode}} (Primitive\+\_\+\+Mode primitive\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the primitive mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_mesh_aef8f3ed8273c53307cd7633564c15dd2}{set\+\_\+indices\+\_\+type}} (Indices\+\_\+\+Type indices\+Type)
+\begin{DoxyCompactList}\small\item\em Set the indices type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_mesh_adc1085f2b12d870bc1ce3c2378d6e25e}{set\+\_\+vertices\+\_\+count}} (G\+Lsizei n\+Vertices)
+\begin{DoxyCompactList}\small\item\em Set the vertices count. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_mesh_a8d66563903c78c841d6019da34ef368b}{set\+\_\+vao}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}} $>$ vao)
+\begin{DoxyCompactList}\small\item\em Set the Vertex Array Object. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_a378584eb11420ebdd6adac3389ccc565}\label{classprz_1_1_mesh_a378584eb11420ebdd6adac3389ccc565}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___array___object}{P\+V\+AO}} $>$ {\bfseries vao\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_a25867807a5fc38bb9fef4adc3054ad2f}\label{classprz_1_1_mesh_a25867807a5fc38bb9fef4adc3054ad2f}} 
+G\+Lenum {\bfseries primitive\+Mode\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_ae10bca999da4d44c507a9b714eee7f77}\label{classprz_1_1_mesh_ae10bca999da4d44c507a9b714eee7f77}} 
+G\+Lenum {\bfseries indices\+Type\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_ae99a348bf0c87fc7d75d45f646e657da}\label{classprz_1_1_mesh_ae99a348bf0c87fc7d75d45f646e657da}} 
+G\+Lsizei {\bfseries n\+Vertices\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_mesh_a148348983842e2200973c761290fbe6d}\label{classprz_1_1_mesh_a148348983842e2200973c761290fbe6d}} 
+P\+String {\bfseries name\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store and manage vertex array objects. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_mesh_a44ad0bce328a1dff4e02c394bb77566d}\label{classprz_1_1_mesh_a44ad0bce328a1dff4e02c394bb77566d}} 
+\index{prz::Mesh@{prz::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily prz\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. 
+
+\mbox{\Hypertarget{classprz_1_1_mesh_affbffa087c8ba58116135a94e043a22b}\label{classprz_1_1_mesh_affbffa087c8ba58116135a94e043a22b}} 
+\index{prz::Mesh@{prz::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily prz\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{Primitive\+\_\+\+Mode}]{primitive\+Mode }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em primitive\+Mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_a60ab064062ab3206f247207ddd41a176}\label{classprz_1_1_mesh_a60ab064062ab3206f247207ddd41a176}} 
+\index{prz::Mesh@{prz::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily prz\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{G\+Lsizei}]{n\+Vertices,  }\item[{Primitive\+\_\+\+Mode}]{primitive\+Mode = {\ttfamily TRIANGLES},  }\item[{Indices\+\_\+\+Type}]{indices\+Type = {\ttfamily UNSIGNED\+\_\+INT} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em n\+Vertices} & \\
+\hline
+{\em primitive\+Mode} & \\
+\hline
+{\em indices\+Type} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_a4433113df2e40cf204bdfe8c9b629ce2}\label{classprz_1_1_mesh_a4433113df2e40cf204bdfe8c9b629ce2}} 
+\index{prz::Mesh@{prz::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily prz\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{const P\+Buffer$<$ G\+Lfloat $>$ \&}]{coordinates,  }\item[{const P\+Buffer$<$ G\+Lfloat $>$ \&}]{normals,  }\item[{const P\+Buffer$<$ G\+Luint $>$ \&}]{indices,  }\item[{Primitive\+\_\+\+Mode}]{primitive\+Mode = {\ttfamily TRIANGLES},  }\item[{const P\+Buffer$<$ G\+Lfloat $>$ \&}]{texture\+U\+Vs = {\ttfamily PBuffer$<$~GLfloat~$>$()},  }\item[{const P\+Buffer$<$ G\+Lfloat $>$ \&}]{colors = {\ttfamily PBuffer$<$~GLfloat~$>$()} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em coordinates} & \\
+\hline
+{\em normals} & \\
+\hline
+{\em indices} & \\
+\hline
+{\em primitive\+Mode} & \\
+\hline
+{\em texture\+U\+Vs} & \\
+\hline
+{\em colors} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_a1f550ea9ea4e04fcc24722843b44419f}\label{classprz_1_1_mesh_a1f550ea9ea4e04fcc24722843b44419f}} 
+\index{prz::Mesh@{prz::Mesh}!````~Mesh@{$\sim$Mesh}}
+\index{````~Mesh@{$\sim$Mesh}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
+{\footnotesize\ttfamily prz\+::\+Mesh\+::$\sim$\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_mesh_aed5a3cd6605bc59e29d6957a8f1a1131}\label{classprz_1_1_mesh_aed5a3cd6605bc59e29d6957a8f1a1131}} 
+\index{prz::Mesh@{prz::Mesh}!draw@{draw}}
+\index{draw@{draw}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void prz\+::\+Mesh\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+draw the mesh 
+
+
+
+Implements \mbox{\hyperlink{classprz_1_1_drawable_aa6ca0ce45d4a00b69ecf47d5deb23825}{prz\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}\label{classprz_1_1_mesh_ae2a7cec3a1cb7409ea2017cd729fe683}} 
+\index{prz::Mesh@{prz::Mesh}!name@{name}}
+\index{name@{name}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Mesh\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_mesh_aef8f3ed8273c53307cd7633564c15dd2}\label{classprz_1_1_mesh_aef8f3ed8273c53307cd7633564c15dd2}} 
+\index{prz::Mesh@{prz::Mesh}!set\_indices\_type@{set\_indices\_type}}
+\index{set\_indices\_type@{set\_indices\_type}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{set\_indices\_type()}{set\_indices\_type()}}
+{\footnotesize\ttfamily void prz\+::\+Mesh\+::set\+\_\+indices\+\_\+type (\begin{DoxyParamCaption}\item[{Indices\+\_\+\+Type}]{indices\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the indices type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices\+Type} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_a909e0d3a9a3670425b6215546b572b1c}\label{classprz_1_1_mesh_a909e0d3a9a3670425b6215546b572b1c}} 
+\index{prz::Mesh@{prz::Mesh}!set\_primitive\_mode@{set\_primitive\_mode}}
+\index{set\_primitive\_mode@{set\_primitive\_mode}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{set\_primitive\_mode()}{set\_primitive\_mode()}}
+{\footnotesize\ttfamily void prz\+::\+Mesh\+::set\+\_\+primitive\+\_\+mode (\begin{DoxyParamCaption}\item[{Primitive\+\_\+\+Mode}]{primitive\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the primitive mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em primitive\+Mode} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_a8d66563903c78c841d6019da34ef368b}\label{classprz_1_1_mesh_a8d66563903c78c841d6019da34ef368b}} 
+\index{prz::Mesh@{prz::Mesh}!set\_vao@{set\_vao}}
+\index{set\_vao@{set\_vao}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{set\_vao()}{set\_vao()}}
+{\footnotesize\ttfamily void prz\+::\+Mesh\+::set\+\_\+vao (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___array___object}{Vertex\+\_\+\+Array\+\_\+\+Object}} $>$}]{vao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Vertex Array Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vao} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_mesh_adc1085f2b12d870bc1ce3c2378d6e25e}\label{classprz_1_1_mesh_adc1085f2b12d870bc1ce3c2378d6e25e}} 
+\index{prz::Mesh@{prz::Mesh}!set\_vertices\_count@{set\_vertices\_count}}
+\index{set\_vertices\_count@{set\_vertices\_count}!prz::Mesh@{prz::Mesh}}
+\subsubsection{\texorpdfstring{set\_vertices\_count()}{set\_vertices\_count()}}
+{\footnotesize\ttfamily void prz\+::\+Mesh\+::set\+\_\+vertices\+\_\+count (\begin{DoxyParamCaption}\item[{G\+Lsizei}]{n\+Vertices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the vertices count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Vertices} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}}\item 
+code/sources/Mesh.\+cpp\end{DoxyCompactItemize}

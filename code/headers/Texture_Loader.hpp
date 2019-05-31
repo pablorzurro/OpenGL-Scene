@@ -23,6 +23,10 @@ namespace prz
 
 	class Texture;
 
+	/**
+	 * @brief Singleton class to load, store and manage textures of any type
+	 * 
+	 */
 	class Texture_Loader
 	{
 	public:

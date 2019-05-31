@@ -1,7 +1,7 @@
 /**
  * @file Shader.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that store a source code and compiles it to OpenGL
  * @version 0.1
  * @date 30-04-2019
  *
@@ -17,7 +17,11 @@
 namespace prz
 {
 	class Source_Code;
-
+	
+	/**
+	 * @brief Class that store a source code and compiles it to OpenGL
+	 * 
+	 */
 	class Shader
 	{
 	public:
@@ -35,27 +39,66 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if is compiled succesfully
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_compiled() const
 		{
 			return (shaderObjID_ != 0);
 		}
 
+		/**
+		 * @brief Return if the compilation has failed
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool has_compilation_failed() const
 		{
 			return (shaderObjID_ == 0);
 		}
 
+		/**
+		 * @brief Return the error log
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& log() const
 		{
 			return (logStr_);
 		}
 
+		/**
+		 * @brief Return the origin path
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& path() const { return path_; };
+
+		/**
+		 * @brief Return the type
+		 * 
+		 * @return Type 
+		 */
 		Type type() const { return type_; };
+
+		/**
+		 * @brief Return the name
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& name() const { return name_; }
 
 	public:
 
+		/**
+		 * @brief Operator to return the identification object 
+		 * 
+		 * @return GLuint 
+		 */
 		operator GLuint () const
 		{
 			return (shaderObjID_);
@@ -63,7 +106,19 @@ namespace prz
 
 	protected:
 
+		/**
+		 * @brief Construct a new Shader. Private mode
+		 * 
+		 * @param sourceCode 
+		 * @param name 
+		 * @param shaderType 
+		 */
 		Shader(const Source_Code& sourceCode, const PString& name, Type shaderType);
+
+		/**
+		 * @brief Destroy the Shader
+		 * 
+		 */
 		~Shader();
 
 	protected:

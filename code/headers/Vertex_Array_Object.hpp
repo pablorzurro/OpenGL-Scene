@@ -1,7 +1,7 @@
 /**
  * @file VertexArrayObject.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Class to manage and store vertex array information
  * @version 0.1
  * @date 29-04-2019
  * 
@@ -21,16 +21,30 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class to manage and store vertex array information
+	 * 
+	 */
 	class Vertex_Array_Object
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Vertex_Array_Object
+		 * 
+		 * @param vertexAttribInfoList 
+		 * @param vboIndices 
+		 */
 		Vertex_Array_Object
 		(
 			const PList< PVAI >& vertexAttribInfoList,
 			const PSPtr< PVBO >& vboIndices = PSPtr< PVBO >()
 		);
 
+		/**
+		 * @brief Destroy the Vertex_Array_Object
+		 * 
+		 */
 		~Vertex_Array_Object()
 		{
 			glDeleteVertexArrays(1, &vaoID_);
@@ -38,11 +52,19 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Bind the VAO
+		 * 
+		 */
 		void bind() const
 		{
 			glBindVertexArray(vaoID_);
 		}
 
+		/**
+		 * @brief Unbind the VAO
+		 * 
+		 */
 		void unbind() const
 		{
 			glBindVertexArray(0);
@@ -50,6 +72,12 @@ namespace prz
 
 	public: 
 
+		/**
+		 * @brief Return if is ok
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_ok() const
 		{
 			return error_ == GL_NO_ERROR;
@@ -57,11 +85,21 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the error
+		 * 
+		 * @return GLenum 
+		 */
 		GLenum get_error() const
 		{
 			return error_;
 		}
 
+		/**
+		 * @brief Return the VAO identification
+		 * 
+		 * @return GLuint 
+		 */
 		GLuint vaoID()
 		{
 			return vaoID_;
@@ -75,6 +113,10 @@ namespace prz
 
 	private:
 
+		/**
+		 * @brief Construct a new Vertex_Array_Object (private)
+		 * 
+		 */
 		Vertex_Array_Object(const Vertex_Array_Object&);
 
 	private:

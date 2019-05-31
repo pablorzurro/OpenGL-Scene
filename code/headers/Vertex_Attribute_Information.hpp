@@ -1,7 +1,7 @@
 /**
  * @file Vertex_Attribute_Information.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Class to store vertex attributes 
  * @version 0.1
  * @date 16-05-2019
  * 
@@ -18,10 +18,18 @@
 
 namespace prz
 {
-
+	/**
+	 * @brief Class to store vertex attributes 
+	 * 
+	 */
 	struct Vertex_Attribute_Information
 	{
-
+		/**
+		 * @brief Construct a new Vertex_Attribute_Information
+		 * 
+		 * @param iVBO 
+		 * @param iIndex 
+		 */
 		Vertex_Attribute_Information(PSPtr< PVBO > iVBO, GLuint iIndex)
 		{
 			if (iVBO.get())

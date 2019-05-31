@@ -75,6 +75,9 @@ namespace prz
 						assert(glGetError() == GL_NO_ERROR);
 					}
 				}
+
+				// Disable all texture slots after use it. Try of solve the framebuffer texture problem
+				/*material->desuse(); */
 			}
 		}
 	}
@@ -134,7 +137,7 @@ namespace prz
 		material->set_uniform("proj_matrix", "projection_matrix", activeCamera->projectionMatrix(), true);
 		material->set_uniform("view_matrix", "view_matrix", activeCamera->viewMatrix(), true);
 		material->set_uniform("light_color", "light_color", PVec3(1.f, 1.f, 1.f), true);
-		material->set_uniform("light_pos", "light_position", PVec3(30.f, 20.f, -2.f), true);
+		material->set_uniform("light_pos", "light_position", PVec3(-100.f, 70.f, -20.f), true);
 		material->set_uniform("view_pos", "view_pos", activeCamera->transform().translation() , true);
 		material->set_uniform("ambient_intensity", "ambient_intensity", 0.5f, true);
 		material->set_uniform("camera_pos", "camera_pos", activeCamera->transform().translation());

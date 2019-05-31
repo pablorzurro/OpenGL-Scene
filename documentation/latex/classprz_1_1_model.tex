@@ -1,0 +1,344 @@
+\hypertarget{classprz_1_1_model}{}\section{prz\+::Model Class Reference}
+\label{classprz_1_1_model}\index{prz::Model@{prz::Model}}
+
+
+Class to store and manage meshes and materials.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structprz_1_1_model_1_1_piece}{Piece}}
+\begin{DoxyCompactList}\small\item\em Combination of a mesh and a material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_model_ab21531a0ebdcaa4dd12c8d224880a8d9}\label{classprz_1_1_model_ab21531a0ebdcaa4dd12c8d224880a8d9}} 
+using {\bfseries Meshes\+\_\+\+By\+\_\+\+Material} = P\+Map$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$, P\+List$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$ $>$ $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_model_af337bec498ad5894e6636689254ae9f7}{Model}} (\mbox{\hyperlink{classprz_1_1_entity}{Entity}} $\ast$owner=nullptr, unsigned int num\+Pieces=100, const P\+String \&\mbox{\hyperlink{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}{name}}=\char`\"{}undefined\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_model_a4ea2432067b96e8ce943f5588f41c43f}{Model}} (unsigned int num\+Pieces=100, const P\+String \&\mbox{\hyperlink{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}{name}}=\char`\"{}undefined\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_model_a80543f3a7b7034799221143c28fc8dab}{$\sim$\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_model_a88179eb2baaa2186479234d252612ea3}{initialize}} (\mbox{\hyperlink{classprz_1_1_entity}{Entity}} $\ast$owner=nullptr)
+\begin{DoxyCompactList}\small\item\em Initialize this model. Only can initialize if the previously specified number of vertices is the same as the current number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_a462a854cd7ca40a0484e23d92c64deb9}{add\+\_\+piece}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$ mesh, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material=\mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material())
+\begin{DoxyCompactList}\small\item\em Add a piece by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_ac68a6c012bdcaf9a24c275f7acf081bf}{set\+\_\+material\+\_\+to\+\_\+mesh}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$ mesh, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Set the material to a mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_a8ce72cf9e0f9df5dcf760e1ff748e8cc}{set\+\_\+material\+\_\+to\+\_\+mesh}} (const P\+String \&mesh\+Name, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Set the material to a mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_model_aceccc8a7ed45ff2b0328f2bd68552aa6}{set\+\_\+material\+\_\+to\+\_\+all\+\_\+pieces}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Set a material to all the pieces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_model_a553159d0e6db23fa478e2c84ddc20358}{set\+\_\+name}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}{name}})
+\begin{DoxyCompactList}\small\item\em Set the name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_aa13ec4e2bc7c299f10806ced907eb198}{exists\+\_\+mesh\+\_\+with\+\_\+name}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}{name}})
+\begin{DoxyCompactList}\small\item\em Return if exists a mesh with the input name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_a9abedee0fc21b70b26df34720dfa376c}{exists\+\_\+mesh}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$ mesh)
+\begin{DoxyCompactList}\small\item\em Return if exists the input mesh. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_a7d0d73cf0a3adf35a3a2cceddbde878e}{exists\+\_\+material}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Return if exists the input material. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model_a16fda70601dfe40015b6d593aae2b71b}{is\+\_\+ok}} ()
+\begin{DoxyCompactList}\small\item\em Return if the model is ok. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\item 
+P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_model_1_1_piece}{Piece}} $>$ \& \mbox{\hyperlink{classprz_1_1_model_ace7ab981e121cb00ded294060131aaf1}{pieces}} ()
+\begin{DoxyCompactList}\small\item\em Get the pieces map. \end{DoxyCompactList}\item 
+Meshes\+\_\+\+By\+\_\+\+Material \& \mbox{\hyperlink{classprz_1_1_model_abc463fe1a08047ad01acc0ac3771c595}{meshes\+By\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Return the meshes by material map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store and manage meshes and materials. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_model_af337bec498ad5894e6636689254ae9f7}\label{classprz_1_1_model_af337bec498ad5894e6636689254ae9f7}} 
+\index{prz::Model@{prz::Model}!Model@{Model}}
+\index{Model@{Model}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_entity}{Entity}} $\ast$}]{owner = {\ttfamily nullptr},  }\item[{unsigned int}]{num\+Pieces = {\ttfamily 100},  }\item[{const P\+String \&}]{name = {\ttfamily \char`\"{}undefined\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_model}{Model}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & \\
+\hline
+{\em num\+Pieces} & \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_model_a4ea2432067b96e8ce943f5588f41c43f}\label{classprz_1_1_model_a4ea2432067b96e8ce943f5588f41c43f}} 
+\index{prz::Model@{prz::Model}!Model@{Model}}
+\index{Model@{Model}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{unsigned int}]{num\+Pieces = {\ttfamily 100},  }\item[{const P\+String \&}]{name = {\ttfamily \char`\"{}undefined\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_model}{Model}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Pieces} & \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_model_a80543f3a7b7034799221143c28fc8dab}\label{classprz_1_1_model_a80543f3a7b7034799221143c28fc8dab}} 
+\index{prz::Model@{prz::Model}!````~Model@{$\sim$Model}}
+\index{````~Model@{$\sim$Model}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{$\sim$Model()}{~Model()}}
+{\footnotesize\ttfamily prz\+::\+Model\+::$\sim$\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_model}{Model}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_model_a462a854cd7ca40a0484e23d92c64deb9}\label{classprz_1_1_model_a462a854cd7ca40a0484e23d92c64deb9}} 
+\index{prz::Model@{prz::Model}!add\_piece@{add\_piece}}
+\index{add\_piece@{add\_piece}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{add\_piece()}{add\_piece()}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::add\+\_\+piece (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$}]{mesh,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material = {\ttfamily \mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a piece by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_a7d0d73cf0a3adf35a3a2cceddbde878e}\label{classprz_1_1_model_a7d0d73cf0a3adf35a3a2cceddbde878e}} 
+\index{prz::Model@{prz::Model}!exists\_material@{exists\_material}}
+\index{exists\_material@{exists\_material}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{exists\_material()}{exists\_material()}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::exists\+\_\+material (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists the input material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_a9abedee0fc21b70b26df34720dfa376c}\label{classprz_1_1_model_a9abedee0fc21b70b26df34720dfa376c}} 
+\index{prz::Model@{prz::Model}!exists\_mesh@{exists\_mesh}}
+\index{exists\_mesh@{exists\_mesh}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{exists\_mesh()}{exists\_mesh()}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::exists\+\_\+mesh (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$}]{mesh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists the input mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_aa13ec4e2bc7c299f10806ced907eb198}\label{classprz_1_1_model_aa13ec4e2bc7c299f10806ced907eb198}} 
+\index{prz::Model@{prz::Model}!exists\_mesh\_with\_name@{exists\_mesh\_with\_name}}
+\index{exists\_mesh\_with\_name@{exists\_mesh\_with\_name}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{exists\_mesh\_with\_name()}{exists\_mesh\_with\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::exists\+\_\+mesh\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists a mesh with the input name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_a88179eb2baaa2186479234d252612ea3}\label{classprz_1_1_model_a88179eb2baaa2186479234d252612ea3}} 
+\index{prz::Model@{prz::Model}!initialize@{initialize}}
+\index{initialize@{initialize}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void prz\+::\+Model\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_entity}{Entity}} $\ast$}]{owner = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialize this model. Only can initialize if the previously specified number of vertices is the same as the current number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_model_a16fda70601dfe40015b6d593aae2b71b}\label{classprz_1_1_model_a16fda70601dfe40015b6d593aae2b71b}} 
+\index{prz::Model@{prz::Model}!is\_ok@{is\_ok}}
+\index{is\_ok@{is\_ok}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{is\_ok()}{is\_ok()}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::is\+\_\+ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if the model is ok. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_abc463fe1a08047ad01acc0ac3771c595}\label{classprz_1_1_model_abc463fe1a08047ad01acc0ac3771c595}} 
+\index{prz::Model@{prz::Model}!meshesByMaterial@{meshesByMaterial}}
+\index{meshesByMaterial@{meshesByMaterial}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{meshesByMaterial()}{meshesByMaterial()}}
+{\footnotesize\ttfamily Meshes\+\_\+\+By\+\_\+\+Material\& prz\+::\+Model\+::meshes\+By\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the meshes by material map. 
+
+\begin{DoxyReturn}{Returns}
+Meshes\+\_\+\+By\+\_\+\+Material\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}\label{classprz_1_1_model_aa9a4c5370ebe94b8d34c83e7b6317239}} 
+\index{prz::Model@{prz::Model}!name@{name}}
+\index{name@{name}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Model\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_ace7ab981e121cb00ded294060131aaf1}\label{classprz_1_1_model_ace7ab981e121cb00ded294060131aaf1}} 
+\index{prz::Model@{prz::Model}!pieces@{pieces}}
+\index{pieces@{pieces}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{pieces()}{pieces()}}
+{\footnotesize\ttfamily P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_model_1_1_piece}{Piece}} $>$\& prz\+::\+Model\+::pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pieces map. 
+
+\begin{DoxyReturn}{Returns}
+P\+Map$<$ P\+String, Piece $>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_aceccc8a7ed45ff2b0328f2bd68552aa6}\label{classprz_1_1_model_aceccc8a7ed45ff2b0328f2bd68552aa6}} 
+\index{prz::Model@{prz::Model}!set\_material\_to\_all\_pieces@{set\_material\_to\_all\_pieces}}
+\index{set\_material\_to\_all\_pieces@{set\_material\_to\_all\_pieces}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{set\_material\_to\_all\_pieces()}{set\_material\_to\_all\_pieces()}}
+{\footnotesize\ttfamily void prz\+::\+Model\+::set\+\_\+material\+\_\+to\+\_\+all\+\_\+pieces (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a material to all the pieces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_model_ac68a6c012bdcaf9a24c275f7acf081bf}\label{classprz_1_1_model_ac68a6c012bdcaf9a24c275f7acf081bf}} 
+\index{prz::Model@{prz::Model}!set\_material\_to\_mesh@{set\_material\_to\_mesh}}
+\index{set\_material\_to\_mesh@{set\_material\_to\_mesh}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{set\_material\_to\_mesh()}{set\_material\_to\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::set\+\_\+material\+\_\+to\+\_\+mesh (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$}]{mesh,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the material to a mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_a8ce72cf9e0f9df5dcf760e1ff748e8cc}\label{classprz_1_1_model_a8ce72cf9e0f9df5dcf760e1ff748e8cc}} 
+\index{prz::Model@{prz::Model}!set\_material\_to\_mesh@{set\_material\_to\_mesh}}
+\index{set\_material\_to\_mesh@{set\_material\_to\_mesh}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{set\_material\_to\_mesh()}{set\_material\_to\_mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+::set\+\_\+material\+\_\+to\+\_\+mesh (\begin{DoxyParamCaption}\item[{const P\+String \&}]{mesh\+Name,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the material to a mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+Name} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model_a553159d0e6db23fa478e2c84ddc20358}\label{classprz_1_1_model_a553159d0e6db23fa478e2c84ddc20358}} 
+\index{prz::Model@{prz::Model}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!prz::Model@{prz::Model}}
+\subsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void prz\+::\+Model\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_model_8hpp}{Model.\+hpp}}\end{DoxyCompactItemize}

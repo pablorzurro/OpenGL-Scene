@@ -1,7 +1,7 @@
 /**
  * @file Texture.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class that manage OpenGL textures and images loaded from files
  * @version 0.1
  * @date 30-04-2019
  *
@@ -17,6 +17,10 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class that manage OpenGL textures and images loaded from files
+	 * 
+	 */
 	class Texture
 	{
 	public:
@@ -47,6 +51,15 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Construct a new Texture
+		 * 
+		 * @param textureType 
+		 * @param name 
+		 * @param wrapMode 
+		 * @param filterMode 
+		 * @param colorFormat 
+		 */
 		Texture
 		(
 			GLenum textureType,
@@ -56,6 +69,17 @@ namespace prz
 			const Color_Format& colorFormat = Color_Format::RGBA
 		);
 
+		/**
+		 * @brief Construct a new Texture
+		 * 
+		 * @param textureType 
+		 * @param imagePaths 
+		 * @param name 
+		 * @param wrapMode 
+		 * @param filterMode 
+		 * @param colorFormat 
+		 * @param flipImages 
+		 */
 		Texture
 		(
 			GLenum textureType,
@@ -67,7 +91,10 @@ namespace prz
 			bool flipImages = true
 		);
 
-
+		/**
+		 * @brief Destroy the Texture
+		 * 
+		 */
 		~Texture()
 		{
 			glDeleteTextures(1, &textureID_);
@@ -75,11 +102,19 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Bind the texture
+		 * 
+		 */
 		void bind()
 		{
 			glBindTexture(textureType_, textureID_);
 		}
 
+		/**
+		 * @brief Unbind the texture
+		 * 
+		 */
 		void unbind()
 		{
 			glBindTexture(textureType_, 0);
@@ -87,6 +122,10 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Flip images
+		 * 
+		 */
 		void flip_images()
 		{
 			for (PImage& image : images_)
@@ -97,13 +136,22 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Set the wrap mode
+		 * 
+		 * @param wrapMode 
+		 */
 		virtual void set_wrap_mode(Wrap_Mode wrapMode)
 		{
 			wrapMode_ = wrapMode;
 			apply_wrap_mode();
 		}
 
-
+		/**
+		 * @brief Set the filter mode
+		 * 
+		 * @param filterMode 
+		 */
 		virtual void set_filter_mode(Filter_Mode filterMode)
 		{
 			filterMode_ = filterMode;
@@ -112,6 +160,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if is good
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_ok() const
 		{
 			return error_ == GL_NO_ERROR;
@@ -119,21 +173,41 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the error
+		 * 
+		 * @return GLenum 
+		 */
 		GLenum get_error() const
 		{
 			return error_;
 		}
 
+		/**
+		 * @brief Return the name
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& name()
 		{
 			return name_;
 		}
 
+		/**
+		 * @brief Return the texture identification
+		 * 
+		 * @return GLuint 
+		 */
 		GLuint textureID() const
 		{
 			return textureID_;
 		}
 
+		/**
+		 * @brief Return the texture type
+		 * 
+		 * @return GLuint 
+		 */
 		GLuint textureType() const
 		{
 			return textureType_;
@@ -141,16 +215,39 @@ namespace prz
 
 	protected:
 
+		/**
+		 * @brief Initialize
+		 * 
+		 */
 		virtual void initialize();
+
+		/**
+		 * @brief Method called on initialize
+		 * 
+		 */
 		virtual void on_initialize() = 0;
 
 	protected:
 
+		/**
+		 * @brief Load images from files
+		 * 
+		 * @param imagePaths 
+		 */
 		virtual void load_images(PBuffer<PString>& imagePaths);
 		
 	protected:
 
+		/**
+		 * @brief Apply the texture wrap mode
+		 * 
+		 */
 		virtual void apply_wrap_mode(){}
+
+		/**
+		 * @brief Apply the filter mode
+		 * 
+		 */
 		virtual void apply_filter_mode();
 		
 

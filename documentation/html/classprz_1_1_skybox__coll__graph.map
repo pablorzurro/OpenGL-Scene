@@ -1,0 +1,4 @@
+<map id="prz::Skybox" name="prz::Skybox">
+<area shape="rect" id="node1" title="Class that is similar to a material but with only a cube map." alt="" coords="10,80,102,107"/>
+<area shape="rect" id="node2" href="$classprz_1_1_drawable.html" title="Abstract class that will be the base of all drawable objects." alt="" coords="5,5,107,32"/>
+</map>

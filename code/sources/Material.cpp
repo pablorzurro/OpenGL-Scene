@@ -282,4 +282,29 @@ namespace prz
 			}
 		}	
 	}
+
+	void Material::desuse()
+	{
+		unsigned int i = 0;
+
+		for (auto& pair : textures_)
+		{
+			TextureSlot& textureSlot = pair.second;
+
+			if (i > 15)
+			{
+				break; // A shader program can have only 16 texture slots
+			}
+
+			if (i == 1)
+			{
+				i;
+			}
+
+			glActiveTexture(GL_TEXTURE0 + i);
+			glDisable(GL_TEXTURE_2D);
+
+			i++;
+		}
+	}
 }

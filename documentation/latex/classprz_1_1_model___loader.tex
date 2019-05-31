@@ -1,0 +1,94 @@
+\hypertarget{classprz_1_1_model___loader}{}\section{prz\+::Model\+\_\+\+Loader Class Reference}
+\label{classprz_1_1_model___loader}\index{prz::Model\_Loader@{prz::Model\_Loader}}
+
+
+Class to load and store models.  
+
+
+
+
+{\ttfamily \#include $<$Model\+\_\+\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ \mbox{\hyperlink{classprz_1_1_model___loader_a3a71609e728a26ec26b4b5da165f9b09}{load\+\_\+model}} (const P\+String \&mesh\+Path, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material=\mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material())
+\begin{DoxyCompactList}\small\item\em Load a model by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_model___loader_a7edc6d5fa1e3d13e965045199c9ec933}{load\+\_\+model}} (const P\+String \&mesh\+Path, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity\+To\+Save, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material=\mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material())
+\begin{DoxyCompactList}\small\item\em Load a model by\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_model___loader}{Model\+\_\+\+Loader}} \& \mbox{\hyperlink{classprz_1_1_model___loader_a377fe640a549451ac04cffff0cf8c0d9}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to load and store models. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_model___loader_a377fe640a549451ac04cffff0cf8c0d9}\label{classprz_1_1_model___loader_a377fe640a549451ac04cffff0cf8c0d9}} 
+\index{prz::Model\_Loader@{prz::Model\_Loader}!instance@{instance}}
+\index{instance@{instance}!prz::Model\_Loader@{prz::Model\_Loader}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_model___loader}{Model\+\_\+\+Loader}}\& prz\+::\+Model\+\_\+\+Loader\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_model___loader}{Model\+\_\+\+Loader}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model___loader_a3a71609e728a26ec26b4b5da165f9b09}\label{classprz_1_1_model___loader_a3a71609e728a26ec26b4b5da165f9b09}} 
+\index{prz::Model\_Loader@{prz::Model\_Loader}!load\_model@{load\_model}}
+\index{load\_model@{load\_model}!prz::Model\_Loader@{prz::Model\_Loader}}
+\subsubsection{\texorpdfstring{load\_model()}{load\_model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_model}{Model}} $>$ prz\+::\+Model\+\_\+\+Loader\+::load\+\_\+model (\begin{DoxyParamCaption}\item[{const P\+String \&}]{mesh\+Path,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material = {\ttfamily \mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material()} }\end{DoxyParamCaption})}
+
+
+
+Load a model by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+Path} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Model $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_model___loader_a7edc6d5fa1e3d13e965045199c9ec933}\label{classprz_1_1_model___loader_a7edc6d5fa1e3d13e965045199c9ec933}} 
+\index{prz::Model\_Loader@{prz::Model\_Loader}!load\_model@{load\_model}}
+\index{load\_model@{load\_model}!prz::Model\_Loader@{prz::Model\_Loader}}
+\subsubsection{\texorpdfstring{load\_model()}{load\_model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Model\+\_\+\+Loader\+::load\+\_\+model (\begin{DoxyParamCaption}\item[{const P\+String \&}]{mesh\+Path,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity\+To\+Save,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material = {\ttfamily \mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{Material\+\_\+\+Loader\+::instance}}().get\+\_\+default\+\_\+material()} }\end{DoxyParamCaption})}
+
+
+
+Load a model by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh\+Path} & \\
+\hline
+{\em entity\+To\+Save} & \\
+\hline
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_model___loader_8hpp}{Model\+\_\+\+Loader.\+hpp}}\item 
+code/sources/Model\+\_\+\+Loader.\+cpp\end{DoxyCompactItemize}

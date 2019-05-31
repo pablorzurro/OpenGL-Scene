@@ -1,7 +1,7 @@
 /**
  * @file Plane.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Plane mesh
  * @version 0.1
  * @date 08-05-2019
  *
@@ -19,11 +19,20 @@
 namespace prz
 {
 
+	/**
+	 * @brief Mesh that represents a quad with 2 triangles
+	 * 
+	 */
 	class Plane : public Mesh
 	{
 
 	public:
 
+		/**
+		 * @brief Construct a new Plane
+		 * 
+		 * @param name 
+		 */
 		Plane(const PString& name = "undefined");
 
 	private:

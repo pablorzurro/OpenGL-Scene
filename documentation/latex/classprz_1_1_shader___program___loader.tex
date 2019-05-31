@@ -1,0 +1,195 @@
+\hypertarget{classprz_1_1_shader___program___loader}{}\section{prz\+::Shader\+\_\+\+Program\+\_\+\+Loader Class Reference}
+\label{classprz_1_1_shader___program___loader}\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+
+
+Class to load and store shader programs.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Program\+\_\+\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_shader___program___loader_a30e0a0233aaecaef88771c0cbd6bf34d}{load\+\_\+shader\+\_\+program}} (const P\+String \&path\+Vertex\+Shader, const P\+String \&path\+Fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load shader program by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_shader___program___loader_aa5dd051be718aba2a19c66b2e7e6d55d}{load\+\_\+shader\+\_\+program}} (P\+Buffer$<$ P\+String $>$ \&shader\+Paths)
+\begin{DoxyCompactList}\small\item\em Load a shader program by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_shader___program___loader_a2e7b3a77a496ac0d906852a2c727364e}{load\+\_\+shader\+\_\+program}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$ vertex\+Shader, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$ fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Load a shader program by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_shader___program___loader_abea22b3ab2b7723d8a43bf7ab66cfdaf}{load\+\_\+shader\+\_\+program}} (P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&shaders)
+\begin{DoxyCompactList}\small\item\em Load a shader program by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program___loader_a8f29cfe9fe72b5c1b5b92f327aaa8ec4}{exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+name}} (const P\+String \&name)
+\begin{DoxyCompactList}\small\item\em Return if exists a shader program with name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program___loader_a2d0b7273a7c0d96a59a29e392670f998}{exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+shaders}} (P\+Buffer$<$ P\+String $>$ \&shader\+Names)
+\begin{DoxyCompactList}\small\item\em Return if exists a shader program with the input shader names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___program___loader_abd5dbe883d8585c87fade3b2bad85f05}{exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+shaders}} (P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&shaders)
+\begin{DoxyCompactList}\small\item\em Return if exists a shader program with the input shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_shader___program___loader}{Shader\+\_\+\+Program\+\_\+\+Loader}} \& \mbox{\hyperlink{classprz_1_1_shader___program___loader_a53c57a4fe69fe9b343124d7d6e0c373c}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to load and store shader programs. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_a8f29cfe9fe72b5c1b5b92f327aaa8ec4}\label{classprz_1_1_shader___program___loader_a8f29cfe9fe72b5c1b5b92f327aaa8ec4}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!exists\_shader\_program\_with\_name@{exists\_shader\_program\_with\_name}}
+\index{exists\_shader\_program\_with\_name@{exists\_shader\_program\_with\_name}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{exists\_shader\_program\_with\_name()}{exists\_shader\_program\_with\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists a shader program with name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_a2d0b7273a7c0d96a59a29e392670f998}\label{classprz_1_1_shader___program___loader_a2d0b7273a7c0d96a59a29e392670f998}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!exists\_shader\_program\_with\_shaders@{exists\_shader\_program\_with\_shaders}}
+\index{exists\_shader\_program\_with\_shaders@{exists\_shader\_program\_with\_shaders}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{exists\_shader\_program\_with\_shaders()}{exists\_shader\_program\_with\_shaders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+shaders (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+String $>$ \&}]{shader\+Names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists a shader program with the input shader names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Names} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_abd5dbe883d8585c87fade3b2bad85f05}\label{classprz_1_1_shader___program___loader_abd5dbe883d8585c87fade3b2bad85f05}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!exists\_shader\_program\_with\_shaders@{exists\_shader\_program\_with\_shaders}}
+\index{exists\_shader\_program\_with\_shaders@{exists\_shader\_program\_with\_shaders}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{exists\_shader\_program\_with\_shaders()}{exists\_shader\_program\_with\_shaders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::exists\+\_\+shader\+\_\+program\+\_\+with\+\_\+shaders (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&}]{shaders }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists a shader program with the input shaders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shaders} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_a53c57a4fe69fe9b343124d7d6e0c373c}\label{classprz_1_1_shader___program___loader_a53c57a4fe69fe9b343124d7d6e0c373c}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!instance@{instance}}
+\index{instance@{instance}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_shader___program___loader}{Shader\+\_\+\+Program\+\_\+\+Loader}}\& prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_shader___program___loader}{Shader\+\_\+\+Program\+\_\+\+Loader}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_a30e0a0233aaecaef88771c0cbd6bf34d}\label{classprz_1_1_shader___program___loader_a30e0a0233aaecaef88771c0cbd6bf34d}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!load\_shader\_program@{load\_shader\_program}}
+\index{load\_shader\_program@{load\_shader\_program}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{load\_shader\_program()}{load\_shader\_program()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::load\+\_\+shader\+\_\+program (\begin{DoxyParamCaption}\item[{const P\+String \&}]{path\+Vertex\+Shader,  }\item[{const P\+String \&}]{path\+Fragment\+Shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load shader program by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Vertex\+Shader} & \\
+\hline
+{\em path\+Fragment\+Shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader\+\_\+\+Program $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_aa5dd051be718aba2a19c66b2e7e6d55d}\label{classprz_1_1_shader___program___loader_aa5dd051be718aba2a19c66b2e7e6d55d}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!load\_shader\_program@{load\_shader\_program}}
+\index{load\_shader\_program@{load\_shader\_program}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{load\_shader\_program()}{load\_shader\_program()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::load\+\_\+shader\+\_\+program (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+String $>$ \&}]{shader\+Paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load a shader program by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Paths} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader\+\_\+\+Program $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_a2e7b3a77a496ac0d906852a2c727364e}\label{classprz_1_1_shader___program___loader_a2e7b3a77a496ac0d906852a2c727364e}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!load\_shader\_program@{load\_shader\_program}}
+\index{load\_shader\_program@{load\_shader\_program}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{load\_shader\_program()}{load\_shader\_program()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::load\+\_\+shader\+\_\+program (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$}]{vertex\+Shader,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$}]{fragment\+Shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load a shader program by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader} & \\
+\hline
+{\em fragment\+Shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader\+\_\+\+Program $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___program___loader_abea22b3ab2b7723d8a43bf7ab66cfdaf}\label{classprz_1_1_shader___program___loader_abea22b3ab2b7723d8a43bf7ab66cfdaf}} 
+\index{prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}!load\_shader\_program@{load\_shader\_program}}
+\index{load\_shader\_program@{load\_shader\_program}!prz::Shader\_Program\_Loader@{prz::Shader\_Program\_Loader}}
+\subsubsection{\texorpdfstring{load\_shader\_program()}{load\_shader\_program()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}$>$ prz\+::\+Shader\+\_\+\+Program\+\_\+\+Loader\+::load\+\_\+shader\+\_\+program (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ $>$ \&}]{shaders }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Load a shader program by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shaders} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader\+\_\+\+Program$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_shader___program___loader_8hpp}{Shader\+\_\+\+Program\+\_\+\+Loader.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="code/headers/Material.hpp" name="code/headers/Material.hpp">
+<area shape="rect" id="node1" title="Class that represents the union of a shader program and multiple textures." alt="" coords="19,5,194,32"/>
+<area shape="rect" id="node2" href="$_entity_8hpp.html" title="Core class that store models and a transform." alt="" coords="25,169,188,196"/>
+<area shape="rect" id="node4" href="$_model_8hpp.html" title="Class to store and manage meshes and materials." alt="" coords="25,87,189,114"/>
+<area shape="rect" id="node5" href="$_model___loader_8hpp.html" title="Class to load and store models." alt="" coords="213,80,352,121"/>
+<area shape="rect" id="node3" href="$_camera_8hpp.html" title="Class to handle the view of the scene." alt="" coords="19,244,194,271"/>
+</map>

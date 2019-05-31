@@ -1,7 +1,7 @@
 /**
  * @file Model.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief Class to store and manage meshes and materials
  * @version 0.1
  * @date 30-04-2019
  *
@@ -21,10 +21,19 @@
 namespace prz
 {
 	class Entity;
+
+	/**
+	 * @brief Class to store and manage meshes and materials
+	 * 
+	 */
 	class Model
 	{
 	public:
 
+		/**
+		 * @brief Combination of a mesh and a material
+		 * 
+		 */
 		struct Piece
 		{
 			PSPtr< Mesh > mesh;
@@ -35,21 +44,43 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Construct a new Model
+		 * 
+		 * @param owner 
+		 * @param numPieces 
+		 * @param name 
+		 */
 		Model(Entity* owner = nullptr, unsigned int numPieces = 100, const PString& name = "undefined") :
 			owner_(owner),
 			numPieces_(numPieces),
 			name_(name)
 		{}
 
+		/**
+		 * @brief Construct a new Model
+		 * 
+		 * @param numPieces 
+		 * @param name 
+		 */
 		Model(unsigned int numPieces = 100, const PString& name = "undefined") :
 			Model(nullptr, numPieces, name)
 		{}
 
+		/**
+		 * @brief Destroy the Model
+		 * 
+		 */
 		~Model()
 		{}
 
 	public:
 
+		/**
+		 * @brief Initialize this model. Only can initialize if the previously specified number of vertices is the same as the current number. 
+		 * 
+		 * @param owner 
+		 */
 		void initialize(Entity* owner = nullptr)
 		{
 			if (owner_ != owner && owner && !owner_)
@@ -60,6 +91,14 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Add a piece by:
+		 * 
+		 * @param mesh 
+		 * @param material 
+		 * @return true 
+		 * @return false 
+		 */
 		bool add_piece(PSPtr< Mesh > mesh, PSPtr< Material > material = Material_Loader::instance().get_default_material())
 		{
 			if (!exists_mesh(mesh))
@@ -74,11 +113,27 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Set the material to a mesh
+		 * 
+		 * @param mesh 
+		 * @param material 
+		 * @return true 
+		 * @return false 
+		 */
 		bool set_material_to_mesh(PSPtr< Mesh> mesh, PSPtr< Material > material)
 		{
 			return set_material_to_mesh(mesh->name(), material);
 		}
 
+		/**
+		 * @brief Set the material to a mesh
+		 * 
+		 * @param meshName 
+		 * @param material 
+		 * @return true 
+		 * @return false 
+		 */
 		bool set_material_to_mesh(const PString& meshName, PSPtr< Material > material)
 		{
 			if (exists_mesh_with_name(meshName) && material)
@@ -109,6 +164,11 @@ namespace prz
 			return false;
 		}
 
+		/**
+		 * @brief Set a material to all the pieces
+		 * 
+		 * @param material 
+		 */
 		void set_material_to_all_pieces(PSPtr< Material > material)
 		{
 			for (auto& pair : pieces_)
@@ -121,6 +181,11 @@ namespace prz
 			}
 		}
 
+		/**
+		 * @brief Set the name
+		 * 
+		 * @param name 
+		 */
 		void set_name(const PString& name)
 		{
 			name_ = name;
@@ -128,16 +193,37 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if exists a mesh with the input name
+		 * 
+		 * @param name 
+		 * @return true 
+		 * @return false 
+		 */
 		bool exists_mesh_with_name(const PString& name)
 		{
 			return pieces_.find(name) != pieces_.end();
 		}
 
+		/**
+		 * @brief Return if exists the input mesh
+		 * 
+		 * @param mesh 
+		 * @return true 
+		 * @return false 
+		 */
 		bool exists_mesh(PSPtr< Mesh > mesh)
 		{
 			return exists_mesh_with_name(mesh->name());
 		}
 
+		/**
+		 * @brief Return if exists the input material 
+		 * 
+		 * @param material 
+		 * @return true 
+		 * @return false 
+		 */
 		bool exists_material(PSPtr< Material > material)
 		{
 			return meshesByMaterial_.find(material) != meshesByMaterial_.end();
@@ -145,6 +231,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if the model is ok
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_ok()
 		{
 			return numPieces_ == pieces_.size() && owner_;
@@ -152,11 +244,27 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the name
+		 * 
+		 * @return const PString& 
+		 */
 		const PString& name() const { return name_; }
 
 	public:
 
+		/**
+		 * @brief Get the pieces map
+		 * 
+		 * @return PMap< PString, Piece >& 
+		 */
 		PMap< PString, Piece >& pieces() { return pieces_; }
+
+		/**
+		 * @brief Return the meshes by material map
+		 * 
+		 * @return Meshes_By_Material& 
+		 */
 		Meshes_By_Material& meshesByMaterial() { return meshesByMaterial_; }
 
 	private:

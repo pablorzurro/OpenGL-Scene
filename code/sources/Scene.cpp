@@ -17,17 +17,17 @@ namespace prz
 		window_(window),
 		renderer_(*this),
 		isWireframeModeActive_(false),
-		applyFrameBufferEffect_(false),
+		applyFramebufferEffect_(false),
 		inputTimer_(0)
 	{
-		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE); // By enabling GL_CULL_FACE, is set to cull back faces by default
 	}
 
-	Scene::Scene(Window& window, PSPtr<Camera> activeCamera, PSPtr<Skybox> skybox) : 
-		Scene(window)	
+	Scene::Scene(Window& window, PSPtr<Camera> activeCamera, PSPtr< Framebuffer > framebuffer, PSPtr<Skybox> skybox) : 
+		Scene(window)
 	{ 
 		activeCamera_ = activeCamera;
+		framebuffer_ = framebuffer;
 		skybox_ = skybox;
 
 		on_window_resized();
@@ -52,7 +52,7 @@ namespace prz
 
 			if (Input_Manager::instance().is_key_pressed(PKey::F))
 			{
-				applyFrameBufferEffect_ = applyFrameBufferEffect_ ? false : true;
+				applyFramebufferEffect_ = applyFramebufferEffect_ ? false : true;
 				inputTimer_ = 0.f;
 			}
 		}
@@ -69,25 +69,27 @@ namespace prz
 
 	void Scene::render(float deltaTime)
 	{
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		bool useFramebuffer = framebuffer_ && applyFramebufferEffect_;
 
-		if (applyFrameBufferEffect_ && framebuffer_)
+		if (useFramebuffer)
 		{
-			framebuffer_->render_first_pass();
+			framebuffer_->bind();
 		}
-
-		glClearColor(0.5, 0.5, 0.5, 1.0);
-
-		if (skybox_)
 		{
-			skybox_->draw(activeCamera_);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			glClearColor(0.5, 0.5, 0.5, 1.0);
+			glEnable(GL_DEPTH_TEST);
+
+			if (skybox_)
+			{
+				skybox_->draw(activeCamera_);
+			}
+
+			renderer_.render(activeCamera_);
 		}
-
-		renderer_.render(activeCamera_);
-		
-		if (applyFrameBufferEffect_ && framebuffer_)
+		if (useFramebuffer)
 		{
-			framebuffer_->render_second_pass();
+			framebuffer_->render();
 		}
 	}
 

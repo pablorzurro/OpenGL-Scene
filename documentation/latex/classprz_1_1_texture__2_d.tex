@@ -1,0 +1,142 @@
+\hypertarget{classprz_1_1_texture__2_d}{}\section{prz\+::Texture\+\_\+2D Class Reference}
+\label{classprz_1_1_texture__2_d}\index{prz::Texture\_2D@{prz::Texture\_2D}}
+
+
+Class that represents an image 2D.  
+
+
+
+
+{\ttfamily \#include $<$Texture\+\_\+2\+D.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Texture\+\_\+2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classprz_1_1_texture__2_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Texture\+\_\+2D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classprz_1_1_texture__2_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_texture__2_d_a954cc43fd1a1bc40866985749e795547}{Texture\+\_\+2D}} (P\+Buffer$<$ P\+String $>$ \&image\+Paths, const P\+String \&\mbox{\hyperlink{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}{name}}, const Color\+\_\+\+Format \&color\+Format=Color\+\_\+\+Format\+::\+R\+G\+BA, bool flip\+Images=true)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_texture__2_d}{Texture\+\_\+2D}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_texture__2_d_afc1007f077b357d4203993e40b08eed9}{Texture\+\_\+2D}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_texture_ad6163bf48f820adc4665d227bcd5c258}{name}}, unsigned int width, unsigned int height, const Color\+\_\+\+Format \&color\+Format=Color\+\_\+\+Format\+::\+R\+G\+BA)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_texture__2_d}{Texture\+\_\+2D}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classprz_1_1_texture__2_d_abf56074e463a4811b4e64ccf61931d94}{on\+\_\+initialize}} () override
+\begin{DoxyCompactList}\small\item\em Method called on initialize. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_texture__2_d_ac8639f22c51ad83198fb8d1a7c257ac2}{apply\+\_\+wrap\+\_\+mode}} () override
+\begin{DoxyCompactList}\small\item\em Overrided wrap mode application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_a2ced7051e8376aa95e9db8568300adb5}\label{classprz_1_1_texture__2_d_a2ced7051e8376aa95e9db8568300adb5}} 
+unsigned int {\bfseries width\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_a4ea7a2c17109f801bf620eb5755ba876}\label{classprz_1_1_texture__2_d_a4ea7a2c17109f801bf620eb5755ba876}} 
+unsigned int {\bfseries height\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents an image 2D. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_a954cc43fd1a1bc40866985749e795547}\label{classprz_1_1_texture__2_d_a954cc43fd1a1bc40866985749e795547}} 
+\index{prz::Texture\_2D@{prz::Texture\_2D}!Texture\_2D@{Texture\_2D}}
+\index{Texture\_2D@{Texture\_2D}!prz::Texture\_2D@{prz::Texture\_2D}}
+\subsubsection{\texorpdfstring{Texture\_2D()}{Texture\_2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Texture\+\_\+2\+D\+::\+Texture\+\_\+2D (\begin{DoxyParamCaption}\item[{P\+Buffer$<$ P\+String $>$ \&}]{image\+Paths,  }\item[{const P\+String \&}]{name,  }\item[{const Color\+\_\+\+Format \&}]{color\+Format = {\ttfamily Color\+\_\+Format\+:\+:RGBA},  }\item[{bool}]{flip\+Images = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_texture__2_d}{Texture\+\_\+2D}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Paths} & \\
+\hline
+{\em name} & \\
+\hline
+{\em color\+Format} & \\
+\hline
+{\em flip\+Images} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_afc1007f077b357d4203993e40b08eed9}\label{classprz_1_1_texture__2_d_afc1007f077b357d4203993e40b08eed9}} 
+\index{prz::Texture\_2D@{prz::Texture\_2D}!Texture\_2D@{Texture\_2D}}
+\index{Texture\_2D@{Texture\_2D}!prz::Texture\_2D@{prz::Texture\_2D}}
+\subsubsection{\texorpdfstring{Texture\_2D()}{Texture\_2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Texture\+\_\+2\+D\+::\+Texture\+\_\+2D (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height,  }\item[{const Color\+\_\+\+Format \&}]{color\+Format = {\ttfamily Color\+\_\+Format\+:\+:RGBA} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_texture__2_d}{Texture\+\_\+2D}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em color\+Format} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_ac8639f22c51ad83198fb8d1a7c257ac2}\label{classprz_1_1_texture__2_d_ac8639f22c51ad83198fb8d1a7c257ac2}} 
+\index{prz::Texture\_2D@{prz::Texture\_2D}!apply\_wrap\_mode@{apply\_wrap\_mode}}
+\index{apply\_wrap\_mode@{apply\_wrap\_mode}!prz::Texture\_2D@{prz::Texture\_2D}}
+\subsubsection{\texorpdfstring{apply\_wrap\_mode()}{apply\_wrap\_mode()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+\_\+2\+D\+::apply\+\_\+wrap\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overrided wrap mode application. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classprz_1_1_texture_ad68b4a5a4032f74d3ea719f26f78b202}{prz\+::\+Texture}}.
+
+\mbox{\Hypertarget{classprz_1_1_texture__2_d_abf56074e463a4811b4e64ccf61931d94}\label{classprz_1_1_texture__2_d_abf56074e463a4811b4e64ccf61931d94}} 
+\index{prz::Texture\_2D@{prz::Texture\_2D}!on\_initialize@{on\_initialize}}
+\index{on\_initialize@{on\_initialize}!prz::Texture\_2D@{prz::Texture\_2D}}
+\subsubsection{\texorpdfstring{on\_initialize()}{on\_initialize()}}
+{\footnotesize\ttfamily void prz\+::\+Texture\+\_\+2\+D\+::on\+\_\+initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method called on initialize. 
+
+
+
+Implements \mbox{\hyperlink{classprz_1_1_texture_a75b9d1ba9920727d99e4c167c900fa32}{prz\+::\+Texture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_texture__2_d_8hpp}{Texture\+\_\+2\+D.\+hpp}}\item 
+code/sources/Texture\+\_\+2\+D.\+cpp\end{DoxyCompactItemize}

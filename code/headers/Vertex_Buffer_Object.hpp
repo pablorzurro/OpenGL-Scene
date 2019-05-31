@@ -19,6 +19,10 @@
 namespace prz
 {
 	
+	/**
+	 * @brief Class to manage a memory buffer of vertices 
+	 * 
+	 */
 	class Vertex_Buffer_Object
 	{
 	public:
@@ -55,7 +59,10 @@ namespace prz
 		Vertex_Buffer_Object(const PUVec3* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC) : Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage, 3) {}
 		Vertex_Buffer_Object(const PUVec4* data, size_t size, Target target = ARRAY_BUFFER, DrawUsage drawUsage = STATIC) : Vertex_Buffer_Object(data, size, target, GL_UNSIGNED_INT, drawUsage, 4) {}
 
-
+		/**
+		 * @brief Destroy the Vertex_Buffer_Object
+		 * 
+		 */
 		~Vertex_Buffer_Object()
 		{
 			glDeleteBuffers(1, &vboID_);
@@ -63,15 +70,29 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Create a VBO with void date (used by all constructors)
+		 * 
+		 * @param data 
+		 * @param size 
+		 */
 		void create(const void* data, size_t size);
 
 	public:
 
+		/**
+		 * @brief Bind the vbo
+		 * 
+		 */
 		void bind()
 		{
 			glBindBuffer(target_, vboID_);
 		}
 
+		/**
+		 * @brief Unbind the vbo
+		 * 
+		 */
 		void unbind()
 		{
 			glBindBuffer(target_, 0);
@@ -79,18 +100,58 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if is ok
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_ok() const { return error_ == GL_NO_ERROR; }
 
 	public:
 
+		/**
+		 * @brief Return the VBO identification
+		 * 
+		 * @return GLuint 
+		 */
 		GLuint vboID() const { return vboID_; }
+
+		/**
+		 * @brief Return the target
+		 * 
+		 * @return GLenum 
+		 */
 		GLenum target() const { return target_; }
+
+		/**
+		 * @brief Return the element type
+		 * 
+		 * @return GLenum 
+		 */
 		GLenum elementType() const { return elementType_; }
+
+		/**
+		 * @brief Return the components per element
+		 * 
+		 * @return unsigned int 
+		 */
 		unsigned int nComponentsPerElement() { return nComponentsPerElement_; }
+
+		/**
+		 * @brief Return the size 
+		 * 
+		 * @return unsigned int 
+		 */
 		unsigned int size() { return size_; }
 
 	public:
 
+		/**
+		 * @brief Return the error
+		 * 
+		 * @return GLenum 
+		 */
 		GLenum get_error() const { return error_; }
 
 	private: 

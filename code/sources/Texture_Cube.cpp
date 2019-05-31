@@ -5,11 +5,6 @@ namespace prz
 	Texture_Cube::Texture_Cube(PBuffer<PString>& imagePaths, const PString& name, const Color_Format& colorFormat) :
 		Texture(GL_TEXTURE_CUBE_MAP, imagePaths, name, CLAMP_TO_EDGE, LINEAR, colorFormat)
 	{
-		/*images_[2].flipHorizontally();
-		images_[3].flipHorizontally();*/
-		/*images_[2].flipVertically();
-		images_[3].flipVertically();*/
-
 		initialize();
 	}
 

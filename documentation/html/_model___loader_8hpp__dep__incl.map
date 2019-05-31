@@ -1,0 +1,5 @@
+<map id="code/headers/Model_Loader.hpp" name="code/headers/Model_Loader.hpp">
+<area shape="rect" id="node1" title="Class to load and store models." alt="" coords="23,5,162,47"/>
+<area shape="rect" id="node2" href="$_entity_8hpp.html" title="Core class that store models and a transform." alt="" coords="11,95,174,121"/>
+<area shape="rect" id="node3" href="$_camera_8hpp.html" title="Class to handle the view of the scene." alt="" coords="5,169,180,196"/>
+</map>
