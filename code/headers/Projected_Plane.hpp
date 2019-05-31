@@ -1,16 +1,16 @@
 /**
- * @file Plane.hpp
+ * @file Projected_Plane.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief
+ * @brief 
  * @version 0.1
- * @date 08-05-2019
- *
+ * @date 31-05-2019
+ * 
  * @copyright Copyright (c) 2019
- *
+ * 
  */
 
-#ifndef OPENGL_SCENE_PLANE_MESH_H_
-#define OPENGL_SCENE_PLANE_MESH_H_
+#ifndef OPENGL_SCENE_PROJECTED_PLANE
+#define OPENGL_SCENE_PROJECTED_PLANE
 
 #include <Mesh.hpp>
 
@@ -19,12 +19,11 @@
 namespace prz
 {
 
-	class Plane : public Mesh
+	class Projected_Plane : public Mesh
 	{
-
 	public:
 
-		Plane(const PString& name = "undefined");
+		Projected_Plane(const PString& name);
 
 	private:
 
@@ -32,8 +31,9 @@ namespace prz
 		static const PBuffer< GLfloat > normals_;
 		static const PBuffer< GLfloat > textureUVs_;
 		static const PBuffer< GLuint > indices_;
+
 	};
 
-} // !namespace prz 
+} // !namespace prz
 
-#endif // !OPENGL_SCENE_PLANE_MESH_H_
+#endif // !OPENGL_SCENE_PROJECTED_PLANE

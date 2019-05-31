@@ -39,24 +39,34 @@ namespace prz
 			LINEAR_MIPMAP_LINEAR = GL_LINEAR_MIPMAP_LINEAR
 		};
 
+		enum Color_Format
+		{
+			RGB = GL_RGB,
+			RGBA = GL_RGBA
+		};
+
 	public:
 
-		Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, Filter_Mode filterMode = Filter_Mode::NEAREST, bool flipImages = true):
-			textureID_(8000),
-			textureType_(textureType),
-			name_(name),
-			wrapMode_(wrapMode),
-			filterMode_(filterMode),
-			error_(GL_NO_ERROR)
-		{
-			error_ = glGetError();
-			load_images(imagePaths);
+		Texture
+		(
+			GLenum textureType,
+			const PString& name, 
+			Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE, 
+			Filter_Mode filterMode = Filter_Mode::LINEAR, 
+			const Color_Format& colorFormat = Color_Format::RGBA
+		);
 
-			if (flipImages)
-			{
-				flip_images();
-			}
-		}
+		Texture
+		(
+			GLenum textureType,
+			PBuffer<PString>& imagePaths,
+			const PString& name,
+			Wrap_Mode wrapMode = Wrap_Mode::CLAMP_TO_EDGE,
+			Filter_Mode filterMode = Filter_Mode::LINEAR,
+			const Color_Format& colorFormat = Color_Format::RGBA,
+			bool flipImages = true
+		);
+
 
 		~Texture()
 		{
@@ -157,6 +167,7 @@ namespace prz
 
 		Wrap_Mode wrapMode_;
 		Filter_Mode filterMode_;
+		Color_Format colorFormat_;
 
 	protected:
 

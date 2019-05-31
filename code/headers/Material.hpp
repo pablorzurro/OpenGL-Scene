@@ -67,6 +67,13 @@ namespace prz
 
 	public:
 
+		void clear_textures()
+		{
+			textures_.clear();
+		}
+
+	public:
+
 		bool exists_texture_with_name(const PString& textureName);
 		bool exists_texture(PSPtr< Texture > texture);
 		

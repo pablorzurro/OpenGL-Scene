@@ -27,10 +27,10 @@ namespace prz
 
 	private:
 
-		static const GLfloat coordinates_[];
-		static const GLfloat normals_[];
-		static const GLfloat textureUVs_[];
-		static const GLubyte indices_[];
+		static const PBuffer< GLfloat > coordinates_;
+		static const PBuffer< GLfloat > normals_;
+		static const PBuffer< GLfloat > textureUVs_;
+		static const PBuffer< GLuint > indices_;
 	};
 
 } // !namespace prz 

@@ -17,6 +17,7 @@
 #include <Vertex_Buffer_Object.hpp>
 
 #include <Declarations.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -38,8 +39,32 @@ namespace prz
 	public:
 
 		Mesh();
-		Mesh(Primitive_Mode primitiveMode, const PString& name = "undefined");
-		Mesh(Primitive_Mode primitiveMode, GLsizei nVertices, Indices_Type indicesType = NO_INDICES_TYPE, const PString& name = "undefined");
+
+		Mesh
+		(
+			const PString& name,
+			Primitive_Mode primitiveMode
+		);
+
+		Mesh
+		(
+			const PString& name,
+			GLsizei nVertices,
+			Primitive_Mode primitiveMode = TRIANGLES,
+			Indices_Type indicesType = UNSIGNED_INT
+		);
+
+
+		Mesh
+		(
+			const PString& name,
+			const PBuffer< GLfloat >& coordinates,
+			const PBuffer< GLfloat >& normals,
+			const PBuffer< GLuint  >& indices,
+			Primitive_Mode primitiveMode = TRIANGLES,
+			const PBuffer< GLfloat > & textureUVs = PBuffer< GLfloat >(),
+			const PBuffer< GLfloat > & colors = PBuffer< GLfloat >()
+		);
 
 		~Mesh()
 		{

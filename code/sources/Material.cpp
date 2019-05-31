@@ -257,8 +257,6 @@ namespace prz
 			
 			unsigned int i = 0;
 
-
-
 			for (auto& pair : textures_)
 			{
 				TextureSlot& textureSlot = pair.second;

@@ -2,6 +2,28 @@
 
 namespace prz
 {
+	Texture::Texture(GLenum textureType, const PString& name, Wrap_Mode wrapMode, Filter_Mode filterMode, const Color_Format& colorFormat) :
+		textureID_(8000),
+		textureType_(textureType),
+		name_(name),
+		wrapMode_(wrapMode),
+		filterMode_(filterMode),
+		colorFormat_(colorFormat),
+		error_(GL_NO_ERROR)
+	{}
+
+	Texture::Texture(GLenum textureType, PBuffer<PString>& imagePaths, const PString& name, Wrap_Mode wrapMode, Filter_Mode filterMode, const Color_Format& colorFormat, bool flipImages) :
+		Texture(textureType, name, wrapMode, filterMode, colorFormat)
+	{
+		error_ = glGetError();
+		load_images(imagePaths);
+
+		if (flipImages)
+		{
+			flip_images();
+		}
+	}
+
 	void Texture::initialize()
 	{
 		if (is_ok()) // Check if the images have been loaded succesfully 

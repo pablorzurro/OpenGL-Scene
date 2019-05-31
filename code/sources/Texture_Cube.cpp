@@ -2,6 +2,17 @@
 
 namespace prz
 {
+	Texture_Cube::Texture_Cube(PBuffer<PString>& imagePaths, const PString& name, const Color_Format& colorFormat) :
+		Texture(GL_TEXTURE_CUBE_MAP, imagePaths, name, CLAMP_TO_EDGE, LINEAR, colorFormat)
+	{
+		/*images_[2].flipHorizontally();
+		images_[3].flipHorizontally();*/
+		/*images_[2].flipVertically();
+		images_[3].flipVertically();*/
+
+		initialize();
+	}
+
 	void Texture_Cube::on_initialize()
 	{
 		// Send the image bitmaps to the GPU:
@@ -13,15 +24,23 @@ namespace prz
 			(
 				textureTarget_[i],
 				0,
-				GL_RGBA,
+				colorFormat_,
 				image.getSize().x,
 				image.getSize().y,
 				0,
-				GL_RGBA,
+				colorFormat_,
 				GL_UNSIGNED_BYTE,
 				image.getPixelsPtr()
 			);
 		}	
+	}
+
+	void Texture_Cube::apply_wrap_mode()
+	{
+		// Apply the wrap mode to each space coordinate axis. A cube map is a tridimensional texture so three axes
+		glTexParameteri(textureType_, GL_TEXTURE_WRAP_S, wrapMode_);
+		glTexParameteri(textureType_, GL_TEXTURE_WRAP_T, wrapMode_);
+		glTexParameteri(textureType_, GL_TEXTURE_WRAP_R, wrapMode_);
 	}
 
 	const GLenum Texture_Cube::textureTarget_[] =

@@ -7,6 +7,7 @@
 #include <Skybox.hpp>
 #include <Camera.hpp>
 #include <Material_Loader.hpp>
+#include <Framebuffer.hpp>
 
 namespace prz
 {
@@ -21,6 +22,16 @@ namespace prz
 
 	void Demo_Scene_01::initialize()
 	{
+		PString shadersFolderPath = Game::assetsFolderPath() + "shaders/";
+
+		framebuffer_ = make_shared< Framebuffer >
+		(
+			*this,
+			shadersFolderPath + "vertex.vert",
+			shadersFolderPath + "framebuffer.frag",
+			window_.getSize().x, 
+			window_.getSize().y
+		);
 
 		PSPtr< Entity > head = create_entity("Head");
 		head->add_model(Game::assetsFolderPath() + "models/obj/head.obj");
@@ -31,8 +42,8 @@ namespace prz
 		PSPtr< Model >model(std::make_shared<Model >(1, "Model with a cube"));
 		model->add_piece(std::make_shared< Cube >("cube_mesh"));
 		cube->add_model(model);
-		cube->transform().scale(5.f, 5.f, 5.f);
-		cube->transform().translate_in_z(-20.f);
+		cube->transform().scale(PVec3(2.f));
+		cube->transform().translate_in_z(-30.f);
 
 		PSPtr< Entity > weapon = create_entity("Weapon");
 		weapon->add_model(Game::assetsFolderPath() + "models/obj/m4mw3.obj");
@@ -50,13 +61,13 @@ namespace prz
 			true
 		);
 
-		elevationMaterial->add_texture_2D
+		PSPtr< Texture > rockTexture = elevationMaterial->add_texture_2D
 		(
 			Game::assetsFolderPath() + "textures/2D/rock.jpg",
 			"texture_color"
 		);
 
-		elevationMaterial->add_texture_2D
+		PSPtr< Texture > heightTexture = elevationMaterial->add_texture_2D
 		(
 			Game::assetsFolderPath() + "textures/2D/height_map.png",
 			"height_map"
@@ -72,6 +83,7 @@ namespace prz
 
 		elevationPlane->transform().translate_in_z(-1.f);
 		elevationPlane->transform().translate_in_x(-20.f);
+		elevationPlane->transform().scale(PVec3(10.f));
 
 	}
 	void Demo_Scene_01::update(float deltaTime)

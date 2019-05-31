@@ -76,6 +76,12 @@ namespace prz
 		return str;
 	}
 
+	template< typename T >
+	static size_t byte_sizeof(const std::vector<T>& vector)
+	{
+		return vector.size() * sizeof(T);
+	}
+
 	///////////////////////////////////GLM///////////////////////////////////////
 
 	inline PVec3 extract_translation(PMat4 & matrix)

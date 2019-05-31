@@ -21,16 +21,12 @@ namespace prz
 	{
 	public:
 		
-		Texture_Cube(PBuffer<PString>& imagePaths, const PString& name):
-			Texture(GL_TEXTURE_CUBE_MAP, imagePaths, name)
-		{
-			/*images_[2].flipHorizontally();
-			images_[3].flipHorizontally();*/
-			/*images_[2].flipVertically();
-			images_[3].flipVertically();*/
-			
-			initialize();
-		}
+		Texture_Cube
+		(
+			PBuffer<PString>& imagePaths,
+			const PString& name,
+			const Color_Format& colorFormat = Color_Format::RGBA
+		);
 
 	protected:
 
@@ -38,14 +34,8 @@ namespace prz
 
 	protected:
 
-		void apply_wrap_mode() override
-		{
-			// Apply the wrap mode to each space coordinate axis. A cube map is a tridimensional texture so three axes
-			glTexParameteri(textureType_, GL_TEXTURE_WRAP_S, wrapMode_);
-			glTexParameteri(textureType_, GL_TEXTURE_WRAP_T, wrapMode_);
-			glTexParameteri(textureType_, GL_TEXTURE_WRAP_R, wrapMode_);
-		}
-
+		void apply_wrap_mode() override;
+	
 	private:
 
 		static const GLenum textureTarget_[];

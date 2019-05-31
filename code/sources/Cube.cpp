@@ -5,7 +5,7 @@
 
 namespace prz
 {
-	const GLfloat Cube::coordinates_[] =
+	const PBuffer< GLfloat > Cube::coordinates_=
 	{
 	   -1.f, +1.f, +1.f,        // 0
 	   +1.f, +1.f, +1.f,        // 1
@@ -33,7 +33,7 @@ namespace prz
 	   -1.f, +1.f, +1.f,        // 23
 	};
 
-	const GLfloat Cube::normals_[] =
+	const PBuffer< GLfloat > Cube::normals_ =
 	{
 		0.f,  0.f, +1.f,        // 0
 		0.f,  0.f, +1.f,        // 1
@@ -61,7 +61,7 @@ namespace prz
 		0.f, +1.f,  0.f,        // 23
 	};
 
-	const GLfloat Cube::textureUVs_[] =
+	const PBuffer< GLfloat > Cube::textureUVs_ =
 	{
 		0.f, 0.f,               // 0
 		1.f, 0.f,               // 1
@@ -89,7 +89,7 @@ namespace prz
 		0.f, 1.f,               // 23
 	};
 
-	const GLubyte Cube::indices_[] =
+	const PBuffer< GLuint > Cube::indices_ =
 	{
 		1,  0,  3,              // front
 		1,  3,  2,
@@ -106,23 +106,6 @@ namespace prz
 	};
 
 	Cube::Cube(const PString& name) :
-		Mesh(Primitive_Mode::TRIANGLES, sizeof(indices_), Indices_Type::UNSIGNED_BYTE, name)
-	{
-		unsigned int nCoordinates = sizeof(coordinates_);
-		unsigned int nNormals = sizeof(normals_);
-		unsigned int nUVs = sizeof(textureUVs_);
-
-		PList< PVAI > vertexAttributes =
-		{
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates_,  sizeof(coordinates_), 3)), VBO_ORDER::COORDINATES),
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals_,  sizeof(normals_), 3)), VBO_ORDER::NORMALS),
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs_, sizeof(textureUVs_), 2)), VBO_ORDER::TEXTURE_COORD)
-		};
-
-		vao_ = std::make_shared< PVAO >
-		(
-			vertexAttributes,
-			PSPtr< PVBO >(std::make_shared< PVBO >(indices_, nVertices_, 1, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
-		);
-	}
+		Mesh(name, coordinates_, normals_, indices_, TRIANGLES, textureUVs_)
+	{}
 }

@@ -21,31 +21,27 @@ namespace prz
 	{
 	public:
 
-		Texture_2D(PBuffer<PString>& imagePaths, const PString& name):
-			Texture(GL_TEXTURE_2D, imagePaths, name)
-		{
-			initialize();
-		}
+		Texture_2D
+		(
+			PBuffer<PString>& imagePaths,
+			const PString& name,
+			const Color_Format& colorFormat = Color_Format::RGBA,
+			bool flipImages = true
+		);
+
+		Texture_2D
+		(
+			const PString& name,
+			unsigned int width,
+			unsigned int height,
+			const Color_Format& colorFormat = Color_Format::RGBA
+		);
 
 	protected:
 
-		virtual void on_initialize() override
-		{
-			PImage& image = images_[0];
-
-			glTexImage2D
-			(
-				textureType_,
-				0,
-				GL_RGBA,
-				image.getSize().x,
-				image.getSize().y,
-				0,
-				GL_RGBA,
-				GL_UNSIGNED_BYTE,
-				image.getPixelsPtr()
-			);
-		}
+		virtual void on_initialize() override;
+		
+	protected:
 
 		void apply_wrap_mode() override
 		{
@@ -53,6 +49,12 @@ namespace prz
 			glTexParameteri(textureType_, GL_TEXTURE_WRAP_S, wrapMode_);
 			glTexParameteri(textureType_, GL_TEXTURE_WRAP_T, wrapMode_);
 		}
+
+	protected:
+
+		unsigned int width_;
+		unsigned int height_;
+
 	};
 
 } // !namespace prz 

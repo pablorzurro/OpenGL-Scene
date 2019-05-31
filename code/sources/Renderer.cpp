@@ -7,6 +7,7 @@
 #include <Transform.hpp>
 #include <Entity.hpp>
 #include "Shader_Program.hpp"
+#include <Transform.hpp>
 
 namespace prz
 {
@@ -14,7 +15,7 @@ namespace prz
 	{
 		render_queue(renderQueue_, activeCamera);
 
-		// Render the transparency materials queue
+		// Render the transparency materials queue after the non transparent materials
 
 		glEnable(GL_BLEND);
 		{
@@ -118,6 +119,8 @@ namespace prz
 							// Fill the normal render queue with materials that don't use transparencies
 							renderQueue_[shaderProgram][material][&entityTransform] = meshes;
 						}
+
+						// Add here another layer here to separate the meshes of a transform by material
 					}
 				}
 			}
@@ -130,9 +133,11 @@ namespace prz
 
 		material->set_uniform("proj_matrix", "projection_matrix", activeCamera->projectionMatrix(), true);
 		material->set_uniform("view_matrix", "view_matrix", activeCamera->viewMatrix(), true);
-		material->set_uniform("light_color", "light_color", PVec3(255.f, 255.f, 255.f), true);
-		material->set_uniform("light_pos", "light_position", PVec3(0.f, 20.f, 0.f), true);
-		material->set_uniform("ambient_intensity", "ambient_intensity", 0.15f, true);
+		material->set_uniform("light_color", "light_color", PVec3(1.f, 1.f, 1.f), true);
+		material->set_uniform("light_pos", "light_position", PVec3(30.f, 20.f, -2.f), true);
+		material->set_uniform("view_pos", "view_pos", activeCamera->transform().translation() , true);
+		material->set_uniform("ambient_intensity", "ambient_intensity", 0.5f, true);
+		material->set_uniform("camera_pos", "camera_pos", activeCamera->transform().translation());
 	}
 
 	void Renderer::set_material_local_uniforms(PSPtr<Material> material, Transform* transform)

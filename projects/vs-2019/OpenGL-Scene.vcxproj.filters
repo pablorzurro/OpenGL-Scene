@@ -147,6 +147,15 @@
     <ClCompile Include="..\..\code\sources\Material_Loader.cpp">
       <Filter>Source Files\Loaders</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Framebuffer.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Texture_2D.cpp">
+      <Filter>Source Files\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Projected_Plane.cpp">
+      <Filter>Source Files\Meshes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -262,6 +271,12 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Material_Loader.hpp">
       <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Projected_Plane.hpp">
+      <Filter>Header Files\Meshes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

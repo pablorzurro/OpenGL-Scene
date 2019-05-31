@@ -102,7 +102,7 @@ namespace prz
 		{
 			return is_texture_2D_loaded(texture2DName) ? textures2DByName_[texture2DName] : PSPtr< Texture_2D >();
 		}
-
+		
 		PSPtr< Texture_Cube > get_texture_cube(const PString& textureCubeName)
 		{
 			return is_texture_cube_loaded(textureCubeName) ? texturesCubeByName_[textureCubeName] : nullptr;

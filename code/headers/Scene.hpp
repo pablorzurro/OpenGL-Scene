@@ -26,6 +26,7 @@ namespace prz
 	class Entity;
 	class Camera;
 	class Skybox;
+	class Framebuffer;
 
 	class Scene
 	{
@@ -74,6 +75,7 @@ namespace prz
 	public:
 
 		PSPtr< Entity > get_entity(const PString& name) { return exists_entity(name) ? entities_[name] : PSPtr< Entity >(); }
+		PVec2 get_window_size() { return PVec2(window_.getSize().x, window_.getSize().y); }
 
 	public:
 
@@ -96,6 +98,17 @@ namespace prz
 	protected:
 
 		Window& window_;
+		PSPtr< Framebuffer > framebuffer_;
+
+	protected:
+
+		bool isWireframeModeActive_;
+		bool applyFrameBufferEffect_;
+
+	protected:
+
+		float inputTimer_;
+
 	};
 
 } // !namespace prz

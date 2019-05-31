@@ -99,32 +99,19 @@ namespace prz
 				indices[curIndex3D] = face.mIndices[0]; indices[curIndex3D + 1] = face.mIndices[1]; indices[curIndex3D + 2] = face.mIndices[2];
 			}
 
-			// Create the vertex attributes
-
-			PList< PVAI > vertexAttributes =
-			{
-				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertCoords.data(), sizeof(GLfloat) * n3DVertComponents, 3)), Mesh::VBO_ORDER::COORDINATES),
-				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertNormals.data(), sizeof(GLfloat) * n3DVertComponents, 3)), Mesh::VBO_ORDER::NORMALS)
-			};
-
-			if (hasTextureCoords)
-			{
-				// Choose if push the texCoords buffer or not, is set to default 0,0
-				vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertTexCoords.data(), sizeof(GLfloat) * n2DVertComponents, 2)), Mesh::VBO_ORDER::TEXTURE_COORD));
-			}
-			if (hasColors)
-			{
-				// Choose if push the color buffer or not, is set to default 0 0 0 1 color
-				vertexAttributes.push_back(PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(vertColors.data(), sizeof(GLfloat)* n4DVertComponents, 4)), Mesh::VBO_ORDER::COLORS));
-			}
-
-			PSPtr< Mesh > mesh(std::make_shared< Mesh>(TRIANGLES, numVertices, UNSIGNED_INT, assimpMesh->mName.C_Str()));
-
-			mesh->set_vao(std::make_shared< PVAO >
+			PSPtr< Mesh > mesh
 			(
-				vertexAttributes,
-				PSPtr< PVBO >(std::make_shared< PVBO >(indices.data(), sizeof(GLuint) * nIndices, 1, Vertex_Buffer_Object::Target::ELEMENT_ARRAY_BUFFER))
-			));
+				std::make_shared< Mesh>
+				(
+					assimpMesh->mName.C_Str(),
+					vertCoords,
+					vertNormals,
+					indices,
+					TRIANGLES,
+					vertTexCoords,
+					vertNormals
+				)
+			);
 
 			model->add_piece(mesh, material);
 		}

@@ -1,6 +1,4 @@
 
-// Triangular alrededor del vertex de entrada con las uvs siendo en tres cuadrantes y luego calcular su producto vectorial 
-
 #version 330 core
 
 layout(location = 0) in vec3 in_position;
@@ -30,6 +28,7 @@ void main()
 	vec4 model_pos = model_view_matrix * vec4(in_position.x, pos_y, in_position.z, 1.0);
 	gl_Position = proj_matrix * model_pos;
 
+	// IN PROGRESS: // Triangulate around the input vertex with the uvs to calculate the corrected normal
 	vec4 n = model_view_matrix * vec4(in_normal, 0.0);
 
 	world_pos = model_pos.xyz;
