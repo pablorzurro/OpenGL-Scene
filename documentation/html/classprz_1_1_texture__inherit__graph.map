@@ -1,0 +1,5 @@
+<map id="prz::Texture" name="prz::Texture">
+<area shape="rect" id="node1" title="Class that manage OpenGL textures and images loaded from files." alt="" coords="89,5,180,32"/>
+<area shape="rect" id="node2" href="$classprz_1_1_texture__2_d.html" title="Class that represents an image 2D." alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_texture___cube.html" title="Class that represents 6 textures 2D which forms a cube." alt="" coords="144,80,272,107"/>
+</map>

@@ -1,0 +1,191 @@
+\hypertarget{classprz_1_1_input___manager}{}\section{prz\+::Input\+\_\+\+Manager Class Reference}
+\label{classprz_1_1_input___manager}\index{prz::Input\_Manager@{prz::Input\_Manager}}
+
+
+Class that checks and saves the state of the input.  
+
+
+
+
+{\ttfamily \#include $<$Input\+\_\+\+Manager.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classprz_1_1_input___manager_a4d1defd273c14ac8fd242514a95de019}{update}} (Event \&event)
+\begin{DoxyCompactList}\small\item\em Update the keyboard state with the input event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_input___manager_abaf16456e62dd4a4ab1fc7115f0a4988}{is\+\_\+key\+\_\+pressed}} (const P\+Key \&key) const
+\begin{DoxyCompactList}\small\item\em Get the state of a key. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_input___manager_a038b61e13bb66fc5eaa2cfe613070057}{is\+\_\+mouse\+\_\+pressed}} ()
+\begin{DoxyCompactList}\small\item\em return if mouse is pressed \end{DoxyCompactList}\item 
+P\+U\+Vec2 \mbox{\hyperlink{classprz_1_1_input___manager_a05861231ed2b0b64154579cd3eced94a}{current\+\_\+mouse\+\_\+position}} ()
+\begin{DoxyCompactList}\small\item\em return the current mouse position vector \end{DoxyCompactList}\item 
+P\+U\+Vec2 \mbox{\hyperlink{classprz_1_1_input___manager_a77ba062e39f58eebe9c24ce4dab8fc58}{previous\+\_\+mouse\+\_\+position}} ()
+\begin{DoxyCompactList}\small\item\em return the previous mouse position vector \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{classprz_1_1_input___manager_a401badf5d71a45de8ac2c66d1968afe2}{cur\+MouseX}} ()
+\begin{DoxyCompactList}\small\item\em return the current mouse x position \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{classprz_1_1_input___manager_a243d25eb8d2b06964571fcffc44aa480}{cur\+MouseY}} ()
+\begin{DoxyCompactList}\small\item\em return the current mouse y position \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{classprz_1_1_input___manager_ab71276ab97b9270a69b7ea21856cb92a}{prev\+MouseX}} ()
+\begin{DoxyCompactList}\small\item\em return the previous mouse x position \end{DoxyCompactList}\item 
+const unsigned int \& \mbox{\hyperlink{classprz_1_1_input___manager_a29a282fe4727180e4ea68a67417efea0}{prev\+MouseY}} ()
+\begin{DoxyCompactList}\small\item\em return the previous mouse y position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_input___manager}{Input\+\_\+\+Manager}} \& \mbox{\hyperlink{classprz_1_1_input___manager_a6bc910b69659d7ea1288ed5758bfe9e5}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that checks and saves the state of the input. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a401badf5d71a45de8ac2c66d1968afe2}\label{classprz_1_1_input___manager_a401badf5d71a45de8ac2c66d1968afe2}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!curMouseX@{curMouseX}}
+\index{curMouseX@{curMouseX}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{curMouseX()}{curMouseX()}}
+{\footnotesize\ttfamily const unsigned int\& prz\+::\+Input\+\_\+\+Manager\+::cur\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the current mouse x position 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& cur\+MouseX 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a243d25eb8d2b06964571fcffc44aa480}\label{classprz_1_1_input___manager_a243d25eb8d2b06964571fcffc44aa480}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!curMouseY@{curMouseY}}
+\index{curMouseY@{curMouseY}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{curMouseY()}{curMouseY()}}
+{\footnotesize\ttfamily const unsigned int\& prz\+::\+Input\+\_\+\+Manager\+::cur\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the current mouse y position 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& cur\+MouseY 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a05861231ed2b0b64154579cd3eced94a}\label{classprz_1_1_input___manager_a05861231ed2b0b64154579cd3eced94a}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!current\_mouse\_position@{current\_mouse\_position}}
+\index{current\_mouse\_position@{current\_mouse\_position}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{current\_mouse\_position()}{current\_mouse\_position()}}
+{\footnotesize\ttfamily P\+U\+Vec2 prz\+::\+Input\+\_\+\+Manager\+::current\+\_\+mouse\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the current mouse position vector 
+
+\begin{DoxyReturn}{Returns}
+P\+U\+Vec2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a6bc910b69659d7ea1288ed5758bfe9e5}\label{classprz_1_1_input___manager_a6bc910b69659d7ea1288ed5758bfe9e5}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!instance@{instance}}
+\index{instance@{instance}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_input___manager}{Input\+\_\+\+Manager}}\& prz\+::\+Input\+\_\+\+Manager\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+Input\+Manager\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_abaf16456e62dd4a4ab1fc7115f0a4988}\label{classprz_1_1_input___manager_abaf16456e62dd4a4ab1fc7115f0a4988}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!is\_key\_pressed@{is\_key\_pressed}}
+\index{is\_key\_pressed@{is\_key\_pressed}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{is\_key\_pressed()}{is\_key\_pressed()}}
+{\footnotesize\ttfamily bool prz\+::\+Input\+\_\+\+Manager\+::is\+\_\+key\+\_\+pressed (\begin{DoxyParamCaption}\item[{const P\+Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the state of a key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a038b61e13bb66fc5eaa2cfe613070057}\label{classprz_1_1_input___manager_a038b61e13bb66fc5eaa2cfe613070057}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!is\_mouse\_pressed@{is\_mouse\_pressed}}
+\index{is\_mouse\_pressed@{is\_mouse\_pressed}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{is\_mouse\_pressed()}{is\_mouse\_pressed()}}
+{\footnotesize\ttfamily bool prz\+::\+Input\+\_\+\+Manager\+::is\+\_\+mouse\+\_\+pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if mouse is pressed 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a77ba062e39f58eebe9c24ce4dab8fc58}\label{classprz_1_1_input___manager_a77ba062e39f58eebe9c24ce4dab8fc58}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!previous\_mouse\_position@{previous\_mouse\_position}}
+\index{previous\_mouse\_position@{previous\_mouse\_position}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{previous\_mouse\_position()}{previous\_mouse\_position()}}
+{\footnotesize\ttfamily P\+U\+Vec2 prz\+::\+Input\+\_\+\+Manager\+::previous\+\_\+mouse\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the previous mouse position vector 
+
+\begin{DoxyReturn}{Returns}
+P\+U\+Vec2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_ab71276ab97b9270a69b7ea21856cb92a}\label{classprz_1_1_input___manager_ab71276ab97b9270a69b7ea21856cb92a}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!prevMouseX@{prevMouseX}}
+\index{prevMouseX@{prevMouseX}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{prevMouseX()}{prevMouseX()}}
+{\footnotesize\ttfamily const unsigned int\& prz\+::\+Input\+\_\+\+Manager\+::prev\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the previous mouse x position 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& prev\+MouseX 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a29a282fe4727180e4ea68a67417efea0}\label{classprz_1_1_input___manager_a29a282fe4727180e4ea68a67417efea0}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!prevMouseY@{prevMouseY}}
+\index{prevMouseY@{prevMouseY}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{prevMouseY()}{prevMouseY()}}
+{\footnotesize\ttfamily const unsigned int\& prz\+::\+Input\+\_\+\+Manager\+::prev\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the previous mouse y position 
+
+\begin{DoxyReturn}{Returns}
+const unsigned\& prev\+MouseY 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_input___manager_a4d1defd273c14ac8fd242514a95de019}\label{classprz_1_1_input___manager_a4d1defd273c14ac8fd242514a95de019}} 
+\index{prz::Input\_Manager@{prz::Input\_Manager}!update@{update}}
+\index{update@{update}!prz::Input\_Manager@{prz::Input\_Manager}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void prz\+::\+Input\+\_\+\+Manager\+::update (\begin{DoxyParamCaption}\item[{Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the keyboard state with the input event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_input___manager_8hpp}{Input\+\_\+\+Manager.\+hpp}}\end{DoxyCompactItemize}

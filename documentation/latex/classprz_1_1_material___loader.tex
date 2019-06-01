@@ -1,0 +1,195 @@
+\hypertarget{classprz_1_1_material___loader}{}\section{prz\+::Material\+\_\+\+Loader Class Reference}
+\label{classprz_1_1_material___loader}\index{prz::Material\_Loader@{prz::Material\_Loader}}
+
+
+Class to load and store materials.  
+
+
+
+
+{\ttfamily \#include $<$Material\+\_\+\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ \mbox{\hyperlink{classprz_1_1_material___loader_a384534b5e8e8a558a0ad4df508ec5c33}{load\+\_\+material}} (const P\+String \&name, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader\+Program, bool uses\+Transparency=false)
+\begin{DoxyCompactList}\small\item\em Return the loaded material. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ \mbox{\hyperlink{classprz_1_1_material___loader_a7053997fa500ea92a4759126ceac7449}{load\+\_\+material}} (const P\+String \&name, const P\+String \&path\+Vertex\+Shader, const P\+String \&path\+Fragment\+Shader, bool uses\+Transparency=false)
+\begin{DoxyCompactList}\small\item\em Return the loaded material. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ \mbox{\hyperlink{classprz_1_1_material___loader_a0d05a8baf5e0c0ba42ba543eef665ab1}{load\+\_\+material}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Return the loaded material. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ \mbox{\hyperlink{classprz_1_1_material___loader_a819c44607837169bbaa41d625902bef6}{get\+\_\+default\+\_\+material}} ()
+\begin{DoxyCompactList}\small\item\em returns the default material object \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ \mbox{\hyperlink{classprz_1_1_material___loader_a2eb8615a2067fed29e1d3425c9c79318}{get\+\_\+material}} (const P\+String \&name)
+\begin{DoxyCompactList}\small\item\em returns a material by name \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material___loader_a1cd698bffd010f816ce4e84e66213647}{exists\+\_\+material\+\_\+with\+\_\+name}} (const P\+String \&name)
+\begin{DoxyCompactList}\small\item\em return if exists the material with the input name \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material___loader_a1f790777071e92d5bcd4603b65736aa4}{exists\+\_\+material}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ material)
+\begin{DoxyCompactList}\small\item\em return if is saved the input material in this loader \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_material___loader}{Material\+\_\+\+Loader}} \& \mbox{\hyperlink{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to load and store materials. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a1f790777071e92d5bcd4603b65736aa4}\label{classprz_1_1_material___loader_a1f790777071e92d5bcd4603b65736aa4}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!exists\_material@{exists\_material}}
+\index{exists\_material@{exists\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{exists\_material()}{exists\_material()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+\_\+\+Loader\+::exists\+\_\+material (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})}
+
+
+
+return if is saved the input material in this loader 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a1cd698bffd010f816ce4e84e66213647}\label{classprz_1_1_material___loader_a1cd698bffd010f816ce4e84e66213647}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!exists\_material\_with\_name@{exists\_material\_with\_name}}
+\index{exists\_material\_with\_name@{exists\_material\_with\_name}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{exists\_material\_with\_name()}{exists\_material\_with\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+\_\+\+Loader\+::exists\+\_\+material\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})}
+
+
+
+return if exists the material with the input name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a819c44607837169bbaa41d625902bef6}\label{classprz_1_1_material___loader_a819c44607837169bbaa41d625902bef6}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!get\_default\_material@{get\_default\_material}}
+\index{get\_default\_material@{get\_default\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{get\_default\_material()}{get\_default\_material()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ prz\+::\+Material\+\_\+\+Loader\+::get\+\_\+default\+\_\+material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the default material object 
+
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Material $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a2eb8615a2067fed29e1d3425c9c79318}\label{classprz_1_1_material___loader_a2eb8615a2067fed29e1d3425c9c79318}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!get\_material@{get\_material}}
+\index{get\_material@{get\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{get\_material()}{get\_material()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ prz\+::\+Material\+\_\+\+Loader\+::get\+\_\+material (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})}
+
+
+
+returns a material by name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Material $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}\label{classprz_1_1_material___loader_a5fa3903db95525602037c029debb6532}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!instance@{instance}}
+\index{instance@{instance}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_material___loader}{Material\+\_\+\+Loader}}\& prz\+::\+Material\+\_\+\+Loader\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_material___loader}{Material\+\_\+\+Loader}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a384534b5e8e8a558a0ad4df508ec5c33}\label{classprz_1_1_material___loader_a384534b5e8e8a558a0ad4df508ec5c33}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!load\_material@{load\_material}}
+\index{load\_material@{load\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{load\_material()}{load\_material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ prz\+::\+Material\+\_\+\+Loader\+::load\+\_\+material (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader\+Program,  }\item[{bool}]{uses\+Transparency = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Return the loaded material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em shader\+Program} & \\
+\hline
+{\em uses\+Transparency} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Material $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a7053997fa500ea92a4759126ceac7449}\label{classprz_1_1_material___loader_a7053997fa500ea92a4759126ceac7449}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!load\_material@{load\_material}}
+\index{load\_material@{load\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{load\_material()}{load\_material()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ prz\+::\+Material\+\_\+\+Loader\+::load\+\_\+material (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{const P\+String \&}]{path\+Vertex\+Shader,  }\item[{const P\+String \&}]{path\+Fragment\+Shader,  }\item[{bool}]{uses\+Transparency = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Return the loaded material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em path\+Vertex\+Shader} & \\
+\hline
+{\em path\+Fragment\+Shader} & \\
+\hline
+{\em uses\+Transparency} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Material $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material___loader_a0d05a8baf5e0c0ba42ba543eef665ab1}\label{classprz_1_1_material___loader_a0d05a8baf5e0c0ba42ba543eef665ab1}} 
+\index{prz::Material\_Loader@{prz::Material\_Loader}!load\_material@{load\_material}}
+\index{load\_material@{load\_material}!prz::Material\_Loader@{prz::Material\_Loader}}
+\subsubsection{\texorpdfstring{load\_material()}{load\_material()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$ prz\+::\+Material\+\_\+\+Loader\+::load\+\_\+material (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$}]{material }\end{DoxyParamCaption})}
+
+
+
+Return the loaded material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Material $>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/Material\+\_\+\+Loader.\+hpp\item 
+code/sources/Material\+\_\+\+Loader.\+cpp\end{DoxyCompactItemize}

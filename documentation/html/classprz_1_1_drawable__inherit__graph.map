@@ -1,0 +1,8 @@
+<map id="prz::Drawable" name="prz::Drawable">
+<area shape="rect" id="node1" title="Abstract class that will be the base of all drawable objects." alt="" coords="153,5,254,32"/>
+<area shape="rect" id="node2" href="$classprz_1_1_mesh.html" title="Class to store and manage vertex array objects." alt="" coords="109,80,189,107"/>
+<area shape="rect" id="node6" href="$classprz_1_1_skybox.html" title="Class that is similar to a material but with only a cube map." alt="" coords="213,80,305,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_cube.html" title="Class that store the information of a cube." alt="" coords="5,155,84,181"/>
+<area shape="rect" id="node4" href="$classprz_1_1_plane.html" title="Mesh that represents a quad with 2 triangles." alt="" coords="108,155,189,181"/>
+<area shape="rect" id="node5" href="$classprz_1_1_projected___plane.html" title="Mesh that represents a quad in screen space." alt="" coords="213,155,356,181"/>
+</map>

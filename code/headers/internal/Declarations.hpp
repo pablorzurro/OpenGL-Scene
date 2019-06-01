@@ -1,35 +1,41 @@
-#ifndef OPENGL_SCENE_DECLARATIONS_H
-#define OPENGL_SCENE_DECLARATIONS_H
+/**
+ * @file Declarations.hpp
+ * @author Pablo Rodríguez Zurro (przuro@gmail.com)
+ * @brief Class to define custom names and typedefs of different libraries and include some interesting library headers to avoid repetition.
+ * @version 0.1
+ * @date 01-05-2019
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
-#include "SFML/Graphics.hpp"
+#ifndef OPENGL_SCENE_DECLARATIONS_H_
+#define OPENGL_SCENE_DECLARATIONS_H_
 
-#include <memory>
-#include <vector>
-#include <unordered_map>
-#include <string>
-
-#include <iostream>
+#include <Declarations_STD.hpp>
+#include <Declarations_SFML.hpp>
+#include <Declarations_OpenGL.hpp>
+#include <Declarations_GLM.hpp>
 
 namespace prz
 {
-	using Key = sf::Keyboard::Key;
+	class Vertex_Buffer_Object;
+	class Vertex_Array_Object;
 
-	template<typename T>
-	using PShared_ptr = std::shared_ptr<T>; // Shared pointer
+	using PVBO = Vertex_Buffer_Object;
+	using PVAO = Vertex_Array_Object;
+	using PVAI = struct Vertex_Attribute_Information;
 
-	template<typename Key, typename Val>
-	using PMap = std::unordered_map<Key, Val>;
+	const float mouseSensitivityX = 0.2f;
+	const float mouseSensitivityY = 0.2f;
 
-	template<typename T>
-	using PBuffer = std::vector<T>; // Same as vector but renamed
-
-	using PString = std::string;
+	////////////////////////////////////MATH/////////////////////////////////////
 
 	constexpr float PI			= 3.14159f;
 	constexpr float DELTA_TIME	= 0.01667f;          // ~60 fps
 	
 	constexpr float DEG_TO_RAD	= 0.01745f;
 	constexpr float RAD_TO_DEG	= 57.29578f;
-}
+} // !namespace prz
 
-#endif // !OPENGL_SCENE_DECLARATIONS_H
+#endif // !OPENGL_SCENE_DECLARATIONS_H_

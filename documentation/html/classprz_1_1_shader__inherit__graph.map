@@ -1,0 +1,5 @@
+<map id="prz::Shader" name="prz::Shader">
+<area shape="rect" id="node1" title="Class that store a source code and compiles it to OpenGL." alt="" coords="119,5,208,32"/>
+<area shape="rect" id="node2" href="$classprz_1_1_fragment___shader.html" title="Store and manage a compiled source code by OpenGL." alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node3" href="$classprz_1_1_vertex___shader.html" title=" " alt="" coords="180,80,315,107"/>
+</map>

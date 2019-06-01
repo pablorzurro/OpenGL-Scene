@@ -1,0 +1,471 @@
+\hypertarget{classprz_1_1_material}{}\section{prz\+::Material Class Reference}
+\label{classprz_1_1_material}\index{prz::Material@{prz::Material}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structprz_1_1_material_1_1_texture_slot}{Texture\+Slot}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_material_a96a970f9168c10c004c906a10ccd7681}{Material}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_material_a258f2af6b3141b29ecc1c07968da1e0a}{shader\+Program}}, bool \mbox{\hyperlink{classprz_1_1_material_aa27abc0a7c69fa88cac4d075a082d78c}{uses\+Transparency}}=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_material}{Material}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_material_af550371d4213e10a001a8ee9b27a1c79}{Material}} (const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+String \&path\+Vertex\+Shader, const P\+String \&path\+Fragment\+Shader, bool \mbox{\hyperlink{classprz_1_1_material_aa27abc0a7c69fa88cac4d075a082d78c}{uses\+Transparency}}=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_material}{Material}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_a82bf213bb5c6a403812dab39ac3d7e5a}{use}} ()
+\begin{DoxyCompactList}\small\item\em Use this material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_a67f3f1c440c489c784f8beb5b61ff3a0}{desuse}} ()
+\begin{DoxyCompactList}\small\item\em Try to disable all the textures // \#\+W\+IP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_a294a63c3dc02bf9e5b2ff283e2789313}{apply\+\_\+local\+\_\+uniforms}} ()
+\begin{DoxyCompactList}\small\item\em apply the local uniforms \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_a97b7619874422fe0f154f85f5ac14a93}{apply\+\_\+shared\+\_\+uniforms}} ()
+\begin{DoxyCompactList}\small\item\em apply the shared uniforms \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classprz_1_1_material_ac8ce613c4cb5af860132c5955709a31d}{add\+\_\+texture}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ texture, const P\+String \&uniform\+Name)
+\begin{DoxyCompactList}\small\item\em Add a generic texture. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classprz_1_1_material_aeecf13bf1f8c559f520a2e3400b3f7bf}{add\+\_\+texture\+\_\+cube}} (const P\+String \&texture\+Path, const P\+String \&uniform\+Name)
+\begin{DoxyCompactList}\small\item\em Add a texture cube. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classprz_1_1_material_a860fb902b7f2ce6c31956034112666f5}{add\+\_\+texture\+\_\+2D}} (const P\+String \&texture\+Path, const P\+String \&uniform\+Name)
+\begin{DoxyCompactList}\small\item\em Add a texture 2D. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classprz_1_1_material_a16f993fb8665220f51313df4285bca53}{add\+\_\+texture\+\_\+by\+\_\+name}} (const P\+String \&texture\+Name, const P\+String \&uniform\+Name)
+\begin{DoxyCompactList}\small\item\em Add a generic texture by name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_aa3c07270df05e4f8048974e20599810d}{clear\+\_\+textures}} ()
+\begin{DoxyCompactList}\small\item\em Delete all the textures. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material_a37642f991c010bec61b60cffb5ae44cb}{exists\+\_\+texture\+\_\+with\+\_\+name}} (const P\+String \&texture\+Name)
+\begin{DoxyCompactList}\small\item\em Return if exists a texture with name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material_a48029def7213cab037704cf2ca1a485e}{exists\+\_\+texture}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ texture)
+\begin{DoxyCompactList}\small\item\em Return if is saved the input texture. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material_a7c0a75268c108df5c8b7779c9be7b80a}{set\+\_\+uniform}} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const G\+Lint value, bool is\+Shared\+Uniform=false)
+\begin{DoxyCompactList}\small\item\em Set the uniforms. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_material_ac595a04846ef46f3f5bdf74b9b5b0227}\label{classprz_1_1_material_ac595a04846ef46f3f5bdf74b9b5b0227}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const G\+Luint value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_af69e46e72e2eeb4baa102947673f17fe}\label{classprz_1_1_material_af69e46e72e2eeb4baa102947673f17fe}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const G\+Lfloat value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_ad97f9b96213fb116bf633943f2038f86}\label{classprz_1_1_material_ad97f9b96213fb116bf633943f2038f86}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+Vec2 \&value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a3d876b8c363c04d1cd820305fc212ba5}\label{classprz_1_1_material_a3d876b8c363c04d1cd820305fc212ba5}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+Vec3 \&value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_acb1e095a79c9fb64a2dfcd2680454d4b}\label{classprz_1_1_material_acb1e095a79c9fb64a2dfcd2680454d4b}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+Vec4 \&value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a816d657f74c72b799f0f5c72ecc0042a}\label{classprz_1_1_material_a816d657f74c72b799f0f5c72ecc0042a}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+Mat3 \&value, bool is\+Shared\+Uniform=false)
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a7e872d76e0bdbfe68a1c14ab649a8b83}\label{classprz_1_1_material_a7e872d76e0bdbfe68a1c14ab649a8b83}} 
+bool {\bfseries set\+\_\+uniform} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, const P\+Mat4 \&value, bool is\+Shared\+Uniform=false)
+\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classprz_1_1_material_a2e6d6a6b47a8f79bc07191fdd2a5ed98}{get\+\_\+texture\+\_\+with\+\_\+name}} (const P\+String \&texture\+Name)
+\begin{DoxyCompactList}\small\item\em Returns the texture with name. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classprz_1_1_material_ab65ef8e87a39279c67fa334ac044d1c8}{instance\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Return the instance identification. \end{DoxyCompactList}\item 
+const P\+String \& \mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return the name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $\ast$ \mbox{\hyperlink{classprz_1_1_material_aee5bc4a466d97ffff49ff02bbc41bae6}{shader\+Program\+Ptr}} () const
+\begin{DoxyCompactList}\small\item\em Return a pointer to the shader program object. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classprz_1_1_material_a258f2af6b3141b29ecc1c07968da1e0a}{shader\+Program}} () const
+\begin{DoxyCompactList}\small\item\em Return the shader program object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_material_aa27abc0a7c69fa88cac4d075a082d78c}{uses\+Transparency}} ()
+\begin{DoxyCompactList}\small\item\em Return if this material uses transparency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $\ast$ \mbox{\hyperlink{classprz_1_1_material_ae87c21c227dbbc14239a8c375b751720}{allocate\+\_\+uniform}} (const char $\ast$id, const P\+String \&\mbox{\hyperlink{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}{name}}, Var\+\_\+\+G\+L\+::\+Type type, bool is\+Shared\+Uniform=false)
+\begin{DoxyCompactList}\small\item\em Allocate a uniform with variant type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_material_a537b0e3e75e1a8309f30326541344589}{apply\+\_\+uniforms}} (P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $>$ \&uniforms\+Map)
+\begin{DoxyCompactList}\small\item\em Apply all the uniforms of any kind. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_acd4a5775e669b9879671cfdb44934e08}\label{classprz_1_1_material_acd4a5775e669b9879671cfdb44934e08}} 
+P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_material_1_1_texture_slot}{Texture\+Slot}} $>$ {\bfseries textures\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_afbf95635a971e5aca60cce948f2d1ae3}\label{classprz_1_1_material_afbf95635a971e5aca60cce948f2d1ae3}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ {\bfseries shader\+Program\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_aa14043c45ffb013d66891d647fc0b224}\label{classprz_1_1_material_aa14043c45ffb013d66891d647fc0b224}} 
+P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $>$ {\bfseries local\+Uniforms\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a2f7157038dc7f036142d505c9a9be303}\label{classprz_1_1_material_a2f7157038dc7f036142d505c9a9be303}} 
+P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $>$ {\bfseries shared\+Uniforms\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a68a9f00e184a20736fefb85a6948c377}\label{classprz_1_1_material_a68a9f00e184a20736fefb85a6948c377}} 
+P\+String {\bfseries name\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_material_a0246bc267e52eb97ce79aa97a00ec069}\label{classprz_1_1_material_a0246bc267e52eb97ce79aa97a00ec069}} 
+unsigned int {\bfseries instance\+I\+D\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_material_a96a970f9168c10c004c906a10ccd7681}\label{classprz_1_1_material_a96a970f9168c10c004c906a10ccd7681}} 
+\index{prz::Material@{prz::Material}!Material@{Material}}
+\index{Material@{Material}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader\+Program,  }\item[{bool}]{uses\+Transparency = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_material}{Material}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em shader\+Program} & \\
+\hline
+{\em uses\+Transparency} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_material_af550371d4213e10a001a8ee9b27a1c79}\label{classprz_1_1_material_af550371d4213e10a001a8ee9b27a1c79}} 
+\index{prz::Material@{prz::Material}!Material@{Material}}
+\index{Material@{Material}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{const P\+String \&}]{path\+Vertex\+Shader,  }\item[{const P\+String \&}]{path\+Fragment\+Shader,  }\item[{bool}]{uses\+Transparency = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_material}{Material}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em path\+Vertex\+Shader} & \\
+\hline
+{\em path\+Fragment\+Shader} & \\
+\hline
+{\em uses\+Transparency} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_material_ac8ce613c4cb5af860132c5955709a31d}\label{classprz_1_1_material_ac8ce613c4cb5af860132c5955709a31d}} 
+\index{prz::Material@{prz::Material}!add\_texture@{add\_texture}}
+\index{add\_texture@{add\_texture}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{add\_texture()}{add\_texture()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ prz\+::\+Material\+::add\+\_\+texture (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$}]{texture,  }\item[{const P\+String \&}]{uniform\+Name }\end{DoxyParamCaption})}
+
+
+
+Add a generic texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+{\em uniform\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Texture $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a860fb902b7f2ce6c31956034112666f5}\label{classprz_1_1_material_a860fb902b7f2ce6c31956034112666f5}} 
+\index{prz::Material@{prz::Material}!add\_texture\_2D@{add\_texture\_2D}}
+\index{add\_texture\_2D@{add\_texture\_2D}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{add\_texture\_2D()}{add\_texture\_2D()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ prz\+::\+Material\+::add\+\_\+texture\+\_\+2D (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Path,  }\item[{const P\+String \&}]{uniform\+Name }\end{DoxyParamCaption})}
+
+
+
+Add a texture 2D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Path} & \\
+\hline
+{\em uniform\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Texture $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a16f993fb8665220f51313df4285bca53}\label{classprz_1_1_material_a16f993fb8665220f51313df4285bca53}} 
+\index{prz::Material@{prz::Material}!add\_texture\_by\_name@{add\_texture\_by\_name}}
+\index{add\_texture\_by\_name@{add\_texture\_by\_name}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{add\_texture\_by\_name()}{add\_texture\_by\_name()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ prz\+::\+Material\+::add\+\_\+texture\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Name,  }\item[{const P\+String \&}]{uniform\+Name }\end{DoxyParamCaption})}
+
+
+
+Add a generic texture by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Name} & \\
+\hline
+{\em uniform\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Texture $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_aeecf13bf1f8c559f520a2e3400b3f7bf}\label{classprz_1_1_material_aeecf13bf1f8c559f520a2e3400b3f7bf}} 
+\index{prz::Material@{prz::Material}!add\_texture\_cube@{add\_texture\_cube}}
+\index{add\_texture\_cube@{add\_texture\_cube}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{add\_texture\_cube()}{add\_texture\_cube()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ prz\+::\+Material\+::add\+\_\+texture\+\_\+cube (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Path,  }\item[{const P\+String \&}]{uniform\+Name }\end{DoxyParamCaption})}
+
+
+
+Add a texture cube. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Path} & \\
+\hline
+{\em uniform\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Texture $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_ae87c21c227dbbc14239a8c375b751720}\label{classprz_1_1_material_ae87c21c227dbbc14239a8c375b751720}} 
+\index{prz::Material@{prz::Material}!allocate\_uniform@{allocate\_uniform}}
+\index{allocate\_uniform@{allocate\_uniform}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{allocate\_uniform()}{allocate\_uniform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $\ast$ prz\+::\+Material\+::allocate\+\_\+uniform (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const P\+String \&}]{name,  }\item[{Var\+\_\+\+G\+L\+::\+Type}]{type,  }\item[{bool}]{is\+Shared\+Uniform = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Allocate a uniform with variant type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em name} & \\
+\hline
+{\em type} & \\
+\hline
+{\em is\+Shared\+Uniform} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uniform$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a294a63c3dc02bf9e5b2ff283e2789313}\label{classprz_1_1_material_a294a63c3dc02bf9e5b2ff283e2789313}} 
+\index{prz::Material@{prz::Material}!apply\_local\_uniforms@{apply\_local\_uniforms}}
+\index{apply\_local\_uniforms@{apply\_local\_uniforms}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{apply\_local\_uniforms()}{apply\_local\_uniforms()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::apply\+\_\+local\+\_\+uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+apply the local uniforms 
+
+\mbox{\Hypertarget{classprz_1_1_material_a97b7619874422fe0f154f85f5ac14a93}\label{classprz_1_1_material_a97b7619874422fe0f154f85f5ac14a93}} 
+\index{prz::Material@{prz::Material}!apply\_shared\_uniforms@{apply\_shared\_uniforms}}
+\index{apply\_shared\_uniforms@{apply\_shared\_uniforms}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{apply\_shared\_uniforms()}{apply\_shared\_uniforms()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::apply\+\_\+shared\+\_\+uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+apply the shared uniforms 
+
+\mbox{\Hypertarget{classprz_1_1_material_a537b0e3e75e1a8309f30326541344589}\label{classprz_1_1_material_a537b0e3e75e1a8309f30326541344589}} 
+\index{prz::Material@{prz::Material}!apply\_uniforms@{apply\_uniforms}}
+\index{apply\_uniforms@{apply\_uniforms}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{apply\_uniforms()}{apply\_uniforms()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::apply\+\_\+uniforms (\begin{DoxyParamCaption}\item[{P\+Map$<$ P\+String, \mbox{\hyperlink{structprz_1_1_uniform}{Uniform}} $>$ \&}]{uniforms\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Apply all the uniforms of any kind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniforms\+Map} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_material_aa3c07270df05e4f8048974e20599810d}\label{classprz_1_1_material_aa3c07270df05e4f8048974e20599810d}} 
+\index{prz::Material@{prz::Material}!clear\_textures@{clear\_textures}}
+\index{clear\_textures@{clear\_textures}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{clear\_textures()}{clear\_textures()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::clear\+\_\+textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delete all the textures. 
+
+\mbox{\Hypertarget{classprz_1_1_material_a67f3f1c440c489c784f8beb5b61ff3a0}\label{classprz_1_1_material_a67f3f1c440c489c784f8beb5b61ff3a0}} 
+\index{prz::Material@{prz::Material}!desuse@{desuse}}
+\index{desuse@{desuse}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{desuse()}{desuse()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::desuse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Try to disable all the textures // \#\+W\+IP. 
+
+\mbox{\Hypertarget{classprz_1_1_material_a48029def7213cab037704cf2ca1a485e}\label{classprz_1_1_material_a48029def7213cab037704cf2ca1a485e}} 
+\index{prz::Material@{prz::Material}!exists\_texture@{exists\_texture}}
+\index{exists\_texture@{exists\_texture}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{exists\_texture()}{exists\_texture()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+::exists\+\_\+texture (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$}]{texture }\end{DoxyParamCaption})}
+
+
+
+Return if is saved the input texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a37642f991c010bec61b60cffb5ae44cb}\label{classprz_1_1_material_a37642f991c010bec61b60cffb5ae44cb}} 
+\index{prz::Material@{prz::Material}!exists\_texture\_with\_name@{exists\_texture\_with\_name}}
+\index{exists\_texture\_with\_name@{exists\_texture\_with\_name}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{exists\_texture\_with\_name()}{exists\_texture\_with\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+::exists\+\_\+texture\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Name }\end{DoxyParamCaption})}
+
+
+
+Return if exists a texture with name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a2e6d6a6b47a8f79bc07191fdd2a5ed98}\label{classprz_1_1_material_a2e6d6a6b47a8f79bc07191fdd2a5ed98}} 
+\index{prz::Material@{prz::Material}!get\_texture\_with\_name@{get\_texture\_with\_name}}
+\index{get\_texture\_with\_name@{get\_texture\_with\_name}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{get\_texture\_with\_name()}{get\_texture\_with\_name()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ prz\+::\+Material\+::get\+\_\+texture\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Name }\end{DoxyParamCaption})}
+
+
+
+Returns the texture with name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Texture $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_ab65ef8e87a39279c67fa334ac044d1c8}\label{classprz_1_1_material_ab65ef8e87a39279c67fa334ac044d1c8}} 
+\index{prz::Material@{prz::Material}!instanceID@{instanceID}}
+\index{instanceID@{instanceID}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{instanceID()}{instanceID()}}
+{\footnotesize\ttfamily unsigned prz\+::\+Material\+::instance\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the instance identification. 
+
+\begin{DoxyReturn}{Returns}
+unsigned 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}\label{classprz_1_1_material_ab1b2f9074aea77954b1ad70b72f48c3a}} 
+\index{prz::Material@{prz::Material}!name@{name}}
+\index{name@{name}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const P\+String\& prz\+::\+Material\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the name. 
+
+\begin{DoxyReturn}{Returns}
+const P\+String\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a7c0a75268c108df5c8b7779c9be7b80a}\label{classprz_1_1_material_a7c0a75268c108df5c8b7779c9be7b80a}} 
+\index{prz::Material@{prz::Material}!set\_uniform@{set\_uniform}}
+\index{set\_uniform@{set\_uniform}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{set\_uniform()}{set\_uniform()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+::set\+\_\+uniform (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const P\+String \&}]{name,  }\item[{const G\+Lint}]{value,  }\item[{bool}]{is\+Shared\+Uniform = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Set the uniforms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em name} & \\
+\hline
+{\em value} & \\
+\hline
+{\em is\+Shared\+Uniform} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a258f2af6b3141b29ecc1c07968da1e0a}\label{classprz_1_1_material_a258f2af6b3141b29ecc1c07968da1e0a}} 
+\index{prz::Material@{prz::Material}!shaderProgram@{shaderProgram}}
+\index{shaderProgram@{shaderProgram}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{shaderProgram()}{shaderProgram()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ prz\+::\+Material\+::shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the shader program object. 
+
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader\+\_\+\+Program $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_aee5bc4a466d97ffff49ff02bbc41bae6}\label{classprz_1_1_material_aee5bc4a466d97ffff49ff02bbc41bae6}} 
+\index{prz::Material@{prz::Material}!shaderProgramPtr@{shaderProgramPtr}}
+\index{shaderProgramPtr@{shaderProgramPtr}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{shaderProgramPtr()}{shaderProgramPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}}$\ast$ prz\+::\+Material\+::shader\+Program\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a pointer to the shader program object. 
+
+\begin{DoxyReturn}{Returns}
+Shader\+\_\+\+Program$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_material_a82bf213bb5c6a403812dab39ac3d7e5a}\label{classprz_1_1_material_a82bf213bb5c6a403812dab39ac3d7e5a}} 
+\index{prz::Material@{prz::Material}!use@{use}}
+\index{use@{use}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void prz\+::\+Material\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Use this material. 
+
+\mbox{\Hypertarget{classprz_1_1_material_aa27abc0a7c69fa88cac4d075a082d78c}\label{classprz_1_1_material_aa27abc0a7c69fa88cac4d075a082d78c}} 
+\index{prz::Material@{prz::Material}!usesTransparency@{usesTransparency}}
+\index{usesTransparency@{usesTransparency}!prz::Material@{prz::Material}}
+\subsubsection{\texorpdfstring{usesTransparency()}{usesTransparency()}}
+{\footnotesize\ttfamily bool prz\+::\+Material\+::uses\+Transparency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if this material uses transparency. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_material_8hpp}{Material.\+hpp}}\item 
+code/sources/Material.\+cpp\end{DoxyCompactItemize}

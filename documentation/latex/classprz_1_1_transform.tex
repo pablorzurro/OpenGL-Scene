@@ -1,0 +1,912 @@
+\hypertarget{classprz_1_1_transform}{}\section{prz\+::Transform Class Reference}
+\label{classprz_1_1_transform}\index{prz::Transform@{prz::Transform}}
+
+
+Class that represents the transformation of an object in a scene.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+hpp$>$}
+
+
+
+Collaboration diagram for prz\+::Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classprz_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_transform_a3728e8216215bccfd7585d364c2b2edd}{Transform}} (\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \&\mbox{\hyperlink{classprz_1_1_transform_a16403133940713f900fcc5b66300a10b}{owner}}, \mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$\mbox{\hyperlink{classprz_1_1_transform_a9acc3ca9bcab25fba6ab51727c240432}{parent}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_transform}{Transform}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_transform_af3a80de091cf1fb9871b735746be6714}{Transform}} (\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \&\mbox{\hyperlink{classprz_1_1_transform_a16403133940713f900fcc5b66300a10b}{owner}}, \mbox{\hyperlink{classprz_1_1_transform}{Transform}} \&other)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_transform}{Transform}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_af49227fa642fc433c6d1344dc0eebc18}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update the members. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_afb3676728f23569e5589adadcb4ae3d3}{translate}} (const P\+Vec3 \&\mbox{\hyperlink{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}{translation}})
+\begin{DoxyCompactList}\small\item\em Translate by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_ad90f3df96f31284ebec55fcbbb61e8be}{translate}} (float translationX, float translationY, float translationZ)
+\begin{DoxyCompactList}\small\item\em Translate by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a747b5f97e713135c2c5e3ade5d552222}{translate\+\_\+in\+\_\+x}} (float translationX)
+\begin{DoxyCompactList}\small\item\em Translate in x. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_afb0dde38647898af14e4fe28252f729e}{translate\+\_\+in\+\_\+y}} (float translationY)
+\begin{DoxyCompactList}\small\item\em Translate in y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a1d30233027b9135f0a35c304b3cd0ec6}{translate\+\_\+in\+\_\+z}} (float translationZ)
+\begin{DoxyCompactList}\small\item\em Translate in z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a6f7a77db1c8c8d411a279932f7e826eb}{forward\+\_\+translate}} (float \mbox{\hyperlink{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}{translation}})
+\begin{DoxyCompactList}\small\item\em Translate in forward vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a5f942740959b5816e2bb4e2789098782}{left\+\_\+translate}} (float \mbox{\hyperlink{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}{translation}})
+\begin{DoxyCompactList}\small\item\em Translate in left vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_aa43ec7c6cd3a915c79c32b092dd54a34}{up\+\_\+translate}} (float \mbox{\hyperlink{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}{translation}})
+\begin{DoxyCompactList}\small\item\em Translate in up vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a09445992f10a03c34ef18279537cf082}{rotate}} (const P\+Quat \&rotation)
+\begin{DoxyCompactList}\small\item\em Rotate by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_aa9461cdc00cb147ae4b95d464c13e8df}{rotate}} (const P\+Vec3 \&rotation, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Rotate by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_af178ca44d41e51afc3f939df25b4e3c3}{rotate}} (float euler\+AngleX, float euler\+AngleY, float euler\+AngleZ, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Rotate by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_adb37c1546b894feaee1108c3fe80d52e}{pitch}} (float euler\+Angle, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Rotate pitch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a801b4c4effff845ec88805af04eaec0b}{yaw}} (float euler\+Angle, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Rotate yaw. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a78540142dce967ed0233e49bc8da8d25}{roll}} (float euler\+Angle, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Rotate roll. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_aea8bf8742f7ccfd83582891c1d30076f}{scale}} (const P\+Vec3 \&scale)
+\begin{DoxyCompactList}\small\item\em Scale by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_acccc4fbdffb85695a45742d44c03f456}{scale}} (float scaleX, float scaleY, float scaleZ)
+\begin{DoxyCompactList}\small\item\em Scale by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a3954a22c651edb9d7ebd3fc02e819464}{scale\+\_\+x}} (float scaleX)
+\begin{DoxyCompactList}\small\item\em Scale in x. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a84fe3a084d8a95376502752bf23611d9}{scale\+\_\+y}} (float scaleY)
+\begin{DoxyCompactList}\small\item\em Scale in y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a89e8432dcde698da7dbf125e5260363e}{scale\+\_\+z}} (float scaleZ)
+\begin{DoxyCompactList}\small\item\em Scale in z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a064010404c7ea3de8bf7588f54349de4}{set\+\_\+parent}} (\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$\mbox{\hyperlink{classprz_1_1_transform_a9acc3ca9bcab25fba6ab51727c240432}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a67be0fd111f99b7022637309be974dce}{set\+\_\+renderer}} (\mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} $\ast$\mbox{\hyperlink{classprz_1_1_transform_ad54f15b6454bb7b1df3fa529e41032db}{renderer}})
+\begin{DoxyCompactList}\small\item\em Set the renderer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a918637af3605f6cff9ad6ac6f7094158}{set\+\_\+translation}} (const P\+Vec3 \&new\+Translation)
+\begin{DoxyCompactList}\small\item\em Set the translation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a742cfd3728bfda05c88eca51a1c4d094}{set\+\_\+orientation}} (const P\+Quat \&new\+Orientation)
+\begin{DoxyCompactList}\small\item\em Set the orientation by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a9fb424ad34746fad71d7138ceb467841}{set\+\_\+orientation}} (const P\+Vec3 \&new\+Orientation, bool in\+Radians=false)
+\begin{DoxyCompactList}\small\item\em Set the orientation by\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_ae2672232dfdeedb5952793fd52fc6bf6}{set\+\_\+scale}} (const P\+Vec3 \&new\+Scale)
+\begin{DoxyCompactList}\small\item\em Set the scale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a46563ee73c1091eaf544f88271fed16e}{set\+\_\+visible}} (bool visibility)
+\begin{DoxyCompactList}\small\item\em Set the visibility. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a18dd340b1dd295aac8cfb9a2846eb77f}{model\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Return the model matrix. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a7d3ed4bf1ab8efed786e48632b70422e}{inverse\+\_\+model\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Return the inverse model matrix. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a070208f421673057bf4cd311a3cc05f3}{world\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Return the world matrix. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a729dc939d6f4ac013bcf2a675c5521c4}{inverse\+\_\+world\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Return the inverse world matrix. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a2e5dce185d946609698e708e0898c909}{view\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Return the view matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$ \mbox{\hyperlink{classprz_1_1_transform_a9acc3ca9bcab25fba6ab51727c240432}{parent}} ()
+\begin{DoxyCompactList}\small\item\em Return the parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \& \mbox{\hyperlink{classprz_1_1_transform_a16403133940713f900fcc5b66300a10b}{owner}} ()
+\begin{DoxyCompactList}\small\item\em Return the owner. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} $\ast$ \mbox{\hyperlink{classprz_1_1_transform_ad54f15b6454bb7b1df3fa529e41032db}{renderer}} ()
+\begin{DoxyCompactList}\small\item\em Return the renderer. \end{DoxyCompactList}\item 
+const P\+Vec3 \& \mbox{\hyperlink{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}{translation}} () const
+\begin{DoxyCompactList}\small\item\em Return the translation. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a987d7f508f84c41ce41d38c7d29ab1a2}{translation\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Return the translation matrix. \end{DoxyCompactList}\item 
+const P\+Quat \& \mbox{\hyperlink{classprz_1_1_transform_ab97343c6d88125e347369511b80e8dc0}{orientation}} () const
+\begin{DoxyCompactList}\small\item\em Return the orientation. \end{DoxyCompactList}\item 
+P\+Vec3 \mbox{\hyperlink{classprz_1_1_transform_a1bd0c0c85eb27c3dda501de30b950010}{euler\+\_\+rotation}} (bool in\+Degrees=true) const
+\begin{DoxyCompactList}\small\item\em Return the euler rotation (deprecated) \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a9f87cc22d525150beebf1b5bf7e33393}{rotation\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Return the rotation matrix. \end{DoxyCompactList}\item 
+const P\+Vec3 \& \mbox{\hyperlink{classprz_1_1_transform_acf642384c1d8db9ac6adf2cf7ac0ea86}{scale}} () const
+\begin{DoxyCompactList}\small\item\em Return the scale. \end{DoxyCompactList}\item 
+P\+Mat4 \mbox{\hyperlink{classprz_1_1_transform_a0d906dd2cccb1207304c09cbeb9da99d}{scale\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Return the scale matrix. \end{DoxyCompactList}\item 
+P\+Vec3 \mbox{\hyperlink{classprz_1_1_transform_ae3b522803756c21b856cc4dba3b6419f}{get\+\_\+forward}} () const
+\begin{DoxyCompactList}\small\item\em Return the forward vector. \end{DoxyCompactList}\item 
+P\+Vec3 \mbox{\hyperlink{classprz_1_1_transform_ac9d9a4e551e2777d36a32817e953ac94}{get\+\_\+left}} () const
+\begin{DoxyCompactList}\small\item\em Return the left vector. \end{DoxyCompactList}\item 
+P\+Vec3 \mbox{\hyperlink{classprz_1_1_transform_a4f92c2dccb1af841857930395711906d}{get\+\_\+up}} () const
+\begin{DoxyCompactList}\small\item\em Return the up vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_transform_ac455a3f32172f648099c178cddd6880f}{is\+Visible}} ()
+\begin{DoxyCompactList}\small\item\em Return if is visible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a9c1c93dfd49898aa0d1241036daef430}{update\+\_\+model\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Update the model matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_transform_a0575ce053e514816a99c97a340f582be}{update\+\_\+world\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Update the world matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_ae9f9c3fe2c84c9000837268f1fe712ba}\label{classprz_1_1_transform_ae9f9c3fe2c84c9000837268f1fe712ba}} 
+P\+Mat4 {\bfseries model\+Matrix\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a6457c6fecd621108ca2e54b66d4b0230}\label{classprz_1_1_transform_a6457c6fecd621108ca2e54b66d4b0230}} 
+P\+Mat4 {\bfseries world\+Matrix\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a354404874ba4bf39a21fe551e925089a}\label{classprz_1_1_transform_a354404874ba4bf39a21fe551e925089a}} 
+\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$ {\bfseries parent\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a7f4afd60ca543ec9908bd3d219358728}\label{classprz_1_1_transform_a7f4afd60ca543ec9908bd3d219358728}} 
+\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \& {\bfseries owner\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a1ea23a3ade7a6183df57fd66c7e9190e}\label{classprz_1_1_transform_a1ea23a3ade7a6183df57fd66c7e9190e}} 
+\mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} $\ast$ {\bfseries renderer\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a8ff94e757aea6badeb99a8df7521f998}\label{classprz_1_1_transform_a8ff94e757aea6badeb99a8df7521f998}} 
+P\+Vec3 {\bfseries translation\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a40c60daa032faa9abc2f9b051ff5a1b0}\label{classprz_1_1_transform_a40c60daa032faa9abc2f9b051ff5a1b0}} 
+P\+Quat {\bfseries orientation\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_afe5816c1b0c1146060b28e11fdae04c5}\label{classprz_1_1_transform_afe5816c1b0c1146060b28e11fdae04c5}} 
+P\+Vec3 {\bfseries scale\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_acfba86d3b2e8d82728c125f32a6edd0e}\label{classprz_1_1_transform_acfba86d3b2e8d82728c125f32a6edd0e}} 
+bool {\bfseries is\+Visible\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_a3126e80af373817d9d7617a1b4c1ad04}\label{classprz_1_1_transform_a3126e80af373817d9d7617a1b4c1ad04}} 
+bool {\bfseries is\+Model\+Matrix\+Updated\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_transform_af6520583fae829566754b8cc1bc9f474}\label{classprz_1_1_transform_af6520583fae829566754b8cc1bc9f474}} 
+bool {\bfseries is\+World\+Matrix\+Updated\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents the transformation of an object in a scene. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_transform_a3728e8216215bccfd7585d364c2b2edd}\label{classprz_1_1_transform_a3728e8216215bccfd7585d364c2b2edd}} 
+\index{prz::Transform@{prz::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \&}]{owner,  }\item[{\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_transform}{Transform}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_af3a80de091cf1fb9871b735746be6714}\label{classprz_1_1_transform_af3a80de091cf1fb9871b735746be6714}} 
+\index{prz::Transform@{prz::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_entity}{Entity}} \&}]{owner,  }\item[{\mbox{\hyperlink{classprz_1_1_transform}{Transform}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_transform}{Transform}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & \\
+\hline
+{\em other} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_transform_a1bd0c0c85eb27c3dda501de30b950010}\label{classprz_1_1_transform_a1bd0c0c85eb27c3dda501de30b950010}} 
+\index{prz::Transform@{prz::Transform}!euler\_rotation@{euler\_rotation}}
+\index{euler\_rotation@{euler\_rotation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{euler\_rotation()}{euler\_rotation()}}
+{\footnotesize\ttfamily P\+Vec3 prz\+::\+Transform\+::euler\+\_\+rotation (\begin{DoxyParamCaption}\item[{bool}]{in\+Degrees = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Return the euler rotation (deprecated) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Degrees} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+Vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a6f7a77db1c8c8d411a279932f7e826eb}\label{classprz_1_1_transform_a6f7a77db1c8c8d411a279932f7e826eb}} 
+\index{prz::Transform@{prz::Transform}!forward\_translate@{forward\_translate}}
+\index{forward\_translate@{forward\_translate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{forward\_translate()}{forward\_translate()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::forward\+\_\+translate (\begin{DoxyParamCaption}\item[{float}]{translation }\end{DoxyParamCaption})}
+
+
+
+Translate in forward vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_ae3b522803756c21b856cc4dba3b6419f}\label{classprz_1_1_transform_ae3b522803756c21b856cc4dba3b6419f}} 
+\index{prz::Transform@{prz::Transform}!get\_forward@{get\_forward}}
+\index{get\_forward@{get\_forward}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{get\_forward()}{get\_forward()}}
+{\footnotesize\ttfamily P\+Vec3 prz\+::\+Transform\+::get\+\_\+forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the forward vector. 
+
+\begin{DoxyReturn}{Returns}
+P\+Vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_ac9d9a4e551e2777d36a32817e953ac94}\label{classprz_1_1_transform_ac9d9a4e551e2777d36a32817e953ac94}} 
+\index{prz::Transform@{prz::Transform}!get\_left@{get\_left}}
+\index{get\_left@{get\_left}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{get\_left()}{get\_left()}}
+{\footnotesize\ttfamily P\+Vec3 prz\+::\+Transform\+::get\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the left vector. 
+
+\begin{DoxyReturn}{Returns}
+P\+Vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a4f92c2dccb1af841857930395711906d}\label{classprz_1_1_transform_a4f92c2dccb1af841857930395711906d}} 
+\index{prz::Transform@{prz::Transform}!get\_up@{get\_up}}
+\index{get\_up@{get\_up}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{get\_up()}{get\_up()}}
+{\footnotesize\ttfamily P\+Vec3 prz\+::\+Transform\+::get\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the up vector. 
+
+\begin{DoxyReturn}{Returns}
+P\+Vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a7d3ed4bf1ab8efed786e48632b70422e}\label{classprz_1_1_transform_a7d3ed4bf1ab8efed786e48632b70422e}} 
+\index{prz::Transform@{prz::Transform}!inverse\_modelMatrix@{inverse\_modelMatrix}}
+\index{inverse\_modelMatrix@{inverse\_modelMatrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{inverse\_modelMatrix()}{inverse\_modelMatrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::inverse\+\_\+model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the inverse model matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a729dc939d6f4ac013bcf2a675c5521c4}\label{classprz_1_1_transform_a729dc939d6f4ac013bcf2a675c5521c4}} 
+\index{prz::Transform@{prz::Transform}!inverse\_worldMatrix@{inverse\_worldMatrix}}
+\index{inverse\_worldMatrix@{inverse\_worldMatrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{inverse\_worldMatrix()}{inverse\_worldMatrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::inverse\+\_\+world\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the inverse world matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_ac455a3f32172f648099c178cddd6880f}\label{classprz_1_1_transform_ac455a3f32172f648099c178cddd6880f}} 
+\index{prz::Transform@{prz::Transform}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily bool prz\+::\+Transform\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return if is visible. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a5f942740959b5816e2bb4e2789098782}\label{classprz_1_1_transform_a5f942740959b5816e2bb4e2789098782}} 
+\index{prz::Transform@{prz::Transform}!left\_translate@{left\_translate}}
+\index{left\_translate@{left\_translate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{left\_translate()}{left\_translate()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::left\+\_\+translate (\begin{DoxyParamCaption}\item[{float}]{translation }\end{DoxyParamCaption})}
+
+
+
+Translate in left vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a18dd340b1dd295aac8cfb9a2846eb77f}\label{classprz_1_1_transform_a18dd340b1dd295aac8cfb9a2846eb77f}} 
+\index{prz::Transform@{prz::Transform}!modelMatrix@{modelMatrix}}
+\index{modelMatrix@{modelMatrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{modelMatrix()}{modelMatrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the model matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_ab97343c6d88125e347369511b80e8dc0}\label{classprz_1_1_transform_ab97343c6d88125e347369511b80e8dc0}} 
+\index{prz::Transform@{prz::Transform}!orientation@{orientation}}
+\index{orientation@{orientation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily const P\+Quat \& prz\+::\+Transform\+::orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the orientation. 
+
+\begin{DoxyReturn}{Returns}
+const P\+Quat\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a16403133940713f900fcc5b66300a10b}\label{classprz_1_1_transform_a16403133940713f900fcc5b66300a10b}} 
+\index{prz::Transform@{prz::Transform}!owner@{owner}}
+\index{owner@{owner}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{owner()}{owner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_entity}{Entity}} \& prz\+::\+Transform\+::owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the owner. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_entity}{Entity}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a9acc3ca9bcab25fba6ab51727c240432}\label{classprz_1_1_transform_a9acc3ca9bcab25fba6ab51727c240432}} 
+\index{prz::Transform@{prz::Transform}!parent@{parent}}
+\index{parent@{parent}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$ prz\+::\+Transform\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the parent. 
+
+\begin{DoxyReturn}{Returns}
+Transform$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_adb37c1546b894feaee1108c3fe80d52e}\label{classprz_1_1_transform_adb37c1546b894feaee1108c3fe80d52e}} 
+\index{prz::Transform@{prz::Transform}!pitch@{pitch}}
+\index{pitch@{pitch}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{pitch()}{pitch()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::pitch (\begin{DoxyParamCaption}\item[{float}]{euler\+Angle,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Rotate pitch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em euler\+Angle} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_ad54f15b6454bb7b1df3fa529e41032db}\label{classprz_1_1_transform_ad54f15b6454bb7b1df3fa529e41032db}} 
+\index{prz::Transform@{prz::Transform}!renderer@{renderer}}
+\index{renderer@{renderer}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{renderer()}{renderer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} $\ast$ prz\+::\+Transform\+::renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the renderer. 
+
+\begin{DoxyReturn}{Returns}
+Renderer$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a78540142dce967ed0233e49bc8da8d25}\label{classprz_1_1_transform_a78540142dce967ed0233e49bc8da8d25}} 
+\index{prz::Transform@{prz::Transform}!roll@{roll}}
+\index{roll@{roll}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{roll()}{roll()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::roll (\begin{DoxyParamCaption}\item[{float}]{euler\+Angle,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Rotate roll. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em euler\+Angle} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a09445992f10a03c34ef18279537cf082}\label{classprz_1_1_transform_a09445992f10a03c34ef18279537cf082}} 
+\index{prz::Transform@{prz::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{const P\+Quat \&}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Rotate by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_aa9461cdc00cb147ae4b95d464c13e8df}\label{classprz_1_1_transform_aa9461cdc00cb147ae4b95d464c13e8df}} 
+\index{prz::Transform@{prz::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{rotation,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Rotate by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_af178ca44d41e51afc3f939df25b4e3c3}\label{classprz_1_1_transform_af178ca44d41e51afc3f939df25b4e3c3}} 
+\index{prz::Transform@{prz::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{float}]{euler\+AngleX,  }\item[{float}]{euler\+AngleY,  }\item[{float}]{euler\+AngleZ,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Rotate by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em euler\+AngleX} & \\
+\hline
+{\em euler\+AngleY} & \\
+\hline
+{\em euler\+AngleZ} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a9f87cc22d525150beebf1b5bf7e33393}\label{classprz_1_1_transform_a9f87cc22d525150beebf1b5bf7e33393}} 
+\index{prz::Transform@{prz::Transform}!rotation\_matrix@{rotation\_matrix}}
+\index{rotation\_matrix@{rotation\_matrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{rotation\_matrix()}{rotation\_matrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::rotation\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the rotation matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_aea8bf8742f7ccfd83582891c1d30076f}\label{classprz_1_1_transform_aea8bf8742f7ccfd83582891c1d30076f}} 
+\index{prz::Transform@{prz::Transform}!scale@{scale}}
+\index{scale@{scale}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{scale }\end{DoxyParamCaption})}
+
+
+
+Scale by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_acccc4fbdffb85695a45742d44c03f456}\label{classprz_1_1_transform_acccc4fbdffb85695a45742d44c03f456}} 
+\index{prz::Transform@{prz::Transform}!scale@{scale}}
+\index{scale@{scale}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::scale (\begin{DoxyParamCaption}\item[{float}]{scaleX,  }\item[{float}]{scaleY,  }\item[{float}]{scaleZ }\end{DoxyParamCaption})}
+
+
+
+Scale by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleX} & \\
+\hline
+{\em scaleY} & \\
+\hline
+{\em scaleZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_acf642384c1d8db9ac6adf2cf7ac0ea86}\label{classprz_1_1_transform_acf642384c1d8db9ac6adf2cf7ac0ea86}} 
+\index{prz::Transform@{prz::Transform}!scale@{scale}}
+\index{scale@{scale}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const P\+Vec3 \& prz\+::\+Transform\+::scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the scale. 
+
+\begin{DoxyReturn}{Returns}
+const P\+Vec3\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a0d906dd2cccb1207304c09cbeb9da99d}\label{classprz_1_1_transform_a0d906dd2cccb1207304c09cbeb9da99d}} 
+\index{prz::Transform@{prz::Transform}!scale\_matrix@{scale\_matrix}}
+\index{scale\_matrix@{scale\_matrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale\_matrix()}{scale\_matrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::scale\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the scale matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a3954a22c651edb9d7ebd3fc02e819464}\label{classprz_1_1_transform_a3954a22c651edb9d7ebd3fc02e819464}} 
+\index{prz::Transform@{prz::Transform}!scale\_x@{scale\_x}}
+\index{scale\_x@{scale\_x}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale\_x()}{scale\_x()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::scale\+\_\+x (\begin{DoxyParamCaption}\item[{float}]{scaleX }\end{DoxyParamCaption})}
+
+
+
+Scale in x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleX} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a84fe3a084d8a95376502752bf23611d9}\label{classprz_1_1_transform_a84fe3a084d8a95376502752bf23611d9}} 
+\index{prz::Transform@{prz::Transform}!scale\_y@{scale\_y}}
+\index{scale\_y@{scale\_y}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale\_y()}{scale\_y()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::scale\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{scaleY }\end{DoxyParamCaption})}
+
+
+
+Scale in y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleY} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a89e8432dcde698da7dbf125e5260363e}\label{classprz_1_1_transform_a89e8432dcde698da7dbf125e5260363e}} 
+\index{prz::Transform@{prz::Transform}!scale\_z@{scale\_z}}
+\index{scale\_z@{scale\_z}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{scale\_z()}{scale\_z()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::scale\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{scaleZ }\end{DoxyParamCaption})}
+
+
+
+Scale in z. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scaleZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a742cfd3728bfda05c88eca51a1c4d094}\label{classprz_1_1_transform_a742cfd3728bfda05c88eca51a1c4d094}} 
+\index{prz::Transform@{prz::Transform}!set\_orientation@{set\_orientation}}
+\index{set\_orientation@{set\_orientation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_orientation()}{set\_orientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+orientation (\begin{DoxyParamCaption}\item[{const P\+Quat \&}]{new\+Orientation }\end{DoxyParamCaption})}
+
+
+
+Set the orientation by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Orientation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a9fb424ad34746fad71d7138ceb467841}\label{classprz_1_1_transform_a9fb424ad34746fad71d7138ceb467841}} 
+\index{prz::Transform@{prz::Transform}!set\_orientation@{set\_orientation}}
+\index{set\_orientation@{set\_orientation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_orientation()}{set\_orientation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+orientation (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{new\+Orientation,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Set the orientation by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Orientation} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a064010404c7ea3de8bf7588f54349de4}\label{classprz_1_1_transform_a064010404c7ea3de8bf7588f54349de4}} 
+\index{prz::Transform@{prz::Transform}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_parent()}{set\_parent()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Set the parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a67be0fd111f99b7022637309be974dce}\label{classprz_1_1_transform_a67be0fd111f99b7022637309be974dce}} 
+\index{prz::Transform@{prz::Transform}!set\_renderer@{set\_renderer}}
+\index{set\_renderer@{set\_renderer}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_renderer()}{set\_renderer()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Set the renderer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_ae2672232dfdeedb5952793fd52fc6bf6}\label{classprz_1_1_transform_ae2672232dfdeedb5952793fd52fc6bf6}} 
+\index{prz::Transform@{prz::Transform}!set\_scale@{set\_scale}}
+\index{set\_scale@{set\_scale}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_scale()}{set\_scale()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+scale (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{new\+Scale }\end{DoxyParamCaption})}
+
+
+
+Set the scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Scale} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a918637af3605f6cff9ad6ac6f7094158}\label{classprz_1_1_transform_a918637af3605f6cff9ad6ac6f7094158}} 
+\index{prz::Transform@{prz::Transform}!set\_translation@{set\_translation}}
+\index{set\_translation@{set\_translation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_translation()}{set\_translation()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+translation (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{new\+Translation }\end{DoxyParamCaption})}
+
+
+
+Set the translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Translation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a46563ee73c1091eaf544f88271fed16e}\label{classprz_1_1_transform_a46563ee73c1091eaf544f88271fed16e}} 
+\index{prz::Transform@{prz::Transform}!set\_visible@{set\_visible}}
+\index{set\_visible@{set\_visible}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{set\_visible()}{set\_visible()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::set\+\_\+visible (\begin{DoxyParamCaption}\item[{bool}]{visibility }\end{DoxyParamCaption})}
+
+
+
+Set the visibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visibility} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_afb3676728f23569e5589adadcb4ae3d3}\label{classprz_1_1_transform_afb3676728f23569e5589adadcb4ae3d3}} 
+\index{prz::Transform@{prz::Transform}!translate@{translate}}
+\index{translate@{translate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{const P\+Vec3 \&}]{translation }\end{DoxyParamCaption})}
+
+
+
+Translate by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_ad90f3df96f31284ebec55fcbbb61e8be}\label{classprz_1_1_transform_ad90f3df96f31284ebec55fcbbb61e8be}} 
+\index{prz::Transform@{prz::Transform}!translate@{translate}}
+\index{translate@{translate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{float}]{translationX,  }\item[{float}]{translationY,  }\item[{float}]{translationZ }\end{DoxyParamCaption})}
+
+
+
+Translate by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translationX} & \\
+\hline
+{\em translationY} & \\
+\hline
+{\em translationZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a747b5f97e713135c2c5e3ade5d552222}\label{classprz_1_1_transform_a747b5f97e713135c2c5e3ade5d552222}} 
+\index{prz::Transform@{prz::Transform}!translate\_in\_x@{translate\_in\_x}}
+\index{translate\_in\_x@{translate\_in\_x}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translate\_in\_x()}{translate\_in\_x()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::translate\+\_\+in\+\_\+x (\begin{DoxyParamCaption}\item[{float}]{translationX }\end{DoxyParamCaption})}
+
+
+
+Translate in x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translationX} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_afb0dde38647898af14e4fe28252f729e}\label{classprz_1_1_transform_afb0dde38647898af14e4fe28252f729e}} 
+\index{prz::Transform@{prz::Transform}!translate\_in\_y@{translate\_in\_y}}
+\index{translate\_in\_y@{translate\_in\_y}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translate\_in\_y()}{translate\_in\_y()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::translate\+\_\+in\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{translationY }\end{DoxyParamCaption})}
+
+
+
+Translate in y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translationY} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_a1d30233027b9135f0a35c304b3cd0ec6}\label{classprz_1_1_transform_a1d30233027b9135f0a35c304b3cd0ec6}} 
+\index{prz::Transform@{prz::Transform}!translate\_in\_z@{translate\_in\_z}}
+\index{translate\_in\_z@{translate\_in\_z}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translate\_in\_z()}{translate\_in\_z()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::translate\+\_\+in\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{translationZ }\end{DoxyParamCaption})}
+
+
+
+Translate in z. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translationZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}\label{classprz_1_1_transform_ab23448e27c3d383e9e494c1518058ee8}} 
+\index{prz::Transform@{prz::Transform}!translation@{translation}}
+\index{translation@{translation}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily const P\+Vec3 \& prz\+::\+Transform\+::translation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the translation. 
+
+\begin{DoxyReturn}{Returns}
+const P\+Vec3\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a987d7f508f84c41ce41d38c7d29ab1a2}\label{classprz_1_1_transform_a987d7f508f84c41ce41d38c7d29ab1a2}} 
+\index{prz::Transform@{prz::Transform}!translation\_matrix@{translation\_matrix}}
+\index{translation\_matrix@{translation\_matrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{translation\_matrix()}{translation\_matrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::translation\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the translation matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_aa43ec7c6cd3a915c79c32b092dd54a34}\label{classprz_1_1_transform_aa43ec7c6cd3a915c79c32b092dd54a34}} 
+\index{prz::Transform@{prz::Transform}!up\_translate@{up\_translate}}
+\index{up\_translate@{up\_translate}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{up\_translate()}{up\_translate()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::up\+\_\+translate (\begin{DoxyParamCaption}\item[{float}]{translation }\end{DoxyParamCaption})}
+
+
+
+Translate in up vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_transform_af49227fa642fc433c6d1344dc0eebc18}\label{classprz_1_1_transform_af49227fa642fc433c6d1344dc0eebc18}} 
+\index{prz::Transform@{prz::Transform}!update@{update}}
+\index{update@{update}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the members. 
+
+\mbox{\Hypertarget{classprz_1_1_transform_a9c1c93dfd49898aa0d1241036daef430}\label{classprz_1_1_transform_a9c1c93dfd49898aa0d1241036daef430}} 
+\index{prz::Transform@{prz::Transform}!update\_model\_matrix@{update\_model\_matrix}}
+\index{update\_model\_matrix@{update\_model\_matrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{update\_model\_matrix()}{update\_model\_matrix()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::update\+\_\+model\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Update the model matrix. 
+
+\mbox{\Hypertarget{classprz_1_1_transform_a0575ce053e514816a99c97a340f582be}\label{classprz_1_1_transform_a0575ce053e514816a99c97a340f582be}} 
+\index{prz::Transform@{prz::Transform}!update\_world\_matrix@{update\_world\_matrix}}
+\index{update\_world\_matrix@{update\_world\_matrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{update\_world\_matrix()}{update\_world\_matrix()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::update\+\_\+world\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Update the world matrix. 
+
+\mbox{\Hypertarget{classprz_1_1_transform_a2e5dce185d946609698e708e0898c909}\label{classprz_1_1_transform_a2e5dce185d946609698e708e0898c909}} 
+\index{prz::Transform@{prz::Transform}!viewMatrix@{viewMatrix}}
+\index{viewMatrix@{viewMatrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{viewMatrix()}{viewMatrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::view\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the view matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a070208f421673057bf4cd311a3cc05f3}\label{classprz_1_1_transform_a070208f421673057bf4cd311a3cc05f3}} 
+\index{prz::Transform@{prz::Transform}!worldMatrix@{worldMatrix}}
+\index{worldMatrix@{worldMatrix}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{worldMatrix()}{worldMatrix()}}
+{\footnotesize\ttfamily P\+Mat4 prz\+::\+Transform\+::world\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the world matrix. 
+
+\begin{DoxyReturn}{Returns}
+P\+Mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_transform_a801b4c4effff845ec88805af04eaec0b}\label{classprz_1_1_transform_a801b4c4effff845ec88805af04eaec0b}} 
+\index{prz::Transform@{prz::Transform}!yaw@{yaw}}
+\index{yaw@{yaw}!prz::Transform@{prz::Transform}}
+\subsubsection{\texorpdfstring{yaw()}{yaw()}}
+{\footnotesize\ttfamily void prz\+::\+Transform\+::yaw (\begin{DoxyParamCaption}\item[{float}]{euler\+Angle,  }\item[{bool}]{in\+Radians = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Rotate yaw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em euler\+Angle} & \\
+\hline
+{\em in\+Radians} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_transform_8hpp}{Transform.\+hpp}}\item 
+code/sources/Transform.\+cpp\end{DoxyCompactItemize}

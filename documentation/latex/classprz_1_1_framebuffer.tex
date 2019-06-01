@@ -1,0 +1,185 @@
+\hypertarget{classprz_1_1_framebuffer}{}\section{prz\+::Framebuffer Class Reference}
+\label{classprz_1_1_framebuffer}\index{prz::Framebuffer@{prz::Framebuffer}}
+
+
+Class that fills a texture with the render information of each tick (\#\+W\+IP)  
+
+
+
+
+{\ttfamily \#include $<$Framebuffer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_framebuffer_a9cf6e1feea186d1e71de03ea25d18e58}{Framebuffer}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&scene, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader\+Program, unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_framebuffer_a5a35479fa4cda9ab2e01497b874dad94}{Framebuffer}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&scene, const P\+String \&path\+Vertex\+Shader, const P\+String \&path\+Fragment\+Shader, unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_framebuffer_abbf44c6e80b09d6653a25c55d9374ec5}\label{classprz_1_1_framebuffer_abbf44c6e80b09d6653a25c55d9374ec5}} 
+{\bfseries Framebuffer} (\mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} \&other)=delete
+\item 
+\mbox{\hyperlink{classprz_1_1_framebuffer_a9bbd1410101d54761fc26520fea3c61d}{$\sim$\+Framebuffer}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} and the members. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_framebuffer_a2db3bf6a0337607f5627dda5bd167987}{render}} ()
+\begin{DoxyCompactList}\small\item\em render the framebuffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_framebuffer_acc266facb2c332886cd396f42f51fe7d}{bind}} ()
+\begin{DoxyCompactList}\small\item\em bind the framebuffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_framebuffer_a6c03b79bd901ab90cfe89fdf7141d61d}{unbind}} ()
+\begin{DoxyCompactList}\small\item\em select the main window buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_framebuffer_aa3c0cee259022d2c0c09f50cba65b538}{reset}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader\+Program, unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em reset almost all members of this object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_framebuffer_a6b63a1bfbeed632ad271c5bc735d307a}{reset}} (unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em reset the framebuffer by the changed size of the window \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classprz_1_1_framebuffer_aca934dc2ffb0798e04faf37c8df8d6b1}{framebuffer\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Return the current id of the framebuffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that fills a texture with the render information of each tick (\#\+W\+IP) 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a9cf6e1feea186d1e71de03ea25d18e58}\label{classprz_1_1_framebuffer_a9cf6e1feea186d1e71de03ea25d18e58}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!Framebuffer@{Framebuffer}}
+\index{Framebuffer@{Framebuffer}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{Framebuffer()}{Framebuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Framebuffer\+::\+Framebuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader\+Program,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em shader\+Program} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a5a35479fa4cda9ab2e01497b874dad94}\label{classprz_1_1_framebuffer_a5a35479fa4cda9ab2e01497b874dad94}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!Framebuffer@{Framebuffer}}
+\index{Framebuffer@{Framebuffer}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{Framebuffer()}{Framebuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Framebuffer\+::\+Framebuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{path\+Vertex\+Shader,  }\item[{const P\+String \&}]{path\+Fragment\+Shader,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em path\+Vertex\+Shader} & \\
+\hline
+{\em path\+Fragment\+Shader} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a9bbd1410101d54761fc26520fea3c61d}\label{classprz_1_1_framebuffer_a9bbd1410101d54761fc26520fea3c61d}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!````~Framebuffer@{$\sim$Framebuffer}}
+\index{````~Framebuffer@{$\sim$Framebuffer}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{$\sim$Framebuffer()}{~Framebuffer()}}
+{\footnotesize\ttfamily prz\+::\+Framebuffer\+::$\sim$\+Framebuffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} and the members. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_acc266facb2c332886cd396f42f51fe7d}\label{classprz_1_1_framebuffer_acc266facb2c332886cd396f42f51fe7d}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!bind@{bind}}
+\index{bind@{bind}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void prz\+::\+Framebuffer\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+bind the framebuffer 
+
+\mbox{\Hypertarget{classprz_1_1_framebuffer_aca934dc2ffb0798e04faf37c8df8d6b1}\label{classprz_1_1_framebuffer_aca934dc2ffb0798e04faf37c8df8d6b1}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!framebufferId@{framebufferId}}
+\index{framebufferId@{framebufferId}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{framebufferId()}{framebufferId()}}
+{\footnotesize\ttfamily unsigned int prz\+::\+Framebuffer\+::framebuffer\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the current id of the framebuffer. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a2db3bf6a0337607f5627dda5bd167987}\label{classprz_1_1_framebuffer_a2db3bf6a0337607f5627dda5bd167987}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!render@{render}}
+\index{render@{render}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void prz\+::\+Framebuffer\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+render the framebuffer 
+
+\mbox{\Hypertarget{classprz_1_1_framebuffer_aa3c0cee259022d2c0c09f50cba65b538}\label{classprz_1_1_framebuffer_aa3c0cee259022d2c0c09f50cba65b538}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!reset@{reset}}
+\index{reset@{reset}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Framebuffer\+::reset (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader\+Program,  }\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+
+
+reset almost all members of this object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Program} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a6b63a1bfbeed632ad271c5bc735d307a}\label{classprz_1_1_framebuffer_a6b63a1bfbeed632ad271c5bc735d307a}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!reset@{reset}}
+\index{reset@{reset}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Framebuffer\+::reset (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})}
+
+
+
+reset the framebuffer by the changed size of the window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_framebuffer_a6c03b79bd901ab90cfe89fdf7141d61d}\label{classprz_1_1_framebuffer_a6c03b79bd901ab90cfe89fdf7141d61d}} 
+\index{prz::Framebuffer@{prz::Framebuffer}!unbind@{unbind}}
+\index{unbind@{unbind}!prz::Framebuffer@{prz::Framebuffer}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void prz\+::\+Framebuffer\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+select the main window buffer 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_framebuffer_8hpp}{Framebuffer.\+hpp}}\item 
+code/sources/Framebuffer.\+cpp\end{DoxyCompactItemize}

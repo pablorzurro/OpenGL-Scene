@@ -1,14 +1,11 @@
-#include "internal/Declarations.hpp"
-
-#include <glad/glad.h>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-
+#include <Game.hpp>
 
 using namespace prz;
 
 int main()
 {
+	Game game(1280, 720);
+	game.run();
 
-	return 0;
-}
+	return (EXIT_SUCCESS);
+}	

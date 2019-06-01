@@ -1,0 +1,6 @@
+<map id="prz::Transform" name="prz::Transform">
+<area shape="rect" id="node1" title="Class that represents the transformation of an object in a scene." alt="" coords="5,95,111,121"/>
+<area shape="rect" id="node3" href="$classprz_1_1_entity.html" title="Core class that store models and a transform." alt="" coords="113,184,195,211"/>
+<area shape="rect" id="node2" href="$classprz_1_1_renderer.html" title="Class to render all subscribed entities." alt="" coords="116,5,216,32"/>
+<area shape="rect" id="node4" href="$classprz_1_1_scene.html" title="Core class to save the state and items of the application." alt="" coords="207,95,293,121"/>
+</map>

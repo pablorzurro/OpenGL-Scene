@@ -1,0 +1,384 @@
+\hypertarget{classprz_1_1_shader___loader}{}\section{prz\+::Shader\+\_\+\+Loader Class Reference}
+\label{classprz_1_1_shader___loader}\index{prz::Shader\_Loader@{prz::Shader\_Loader}}
+
+
+Class to load and store materials.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+\_\+\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a00a1b6d36b4266b59a98b5493e38ec8b}{load\+\_\+shader}} (const P\+String \&source\+Code\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Load a shader by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_abfc5a4768307f2f4d25311e8a0fe602c}{unload\+\_\+shader}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Unload a previously loaded shader. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_a5387d5939d4e4049ce2e79e5c0737cda}{unload\+\_\+shader}} (const P\+String \&shader\+Path)
+\begin{DoxyCompactList}\small\item\em Unload a shader by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_ad8290368553e59239f7e802823e0d542}{unload\+\_\+shader\+\_\+by\+\_\+name}} (const P\+String \&name)
+\begin{DoxyCompactList}\small\item\em Umload a shader by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_a3e3cd98317d6006182fd03cfbf29b468}{is\+\_\+shader\+\_\+loaded}} (const P\+String \&shader\+Path) const
+\begin{DoxyCompactList}\small\item\em Return if a shader is loaded by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_ad01ebe77c757cac0163e0c46dec05999}{is\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name}} (const P\+String \&shader\+Name) const
+\begin{DoxyCompactList}\small\item\em Return if a shader is loaded by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_a927613e561c82e198f6a1764be622645}{is\+\_\+vertex\+\_\+shader\+\_\+loaded}} (const P\+String \&vertex\+Shader\+Path) const
+\begin{DoxyCompactList}\small\item\em Return if a vertex shader is loaded by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_ade063fcef4098ddda048cc4281efd1af}{is\+\_\+vertex\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name}} (const P\+String \&vertex\+Shader\+Name) const
+\begin{DoxyCompactList}\small\item\em Return if a vertex shader is loaded by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_ac70cb86a50808ced5b668a46f5d010fc}{is\+\_\+fragment\+\_\+shader\+\_\+loaded}} (const P\+String \&fragment\+Shader\+Path) const
+\begin{DoxyCompactList}\small\item\em Return if a fragment shader is loaded by\+: \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_shader___loader_a2eea0d7674cfde8826965665c19c44c7}{is\+\_\+fragment\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name}} (const P\+String \&fragment\+Shader\+Name) const
+\begin{DoxyCompactList}\small\item\em Return if a fragment shader is loaded by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a4e23aa9732cbb8ee6f77fe44c6bf58fe}{get\+\_\+shader}} (const P\+String \&shader\+Path)
+\begin{DoxyCompactList}\small\item\em Return the shader by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a4b30fda72b2a2d19fe0b1af223dc9264}{get\+\_\+shader\+\_\+by\+\_\+name}} (const P\+String \&shader\+Name)
+\begin{DoxyCompactList}\small\item\em Return the shader by name. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a048561e8c18f09fff2eaf758b6efd79f}{get\+\_\+vertex\+\_\+shader}} (const P\+String \&vertex\+Shader\+Path)
+\begin{DoxyCompactList}\small\item\em Return the vertex shader by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a3f91c84b6fe8b57444de25fb6d467a51}{get\+\_\+vertex\+\_\+shader\+\_\+by\+\_\+name}} (const P\+String \&vertex\+Shader\+Name)
+\begin{DoxyCompactList}\small\item\em Return the vertex shader by name. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_ac62062dc69aae5e6f709852507fcd581}{get\+\_\+fragment\+\_\+shader}} (const P\+String \&fragment\+Shader\+Path)
+\begin{DoxyCompactList}\small\item\em Return the fragment shader by\+: \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$ \mbox{\hyperlink{classprz_1_1_shader___loader_a038668ed01e3660616bb5c9b4afc9867}{get\+\_\+fragment\+\_\+shader\+\_\+by\+\_\+name}} (const P\+String \&fragment\+Shader\+Name)
+\begin{DoxyCompactList}\small\item\em Return the fragment shader by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_shader___loader}{Shader\+\_\+\+Loader}} \& \mbox{\hyperlink{classprz_1_1_shader___loader_adf553c01cabfb79286fa777e8d064b39}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to load and store materials. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_ac62062dc69aae5e6f709852507fcd581}\label{classprz_1_1_shader___loader_ac62062dc69aae5e6f709852507fcd581}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_fragment\_shader@{get\_fragment\_shader}}
+\index{get\_fragment\_shader@{get\_fragment\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_fragment\_shader()}{get\_fragment\_shader()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+fragment\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{fragment\+Shader\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the fragment shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fragment\+Shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Fragment\+\_\+\+Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a038668ed01e3660616bb5c9b4afc9867}\label{classprz_1_1_shader___loader_a038668ed01e3660616bb5c9b4afc9867}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_fragment\_shader\_by\_name@{get\_fragment\_shader\_by\_name}}
+\index{get\_fragment\_shader\_by\_name@{get\_fragment\_shader\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_fragment\_shader\_by\_name()}{get\_fragment\_shader\_by\_name()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_fragment___shader}{Fragment\+\_\+\+Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+fragment\+\_\+shader\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{fragment\+Shader\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the fragment shader by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fragment\+Shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Fragment\+\_\+\+Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a4e23aa9732cbb8ee6f77fe44c6bf58fe}\label{classprz_1_1_shader___loader_a4e23aa9732cbb8ee6f77fe44c6bf58fe}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_shader@{get\_shader}}
+\index{get\_shader@{get\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_shader()}{get\_shader()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a4b30fda72b2a2d19fe0b1af223dc9264}\label{classprz_1_1_shader___loader_a4b30fda72b2a2d19fe0b1af223dc9264}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_shader\_by\_name@{get\_shader\_by\_name}}
+\index{get\_shader\_by\_name@{get\_shader\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_shader\_by\_name()}{get\_shader\_by\_name()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+shader\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the shader by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a048561e8c18f09fff2eaf758b6efd79f}\label{classprz_1_1_shader___loader_a048561e8c18f09fff2eaf758b6efd79f}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_vertex\_shader@{get\_vertex\_shader}}
+\index{get\_vertex\_shader@{get\_vertex\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_vertex\_shader()}{get\_vertex\_shader()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+vertex\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{vertex\+Shader\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the vertex shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Vertex\+\_\+\+Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a3f91c84b6fe8b57444de25fb6d467a51}\label{classprz_1_1_shader___loader_a3f91c84b6fe8b57444de25fb6d467a51}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!get\_vertex\_shader\_by\_name@{get\_vertex\_shader\_by\_name}}
+\index{get\_vertex\_shader\_by\_name@{get\_vertex\_shader\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{get\_vertex\_shader\_by\_name()}{get\_vertex\_shader\_by\_name()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_vertex___shader}{Vertex\+\_\+\+Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::get\+\_\+vertex\+\_\+shader\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{vertex\+Shader\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the vertex shader by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Vertex\+\_\+\+Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_adf553c01cabfb79286fa777e8d064b39}\label{classprz_1_1_shader___loader_adf553c01cabfb79286fa777e8d064b39}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!instance@{instance}}
+\index{instance@{instance}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_shader___loader}{Shader\+\_\+\+Loader}}\& prz\+::\+Shader\+\_\+\+Loader\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_shader___loader}{Shader\+\_\+\+Loader}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_ac70cb86a50808ced5b668a46f5d010fc}\label{classprz_1_1_shader___loader_ac70cb86a50808ced5b668a46f5d010fc}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_fragment\_shader\_loaded@{is\_fragment\_shader\_loaded}}
+\index{is\_fragment\_shader\_loaded@{is\_fragment\_shader\_loaded}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_fragment\_shader\_loaded()}{is\_fragment\_shader\_loaded()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+fragment\+\_\+shader\+\_\+loaded (\begin{DoxyParamCaption}\item[{const P\+String \&}]{fragment\+Shader\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a fragment shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fragment\+Shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a2eea0d7674cfde8826965665c19c44c7}\label{classprz_1_1_shader___loader_a2eea0d7674cfde8826965665c19c44c7}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_fragment\_shader\_loaded\_by\_name@{is\_fragment\_shader\_loaded\_by\_name}}
+\index{is\_fragment\_shader\_loaded\_by\_name@{is\_fragment\_shader\_loaded\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_fragment\_shader\_loaded\_by\_name()}{is\_fragment\_shader\_loaded\_by\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+fragment\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{fragment\+Shader\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a fragment shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fragment\+Shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a3e3cd98317d6006182fd03cfbf29b468}\label{classprz_1_1_shader___loader_a3e3cd98317d6006182fd03cfbf29b468}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_shader\_loaded@{is\_shader\_loaded}}
+\index{is\_shader\_loaded@{is\_shader\_loaded}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_shader\_loaded()}{is\_shader\_loaded()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+shader\+\_\+loaded (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_ad01ebe77c757cac0163e0c46dec05999}\label{classprz_1_1_shader___loader_ad01ebe77c757cac0163e0c46dec05999}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_shader\_loaded\_by\_name@{is\_shader\_loaded\_by\_name}}
+\index{is\_shader\_loaded\_by\_name@{is\_shader\_loaded\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_shader\_loaded\_by\_name()}{is\_shader\_loaded\_by\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a927613e561c82e198f6a1764be622645}\label{classprz_1_1_shader___loader_a927613e561c82e198f6a1764be622645}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_vertex\_shader\_loaded@{is\_vertex\_shader\_loaded}}
+\index{is\_vertex\_shader\_loaded@{is\_vertex\_shader\_loaded}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_vertex\_shader\_loaded()}{is\_vertex\_shader\_loaded()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+vertex\+\_\+shader\+\_\+loaded (\begin{DoxyParamCaption}\item[{const P\+String \&}]{vertex\+Shader\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a vertex shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_ade063fcef4098ddda048cc4281efd1af}\label{classprz_1_1_shader___loader_ade063fcef4098ddda048cc4281efd1af}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!is\_vertex\_shader\_loaded\_by\_name@{is\_vertex\_shader\_loaded\_by\_name}}
+\index{is\_vertex\_shader\_loaded\_by\_name@{is\_vertex\_shader\_loaded\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{is\_vertex\_shader\_loaded\_by\_name()}{is\_vertex\_shader\_loaded\_by\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::is\+\_\+vertex\+\_\+shader\+\_\+loaded\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{vertex\+Shader\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if a vertex shader is loaded by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a00a1b6d36b4266b59a98b5493e38ec8b}\label{classprz_1_1_shader___loader_a00a1b6d36b4266b59a98b5493e38ec8b}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!load\_shader@{load\_shader}}
+\index{load\_shader@{load\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{load\_shader()}{load\_shader()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$ prz\+::\+Shader\+\_\+\+Loader\+::load\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{source\+Code\+File\+Path }\end{DoxyParamCaption})}
+
+
+
+Load a shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Code\+File\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Shader $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_abfc5a4768307f2f4d25311e8a0fe602c}\label{classprz_1_1_shader___loader_abfc5a4768307f2f4d25311e8a0fe602c}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!unload\_shader@{unload\_shader}}
+\index{unload\_shader@{unload\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{unload\_shader()}{unload\_shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::unload\+\_\+shader (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader}{Shader}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unload a previously loaded shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_a5387d5939d4e4049ce2e79e5c0737cda}\label{classprz_1_1_shader___loader_a5387d5939d4e4049ce2e79e5c0737cda}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!unload\_shader@{unload\_shader}}
+\index{unload\_shader@{unload\_shader}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{unload\_shader()}{unload\_shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::unload\+\_\+shader (\begin{DoxyParamCaption}\item[{const P\+String \&}]{shader\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unload a shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_shader___loader_ad8290368553e59239f7e802823e0d542}\label{classprz_1_1_shader___loader_ad8290368553e59239f7e802823e0d542}} 
+\index{prz::Shader\_Loader@{prz::Shader\_Loader}!unload\_shader\_by\_name@{unload\_shader\_by\_name}}
+\index{unload\_shader\_by\_name@{unload\_shader\_by\_name}!prz::Shader\_Loader@{prz::Shader\_Loader}}
+\subsubsection{\texorpdfstring{unload\_shader\_by\_name()}{unload\_shader\_by\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Shader\+\_\+\+Loader\+::unload\+\_\+shader\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Umload a shader by\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_shader___loader_8hpp}{Shader\+\_\+\+Loader.\+hpp}}\item 
+code/sources/Shader\+\_\+\+Loader.\+cpp\end{DoxyCompactItemize}

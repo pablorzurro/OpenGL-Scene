@@ -58,13 +58,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../code/headers;../../libraries/SOIL2;../../libraries/SFML-2.5.1/include;../../libraries/glm;../../libraries/glad-gl-3.3-core/include;../../libraries/Assimp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../code/headers;../../libraries/SOIL2;../../libraries/SFML-2.5.1/include;../../code/headers/internal;../../libraries/glm;../../libraries/glad-gl-3.3-core/include;../../libraries/Assimp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../libraries/SFML-2.5.1/lib;../../libraries/Assimp/lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;gdi32.lib;sfml-graphics-s-d.lib	;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;sfml-graphics-s-d.lib	;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../code/headers;../../libraries/SOIL2;../../libraries/SFML-2.5.1/include;../../libraries/glm;../../libraries/glad-gl-3.3-core/include;../../libraries/Assimp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../code/headers;../../libraries/SOIL2;../../libraries/SFML-2.5.1/include;../../code/headers/internal;../../libraries/glm;../../libraries/glm;../../libraries/glad-gl-3.3-core/include;../../libraries/Assimp/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,15 +84,81 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../libraries/SFML-2.5.1/lib;../../libraries/Assimp/lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;gdi32.lib;sfml-graphics-s.lib	;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;gdi32.lib;opengl32.lib;sfml-graphics-s.lib	;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Camera.cpp" />
+    <ClCompile Include="..\..\code\sources\Cube.cpp" />
+    <ClCompile Include="..\..\code\sources\Demo_Scene_01.cpp" />
+    <ClCompile Include="..\..\code\sources\Framebuffer.cpp" />
+    <ClCompile Include="..\..\code\sources\Game.cpp" />
+    <ClCompile Include="..\..\code\sources\internal\OpenGL.cpp" />
+    <ClCompile Include="..\..\code\sources\internal\Utilities.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Material.cpp" />
+    <ClCompile Include="..\..\code\sources\Material_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Mesh.cpp" />
+    <ClCompile Include="..\..\code\sources\Model_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Plane.cpp" />
+    <ClCompile Include="..\..\code\sources\Projected_Plane.cpp" />
+    <ClCompile Include="..\..\code\sources\Renderer.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader_Program.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader_Program_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Skybox.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture_2D.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture_Cube.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Transform.cpp" />
+    <ClCompile Include="..\..\code\sources\Vertex_Array_Object.cpp" />
+    <ClCompile Include="..\..\code\sources\Vertex_Buffer_Object.cpp" />
+    <ClCompile Include="..\..\code\sources\Scene.cpp" />
+    <ClCompile Include="..\..\libraries\glad-gl-3.3-core\src\glad.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\code\headers\Camera.hpp" />
+    <ClInclude Include="..\..\code\headers\Demo_Scene_01.hpp" />
+    <ClInclude Include="..\..\code\headers\Drawable.hpp" />
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp" />
+    <ClInclude Include="..\..\code\headers\Game.hpp" />
+    <ClInclude Include="..\..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_GLM.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_SFML.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\OpenGL.hpp" />
+    <ClInclude Include="..\..\code\headers\Material_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Model_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Projected_Plane.hpp" />
+    <ClInclude Include="..\..\code\headers\Renderer.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader_Program_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Source_Code.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture_Cube.hpp" />
+    <ClInclude Include="..\..\code\headers\Cube.hpp" />
+    <ClInclude Include="..\..\code\headers\Input_Manager.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
+    <ClInclude Include="..\..\code\headers\Material.hpp" />
+    <ClInclude Include="..\..\code\headers\Mesh.hpp" />
+    <ClInclude Include="..\..\code\headers\Model.hpp" />
+    <ClInclude Include="..\..\code\headers\Plane.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader_Program.hpp" />
+    <ClInclude Include="..\..\code\headers\Skybox.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture_2D.hpp" />
+    <ClInclude Include="..\..\code\headers\Texture_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Transform.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Array_Object.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Attribute_Information.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Buffer_Object.hpp" />
+    <ClInclude Include="..\..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\..\code\headers\Vertex_Shader.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

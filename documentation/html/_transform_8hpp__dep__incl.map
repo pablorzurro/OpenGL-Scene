@@ -1,0 +1,5 @@
+<map id="code/headers/Transform.hpp" name="code/headers/Transform.hpp">
+<area shape="rect" id="node1" title="Class that represents the transformation of an object in a scene." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$_entity_8hpp.html" title="Core class that store models and a transform." alt="" coords="17,80,180,107"/>
+<area shape="rect" id="node3" href="$_camera_8hpp.html" title="Class to handle the view of the scene." alt="" coords="11,155,186,181"/>
+</map>

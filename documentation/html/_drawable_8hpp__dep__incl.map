@@ -1,0 +1,11 @@
+<map id="code/headers/Drawable.hpp" name="code/headers/Drawable.hpp">
+<area shape="rect" id="node1" title="Abstract class that will be the base of all drawable objects." alt="" coords="524,5,707,32"/>
+<area shape="rect" id="node2" href="$_mesh_8hpp.html" title="Class to store and manage vertex array objects." alt="" coords="385,80,547,107"/>
+<area shape="rect" id="node4" href="$_skybox_8hpp.html" title="Class that is similar to a material but with a cube map." alt="" coords="621,244,794,271"/>
+<area shape="rect" id="node3" href="$_cube_8hpp.html" title="Class that store the information of a cube." alt="" coords="569,162,728,189"/>
+<area shape="rect" id="node5" href="$_model_8hpp.html" title="Class to store and manage meshes and materials." alt="" coords="11,162,175,189"/>
+<area shape="rect" id="node8" href="$_plane_8hpp.html" title="Plane mesh." alt="" coords="199,162,362,189"/>
+<area shape="rect" id="node9" href="$_projected___plane_8hpp.html" title=" " alt="" coords="387,155,545,196"/>
+<area shape="rect" id="node6" href="$_entity_8hpp.html" title="Core class that store models and a transform." alt="" coords="11,244,174,271"/>
+<area shape="rect" id="node7" href="$_camera_8hpp.html" title="Class to handle the view of the scene." alt="" coords="5,319,180,345"/>
+</map>

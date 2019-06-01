@@ -1,0 +1,357 @@
+\hypertarget{classprz_1_1_camera}{}\section{prz\+::Camera Class Reference}
+\label{classprz_1_1_camera}\index{prz::Camera@{prz::Camera}}
+
+
+Class that represents the view of the scene.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classprz_1_1_camera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classprz_1_1_camera__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_camera_a6464fdd8ca4f4f3f02d7b368f7398b4f}{Camera}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&\mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}}, float \mbox{\hyperlink{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}{fov}}, float z\+Near, float z\+Far, float aspect\+Ratio)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_camera_a7e8a661cdd1e01103456b25f45dc1a62}{Camera}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&\mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}}, float \mbox{\hyperlink{classprz_1_1_camera_a517dfb210de1064c5f13435bff78af6f}{ratio}}=1.f)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_camera_a5e9296273a259cd0876378c89ad4bfea}{Camera}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&\mbox{\hyperlink{classprz_1_1_entity_abc93c872fbda2dff6c205a8aeac9d96e}{scene}}, const P\+String \&\mbox{\hyperlink{classprz_1_1_entity_a3dcb8ce07126711bf90f3272b293d980}{name}}, float z\+Near, float z\+Far, float aspect\+Ratio=1.f)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_abea73c7221f27991b3c2790e71feaf3b}{entity\+\_\+update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update the camera matrices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_a0ea8099b1dd633ee59746efdc7df5e40}{set\+\_\+fov}} (float \mbox{\hyperlink{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}{fov}})
+\begin{DoxyCompactList}\small\item\em Set the fov object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_a50dd11b89b9bfe5b0c0f253f093180df}{set\+\_\+near\+\_\+z}} (float z\+Near)
+\begin{DoxyCompactList}\small\item\em Set the near z object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_a6b3de1c2275908dd36659934c6389f48}{set\+\_\+far\+\_\+z}} (float z\+Far)
+\begin{DoxyCompactList}\small\item\em Set the far z object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_ad5f11c3aace04adb03d4f7edc7aa9c66}{set\+\_\+ratio}} (float aspect\+Ratio)
+\begin{DoxyCompactList}\small\item\em Set the ratio object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_camera_aa2f75c0cf4f1458922fc9d128c671928}{reset}} (float \mbox{\hyperlink{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}{fov}}, float z\+Near, float z\+Far, float aspect\+Ratio)
+\begin{DoxyCompactList}\small\item\em Reset the members of the camera. \end{DoxyCompactList}\item 
+const P\+Mat4 \& \mbox{\hyperlink{classprz_1_1_camera_a73be3bc102f3acaaf4abb4893dd3856f}{matrix}} () const
+\begin{DoxyCompactList}\small\item\em return the camera matrix \end{DoxyCompactList}\item 
+const P\+Mat4 \& \mbox{\hyperlink{classprz_1_1_camera_a5dc5b4ddc7be0671f20c19138141bdd6}{view\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the view matrix of the transform. \end{DoxyCompactList}\item 
+const P\+Mat4 \& \mbox{\hyperlink{classprz_1_1_camera_a2fab4f93dddff59ac8cd877f58bd4153}{model\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the model matrix of the transform. \end{DoxyCompactList}\item 
+const P\+Mat4 \& \mbox{\hyperlink{classprz_1_1_camera_aecd84c9c5a0575286dfd429a825822bb}{projection\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em returns the camera projection \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}{fov}} () const
+\begin{DoxyCompactList}\small\item\em return fov \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classprz_1_1_camera_ac8796588065240fa2e73dccad3f5d858}{nearZ}} () const
+\begin{DoxyCompactList}\small\item\em return z\+Near \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classprz_1_1_camera_a6498a63b05939b136657b99d8a8fc9ce}{farZ}} () const
+\begin{DoxyCompactList}\small\item\em return z\+Far \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classprz_1_1_camera_a517dfb210de1064c5f13435bff78af6f}{ratio}} () const
+\begin{DoxyCompactList}\small\item\em return aspect ratio \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents the view of the scene. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_camera_a6464fdd8ca4f4f3f02d7b368f7398b4f}\label{classprz_1_1_camera_a6464fdd8ca4f4f3f02d7b368f7398b4f}} 
+\index{prz::Camera@{prz::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily prz\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{name,  }\item[{float}]{fov,  }\item[{float}]{z\+Near,  }\item[{float}]{z\+Far,  }\item[{float}]{aspect\+Ratio }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em name} & \\
+\hline
+{\em fov} & \\
+\hline
+{\em z\+Near} & \\
+\hline
+{\em z\+Far} & \\
+\hline
+{\em aspect\+Ratio} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a7e8a661cdd1e01103456b25f45dc1a62}\label{classprz_1_1_camera_a7e8a661cdd1e01103456b25f45dc1a62}} 
+\index{prz::Camera@{prz::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily prz\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{name,  }\item[{float}]{ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em name} & \\
+\hline
+{\em ratio} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a5e9296273a259cd0876378c89ad4bfea}\label{classprz_1_1_camera_a5e9296273a259cd0876378c89ad4bfea}} 
+\index{prz::Camera@{prz::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily prz\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene,  }\item[{const P\+String \&}]{name,  }\item[{float}]{z\+Near,  }\item[{float}]{z\+Far,  }\item[{float}]{aspect\+Ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_camera}{Camera}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \\
+\hline
+{\em name} & \\
+\hline
+{\em z\+Near} & \\
+\hline
+{\em z\+Far} & \\
+\hline
+{\em aspect\+Ratio} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_camera_abea73c7221f27991b3c2790e71feaf3b}\label{classprz_1_1_camera_abea73c7221f27991b3c2790e71feaf3b}} 
+\index{prz::Camera@{prz::Camera}!entity\_update@{entity\_update}}
+\index{entity\_update@{entity\_update}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{entity\_update()}{entity\_update()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::entity\+\_\+update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the camera matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classprz_1_1_entity_abf4cb73b801b239f61535eec0505b26d}{prz\+::\+Entity}}.
+
+\mbox{\Hypertarget{classprz_1_1_camera_a6498a63b05939b136657b99d8a8fc9ce}\label{classprz_1_1_camera_a6498a63b05939b136657b99d8a8fc9ce}} 
+\index{prz::Camera@{prz::Camera}!farZ@{farZ}}
+\index{farZ@{farZ}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{farZ()}{farZ()}}
+{\footnotesize\ttfamily float prz\+::\+Camera\+::farZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return z\+Far 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}\label{classprz_1_1_camera_a1424858488672135d41e1376c7c0db11}} 
+\index{prz::Camera@{prz::Camera}!fov@{fov}}
+\index{fov@{fov}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{fov()}{fov()}}
+{\footnotesize\ttfamily float prz\+::\+Camera\+::fov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return fov 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_a73be3bc102f3acaaf4abb4893dd3856f}\label{classprz_1_1_camera_a73be3bc102f3acaaf4abb4893dd3856f}} 
+\index{prz::Camera@{prz::Camera}!matrix@{matrix}}
+\index{matrix@{matrix}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{matrix()}{matrix()}}
+{\footnotesize\ttfamily const P\+Mat4\& prz\+::\+Camera\+::matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the camera matrix 
+
+\begin{DoxyReturn}{Returns}
+const P\+Mat4\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_a2fab4f93dddff59ac8cd877f58bd4153}\label{classprz_1_1_camera_a2fab4f93dddff59ac8cd877f58bd4153}} 
+\index{prz::Camera@{prz::Camera}!modelMatrix@{modelMatrix}}
+\index{modelMatrix@{modelMatrix}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{modelMatrix()}{modelMatrix()}}
+{\footnotesize\ttfamily const P\+Mat4\& prz\+::\+Camera\+::model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the model matrix of the transform. 
+
+\begin{DoxyReturn}{Returns}
+const P\+Mat4\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_ac8796588065240fa2e73dccad3f5d858}\label{classprz_1_1_camera_ac8796588065240fa2e73dccad3f5d858}} 
+\index{prz::Camera@{prz::Camera}!nearZ@{nearZ}}
+\index{nearZ@{nearZ}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{nearZ()}{nearZ()}}
+{\footnotesize\ttfamily float prz\+::\+Camera\+::nearZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return z\+Near 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_aecd84c9c5a0575286dfd429a825822bb}\label{classprz_1_1_camera_aecd84c9c5a0575286dfd429a825822bb}} 
+\index{prz::Camera@{prz::Camera}!projectionMatrix@{projectionMatrix}}
+\index{projectionMatrix@{projectionMatrix}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{projectionMatrix()}{projectionMatrix()}}
+{\footnotesize\ttfamily const P\+Mat4\& prz\+::\+Camera\+::projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the camera projection 
+
+\begin{DoxyReturn}{Returns}
+const P\+Mat4\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_a517dfb210de1064c5f13435bff78af6f}\label{classprz_1_1_camera_a517dfb210de1064c5f13435bff78af6f}} 
+\index{prz::Camera@{prz::Camera}!ratio@{ratio}}
+\index{ratio@{ratio}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{ratio()}{ratio()}}
+{\footnotesize\ttfamily float prz\+::\+Camera\+::ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return aspect ratio 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_camera_aa2f75c0cf4f1458922fc9d128c671928}\label{classprz_1_1_camera_aa2f75c0cf4f1458922fc9d128c671928}} 
+\index{prz::Camera@{prz::Camera}!reset@{reset}}
+\index{reset@{reset}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::reset (\begin{DoxyParamCaption}\item[{float}]{fov,  }\item[{float}]{z\+Near,  }\item[{float}]{z\+Far,  }\item[{float}]{aspect\+Ratio }\end{DoxyParamCaption})}
+
+
+
+Reset the members of the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & \\
+\hline
+{\em z\+Near} & \\
+\hline
+{\em z\+Far} & \\
+\hline
+{\em aspect\+Ratio} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a6b3de1c2275908dd36659934c6389f48}\label{classprz_1_1_camera_a6b3de1c2275908dd36659934c6389f48}} 
+\index{prz::Camera@{prz::Camera}!set\_far\_z@{set\_far\_z}}
+\index{set\_far\_z@{set\_far\_z}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{set\_far\_z()}{set\_far\_z()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::set\+\_\+far\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{z\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the far z object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z\+Far} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a0ea8099b1dd633ee59746efdc7df5e40}\label{classprz_1_1_camera_a0ea8099b1dd633ee59746efdc7df5e40}} 
+\index{prz::Camera@{prz::Camera}!set\_fov@{set\_fov}}
+\index{set\_fov@{set\_fov}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{set\_fov()}{set\_fov()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::set\+\_\+fov (\begin{DoxyParamCaption}\item[{float}]{fov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the fov object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a50dd11b89b9bfe5b0c0f253f093180df}\label{classprz_1_1_camera_a50dd11b89b9bfe5b0c0f253f093180df}} 
+\index{prz::Camera@{prz::Camera}!set\_near\_z@{set\_near\_z}}
+\index{set\_near\_z@{set\_near\_z}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{set\_near\_z()}{set\_near\_z()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::set\+\_\+near\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{z\+Near }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the near z object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z\+Near} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_ad5f11c3aace04adb03d4f7edc7aa9c66}\label{classprz_1_1_camera_ad5f11c3aace04adb03d4f7edc7aa9c66}} 
+\index{prz::Camera@{prz::Camera}!set\_ratio@{set\_ratio}}
+\index{set\_ratio@{set\_ratio}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{set\_ratio()}{set\_ratio()}}
+{\footnotesize\ttfamily void prz\+::\+Camera\+::set\+\_\+ratio (\begin{DoxyParamCaption}\item[{float}]{aspect\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the ratio object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aspect\+Ratio} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_camera_a5dc5b4ddc7be0671f20c19138141bdd6}\label{classprz_1_1_camera_a5dc5b4ddc7be0671f20c19138141bdd6}} 
+\index{prz::Camera@{prz::Camera}!viewMatrix@{viewMatrix}}
+\index{viewMatrix@{viewMatrix}!prz::Camera@{prz::Camera}}
+\subsubsection{\texorpdfstring{viewMatrix()}{viewMatrix()}}
+{\footnotesize\ttfamily const P\+Mat4\& prz\+::\+Camera\+::view\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the view matrix of the transform. 
+
+\begin{DoxyReturn}{Returns}
+const P\+Mat4\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\item 
+code/sources/Camera.\+cpp\end{DoxyCompactItemize}

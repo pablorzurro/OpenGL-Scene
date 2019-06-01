@@ -1,0 +1,4 @@
+<map id="prz::Scene" name="prz::Scene">
+<area shape="rect" id="node1" title="Core class to save the state and items of the application." alt="" coords="13,95,98,121"/>
+<area shape="rect" id="node2" href="$classprz_1_1_renderer.html" title="Class to render all subscribed entities." alt="" coords="5,5,105,32"/>
+</map>

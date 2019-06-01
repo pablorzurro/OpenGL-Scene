@@ -1,0 +1,189 @@
+\hypertarget{classprz_1_1_renderer}{}\section{prz\+::Renderer Class Reference}
+\label{classprz_1_1_renderer}\index{prz::Renderer@{prz::Renderer}}
+
+
+Class to render all subscribed entities.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_renderer_a238a312cfc99589491e7bab525aed05a}\label{classprz_1_1_renderer_a238a312cfc99589491e7bab525aed05a}} 
+using {\bfseries Meshes\+\_\+\+By\+\_\+\+Transform} = P\+Map$<$ \mbox{\hyperlink{classprz_1_1_transform}{Transform}} $\ast$, P\+List$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_mesh}{Mesh}} $>$ $>$ $\ast$ $>$
+\item 
+\mbox{\Hypertarget{classprz_1_1_renderer_a1d8fb1bc716e17e7e509d7692bc3b2ca}\label{classprz_1_1_renderer_a1d8fb1bc716e17e7e509d7692bc3b2ca}} 
+using {\bfseries Material\+\_\+\+Batches} = P\+Map$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_material}{Material}} $>$, Meshes\+\_\+\+By\+\_\+\+Transform $>$
+\item 
+\mbox{\Hypertarget{classprz_1_1_renderer_aaaf8bf1a30a10c59853ef9f45f8aa6e6}\label{classprz_1_1_renderer_aaaf8bf1a30a10c59853ef9f45f8aa6e6}} 
+using {\bfseries Shader\+\_\+\+Program\+\_\+\+Batches} = P\+Map$<$ P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$, Material\+\_\+\+Batches $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_renderer_ac65609621c2c993fd923a74d5c9f6042}{Renderer}} (\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&scene\+Owner)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_renderer_aa4a2a69d65e8c6f30c4fcf693c006f08}{$\sim$\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_renderer_a6afd9f0501d72f9a128625ad2d28a59d}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update the render queues. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_renderer_a1b1894524e453b510ef23fec58aa12a2}{render}} (const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ active\+Camera)
+\begin{DoxyCompactList}\small\item\em Render the batches queues. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_renderer_a479da300bc28d8d22ac26cbed51423f4}{subscribe\+\_\+entity}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em subscribe a new entity \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_renderer_acc8bf8513b1b3c9e649ff34a93abd18f}{unsubscribe\+\_\+entity}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em unsubscribe an entity \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_renderer_ae2cc6d2d4a5668f2ef91bc2d994fa9d3}{is\+\_\+entity\+\_\+subscribed}} (const P\+String \&name) const
+\begin{DoxyCompactList}\small\item\em return if an entity with name is subscribed \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_renderer_a669ce404b1d420c1ebd6ed66925b3289}{is\+\_\+entity\+\_\+subscribed}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity) const
+\begin{DoxyCompactList}\small\item\em return if the input entity is subscribed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to render all subscribed entities. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_renderer_ac65609621c2c993fd923a74d5c9f6042}\label{classprz_1_1_renderer_ac65609621c2c993fd923a74d5c9f6042}} 
+\index{prz::Renderer@{prz::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily prz\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classprz_1_1_scene}{Scene}} \&}]{scene\+Owner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Owner} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_renderer_aa4a2a69d65e8c6f30c4fcf693c006f08}\label{classprz_1_1_renderer_aa4a2a69d65e8c6f30c4fcf693c006f08}} 
+\index{prz::Renderer@{prz::Renderer}!````~Renderer@{$\sim$Renderer}}
+\index{````~Renderer@{$\sim$Renderer}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{$\sim$Renderer()}{~Renderer()}}
+{\footnotesize\ttfamily prz\+::\+Renderer\+::$\sim$\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_renderer_ae2cc6d2d4a5668f2ef91bc2d994fa9d3}\label{classprz_1_1_renderer_ae2cc6d2d4a5668f2ef91bc2d994fa9d3}} 
+\index{prz::Renderer@{prz::Renderer}!is\_entity\_subscribed@{is\_entity\_subscribed}}
+\index{is\_entity\_subscribed@{is\_entity\_subscribed}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{is\_entity\_subscribed()}{is\_entity\_subscribed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Renderer\+::is\+\_\+entity\+\_\+subscribed (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if an entity with name is subscribed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_renderer_a669ce404b1d420c1ebd6ed66925b3289}\label{classprz_1_1_renderer_a669ce404b1d420c1ebd6ed66925b3289}} 
+\index{prz::Renderer@{prz::Renderer}!is\_entity\_subscribed@{is\_entity\_subscribed}}
+\index{is\_entity\_subscribed@{is\_entity\_subscribed}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{is\_entity\_subscribed()}{is\_entity\_subscribed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Renderer\+::is\+\_\+entity\+\_\+subscribed (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption}) const}
+
+
+
+return if the input entity is subscribed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_renderer_a1b1894524e453b510ef23fec58aa12a2}\label{classprz_1_1_renderer_a1b1894524e453b510ef23fec58aa12a2}} 
+\index{prz::Renderer@{prz::Renderer}!render@{render}}
+\index{render@{render}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void prz\+::\+Renderer\+::render (\begin{DoxyParamCaption}\item[{const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$}]{active\+Camera }\end{DoxyParamCaption})}
+
+
+
+Render the batches queues. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active\+Camera} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_renderer_a479da300bc28d8d22ac26cbed51423f4}\label{classprz_1_1_renderer_a479da300bc28d8d22ac26cbed51423f4}} 
+\index{prz::Renderer@{prz::Renderer}!subscribe\_entity@{subscribe\_entity}}
+\index{subscribe\_entity@{subscribe\_entity}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{subscribe\_entity()}{subscribe\_entity()}}
+{\footnotesize\ttfamily bool prz\+::\+Renderer\+::subscribe\+\_\+entity (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+subscribe a new entity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_renderer_acc8bf8513b1b3c9e649ff34a93abd18f}\label{classprz_1_1_renderer_acc8bf8513b1b3c9e649ff34a93abd18f}} 
+\index{prz::Renderer@{prz::Renderer}!unsubscribe\_entity@{unsubscribe\_entity}}
+\index{unsubscribe\_entity@{unsubscribe\_entity}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{unsubscribe\_entity()}{unsubscribe\_entity()}}
+{\footnotesize\ttfamily bool prz\+::\+Renderer\+::unsubscribe\+\_\+entity (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+unsubscribe an entity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_renderer_a6afd9f0501d72f9a128625ad2d28a59d}\label{classprz_1_1_renderer_a6afd9f0501d72f9a128625ad2d28a59d}} 
+\index{prz::Renderer@{prz::Renderer}!update@{update}}
+\index{update@{update}!prz::Renderer@{prz::Renderer}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void prz\+::\+Renderer\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the render queues. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_renderer_8hpp}{Renderer.\+hpp}}\item 
+code/sources/Renderer.\+cpp\end{DoxyCompactItemize}

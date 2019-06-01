@@ -1,0 +1,81 @@
+\hypertarget{_declarations___s_t_d_8hpp}{}\section{code/headers/internal/\+Declarations\+\_\+\+S\+TD.hpp File Reference}
+\label{_declarations___s_t_d_8hpp}\index{code/headers/internal/Declarations\_STD.hpp@{code/headers/internal/Declarations\_STD.hpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+Include dependency graph for Declarations\+\_\+\+S\+T\+D.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_declarations___s_t_d_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_declarations___s_t_d_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a0ac6bacf331c2f59f21907ea1c6c8b49}\label{_declarations___s_t_d_8hpp_a0ac6bacf331c2f59f21907ea1c6c8b49}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries prz\+::\+P\+S\+Ptr} = std\+::shared\+\_\+ptr$<$ T $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a421d2a9c91265205618340816e8d8ace}\label{_declarations___s_t_d_8hpp_a421d2a9c91265205618340816e8d8ace}} 
+{\footnotesize template$<$typename Key , typename Val $>$ }\\using {\bfseries prz\+::\+P\+Map} = std\+::unordered\+\_\+map$<$ Key, Val $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_ae4a29983c8bc6b4abf6acc7265dc3126}\label{_declarations___s_t_d_8hpp_ae4a29983c8bc6b4abf6acc7265dc3126}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries prz\+::\+P\+Buffer} = std\+::vector$<$ T $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_af28644b20040d37ed380eb3810b56394}\label{_declarations___s_t_d_8hpp_af28644b20040d37ed380eb3810b56394}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries prz\+::\+P\+List} = std\+::list$<$ T $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a92a72275ab4ff09208a8e5eb1dced77b}\label{_declarations___s_t_d_8hpp_a92a72275ab4ff09208a8e5eb1dced77b}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries prz\+::\+P\+Init\+List} = std\+::initializer\+\_\+list$<$ T $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a60eeac09f5b385c8b944ef2af8a9056f}\label{_declarations___s_t_d_8hpp_a60eeac09f5b385c8b944ef2af8a9056f}} 
+using {\bfseries prz\+::\+P\+String} = std\+::string
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a543242f5143fecbbaea3dc12970e3def}\label{_declarations___s_t_d_8hpp_a543242f5143fecbbaea3dc12970e3def}} 
+typedef std\+::chrono\+::high\+\_\+resolution\+\_\+clock {\bfseries prz\+::\+High\+Clock}
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_ae12cf0177a1472e313660e01992e7bbc}\label{_declarations___s_t_d_8hpp_ae12cf0177a1472e313660e01992e7bbc}} 
+typedef std\+::chrono\+::time\+\_\+point$<$ High\+Clock $>$ {\bfseries prz\+::\+High\+Time\+Point}
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_a91fc8a9a5bfa70e8928cb7e6d9f43fbf}\label{_declarations___s_t_d_8hpp_a91fc8a9a5bfa70e8928cb7e6d9f43fbf}} 
+typedef std\+::chrono\+::duration$<$ double $>$ {\bfseries prz\+::\+Elapsed}
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_af6188976f9c42a431d57bdeb97831a48}\label{_declarations___s_t_d_8hpp_af6188976f9c42a431d57bdeb97831a48}} 
+using {\bfseries prz\+::\+P\+High\+Clock} = std\+::chrono\+::high\+\_\+resolution\+\_\+clock
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_ad861ed5a55bd43d453410d787525c2f5}\label{_declarations___s_t_d_8hpp_ad861ed5a55bd43d453410d787525c2f5}} 
+using {\bfseries prz\+::\+P\+Time\+Point} = std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$
+\item 
+\mbox{\Hypertarget{_declarations___s_t_d_8hpp_ac590ec095432679e4749de68de1385c1}\label{_declarations___s_t_d_8hpp_ac590ec095432679e4749de68de1385c1}} 
+using {\bfseries prz\+::\+P\+Elapsed\+Time} = std\+::chrono\+::duration$<$ double $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Pablo Rodríguez Zurro (\href{mailto:przuro@gmail.com}{\texttt{ przuro@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/05-\/2019
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2019 
+\end{DoxyCopyright}

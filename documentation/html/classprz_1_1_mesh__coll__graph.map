@@ -1,0 +1,4 @@
+<map id="prz::Mesh" name="prz::Mesh">
+<area shape="rect" id="node1" title="Class to store and manage vertex array objects." alt="" coords="16,80,96,107"/>
+<area shape="rect" id="node2" href="$classprz_1_1_drawable.html" title="Abstract class that will be the base of all drawable objects." alt="" coords="5,5,107,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="code/headers/Texture_Cube.hpp" name="code/headers/Texture_Cube.hpp">
+<area shape="rect" id="node1" title="Class that represents 6 textures 2D which forms a cube." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$_texture___loader_8hpp.html" title="Singleton class to load, store and manage textures of any type." alt="" coords="5,95,152,136"/>
+</map>

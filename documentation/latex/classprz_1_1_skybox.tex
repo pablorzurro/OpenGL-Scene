@@ -1,0 +1,140 @@
+\hypertarget{classprz_1_1_skybox}{}\section{prz\+::Skybox Class Reference}
+\label{classprz_1_1_skybox}\index{prz::Skybox@{prz::Skybox}}
+
+
+Class that is similar to a material but with only a cube map.  
+
+
+
+
+{\ttfamily \#include $<$Skybox.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Skybox\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classprz_1_1_skybox__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Skybox\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classprz_1_1_skybox__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_skybox_aef3ae2ac798250a694da015213e15f07}{Skybox}} (const P\+String \&texture\+Root\+Path, const P\+String \&path\+Vertex\+Shader, const P\+String \&path\+Fragment\+Shader)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_skybox_ad924fe508676a78665ad2497b264ea3f}{Skybox}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ cube\+Map, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader\+Program)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_skybox_aaa7b576943c21c939f3de52ef5f57043}{$\sim$\+Skybox}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_skybox_a8a55c1baca43d28ec7d13c68828b7bb8}{draw}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ camera) override
+\begin{DoxyCompactList}\small\item\em Draw the skybox by the camera matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_skybox_aec1e6ca523b459acf02df4800e27de23}{draw}} () override
+\begin{DoxyCompactList}\small\item\em Draw the skybox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that is similar to a material but with only a cube map. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_skybox_aef3ae2ac798250a694da015213e15f07}\label{classprz_1_1_skybox_aef3ae2ac798250a694da015213e15f07}} 
+\index{prz::Skybox@{prz::Skybox}!Skybox@{Skybox}}
+\index{Skybox@{Skybox}!prz::Skybox@{prz::Skybox}}
+\subsubsection{\texorpdfstring{Skybox()}{Skybox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Skybox\+::\+Skybox (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Root\+Path,  }\item[{const P\+String \&}]{path\+Vertex\+Shader,  }\item[{const P\+String \&}]{path\+Fragment\+Shader }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Root\+Path} & \\
+\hline
+{\em path\+Vertex\+Shader} & \\
+\hline
+{\em path\+Fragment\+Shader} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_skybox_ad924fe508676a78665ad2497b264ea3f}\label{classprz_1_1_skybox_ad924fe508676a78665ad2497b264ea3f}} 
+\index{prz::Skybox@{prz::Skybox}!Skybox@{Skybox}}
+\index{Skybox@{Skybox}!prz::Skybox@{prz::Skybox}}
+\subsubsection{\texorpdfstring{Skybox()}{Skybox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Skybox\+::\+Skybox (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$}]{cube\+Map,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader\+Program }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\+Map} & \\
+\hline
+{\em shader\+Program} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_skybox_aaa7b576943c21c939f3de52ef5f57043}\label{classprz_1_1_skybox_aaa7b576943c21c939f3de52ef5f57043}} 
+\index{prz::Skybox@{prz::Skybox}!````~Skybox@{$\sim$Skybox}}
+\index{````~Skybox@{$\sim$Skybox}!prz::Skybox@{prz::Skybox}}
+\subsubsection{\texorpdfstring{$\sim$Skybox()}{~Skybox()}}
+{\footnotesize\ttfamily prz\+::\+Skybox\+::$\sim$\+Skybox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_skybox_a8a55c1baca43d28ec7d13c68828b7bb8}\label{classprz_1_1_skybox_a8a55c1baca43d28ec7d13c68828b7bb8}} 
+\index{prz::Skybox@{prz::Skybox}!draw@{draw}}
+\index{draw@{draw}!prz::Skybox@{prz::Skybox}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void prz\+::\+Skybox\+::draw (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw the skybox by the camera matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classprz_1_1_drawable_ab82bbd8a27416a49efcef7fa11b59b89}{prz\+::\+Drawable}}.
+
+\mbox{\Hypertarget{classprz_1_1_skybox_aec1e6ca523b459acf02df4800e27de23}\label{classprz_1_1_skybox_aec1e6ca523b459acf02df4800e27de23}} 
+\index{prz::Skybox@{prz::Skybox}!draw@{draw}}
+\index{draw@{draw}!prz::Skybox@{prz::Skybox}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void prz\+::\+Skybox\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw the skybox. 
+
+
+
+Implements \mbox{\hyperlink{classprz_1_1_drawable_aa6ca0ce45d4a00b69ecf47d5deb23825}{prz\+::\+Drawable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_skybox_8hpp}{Skybox.\+hpp}}\item 
+code/sources/Skybox.\+cpp\end{DoxyCompactItemize}

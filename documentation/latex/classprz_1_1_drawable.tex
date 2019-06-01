@@ -1,0 +1,89 @@
+\hypertarget{classprz_1_1_drawable}{}\section{prz\+::Drawable Class Reference}
+\label{classprz_1_1_drawable}\index{prz::Drawable@{prz::Drawable}}
+
+
+Abstract class that will be the base of all drawable objects.  
+
+
+
+
+{\ttfamily \#include $<$Drawable.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Drawable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classprz_1_1_drawable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classprz_1_1_drawable_a6fbba7cb0aae98e2b777e86897c3512b}{$\sim$\+Drawable}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_drawable}{Drawable}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_drawable_aa6ca0ce45d4a00b69ecf47d5deb23825}{draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Draw this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_drawable_ab82bbd8a27416a49efcef7fa11b59b89}{draw}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Draw this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that will be the base of all drawable objects. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_drawable_a6fbba7cb0aae98e2b777e86897c3512b}\label{classprz_1_1_drawable_a6fbba7cb0aae98e2b777e86897c3512b}} 
+\index{prz::Drawable@{prz::Drawable}!````~Drawable@{$\sim$Drawable}}
+\index{````~Drawable@{$\sim$Drawable}!prz::Drawable@{prz::Drawable}}
+\subsubsection{\texorpdfstring{$\sim$Drawable()}{~Drawable()}}
+{\footnotesize\ttfamily virtual prz\+::\+Drawable\+::$\sim$\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_drawable}{Drawable}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_drawable_aa6ca0ce45d4a00b69ecf47d5deb23825}\label{classprz_1_1_drawable_aa6ca0ce45d4a00b69ecf47d5deb23825}} 
+\index{prz::Drawable@{prz::Drawable}!draw@{draw}}
+\index{draw@{draw}!prz::Drawable@{prz::Drawable}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void prz\+::\+Drawable\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Draw this object. 
+
+
+
+Implemented in \mbox{\hyperlink{classprz_1_1_mesh_aed5a3cd6605bc59e29d6957a8f1a1131}{prz\+::\+Mesh}}, and \mbox{\hyperlink{classprz_1_1_skybox_aec1e6ca523b459acf02df4800e27de23}{prz\+::\+Skybox}}.
+
+\mbox{\Hypertarget{classprz_1_1_drawable_ab82bbd8a27416a49efcef7fa11b59b89}\label{classprz_1_1_drawable_ab82bbd8a27416a49efcef7fa11b59b89}} 
+\index{prz::Drawable@{prz::Drawable}!draw@{draw}}
+\index{draw@{draw}!prz::Drawable@{prz::Drawable}}
+\subsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void prz\+::\+Drawable\+::draw (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Draw this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classprz_1_1_skybox_a8a55c1baca43d28ec7d13c68828b7bb8}{prz\+::\+Skybox}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_drawable_8hpp}{Drawable.\+hpp}}\end{DoxyCompactItemize}

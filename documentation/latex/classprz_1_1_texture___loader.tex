@@ -1,0 +1,133 @@
+\hypertarget{classprz_1_1_texture___loader}{}\section{prz\+::Texture\+\_\+\+Loader Class Reference}
+\label{classprz_1_1_texture___loader}\index{prz::Texture\_Loader@{prz::Texture\_Loader}}
+
+
+Singleton class to load, store and manage textures of any type.  
+
+
+
+
+{\ttfamily \#include $<$Texture\+\_\+\+Loader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a8b577eb323df37bf656ce369169a47f9}\label{classprz_1_1_texture___loader_a8b577eb323df37bf656ce369169a47f9}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ {\bfseries load\+\_\+texture2D} (const P\+String \&texture\+Path, const P\+String \&texture\+Name=\char`\"{}no\+\_\+input\+\_\+name\char`\"{})
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_ad80e66e133c826456276d924e87b8df2}\label{classprz_1_1_texture___loader_ad80e66e133c826456276d924e87b8df2}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ {\bfseries load\+\_\+cube\+\_\+map} (const P\+String \&texture\+Root\+Path, const P\+String \&texture\+Name=\char`\"{}no\+\_\+input\+\_\+name\char`\"{})
+\item 
+bool \mbox{\hyperlink{classprz_1_1_texture___loader_aea5eb425e3e4b39767fcf224415686ba}{is\+\_\+texture\+\_\+loaded}} (const P\+String \&texture\+Path) const
+\begin{DoxyCompactList}\small\item\em return if is loaded a texture by path \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_texture___loader_ac824d4884c5ba02477f60e296ae21e1c}{is\+\_\+texture\+\_\+loaded\+\_\+by\+\_\+name}} (const P\+String \&texture\+Name) const
+\begin{DoxyCompactList}\small\item\em return if is loaded a texture by name \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_texture___loader_ac57a1e14179f8aff43030b2c5f85ca59}{is\+\_\+texture\+\_\+2\+D\+\_\+loaded}} (const P\+String \&texture2\+D\+Name) const
+\begin{DoxyCompactList}\small\item\em return if is loaded a 2D texture by name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a2f2a029a3688a1360ad234becd8f4304}\label{classprz_1_1_texture___loader_a2f2a029a3688a1360ad234becd8f4304}} 
+bool {\bfseries is\+\_\+texture\+\_\+cube\+\_\+loaded} (const P\+String \&texture\+Cube\+Name) const
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a67365b6e0f0990c227c7bdcc2d59c666}\label{classprz_1_1_texture___loader_a67365b6e0f0990c227c7bdcc2d59c666}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ {\bfseries get\+\_\+texture} (const P\+String \&texture\+Path)
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a387d220d817d09c19efa7cfc839fae4b}\label{classprz_1_1_texture___loader_a387d220d817d09c19efa7cfc839fae4b}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture}{Texture}} $>$ {\bfseries get\+\_\+texture\+\_\+by\+\_\+name} (const P\+String \&texture\+Name)
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a72244f8b959048f4c2fe3e498922871c}\label{classprz_1_1_texture___loader_a72244f8b959048f4c2fe3e498922871c}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture__2_d}{Texture\+\_\+2D}} $>$ {\bfseries get\+\_\+texture\+\_\+2d} (const P\+String \&texture2\+D\+Name)
+\item 
+\mbox{\Hypertarget{classprz_1_1_texture___loader_a2863ad70bf3d96a2cb107eb957a6e605}\label{classprz_1_1_texture___loader_a2863ad70bf3d96a2cb107eb957a6e605}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_texture___cube}{Texture\+\_\+\+Cube}} $>$ {\bfseries get\+\_\+texture\+\_\+cube} (const P\+String \&texture\+Cube\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classprz_1_1_texture___loader}{Texture\+\_\+\+Loader}} \& \mbox{\hyperlink{classprz_1_1_texture___loader_ad4ec3289aad70624cf0ae28048e84778}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get an static instance object of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton class to load, store and manage textures of any type. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_texture___loader_ad4ec3289aad70624cf0ae28048e84778}\label{classprz_1_1_texture___loader_ad4ec3289aad70624cf0ae28048e84778}} 
+\index{prz::Texture\_Loader@{prz::Texture\_Loader}!instance@{instance}}
+\index{instance@{instance}!prz::Texture\_Loader@{prz::Texture\_Loader}}
+\subsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classprz_1_1_texture___loader}{Texture\+\_\+\+Loader}}\& prz\+::\+Texture\+\_\+\+Loader\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an static instance object of this class. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classprz_1_1_texture___loader}{Texture\+\_\+\+Loader}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture___loader_ac57a1e14179f8aff43030b2c5f85ca59}\label{classprz_1_1_texture___loader_ac57a1e14179f8aff43030b2c5f85ca59}} 
+\index{prz::Texture\_Loader@{prz::Texture\_Loader}!is\_texture\_2D\_loaded@{is\_texture\_2D\_loaded}}
+\index{is\_texture\_2D\_loaded@{is\_texture\_2D\_loaded}!prz::Texture\_Loader@{prz::Texture\_Loader}}
+\subsubsection{\texorpdfstring{is\_texture\_2D\_loaded()}{is\_texture\_2D\_loaded()}}
+{\footnotesize\ttfamily bool prz\+::\+Texture\+\_\+\+Loader\+::is\+\_\+texture\+\_\+2\+D\+\_\+loaded (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture2\+D\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if is loaded a 2D texture by name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture2\+D\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture___loader_aea5eb425e3e4b39767fcf224415686ba}\label{classprz_1_1_texture___loader_aea5eb425e3e4b39767fcf224415686ba}} 
+\index{prz::Texture\_Loader@{prz::Texture\_Loader}!is\_texture\_loaded@{is\_texture\_loaded}}
+\index{is\_texture\_loaded@{is\_texture\_loaded}!prz::Texture\_Loader@{prz::Texture\_Loader}}
+\subsubsection{\texorpdfstring{is\_texture\_loaded()}{is\_texture\_loaded()}}
+{\footnotesize\ttfamily bool prz\+::\+Texture\+\_\+\+Loader\+::is\+\_\+texture\+\_\+loaded (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Path }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if is loaded a texture by path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_texture___loader_ac824d4884c5ba02477f60e296ae21e1c}\label{classprz_1_1_texture___loader_ac824d4884c5ba02477f60e296ae21e1c}} 
+\index{prz::Texture\_Loader@{prz::Texture\_Loader}!is\_texture\_loaded\_by\_name@{is\_texture\_loaded\_by\_name}}
+\index{is\_texture\_loaded\_by\_name@{is\_texture\_loaded\_by\_name}!prz::Texture\_Loader@{prz::Texture\_Loader}}
+\subsubsection{\texorpdfstring{is\_texture\_loaded\_by\_name()}{is\_texture\_loaded\_by\_name()}}
+{\footnotesize\ttfamily bool prz\+::\+Texture\+\_\+\+Loader\+::is\+\_\+texture\+\_\+loaded\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const P\+String \&}]{texture\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return if is loaded a texture by name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_texture___loader_8hpp}{Texture\+\_\+\+Loader.\+hpp}}\item 
+code/sources/Texture\+\_\+\+Loader.\+cpp\end{DoxyCompactItemize}

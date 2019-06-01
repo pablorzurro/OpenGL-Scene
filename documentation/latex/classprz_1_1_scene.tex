@@ -1,0 +1,354 @@
+\hypertarget{classprz_1_1_scene}{}\section{prz\+::Scene Class Reference}
+\label{classprz_1_1_scene}\index{prz::Scene@{prz::Scene}}
+
+
+Core class to save the state and items of the application.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+
+
+Inheritance diagram for prz\+::Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classprz_1_1_scene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for prz\+::Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classprz_1_1_scene__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classprz_1_1_scene_a99d23e99f8f47fdf4e6bd698d7615121}{Scene}} (Window \&window)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_scene}{Scene}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classprz_1_1_scene_aad3da8080dd5063fc76f94285b027e13}{Scene}} (Window \&window, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{classprz_1_1_scene_a19077419381d6e278ca13abf7f8eb69c}{active\+Camera}}, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} $>$ framebuffer, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}} $>$ skybox)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classprz_1_1_scene}{Scene}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_scene_ad8ae9e750f1d233f7026cba59241f419}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classprz_1_1_scene_a19ade334f3e3ecf0cf0ace488963ef00}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the scnee. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_scene_a1744d861904b1cb0177c913e60911089}{render}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Render the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_scene_a7bf265c1a9266e2685a81687ba8380f2}{display}} ()
+\begin{DoxyCompactList}\small\item\em Swap the buffers of the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_scene_a236daf32a516ceb45c5a2ad2fa271b84}{on\+\_\+window\+\_\+resized}} ()
+\begin{DoxyCompactList}\small\item\em Method called when the window is resized externaly. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classprz_1_1_scene_a6b2893cd5382fe548f79278ccaaa7919}{add\+\_\+entity}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ parent=P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$(), bool subscribe\+To\+Renderer=true)
+\begin{DoxyCompactList}\small\item\em Add a entity to the scene. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classprz_1_1_scene_a4556c6d177223750d558227109b230cd}{create\+\_\+entity}} (const P\+String \&name, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ parent=P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$())
+\begin{DoxyCompactList}\small\item\em Create a base entity to fill it with whatever is wanted. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_scene_aa3c59d6b9df4fb911fce48003a6f945b}{exists\+\_\+entity}} (P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ entity) const
+\begin{DoxyCompactList}\small\item\em Return if exists a entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_scene_abd37a8193847977ecf5f6352aaa77042}{exists\+\_\+entity}} (const P\+String \&name) const
+\begin{DoxyCompactList}\small\item\em Return if exists a entity by name. \end{DoxyCompactList}\item 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{classprz_1_1_scene_aba275583269ef775fd5d75777a5b33fb}{get\+\_\+entity}} (const P\+String \&name)
+\begin{DoxyCompactList}\small\item\em Return the entity by name. \end{DoxyCompactList}\item 
+P\+Vec2 \mbox{\hyperlink{classprz_1_1_scene_a1740ae76f69941fd144c0bd2b676cbee}{get\+\_\+window\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em Return the window size. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} \& \mbox{\hyperlink{classprz_1_1_scene_a9b3d951d80efb66226155224fe63956b}{renderer}} () const
+\begin{DoxyCompactList}\small\item\em Return the renderer. \end{DoxyCompactList}\item 
+const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{classprz_1_1_scene_a19077419381d6e278ca13abf7f8eb69c}{active\+Camera}} () const
+\begin{DoxyCompactList}\small\item\em Return the active camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a24a99ab494d44283d6bcf6828f9e6dea}\label{classprz_1_1_scene_a24a99ab494d44283d6bcf6828f9e6dea}} 
+\mbox{\hyperlink{classprz_1_1_renderer}{Renderer}} {\bfseries renderer\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a94c4031887163a16526986a41d29aa19}\label{classprz_1_1_scene_a94c4031887163a16526986a41d29aa19}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ {\bfseries active\+Camera\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_ac3845fa3686d450470508a9f84aca3a3}\label{classprz_1_1_scene_ac3845fa3686d450470508a9f84aca3a3}} 
+P\+Map$<$ P\+String, P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ $>$ {\bfseries entities\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a5be14acdc2018956835558e66c10bb4e}\label{classprz_1_1_scene_a5be14acdc2018956835558e66c10bb4e}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}} $>$ {\bfseries skybox\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a0291cb68b6a804a503f70a6965427ef9}\label{classprz_1_1_scene_a0291cb68b6a804a503f70a6965427ef9}} 
+Window \& {\bfseries window\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_ae1e16e4d41ba0f5fbdd932d69273ee93}\label{classprz_1_1_scene_ae1e16e4d41ba0f5fbdd932d69273ee93}} 
+P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} $>$ {\bfseries framebuffer\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a163d4ca0d86d3f9c994997de3cf166f6}\label{classprz_1_1_scene_a163d4ca0d86d3f9c994997de3cf166f6}} 
+bool {\bfseries is\+Wireframe\+Mode\+Active\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_a1d7e498c1bfc2a26da3aa64c915e861d}\label{classprz_1_1_scene_a1d7e498c1bfc2a26da3aa64c915e861d}} 
+bool {\bfseries apply\+Framebuffer\+Effect\+\_\+}
+\item 
+\mbox{\Hypertarget{classprz_1_1_scene_ae10b9e2eed16a4c52af6a1e02abc1c35}\label{classprz_1_1_scene_ae10b9e2eed16a4c52af6a1e02abc1c35}} 
+float {\bfseries input\+Timer\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core class to save the state and items of the application. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_scene_a99d23e99f8f47fdf4e6bd698d7615121}\label{classprz_1_1_scene_a99d23e99f8f47fdf4e6bd698d7615121}} 
+\index{prz::Scene@{prz::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily prz\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_scene_aad3da8080dd5063fc76f94285b027e13}\label{classprz_1_1_scene_aad3da8080dd5063fc76f94285b027e13}} 
+\index{prz::Scene@{prz::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily prz\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{Window \&}]{window,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$}]{active\+Camera,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_framebuffer}{Framebuffer}} $>$}]{framebuffer,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_skybox}{Skybox}} $>$}]{skybox }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classprz_1_1_scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em active\+Camera} & \\
+\hline
+{\em framebuffer} & \\
+\hline
+{\em skybox} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_scene_a19077419381d6e278ca13abf7f8eb69c}\label{classprz_1_1_scene_a19077419381d6e278ca13abf7f8eb69c}} 
+\index{prz::Scene@{prz::Scene}!activeCamera@{activeCamera}}
+\index{activeCamera@{activeCamera}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{activeCamera()}{activeCamera()}}
+{\footnotesize\ttfamily const P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_camera}{Camera}} $>$ prz\+::\+Scene\+::active\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the active camera. 
+
+\begin{DoxyReturn}{Returns}
+const P\+S\+Ptr$<$ Camera $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_a6b2893cd5382fe548f79278ccaaa7919}\label{classprz_1_1_scene_a6b2893cd5382fe548f79278ccaaa7919}} 
+\index{prz::Scene@{prz::Scene}!add\_entity@{add\_entity}}
+\index{add\_entity@{add\_entity}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{add\_entity()}{add\_entity()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ prz\+::\+Scene\+::add\+\_\+entity (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{parent = {\ttfamily PSPtr~$<$~\mbox{\hyperlink{classprz_1_1_entity}{Entity}}~$>$()},  }\item[{bool}]{subscribe\+To\+Renderer = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Add a entity to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+{\em parent} & \\
+\hline
+{\em subscribe\+To\+Renderer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Entity $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_a4556c6d177223750d558227109b230cd}\label{classprz_1_1_scene_a4556c6d177223750d558227109b230cd}} 
+\index{prz::Scene@{prz::Scene}!create\_entity@{create\_entity}}
+\index{create\_entity@{create\_entity}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{create\_entity()}{create\_entity()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ prz\+::\+Scene\+::create\+\_\+entity (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name,  }\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{parent = {\ttfamily PSPtr~$<$~\mbox{\hyperlink{classprz_1_1_entity}{Entity}}~$>$()} }\end{DoxyParamCaption})}
+
+
+
+Create a base entity to fill it with whatever is wanted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Entity $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_a7bf265c1a9266e2685a81687ba8380f2}\label{classprz_1_1_scene_a7bf265c1a9266e2685a81687ba8380f2}} 
+\index{prz::Scene@{prz::Scene}!display@{display}}
+\index{display@{display}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void prz\+::\+Scene\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Swap the buffers of the window. 
+
+\mbox{\Hypertarget{classprz_1_1_scene_aa3c59d6b9df4fb911fce48003a6f945b}\label{classprz_1_1_scene_aa3c59d6b9df4fb911fce48003a6f945b}} 
+\index{prz::Scene@{prz::Scene}!exists\_entity@{exists\_entity}}
+\index{exists\_entity@{exists\_entity}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{exists\_entity()}{exists\_entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Scene\+::exists\+\_\+entity (\begin{DoxyParamCaption}\item[{P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption}) const}
+
+
+
+Return if exists a entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_abd37a8193847977ecf5f6352aaa77042}\label{classprz_1_1_scene_abd37a8193847977ecf5f6352aaa77042}} 
+\index{prz::Scene@{prz::Scene}!exists\_entity@{exists\_entity}}
+\index{exists\_entity@{exists\_entity}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{exists\_entity()}{exists\_entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool prz\+::\+Scene\+::exists\+\_\+entity (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if exists a entity by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_aba275583269ef775fd5d75777a5b33fb}\label{classprz_1_1_scene_aba275583269ef775fd5d75777a5b33fb}} 
+\index{prz::Scene@{prz::Scene}!get\_entity@{get\_entity}}
+\index{get\_entity@{get\_entity}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{get\_entity()}{get\_entity()}}
+{\footnotesize\ttfamily P\+S\+Ptr$<$ \mbox{\hyperlink{classprz_1_1_entity}{Entity}} $>$ prz\+::\+Scene\+::get\+\_\+entity (\begin{DoxyParamCaption}\item[{const P\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the entity by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+S\+Ptr$<$ Entity $>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_a1740ae76f69941fd144c0bd2b676cbee}\label{classprz_1_1_scene_a1740ae76f69941fd144c0bd2b676cbee}} 
+\index{prz::Scene@{prz::Scene}!get\_window\_size@{get\_window\_size}}
+\index{get\_window\_size@{get\_window\_size}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{get\_window\_size()}{get\_window\_size()}}
+{\footnotesize\ttfamily P\+Vec2 prz\+::\+Scene\+::get\+\_\+window\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the window size. 
+
+\begin{DoxyReturn}{Returns}
+P\+Vec2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_ad8ae9e750f1d233f7026cba59241f419}\label{classprz_1_1_scene_ad8ae9e750f1d233f7026cba59241f419}} 
+\index{prz::Scene@{prz::Scene}!initialize@{initialize}}
+\index{initialize@{initialize}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void prz\+::\+Scene\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the scene. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classprz_1_1_demo___scene__01_acaf389e824f310d3f3b06e1c8b510ff2}{prz\+::\+Demo\+\_\+\+Scene\+\_\+01}}.
+
+\mbox{\Hypertarget{classprz_1_1_scene_a236daf32a516ceb45c5a2ad2fa271b84}\label{classprz_1_1_scene_a236daf32a516ceb45c5a2ad2fa271b84}} 
+\index{prz::Scene@{prz::Scene}!on\_window\_resized@{on\_window\_resized}}
+\index{on\_window\_resized@{on\_window\_resized}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{on\_window\_resized()}{on\_window\_resized()}}
+{\footnotesize\ttfamily void prz\+::\+Scene\+::on\+\_\+window\+\_\+resized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method called when the window is resized externaly. 
+
+\mbox{\Hypertarget{classprz_1_1_scene_a1744d861904b1cb0177c913e60911089}\label{classprz_1_1_scene_a1744d861904b1cb0177c913e60911089}} 
+\index{prz::Scene@{prz::Scene}!render@{render}}
+\index{render@{render}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void prz\+::\+Scene\+::render (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Render the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_scene_a9b3d951d80efb66226155224fe63956b}\label{classprz_1_1_scene_a9b3d951d80efb66226155224fe63956b}} 
+\index{prz::Scene@{prz::Scene}!renderer@{renderer}}
+\index{renderer@{renderer}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{renderer()}{renderer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}\& prz\+::\+Scene\+::renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the renderer. 
+
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{classprz_1_1_renderer}{Renderer}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_scene_a19ade334f3e3ecf0cf0ace488963ef00}\label{classprz_1_1_scene_a19ade334f3e3ecf0cf0ace488963ef00}} 
+\index{prz::Scene@{prz::Scene}!update@{update}}
+\index{update@{update}!prz::Scene@{prz::Scene}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void prz\+::\+Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the scnee. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classprz_1_1_demo___scene__01_ad452238849b24043acb89b1d76f996cb}{prz\+::\+Demo\+\_\+\+Scene\+\_\+01}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\item 
+code/sources/Scene.\+cpp\end{DoxyCompactItemize}

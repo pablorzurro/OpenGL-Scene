@@ -1,0 +1,246 @@
+\hypertarget{classprz_1_1_vertex___buffer___object}{}\section{prz\+::Vertex\+\_\+\+Buffer\+\_\+\+Object Class Reference}
+\label{classprz_1_1_vertex___buffer___object}\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+
+
+Class to manage a memory buffer of vertices.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+\_\+\+Buffer\+\_\+\+Object.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a22e97683138a3109923dba7e21f2345c}\label{classprz_1_1_vertex___buffer___object_a22e97683138a3109923dba7e21f2345c}} 
+enum {\bfseries Target} \{ {\bfseries A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER} = G\+L\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, 
+{\bfseries E\+L\+E\+M\+E\+N\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER} = G\+L\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER
+ \}
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a2a2aa27fbdbcc99867ba06bf18485bfb}\label{classprz_1_1_vertex___buffer___object_a2a2aa27fbdbcc99867ba06bf18485bfb}} 
+enum {\bfseries Draw\+Usage} \{ {\bfseries S\+T\+A\+T\+IC} = G\+L\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+D\+R\+AW, 
+{\bfseries D\+Y\+N\+A\+M\+IC} = G\+L\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+D\+R\+AW, 
+{\bfseries S\+T\+R\+E\+AM} = G\+L\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+R\+AW
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_afe094cc200fa62b2104e59c896e330ae}\label{classprz_1_1_vertex___buffer___object_afe094cc200fa62b2104e59c896e330ae}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lbyte $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a0328b70da8980eb19394ae223488ad33}\label{classprz_1_1_vertex___buffer___object_a0328b70da8980eb19394ae223488ad33}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lubyte $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a8bcd705519da61854d61684bb1a3d1dd}\label{classprz_1_1_vertex___buffer___object_a8bcd705519da61854d61684bb1a3d1dd}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lshort $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a05d9595ec79ed40ee1a668bf01a9fd54}\label{classprz_1_1_vertex___buffer___object_a05d9595ec79ed40ee1a668bf01a9fd54}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lushort $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a2e574c83ecbfbf4f92ed9053f5b8410e}\label{classprz_1_1_vertex___buffer___object_a2e574c83ecbfbf4f92ed9053f5b8410e}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lint $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_acaeca719dc93bd6994f9a1fc817ddb4d}\label{classprz_1_1_vertex___buffer___object_acaeca719dc93bd6994f9a1fc817ddb4d}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Luint $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a412d7b4200dd58179f30f61eecaab891}\label{classprz_1_1_vertex___buffer___object_a412d7b4200dd58179f30f61eecaab891}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const G\+Lfloat $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, unsigned int n\+Components=1, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a9edd86c88f70d2d427f7aacf5fad23ff}\label{classprz_1_1_vertex___buffer___object_a9edd86c88f70d2d427f7aacf5fad23ff}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+Vec2 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_ac186acadbd2290883959e5b7ef291e00}\label{classprz_1_1_vertex___buffer___object_ac186acadbd2290883959e5b7ef291e00}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+Vec3 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a5b3b4e7b8c41984db1bcc4cd86148b0c}\label{classprz_1_1_vertex___buffer___object_a5b3b4e7b8c41984db1bcc4cd86148b0c}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+Vec4 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a64f4fbaa5fd223e916cf786402963bca}\label{classprz_1_1_vertex___buffer___object_a64f4fbaa5fd223e916cf786402963bca}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+U\+Vec2 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a141ea94bc3361bf6303fc2b0933f9550}\label{classprz_1_1_vertex___buffer___object_a141ea94bc3361bf6303fc2b0933f9550}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+U\+Vec3 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a9f7882f5f815af18b8b6aa39d20675a5}\label{classprz_1_1_vertex___buffer___object_a9f7882f5f815af18b8b6aa39d20675a5}} 
+{\bfseries Vertex\+\_\+\+Buffer\+\_\+\+Object} (const P\+U\+Vec4 $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}}, Target \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}}=A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+ER, Draw\+Usage draw\+Usage=S\+T\+A\+T\+IC)
+\item 
+\mbox{\hyperlink{classprz_1_1_vertex___buffer___object_af8a4bfaac939c305df32e408c97d1907}{$\sim$\+Vertex\+\_\+\+Buffer\+\_\+\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{Vertex\+\_\+\+Buffer\+\_\+\+Object}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_ae49ebbeffd4601e6d4323a0f0cdec07c}{create}} (const void $\ast$data, size\+\_\+t \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}})
+\begin{DoxyCompactList}\small\item\em Create a V\+BO with void date (used by all constructors) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_af331ffa3037d9439ce128edb2aa68283}{bind}} ()
+\begin{DoxyCompactList}\small\item\em Bind the vbo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_ac0e62263c69190df824e94c318d178af}{unbind}} ()
+\begin{DoxyCompactList}\small\item\em Unbind the vbo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a3aa6dbac656b3ff18972032fc9522aab}{is\+\_\+ok}} () const
+\begin{DoxyCompactList}\small\item\em Return if is ok. \end{DoxyCompactList}\item 
+G\+Luint \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_afa221de7c5ae0a1557a570c5d6b8a057}{vbo\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Return the V\+BO identification. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}{target}} () const
+\begin{DoxyCompactList}\small\item\em Return the target. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a8a8a3fbc56e01dafa1fe8828dfca3e5b}{element\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Return the element type. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a473600ea393a66ad6d949b2e0d6b795d}{n\+Components\+Per\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Return the components per element. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}{size}} ()
+\begin{DoxyCompactList}\small\item\em Return the size. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classprz_1_1_vertex___buffer___object_a7f588b2a07a856c1edde321ee47ee100}{get\+\_\+error}} () const
+\begin{DoxyCompactList}\small\item\em Return the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to manage a memory buffer of vertices. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_af8a4bfaac939c305df32e408c97d1907}\label{classprz_1_1_vertex___buffer___object_af8a4bfaac939c305df32e408c97d1907}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!````~Vertex\_Buffer\_Object@{$\sim$Vertex\_Buffer\_Object}}
+\index{````~Vertex\_Buffer\_Object@{$\sim$Vertex\_Buffer\_Object}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{$\sim$Vertex\_Buffer\_Object()}{~Vertex\_Buffer\_Object()}}
+{\footnotesize\ttfamily prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::$\sim$\+Vertex\+\_\+\+Buffer\+\_\+\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{classprz_1_1_vertex___buffer___object}{Vertex\+\_\+\+Buffer\+\_\+\+Object}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_af331ffa3037d9439ce128edb2aa68283}\label{classprz_1_1_vertex___buffer___object_af331ffa3037d9439ce128edb2aa68283}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!bind@{bind}}
+\index{bind@{bind}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Bind the vbo. 
+
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_ae49ebbeffd4601e6d4323a0f0cdec07c}\label{classprz_1_1_vertex___buffer___object_ae49ebbeffd4601e6d4323a0f0cdec07c}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!create@{create}}
+\index{create@{create}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily void prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::create (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Create a V\+BO with void date (used by all constructors) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a8a8a3fbc56e01dafa1fe8828dfca3e5b}\label{classprz_1_1_vertex___buffer___object_a8a8a3fbc56e01dafa1fe8828dfca3e5b}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!elementType@{elementType}}
+\index{elementType@{elementType}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{elementType()}{elementType()}}
+{\footnotesize\ttfamily G\+Lenum prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::element\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the element type. 
+
+\begin{DoxyReturn}{Returns}
+G\+Lenum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a7f588b2a07a856c1edde321ee47ee100}\label{classprz_1_1_vertex___buffer___object_a7f588b2a07a856c1edde321ee47ee100}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily G\+Lenum prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::get\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error. 
+
+\begin{DoxyReturn}{Returns}
+G\+Lenum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a3aa6dbac656b3ff18972032fc9522aab}\label{classprz_1_1_vertex___buffer___object_a3aa6dbac656b3ff18972032fc9522aab}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!is\_ok@{is\_ok}}
+\index{is\_ok@{is\_ok}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{is\_ok()}{is\_ok()}}
+{\footnotesize\ttfamily bool prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::is\+\_\+ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return if is ok. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a473600ea393a66ad6d949b2e0d6b795d}\label{classprz_1_1_vertex___buffer___object_a473600ea393a66ad6d949b2e0d6b795d}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!nComponentsPerElement@{nComponentsPerElement}}
+\index{nComponentsPerElement@{nComponentsPerElement}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{nComponentsPerElement()}{nComponentsPerElement()}}
+{\footnotesize\ttfamily unsigned int prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::n\+Components\+Per\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the components per element. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}\label{classprz_1_1_vertex___buffer___object_acc2dd595347b27c190d9542b4b624324}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!size@{size}}
+\index{size@{size}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned int prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the size. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}\label{classprz_1_1_vertex___buffer___object_a093cc0098b6993768ebbc9a2c3efeced}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!target@{target}}
+\index{target@{target}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily G\+Lenum prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the target. 
+
+\begin{DoxyReturn}{Returns}
+G\+Lenum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_ac0e62263c69190df824e94c318d178af}\label{classprz_1_1_vertex___buffer___object_ac0e62263c69190df824e94c318d178af}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!unbind@{unbind}}
+\index{unbind@{unbind}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unbind the vbo. 
+
+\mbox{\Hypertarget{classprz_1_1_vertex___buffer___object_afa221de7c5ae0a1557a570c5d6b8a057}\label{classprz_1_1_vertex___buffer___object_afa221de7c5ae0a1557a570c5d6b8a057}} 
+\index{prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}!vboID@{vboID}}
+\index{vboID@{vboID}!prz::Vertex\_Buffer\_Object@{prz::Vertex\_Buffer\_Object}}
+\subsubsection{\texorpdfstring{vboID()}{vboID()}}
+{\footnotesize\ttfamily G\+Luint prz\+::\+Vertex\+\_\+\+Buffer\+\_\+\+Object\+::vbo\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the V\+BO identification. 
+
+\begin{DoxyReturn}{Returns}
+G\+Luint 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/headers/Vertex\+\_\+\+Buffer\+\_\+\+Object.\+hpp\item 
+code/sources/Vertex\+\_\+\+Buffer\+\_\+\+Object.\+cpp\end{DoxyCompactItemize}
