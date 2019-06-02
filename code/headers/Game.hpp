@@ -127,6 +127,20 @@ namespace prz
 			prevTime = curTime;
 		}
 
+	public:
+
+		void set_scene(PSPtr< Scene > scene)
+		{
+			scene_ = scene;
+		}
+
+	public:
+
+		Window& window()
+		{
+			return window_;
+		}
+
 	private:
 
 		Window window_;

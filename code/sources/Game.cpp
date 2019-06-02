@@ -1,11 +1,12 @@
 #include <Game.hpp>
 #include <Input_Manager.hpp>
+
+#include <Scene.hpp>
 #include <Demo_Scene_01.hpp>
-#include <glad/glad.h>
 
 namespace prz
 {
-	Game::Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle, bool vSync, const WindowStyle& windowStyle, unsigned int depth):
+	Game::Game(unsigned int windowWidth, unsigned int windowHeight, const PString& windowTitle, bool vSync, const WindowStyle& windowStyle, unsigned int depth) :
 		window_(VideoMode(windowWidth, windowHeight), windowTitle, windowStyle, ContextSettings(24, 0, 0, 4, 5, ContextSettings::Core)),
 		event_(),
 		deltaTime_(0.f),
@@ -23,7 +24,6 @@ namespace prz
 		cout << endl;
 		assetsFolderPath_ += "/";
 
-		scene_.reset(new Demo_Scene_01(window_));
 		curTime = prevTime = HighClock::now();
 	}
 
