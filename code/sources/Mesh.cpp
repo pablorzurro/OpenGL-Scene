@@ -30,7 +30,7 @@ namespace prz
 	}
 
 	Mesh::Mesh(const PString& name, const PBuffer< GLfloat >& coordinates, const PBuffer< GLfloat >& normals, const PBuffer< GLuint  >& indices, Primitive_Mode primitiveMode, const PBuffer< GLfloat >& textureUVs, const PBuffer< GLfloat >& colors) :
-		Mesh(name, byte_sizeof(indices), primitiveMode, UNSIGNED_INT)
+		Mesh(name, (GLsizei)byte_sizeof(indices), primitiveMode, UNSIGNED_INT)
 	{
 		size_t nCoordinates = byte_sizeof(coordinates);
 		size_t nNormals = byte_sizeof(normals);
@@ -39,28 +39,28 @@ namespace prz
 
 		PList< PVAI > vertexAttributes =
 		{
-			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates.data(), nCoordinates, 3)), VBO_ORDER::COORDINATES)
+			PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(coordinates.data(), (GLsizei)nCoordinates, 3)), VBO_ORDER::COORDINATES)
 		};
 
 		if (nNormals > 0)
 		{
 			vertexAttributes.push_back
 			(
-				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals.data(), nNormals, 3)), VBO_ORDER::NORMALS)
+				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(normals.data(), (GLsizei)nNormals, 3)), VBO_ORDER::NORMALS)
 			);
 		}
 		if (nUVs > 0)
 		{
 			vertexAttributes.push_back
 			(
-				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs.data(), nUVs, 2)), VBO_ORDER::TEXTURE_COORD)
+				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(textureUVs.data(), (GLsizei)nUVs, 2)), VBO_ORDER::TEXTURE_COORD)
 			);
 		}
 		if (nColors > 0)
 		{
 			vertexAttributes.push_back
 			(
-				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(colors.data(), nColors, 4)), VBO_ORDER::COLORS)
+				PVAI(PSPtr< PVBO >(std::make_shared< PVBO >(colors.data(), (GLsizei)nColors, 4)), VBO_ORDER::COLORS)
 			);
 		}
 
