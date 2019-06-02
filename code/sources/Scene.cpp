@@ -87,6 +87,9 @@ namespace prz
 
 			renderer_.render(activeCamera_);
 		}
+
+		custom_render(deltaTime);
+
 		if (useFramebuffer)
 		{
 			framebuffer_->render();
