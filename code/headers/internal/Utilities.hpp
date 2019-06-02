@@ -82,19 +82,70 @@ namespace prz
 		return vector.size() * sizeof(T);
 	}
 
-	///////////////////////////////////GLM///////////////////////////////////////
+	///////////////////////////////////GLM///////////////////////////////////////}
 
-	inline PVec3 extract_translation(PMat4 & matrix)
+	inline static PMat4 translate(const PMat4& matrix, const PVec3& translation)
+	{
+		return glm::translate(matrix, translation);
+	}
+
+	inline static PMat4 translate(const PMat4& matrix, float x, float y, float z)
+	{
+		return glm::translate(matrix, PVec3(x, y, z));
+	}
+
+	inline static PMat4 scale(const PMat4& matrix, const PVec3& scale)
+	{
+		return glm::scale(matrix, scale);
+	}
+
+	inline static PMat4 scale(const PMat4& matrix, float x, float y, float z)
+	{
+		return glm::scale(matrix, PVec3(x, y, z));
+	}
+
+	inline static PMat4 scale(const PMat4& matrix, float scale)
+	{
+		return glm::scale(matrix, PVec3(scale));
+	}
+
+	inline static PMat4 rotate_in_x(const PMat4& matrix, float angle)
+	{
+		return glm::rotate(matrix, glm::radians(angle), PVec3(1.f, 0.f, 0.f));
+	}
+
+	inline static PMat4 rotate_in_y(const PMat4& matrix, float angle)
+	{
+		return glm::rotate(matrix, glm::radians(angle), PVec3(0.f, 1.f, 0.f));
+	}
+
+	inline static PMat4 rotate_in_z(const PMat4& matrix, float angle)
+	{
+		return glm::rotate(matrix, glm::radians(angle), PVec3(0.f, 0.f, 1.f));
+	}
+
+	inline static PMat4 rotate(const PMat4& matrix, const PVec3& rotation)
+	{
+		PMat4 rotatedMatrix; 
+
+		rotatedMatrix = glm::rotate(rotatedMatrix, glm::radians(rotation.x), PVec3(1.f, 0.f, 0.f));
+		rotatedMatrix = glm::rotate(rotatedMatrix, glm::radians(rotation.y), PVec3(0.f, 1.f, 0.f));
+		rotatedMatrix = glm::rotate(rotatedMatrix, glm::radians(rotation.z), PVec3(0.f, 0.f, 1.f));
+
+		return rotatedMatrix;
+	}
+
+	inline static PVec3 extract_translation(const PMat4 & matrix)
 	{
 		return PVec3(matrix[3].x, matrix[3].y, matrix[3].z);
 	}
 
-	inline PVec3 extract_rotation_vector(PMat4& matrix)
+	inline static PVec3 extract_rotation_vector(const PMat4& matrix)
 	{
 		return PVec3(matrix[0].x, matrix[1].y, matrix[2].z);
 	}
 
-	inline PQuat extract_rotation(PMat4& matrix)
+	inline static PQuat extract_rotation(PMat4& matrix)
 	{
 		glm::vec3 scale;
 		glm::quat rotation;
@@ -107,23 +158,22 @@ namespace prz
 		return rotation;
 	}
 
-	inline PMat4 perspective(float fov, float near, float far, float aspect_ratio)
+	inline static PMat4 perspective(float fov, float near, float far, float aspect_ratio)
 	{
 		return glm::perspective(fov, aspect_ratio, near, far);
 	}
 
-	inline PVec3 extract_scale(PMat4& matrix)
+	inline static PVec3 extract_scale(PMat4& matrix)
 	{
 		return PVec3(matrix[0].x, matrix[1].y, matrix[2].z);
 	}
 
-	inline PMat4 rotate_matrix_around_axis(PMat4& matrix, float angle, const PVec3& axis)
+	inline static PMat4 rotate_matrix_around_axis(const PMat4& matrix, float angle, const PVec3& axis)
 	{
-		PMat4 returnMatrix = glm::rotate(matrix, glm::radians(angle), axis);
-		return returnMatrix;
+		return glm::rotate(matrix, glm::radians(angle), axis);
 	}
 
-	inline PQuat get_quaternion_from(const PVec3& vector3f, bool inRadians = false, bool normalize = true)
+	inline static PQuat get_quaternion_from(const PVec3& vector3f, bool inRadians = false, bool normalize = true)
 	{
 		PVec3 v = vector3f;
 		PQuat pitch = PQuatIdentity;
@@ -148,7 +198,6 @@ namespace prz
 
 		PQuat resultantQuat = pitch * yaw * roll;
 		*/
-
 
 		PQuat resultantQuat = PQuat(v);
 
