@@ -83,6 +83,14 @@ namespace prz
 		 */
 		void render(float deltaTime);
 
+
+		/**
+		 * @brief Auxiliar method to render the scene (before the draw of the framebuffer)
+		 *
+		 * @param deltaTime
+		 */
+		virtual void custom_render(float deltaTime){}
+
 	public:
 
 		/**
