@@ -75,21 +75,25 @@ namespace prz
 	{
 		if (vao_)
 		{
-			assert(primitiveMode_ != GL_NONE);
-			assert(nVertices_ > 0);
-
-			vao_->bind();
-
-			if (indicesType_ == GL_NONE)
+			if (!nVertices_ == 0)
 			{
-				glDrawArrays(primitiveMode_, 0, nVertices_);
+				vao_->bind();
+
+				if (indicesType_ == NO_INDICES_TYPE)
+				{
+					glDrawArrays(primitiveMode_, 0, nVertices_);
+				}
+				else
+				{
+					glDrawElements(primitiveMode_, vao_->nIndices(), indicesType_, 0);
+				}
+
+				vao_->unbind();
 			}
 			else
 			{
-				glDrawElements(primitiveMode_, vao_->nIndices(), indicesType_, 0);
+				cout << "Trying to render an empty mesh";
 			}
-
-			vao_->unbind();
 		}
 	}
 }
