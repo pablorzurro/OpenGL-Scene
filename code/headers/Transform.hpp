@@ -233,6 +233,14 @@ namespace prz
 
 	public:
 
+		void set_model_matrix(const PMat4& newModelMatrix)
+		{
+			modelMatrix_ = newModelMatrix;
+			isModelMatrixUpdated_ = true;
+		}
+
+	public:
+
 		/**
 		 * @brief Set the translation
 		 * 

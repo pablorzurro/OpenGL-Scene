@@ -140,7 +140,7 @@ namespace prz
 		material->set_uniform("light_pos", "light_position", PVec3(-100.f, 70.f, -20.f), true);
 		material->set_uniform("view_pos", "view_pos", activeCamera->transform().translation() , true);
 		material->set_uniform("ambient_intensity", "ambient_intensity", 0.5f, true);
-		material->set_uniform("camera_pos", "camera_pos", activeCamera->transform().translation());
+		material->set_uniform("camera_pos", "camera_pos", activeCamera->transform().translation(), true);
 	}
 
 	void Renderer::set_material_local_uniforms(PSPtr<Material> material, Transform* transform)
